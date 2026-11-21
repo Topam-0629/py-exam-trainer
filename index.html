@@ -842,11 +842,21 @@ age = pd.Series([60, 70, 12, 45, 42],
 print(age)
 print(age['papa'])`},
 { t:'learn', title:'방법 ① 딕셔너리로 만들기 (추천)', body:`
-<p>시험 1번은 세 가지 방법 중 <b>1개 선택</b>이에요. 가장 쉽고 실수가 적은 <b>딕셔너리 방법</b>을 기본으로 외우세요.</p>
-<ol><li>딕셔너리: <code>'열 이름': [그 열의 값 5개]</code></li>
-<li><code>pd.DataFrame(딕셔너리, index=[행 이름 5개])</code></li>
-<li><code>print(df)</code></li></ol>
-${FAMILY_TABLE}`,
+<p>시험 1번은 세 가지 방법 중 <b>1개 선택</b>이에요. 가장 쉽고 실수가 적은 <b>딕셔너리 방법</b>을 기본으로 외우세요. 아래 표를 만드는 코드를 한 줄씩 볼게요.</p>
+${FAMILY_TABLE}
+<pre class="code">import pandas as pd                              # ① 판다스 도구 상자, 별명 pd
+data = {'age': [60, 70, 12, 45, 42],             # ② 칼럼 이름: [그 칼럼의 값 5개]
+        'weight': [3.8, 7.2, 6.3, 5.5, 4.6],
+        'height': [4.4, 5.6, 6.4, 5.7, 7.8],
+        'nickname': ['Shark', 'Audrey', 'Smurf', 'Tongk', 'JJ']}
+df = pd.DataFrame(data, index=['grandpa', 'grandma', 'grandson', 'papa', 'mama'])   # ③ 표 만들기
+print(df)                                        # ④ 화면에 표 보여주기</pre>
+<table class="cmp"><tr><th>줄</th><th>뜻</th></tr>
+<tr><td>① <code>import pandas as pd</code></td><td>판다스를 불러와서 <code>pd</code>라고 부를게. 없으면 <code>pd</code>를 몰라서 오류.</td></tr>
+<tr><td>② <code>data = { ... }</code></td><td>딕셔너리. <b>키 = 칼럼(열) 이름</b>, <b>값 리스트 = 그 칼럼을 위에서 아래로</b> 읽은 값. <code>'age': [60, 70, 12, 45, 42]</code> → 표의 age 세로줄. 리스트마다 값이 <b>5개</b>(행 수)로 같아야 해요.</td></tr>
+<tr><td>③ <code>pd.DataFrame(data, index=[...])</code></td><td><code>DataFrame</code>(대문자 D, F)은 <b>표를 만드는 함수</b>. 첫 재료 <code>data</code>로 칼럼을 만들고, <code>index=</code>에 준 리스트가 <b>왼쪽 행 이름(인덱스)</b>이 돼요. 순서는 값 리스트 순서와 같아야 해요(60이 grandpa). 만든 표는 <code>df</code>라는 상자에 넣어요.</td></tr>
+<tr><td>④ <code>print(df)</code></td><td>Thonny는 print를 해야 보여요. 표 전체가 출력돼요.</td></tr></table>
+<div class="tip"><code>index=</code>를 빼면 행 이름이 <b>0, 1, 2, 3, 4</b> 번호로 붙어요. 시험 표처럼 grandpa… 이름을 붙이려면 꼭 써야 해요. (교과서처럼 <code>pd.DataFrame(data, ['grandpa', ...])</code>로 <code>index=</code> 글자를 생략해도 돼요)</div>`,
  code: DF_DICT + `\nprint(df)`},
 { t:'code', title:'문제 1: 딕셔너리로 데이터프레임', body:`<p>딕셔너리를 이용해 아래 데이터프레임을 만들고 출력하세요.</p>${FAMILY_TABLE}`,
  ref: DF_DICT + `\nprint(df)`, check:'out', must:[['\\{','딕셔너리 { }를 써야 해요']], hints:["data = {'age': [60, 70, 12, 45, 42], ...}","df = pd.DataFrame(data, index=[...])","index에 행 이름 5개, 마지막에 print(df)"]},
