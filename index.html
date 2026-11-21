@@ -461,7 +461,7 @@ const NP_TABLE = `<table class="tbl np"><tr><td>1</td><td>4</td><td>3</td><td>7<
 const DESC_NP = '넘파이(NumPy)는 파이썬에서 다차원 배열(ndarray)을 만들고 빠르게 계산하기 위한 수치 계산 라이브러리이다. 배열끼리의 사칙연산과 합계·평균·중앙값·최댓값·최솟값·분산·표준편차 같은 통계 함수를 제공하며, 판다스·맷플롯립·머신러닝 라이브러리의 기반이 된다.';
 const DESC_PD = '판다스(pandas)는 행과 열로 이루어진 표 형태의 데이터를 쉽게 다루고 분석하기 위한 파이썬 라이브러리이다. 1차원 자료구조인 시리즈(Series)와 2차원 표 자료구조인 데이터프레임(DataFrame)을 제공하며, 데이터의 추출·추가·수정·삭제와 통계 계산을 할 수 있다. 넘파이를 기반으로 만들어졌다.';
 const DESC_MPL = '맷플롯립(Matplotlib)은 파이썬에서 데이터를 선 그래프, 막대그래프, 산점도, 원그래프 등 다양한 그래프로 시각화하는 라이브러리이다. 주로 pyplot 모듈을 plt라는 이름으로 불러와 plot(), xlabel(), legend(), show() 같은 함수로 그래프를 그린다.';
-const DESC_ML = '① 데이터 준비: 독립 변수 x(스마트폰 사용 시간)와 종속 변수 y(시험 점수)를 넘파이 배열로 준비한다. ② 모델 선정: 숫자 값을 예측하므로 선형 회귀 모델 LinearRegression()을 만든다. ③ 모델 학습: fit()에 x와 y를 넣어 데이터의 규칙(기울기·절편)을 학습한다. 이때 x는 reshape(-1, 1)로 2차원으로 바꿔야 한다. ④ 예측: predict()에 새로운 값(예: 2시간)을 2차원 [[ ]] 형태로 넣어 시험 점수를 예측한다.';
+const DESC_ML = '1. 데이터 준비: 독립 변수 x(스마트폰 사용 시간)와 종속 변수 y(시험 점수)를 넘파이 배열로 준비한다. 2. 예측 모델 선정 및 모델 학습: 점수(숫자)를 예측하므로 선형 회귀 모델 LinearRegression()을 만들고, fit()에 x와 y를 넣어 데이터의 규칙(기울기·절편)을 학습한다. 이때 x는 reshape(-1, 1)로 2차원으로 바꿔야 한다. 3. 모델 예측: predict()에 새로운 값(예: 2시간)을 [[ ]] 2차원 형태로 넣어 시험 점수를 예측한다.';
 
 const CHAPTERS = [
 /* ================= CH0 ================= */
@@ -678,7 +678,7 @@ import matplotlib.pyplot as plt`},
 { t:'intro', title:'넘파이 NumPy', body:`<p class="lead">시험 넘파이 3문제: <b>① 라이브러리 설명 + 2차원 배열 + 함수 2개</b>, <b>② arange → reshape</b>, <b>③ arange·reshape로 연산</b>.</p>
 ${NP_TABLE}
 <ul class="goals"><li>2차원 배열 만들기</li><li>axis=0과 axis=1 구분하기</li><li>합계·중앙값·평균·최댓값·최솟값·분산·표준편차·any·all·where</li><li>arange, reshape, 배열 연산</li></ul>`},
-{ t:'learn', title:'넘파이란? (서술형 답안)', body:`
+{ t:'learn', title:'넘파이란? (설명 외우기)', body:`
 <p>시험 1번은 <b>"넘파이 라이브러리를 설명하고"</b>로 시작해요. 아래 답안을 이해하고 핵심 단어를 외우세요.</p>
 <div class="answer">${DESC_NP}</div>
 <p class="kw">핵심 단어: <span>다차원 배열</span><span>수치 계산</span><span>빠른 계산</span><span>통계 함수</span><span>판다스·맷플롯립의 기반</span></p>`},
@@ -826,7 +826,7 @@ print(np.arange(9).reshape(3, 3) + np.arange(3))`},
 { id:'c3', title:'판다스', short:'PANDAS', mins:52, steps:[
 { t:'intro', title:'판다스 pandas', body:`<p class="lead">판다스는 <b>1번(데이터프레임 만들기)</b>은 무조건, <b>2~13번 중 5개</b>가 나와요. 그래서 12개 전부 연습해요.</p>${FAMILY_TABLE}
 <ul class="goals"><li>시리즈와 데이터프레임</li><li>딕셔너리 · 배열 · 시리즈로 만들기</li><li>추출 <code>[[ ]]</code>, <code>loc</code></li><li>추가 · 수정 · 이름 변경 · 전치 · 삭제 · 인덱스 변경</li></ul>`},
-{ t:'learn', title:'판다스란? (서술형 답안)', body:`
+{ t:'learn', title:'판다스란? (설명 외우기)', body:`
 <div class="answer">${DESC_PD}</div>
 <p class="kw">핵심 단어: <span>표 형태(행과 열)</span><span>시리즈(1차원)</span><span>데이터프레임(2차원)</span><span>추출·추가·수정·삭제</span><span>넘파이 기반</span></p>
 <p>용어: <b>인덱스(index)</b> = 행 이름 (grandpa, grandma …), <b>칼럼(column)</b> = 열 이름 (age, weight …)</p>`},
@@ -985,7 +985,7 @@ df.set_index('sex', inplace=True)`},
 { t:'intro', title:'맷플롯립 Matplotlib', body:`<p class="lead">시험 그래프는 <b>사진 속 가족 몸무게 그래프 1개</b>예요. 단, <b>마커·색·선 종류가 바뀌어 나올 수 있으니</b> 옵션표를 확실히 외워요.</p>
 <div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ★, 그래프 색상: 마젠타(m), 선 종류: -- · 범례(label='weight')</div>
 <ul class="goals"><li>plot의 기본 구조</li><li>marker · color · linestyle 옵션표</li><li>xlabel · ylabel · label · legend · show</li></ul>`},
-{ t:'learn', title:'맷플롯립이란? (서술형 답안)', body:`<div class="answer">${DESC_MPL}</div>
+{ t:'learn', title:'맷플롯립이란? (설명 외우기)', body:`<div class="answer">${DESC_MPL}</div>
 <p class="kw">핵심 단어: <span>시각화</span><span>선 그래프·막대·산점도·원그래프</span><span>pyplot → plt</span></p>`},
 { t:'learn', title:'그래프의 기본 4단계', body:`
 <ol><li><b>불러오기</b>: <code>import matplotlib.pyplot as plt</code> (시험지 4쪽처럼 <code>from matplotlib import pyplot as plt</code>로 써도 같아요)</li>
@@ -1068,6 +1068,9 @@ plt.show()`},
  ref: PHONE, check:'plot', hints:['np.array로 x, y','plt.figure(figsize=(5, 5))','plt.plot(x, y, \'bo\')']},
 { t:'learn', title:'머신러닝 예측 3단계', body:`
 <p>시험지 9쪽 코드의 주석 그대로 <b>3단계</b>예요.</p>
+<p><b>시험 "기계학습 과정을 설명하시오" 답안 (외우기)</b></p>
+<div class="answer">${DESC_ML}</div>
+<p class="kw">핵심 단어: <span>데이터 준비(독립·종속 변수)</span><span>모델 선정 LinearRegression</span><span>학습 fit</span><span>reshape(-1, 1) 2차원</span><span>예측 predict</span></p>
 <div class="flow" style="grid-template-columns:repeat(3,1fr)"><div><b>1. 데이터 준비</b><br>x, y 배열</div><div><b>2. 예측 모델 선정 및 모델 학습</b><br>LinearRegression() → fit</div><div><b>3. 모델 예측</b><br>predict([[2]])</div></div>
 <p><b>선형 회귀</b>: 데이터에 가장 잘 맞는 <b>직선</b>(기울기와 절편)을 찾아, 새로운 x의 y를 예측해요.</p>
 <div class="warn">sklearn은 x를 <b>2차원</b>으로 받아요.<br>• 학습: <code>x.reshape(-1, 1)</code> → [[1], [3], [5]]<br>• 예측: <code>[[pre_x]]</code> 대괄호 두 겹</div>
@@ -1518,7 +1521,9 @@ function setPyPill(msg){const p=$('#pypill');if(!p)return;p.className='pypill '+
 
 /* ===== 헤더 / 진행 ===== */
 /* 잠금: 통과한 단계까지 + 처음으로 통과 못 한 단계까지만 갈 수 있음 */
-function reach(){for(let i=0;i<FLAT.length;i++)if(!S.done[FLAT[i].key])return i;return FLAT.length-1}
+// 읽기만 하는 화면(intro, 코드 없는 설명)은 잠금 판단에서 뺌 → 나중에 생긴 설명 화면 때문에 뒤가 잠기지 않음
+const READONLY=f=>f.raw.t==='intro'||(f.raw.t==='learn'&&!f.raw.code);
+function reach(){for(let i=0;i<FLAT.length;i++)if(!S.done[FLAT[i].key]&&!READONLY(FLAT[i]))return i;return FLAT.length-1}
 function renderNav(){
   const cur=FLAT[S.pos],R=reach();
   $('#chapters').innerHTML=CHAPTERS.map((c,ci)=>{
