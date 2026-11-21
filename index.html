@@ -10,7 +10,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" media="print" onload="this.media='all'">
 <style>
 .CodeMirror{font-family:monospace;height:300px;color:#000;direction:ltr}.CodeMirror-lines{padding:4px 0}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{padding:0 4px}.CodeMirror-gutter-filler,.CodeMirror-scrollbar-filler{background-color:#fff}.CodeMirror-gutters{border-right:1px solid #ddd;background-color:#f7f7f7;white-space:nowrap}.CodeMirror-linenumber{padding:0 3px 0 5px;min-width:20px;text-align:right;color:#999;white-space:nowrap}.CodeMirror-guttermarker{color:#000}.CodeMirror-guttermarker-subtle{color:#999}.CodeMirror-cursor{border-left:1px solid #000;border-right:none;width:0}.CodeMirror div.CodeMirror-secondarycursor{border-left:1px solid silver}.cm-fat-cursor .CodeMirror-cursor{width:auto;border:0!important;background:#7e7}.cm-fat-cursor div.CodeMirror-cursors{z-index:1}.cm-fat-cursor .CodeMirror-line::selection,.cm-fat-cursor .CodeMirror-line>span::selection,.cm-fat-cursor .CodeMirror-line>span>span::selection{background:0 0}.cm-fat-cursor .CodeMirror-line::-moz-selection,.cm-fat-cursor .CodeMirror-line>span::-moz-selection,.cm-fat-cursor .CodeMirror-line>span>span::-moz-selection{background:0 0}.cm-fat-cursor{caret-color:transparent}@-moz-keyframes blink{50%{background-color:transparent}}@-webkit-keyframes blink{50%{background-color:transparent}}@keyframes blink{50%{background-color:transparent}}.cm-tab{display:inline-block;text-decoration:inherit}.CodeMirror-rulers{position:absolute;left:0;right:0;top:-50px;bottom:0;overflow:hidden}.CodeMirror-ruler{border-left:1px solid #ccc;top:0;bottom:0;position:absolute}.cm-s-default .cm-header{color:#00f}.cm-s-default .cm-quote{color:#090}.cm-negative{color:#d44}.cm-positive{color:#292}.cm-header,.cm-strong{font-weight:700}.cm-em{font-style:italic}.cm-link{text-decoration:underline}.cm-strikethrough{text-decoration:line-through}.cm-s-default .cm-keyword{color:#708}.cm-s-default .cm-atom{color:#219}.cm-s-default .cm-number{color:#164}.cm-s-default .cm-def{color:#00f}.cm-s-default .cm-variable-2{color:#05a}.cm-s-default .cm-type,.cm-s-default .cm-variable-3{color:#085}.cm-s-default .cm-comment{color:#a50}.cm-s-default .cm-string{color:#a11}.cm-s-default .cm-string-2{color:#f50}.cm-s-default .cm-meta{color:#555}.cm-s-default .cm-qualifier{color:#555}.cm-s-default .cm-builtin{color:#30a}.cm-s-default .cm-bracket{color:#997}.cm-s-default .cm-tag{color:#170}.cm-s-default .cm-attribute{color:#00c}.cm-s-default .cm-hr{color:#999}.cm-s-default .cm-link{color:#00c}.cm-s-default .cm-error{color:red}.cm-invalidchar{color:red}.CodeMirror-composing{border-bottom:2px solid}div.CodeMirror span.CodeMirror-matchingbracket{color:#0b0}div.CodeMirror span.CodeMirror-nonmatchingbracket{color:#a22}.CodeMirror-matchingtag{background:rgba(255,150,0,.3)}.CodeMirror-activeline-background{background:#e8f2ff}.CodeMirror{position:relative;overflow:hidden;background:#fff}.CodeMirror-scroll{overflow:scroll!important;margin-bottom:-50px;margin-right:-50px;padding-bottom:50px;height:100%;outline:0;position:relative;z-index:0}.CodeMirror-sizer{position:relative;border-right:50px solid transparent}.CodeMirror-gutter-filler,.CodeMirror-hscrollbar,.CodeMirror-scrollbar-filler,.CodeMirror-vscrollbar{position:absolute;z-index:6;display:none;outline:0}.CodeMirror-vscrollbar{right:0;top:0;overflow-x:hidden;overflow-y:scroll}.CodeMirror-hscrollbar{bottom:0;left:0;overflow-y:hidden;overflow-x:scroll}.CodeMirror-scrollbar-filler{right:0;bottom:0}.CodeMirror-gutter-filler{left:0;bottom:0}.CodeMirror-gutters{position:absolute;left:0;top:0;min-height:100%;z-index:3}.CodeMirror-gutter{white-space:normal;height:100%;display:inline-block;vertical-align:top;margin-bottom:-50px}.CodeMirror-gutter-wrapper{position:absolute;z-index:4;background:0 0!important;border:none!important}.CodeMirror-gutter-background{position:absolute;top:0;bottom:0;z-index:4}.CodeMirror-gutter-elt{position:absolute;cursor:default;z-index:4}.CodeMirror-gutter-wrapper ::selection{background-color:transparent}.CodeMirror-gutter-wrapper ::-moz-selection{background-color:transparent}.CodeMirror-lines{cursor:text;min-height:1px}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;border-width:0;background:0 0;font-family:inherit;font-size:inherit;margin:0;white-space:pre;word-wrap:normal;line-height:inherit;color:inherit;z-index:2;position:relative;overflow:visible;-webkit-tap-highlight-color:transparent;-webkit-font-variant-ligatures:contextual;font-variant-ligatures:contextual}.CodeMirror-wrap pre.CodeMirror-line,.CodeMirror-wrap pre.CodeMirror-line-like{word-wrap:break-word;white-space:pre-wrap;word-break:normal}.CodeMirror-linebackground{position:absolute;left:0;right:0;top:0;bottom:0;z-index:0}.CodeMirror-linewidget{position:relative;z-index:2;padding:.1px}.CodeMirror-rtl pre{direction:rtl}.CodeMirror-code{outline:0}.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber,.CodeMirror-scroll,.CodeMirror-sizer{-moz-box-sizing:content-box;box-sizing:content-box}.CodeMirror-measure{position:absolute;width:100%;height:0;overflow:hidden;visibility:hidden}.CodeMirror-cursor{position:absolute;pointer-events:none}.CodeMirror-measure pre{position:static}div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:3}div.CodeMirror-dragcursors{visibility:visible}.CodeMirror-focused div.CodeMirror-cursors{visibility:visible}.CodeMirror-selected{background:#d9d9d9}.CodeMirror-focused .CodeMirror-selected{background:#d7d4f0}.CodeMirror-crosshair{cursor:crosshair}.CodeMirror-line::selection,.CodeMirror-line>span::selection,.CodeMirror-line>span>span::selection{background:#d7d4f0}.CodeMirror-line::-moz-selection,.CodeMirror-line>span::-moz-selection,.CodeMirror-line>span>span::-moz-selection{background:#d7d4f0}.cm-searching{background-color:#ffa;background-color:rgba(255,255,0,.4)}.cm-force-border{padding-right:.1px}@media print{.CodeMirror div.CodeMirror-cursors{visibility:hidden}}.cm-tab-wrap-hack:after{content:''}span.CodeMirror-selectedtext{background:0 0}
 /* 레이아웃: 상단 챕터 바 + 좌(설명)/우(코드) 2단 + 하단 이동 바, 오른쪽 코치 서랍. 경기장 야간 조명 같은 블랙 + 네온 그린 */
@@ -163,6 +163,8 @@ table.tbl,table.cmp{border-collapse:collapse;font-size:14.5px;margin:12px 0;font
 body.no-coach .coach,body.no-coach #coach-btn,body.no-coach .ask-err,body.no-coach #askfail,body.no-coach #askcoach,body.no-coach #qai,body.no-coach .coach-only{display:none!important}
 .autohint{margin-top:8px;padding:8px 12px;background:rgba(255,211,74,.08);border-left:3px solid var(--gold);font-size:14.5px;line-height:1.7}
 .autohint>b:first-child{color:var(--gold);margin-right:6px}
+.fallback-ed{width:100%;box-sizing:border-box;min-height:260px;background:var(--code);color:#e6fff1;border:0;padding:10px 12px;font:15px/1.6 var(--f-mono);resize:vertical}
+.ghost.arm{border-color:var(--bad);color:var(--bad)}
 .photo-cond{border:1px dashed var(--accent);padding:10px 14px;margin:12px 0;font-size:15px;background:rgba(28,242,138,.05)}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:14px 0}
 .flow div{background:var(--panel2);border:1px solid var(--line2);padding:10px;text-align:center;font-size:14px;clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%,8% 50%)}
@@ -341,9 +343,9 @@ body.coach-open .coach{transform:none}
   </div>
   <div class="coach-in"><textarea id="coach-in" rows="2" placeholder="질문을 입력하세요 (Enter 전송, Shift+Enter 줄바꿈)"></textarea><button id="coach-send">전송</button></div>
 </aside>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="cm/codemirror.min.js"></script>
+<script src="cm/python.min.js"></script>
+<script src="cm/matchbrackets.min.js"></script>
 <script src="py/pyodide.js"></script>
 <script>window.NO_COACH=true;</script>
 <script>
@@ -373,17 +375,21 @@ arr = [[60, 3.8, 4.4, 'Shark'],
 df = pd.DataFrame(arr, index=${IDX},
                   columns=['age', 'weight', 'height', 'nickname'])`;
 const DF_SER = `import pandas as pd
-idx = ${IDX}
-age = pd.Series([60, 70, 12, 45, 42], index=idx)
-weight = pd.Series([3.8, 7.2, 6.3, 5.5, 4.6], index=idx)
-height = pd.Series([4.4, 5.6, 6.4, 5.7, 7.8], index=idx)
-nickname = pd.Series(['Shark', 'Audrey', 'Smurf', 'Tongk', 'JJ'], index=idx)
-df = pd.DataFrame({'age': age, 'weight': weight,
-                   'height': height, 'nickname': nickname})`;
+col = ['age', 'weight', 'height', 'nickname']
+a = pd.Series([60, 3.8, 4.4, 'Shark'], index=col)
+b = pd.Series([70, 7.2, 5.6, 'Audrey'], index=col)
+c = pd.Series([12, 6.3, 6.4, 'Smurf'], index=col)
+d = pd.Series([45, 5.5, 5.7, 'Tongk'], index=col)
+e = pd.Series([42, 4.6, 7.8, 'JJ'], index=col)
+df = pd.DataFrame([a, b, c, d, e], index=${IDX})`;
+// 시험지 3쪽처럼 9번까지 바뀐 상태 (10·12·13번 시작 데이터)
+const ST9 = `df.loc['grandma', 'age'] = 71
+df.loc[['grandson', 'papa'], ['weight', 'height']] = [[6.0, 6.2], [5.7, 5.4]]`;
 const NP_A = `import numpy as np
 a = np.array([[1, 4, 3, 7, 8],
               [2, 1, -1, 3, 6],
               [3, 3, 4, 1, 0]])`;
+const NPIGN = NP_A + `\nprint(a)`;  // 넘파이 문제: 배열 a를 먼저 출력해도 채점에서 빼 줌
 const PHOTO = `import matplotlib.pyplot as plt
 import numpy as np
 x=['grandpa', 'grandma', 'grandson','papa', 'mama']
@@ -485,7 +491,7 @@ const CHAPTERS = [
 ]},
 
 /* ================= CH1 ================= */
-{ id:'c1', title:'파이썬 기초', short:'BASIC', mins:25, steps:[
+{ id:'c1', title:'파이썬 기초', short:'BASIC', mins:22, steps:[
 { t:'intro', title:'파이썬, 진짜 처음부터', body:`<p class="lead">리스트, 딕셔너리 몰라도 괜찮아요. 여기서 <b>처음부터</b> 하나씩 해요. 이 챕터만 끝내면 시험 코드에 나오는 기호( <code>[ ]</code> <code>{ }</code> <code>( )</code> <code>=</code> <code>.</code> )가 무슨 뜻인지 다 읽을 수 있어요.</p>
 <ul class="goals"><li>print: 화면에 보여주기</li><li>변수: 이름 붙인 상자</li><li>리스트: 칸이 여러 개인 상자</li><li>딕셔너리: 이름표 붙은 칸</li><li>함수와 import</li></ul>`},
 
@@ -604,13 +610,13 @@ print(info['age'])`},
 print(data['age'])
 print(data['nickname'][0])   # nickname 리스트의 첫 칸`},
 
-{ t:'mc', title:'확인: 괄호 구별', q:'다음 중 <b>딕셔너리</b>는?', opts:["[60, 70, 12]","{'age': 60, 'weight': 3.8}","print(60)","(60, 70)"], ans:1, exp:'중괄호 { } 안에 \'키\': 값 짝이 있으면 딕셔너리예요. [ ]는 리스트, 이름( )은 함수 실행이에요.'},
+{ t:'mc', title:'확인: 괄호 구별', q:'다음 중 <b>딕셔너리</b>는?', opts:["[60, 70, 12]","{'age': 60, 'weight': 3.8}","print(60)","(60, 70)"], ans:1, exp:'중괄호 { } 안에 \'키\': 값 짝이 있으면 딕셔너리예요. [ ]는 리스트예요. ( )는 바로 뒤 단계에서 정리해요.'},
 
 { t:'learn', title:'괄호 세 종류 정리', body:`
 <table class="cmp"><tr><th>괄호</th><th>뜻</th><th>시험 코드 예</th></tr>
 <tr><td><code>[ ]</code> 대괄호</td><td>① 리스트 만들기<br>② 칸 꺼내기</td><td><code>[3.8, 7.2]</code><br><code>x[0]</code>, <code>df['age']</code></td></tr>
 <tr><td><code>{ }</code> 중괄호</td><td>딕셔너리 만들기</td><td><code>{'age': [60, 70]}</code></td></tr>
-<tr><td><code>( )</code> 소괄호</td><td>함수 실행 (기계에 재료 넣기)</td><td><code>print(x)</code>, <code>plt.show()</code></td></tr></table>
+<tr><td><code>( )</code> 소괄호</td><td>① 함수 실행 (기계에 재료 넣기, ⑤에서 자세히)<br>② 값 묶음: 이름 없이 값만 쉼표로 나열</td><td><code>print(x)</code>, <code>plt.show()</code><br><code>(5, 5)</code>, <code>(3, 5)</code></td></tr></table>
 <div class="tip">시험 코드에서 괄호가 헷갈리면 이 표로 돌아오세요.</div>`},
 
 { t:'learn', title:'⑤ 함수: 재료를 넣으면 일을 하는 기계', body:`
@@ -668,7 +674,7 @@ import matplotlib.pyplot as plt`},
 ]},
 
 /* ================= CH2 넘파이 ================= */
-{ id:'c2', title:'넘파이', short:'NUMPY', mins:35, steps:[
+{ id:'c2', title:'넘파이', short:'NUMPY', mins:33, steps:[
 { t:'intro', title:'넘파이 NumPy', body:`<p class="lead">시험 넘파이 3문제: <b>① 라이브러리 설명 + 2차원 배열 + 함수 2개</b>, <b>② arange → reshape</b>, <b>③ arange·reshape로 연산</b>.</p>
 ${NP_TABLE}
 <ul class="goals"><li>2차원 배열 만들기</li><li>axis=0과 axis=1 구분하기</li><li>합계·중앙값·평균·최댓값·최솟값·분산·표준편차·any·all·where</li><li>arange, reshape, 배열 연산</li></ul>`},
@@ -677,7 +683,7 @@ ${NP_TABLE}
 <div class="answer">${DESC_NP}</div>
 <p class="kw">핵심 단어: <span>다차원 배열</span><span>수치 계산</span><span>빠른 계산</span><span>통계 함수</span><span>판다스·맷플롯립의 기반</span></p>`},
 { t:'learn', title:'np.array로 2차원 배열 만들기', body:`
-<p><b>왜 넘파이를 써요?</b> 그냥 리스트는 값을 <b>담기만</b> 하는 상자라서 "행마다 합계", "열마다 평균" 같은 계산을 못 해요. 넘파이 배열로 바꾸면 그런 <b>표 계산 기능</b>이 생겨요. 그리고 시험 1번이 넘파이로 배열을 만드는 문제예요.</p>
+<p><b>왜 넘파이를 써요?</b> 그냥 리스트는 값을 <b>담기만</b> 하는 상자라서 "합계", "평균", "최댓값" 같은 표 계산을 바로 못 해요. 넘파이 배열로 바꾸면 그런 <b>표 계산 기능</b>이 생겨요. 그리고 시험 1번이 넘파이로 배열을 만드는 문제예요.</p>
 <p><code>np.array( )</code> 함수의 <b>소괄호 안에</b> 2차원 리스트를 넣으면 넘파이 배열이 돼요.</p>
 ${NP_TABLE}
 <ul><li>바깥 대괄호 <code>[ ]</code> 안에 <b>한 줄(행)마다</b> 대괄호 하나씩</li>
@@ -695,14 +701,14 @@ print(a.ndim)`},
 <p>넘파이에는 계산 함수가 있어요. 예를 들어 <code>np.sum(a)</code>는 배열 <code>a</code>의 <b>합계</b>를 구해요. (<code>np.함수이름(배열)</code> 모양 — 교과서가 쓰는 방식)</p>
 <p>여기에 <code>axis</code>를 넣으면 <b>어느 방향으로 계산할지</b> 정해요. <b>교과서(학습자료 77~81쪽) 기준</b>으로 외우세요. 시험도 이 기준이에요.</p>
 <div class="axis-fig">
- <div class="axf"><b>axis=0 → "행끼리" / "행별"</b><br>행(가로줄)들을 위아래로 겹쳐서 계산<br>→ 칸마다(열마다) 결과 1개<br>결과 개수 = 열 개수 = <b>5개</b><br><span>"행끼리 최댓값", "행의 원소 합계"</span></div>
- <div class="axf"><b>axis=1 → "열끼리" / "열별"</b><br>열(세로줄)들을 옆으로 겹쳐서 계산<br>→ 줄마다(행마다) 결과 1개<br>결과 개수 = 행 개수 = <b>3개</b><br><span>"열끼리 최댓값", "열의 원소 합계"</span></div>
+ <div class="axf"><b>axis=0 → "행끼리" / "행별"</b><br>행(가로줄)들을 위아래로 겹쳐서 계산 ↓<br>결과 개수 = 열 개수 = <b>5개</b><br><span>"행끼리 최댓값", "행의 원소 합계"</span></div>
+ <div class="axf"><b>axis=1 → "열끼리" / "열별"</b><br>열(세로줄)들을 옆으로 겹쳐서 계산 →<br>결과 개수 = 행 개수 = <b>3개</b><br><span>"열끼리 최댓값", "열의 원소 합계"</span></div>
 </div>
 <div class="tip"><b>외우는 법: 행렬 순서 = 행 0, 열 1.</b> "행"이 들어가면 <code>axis=0</code>, "열"이 들어가면 <code>axis=1</code>. axis를 안 쓰면 <b>전체</b>를 계산해요.</div>`,
  code: NP_A + `
 print(np.sum(a))            # 전체 합계
 print(np.sum(a, axis=0))    # 행끼리 합계 (5개)
-print(np.sum(a, axis=1))    # 열끼리 합계 (3개)`},
+print(np.sum(a, axis=1))    # 열끼리 합계 (3개)`, starter: NP_A + `\n`},
 { t:'mc', title:'axis 확인', q:'교과서 기준으로 <b>행끼리 원소 합계</b>(행의 원소 합계)를 구하려면?', opts:['np.sum(a, axis=0)','np.sum(a, axis=1)','np.sum(a)','np.sum(a, axis=3)'], ans:0, exp:'"행"이 들어가면 axis=0이에요 (행 0, 열 1). 3행 5열 배열이면 결과는 5개가 나와요. axis를 안 쓰면 전체 합계 1개.'},
 { t:'learn', title:'합계 · 평균 · 중앙값', body:`
 <table class="cmp"><tr><th>구하는 것</th><th>교과서 방식 (추천)</th><th>이렇게 써도 됨</th></tr>
@@ -711,27 +717,28 @@ print(np.sum(a, axis=1))    # 열끼리 합계 (3개)`},
 <tr><td>중앙값</td><td><code>np.median(a, axis=0)</code></td><td class="bad">없음 (<code>a.median()</code>은 오류)</td></tr></table>
 <p>모양: <code>np.함수이름(배열, axis=번호)</code> — 괄호 안에 <b>배열 이름 a를 먼저</b>, 쉼표 다음에 axis.</p>
 <div class="warn"><b>중앙값은 반드시 <code>np.median(a, axis=...)</code></b>. <code>a.median()</code>은 없어서 오류가 나요. 그래서 처음부터 전부 <code>np.</code> 방식으로 통일해서 외우는 게 안전해요.</div>
-<p>중앙값: 크기 순으로 줄 세웠을 때 가운데 값. 첫 열 [1, 2, 3] → 중앙값 2.</p>`,
+<p>중앙값: 크기 순으로 줄 세웠을 때 가운데 값. [1, 2, 3] → 2. 값이 짝수 개면 가운데 두 값의 평균이에요 ([1, 2, 3, 4] → 2.5).</p>`,
  code: NP_A + `
-print('행끼리 합계', np.sum(a, axis=0))
-print('열끼리 평균', np.mean(a, axis=1))
-print('행끼리 중앙값', np.median(a, axis=0))`},
+print(np.sum(a, axis=0))      # 행끼리 합계
+print(np.mean(a, axis=1))     # 열끼리 평균
+print(np.median(a, axis=0))   # 행끼리 중앙값`, starter: NP_A + `\n`},
 { t:'learn', title:'최댓값 · 최솟값 · 분산 · 표준편차', body:`
 <table class="cmp"><tr><th>구하는 것</th><th>교과서 방식</th></tr>
 <tr><td>최댓값</td><td><code>np.max(a, axis=0)</code></td></tr>
 <tr><td>최솟값</td><td><code>np.min(a, axis=0)</code></td></tr>
 <tr><td>분산</td><td><code>np.var(a, axis=1)</code></td></tr>
 <tr><td>표준편차</td><td><code>np.std(a, axis=1)</code></td></tr></table>
-<p><b>"행끼리 최댓값"</b> = 행들을 서로 비교해서 칸(열)마다 가장 큰 값 → <code>axis=0</code>. <b>"열끼리"</b>면 <code>axis=1</code>.</p>
+<p><b>"행끼리 최댓값"</b> = 행들을 위아래로 겹쳐서 비교 → <code>axis=0</code> (결과 5개). <b>"열끼리"</b>면 <code>axis=1</code> (결과 3개).</p>
 <p>분산은 값이 평균에서 얼마나 퍼져 있는지, 표준편차는 분산의 제곱근이에요.</p>
 <div class="tip">영어 이름으로 외우기: max 최대, min 최소, var(variance) 분산, std(standard deviation) 표준편차. 모양은 전부 <code>np.이름(a, axis=번호)</code>로 똑같아요.</div>`,
  code: NP_A + `
-print('행끼리 최댓값', np.max(a, axis=0))
-print('행끼리 최솟값', np.min(a, axis=0))
-print('열끼리 분산', np.var(a, axis=1))
-print('열끼리 표준편차', np.std(a, axis=1))`},
+print(np.max(a, axis=0))   # 행끼리 최댓값
+print(np.min(a, axis=0))   # 행끼리 최솟값
+print(np.var(a, axis=1))   # 열끼리 분산
+print(np.std(a, axis=1))   # 열끼리 표준편차`, starter: NP_A + `\n`},
 { t:'learn', title:'조건 선별: any · all · where', body:`
 <p><code>a &gt; 5</code>처럼 조건을 쓰면 칸마다 <b>True</b>(맞다) 또는 <b>False</b>(아니다)가 나와요. 예: 7 &gt; 5 → True, 3 &gt; 5 → False. 이 결과를 함수에 넣어요.</p>
+<p class="dim">비교 기호: <code>&gt;</code> 크다, <code>&lt;</code> 작다, <code>&gt;=</code> 크거나 같다, <code>&lt;=</code> 작거나 같다, <code>==</code> 같다</p>
 <table class="cmp"><tr><th>함수 (교과서 방식)</th><th>뜻</th><th>결과</th></tr>
 <tr><td><code>np.any(a &gt; 5)</code></td><td>하나라도 맞으면 True</td><td>True 또는 False 1개</td></tr>
 <tr><td><code>np.all(a &gt; 0)</code></td><td>전부 맞아야 True</td><td>True 또는 False 1개</td></tr>
@@ -742,20 +749,20 @@ print('열끼리 표준편차', np.std(a, axis=1))`},
 print(a > 5)
 print(np.any(a > 5))          # 5보다 큰 값이 하나라도 있나?
 print(np.all(a > 0))          # 전부 0보다 큰가?
-print(np.where(a > 3, a, 0))  # 3보다 크면 그대로, 아니면 0`},
+print(np.where(a > 3, a, 0))  # 3보다 크면 그대로, 아니면 0`, starter: NP_A + `\n`},
 { t:'code', title:'문제 1-A: 행의 합계 + 열의 중앙값', body:`<p>시험 배열 <code>a</code>를 만들고 <b>행의 원소 합계</b>와 <b>열의 중앙값</b>을 차례로 출력하세요. (교과서 기준 axis)</p>${NP_TABLE}`,
- ref: NP_A + `\nprint(np.sum(a, axis=0))\nprint(np.median(a, axis=1))`, check:'out', hints:['"행" → axis=0, "열" → axis=1','np.sum(a, axis=0)','np.median(a, axis=1)']},
+ ref: NP_A + `\nprint(np.sum(a, axis=0))\nprint(np.median(a, axis=1))`, ignore: NPIGN, check:'out', hints:['"행" → axis=0, "열" → axis=1','np.sum(a, axis=0)','np.median(a, axis=1)']},
 { t:'code', title:'문제 1-B: 열의 평균 + 행끼리 최솟값', body:`<p>시험 배열로 <b>열의 평균</b>과 <b>행끼리 최솟값</b>을 출력하세요.</p>${NP_TABLE}`,
- ref: NP_A + `\nprint(np.mean(a, axis=1))\nprint(np.min(a, axis=0))`, check:'out', hints:['"열" → axis=1, "행" → axis=0','np.mean(a, axis=1)','np.min(a, axis=0)']},
+ ref: NP_A + `\nprint(np.mean(a, axis=1))\nprint(np.min(a, axis=0))`, ignore: NPIGN, check:'out', hints:['"열" → axis=1, "행" → axis=0','np.mean(a, axis=1)','np.min(a, axis=0)']},
 { t:'code', title:'문제 1-C: 분산과 표준편차', body:`<p>시험 배열로 <b>행끼리 분산</b>과 <b>행끼리 표준편차</b>를 출력하세요.</p>${NP_TABLE}`,
- ref: NP_A + `\nprint(np.var(a, axis=0))\nprint(np.std(a, axis=0))`, check:'out', hints:['분산 var, 표준편차 std','"행끼리" → axis=0','np.var(a, axis=0) / np.std(a, axis=0)']},
+ ref: NP_A + `\nprint(np.var(a, axis=0))\nprint(np.std(a, axis=0))`, ignore: NPIGN, check:'out', hints:['분산 var, 표준편차 std','"행끼리" → axis=0','np.var(a, axis=0) / np.std(a, axis=0)']},
 { t:'code', title:'문제 1-D: 조건 선별', body:`<p>시험 배열로 다음 세 가지를 차례로 출력하세요.</p><ol><li>6보다 큰 값이 <b>하나라도</b> 있는지 (any)</li><li>모든 값이 0보다 큰지 (all)</li><li>0보다 작은 값은 0으로 바꾸고 나머지는 그대로 둔 배열 (where)</li></ol>${NP_TABLE}`,
- ref: NP_A + `\nprint(np.any(a > 6))\nprint(np.all(a > 0))\nprint(np.where(a < 0, 0, a))`, check:'out', hints:['np.any(a > 6)','np.all(a > 0)','np.where(조건, 참일 때, 거짓일 때) → np.where(a < 0, 0, a)']},
+ ref: NP_A + `\nprint(np.any(a > 6))\nprint(np.all(a > 0))\nprint(np.where(a < 0, 0, a))`, ignore: NPIGN, check:'out', hints:['np.any(a > 6)','np.all(a > 0)','np.where(조건, 참일 때, 거짓일 때) → np.where(a < 0, 0, a)']},
 { t:'learn', title:'arange: 연속된 숫자 배열', body:`
 <p><code>np.arange(시작, 끝, 간격)</code> — <b>끝 숫자는 포함하지 않아요.</b></p>
 <table class="cmp"><tr><th>코드</th><th>결과</th></tr>
 <tr><td><code>np.arange(1, 4)</code></td><td>[1 2 3]</td></tr>
-<tr><td><code>np.arange(5)</code></td><td>[0 1 2 3 4]</td></tr>
+<tr><td><code>np.arange(5)</code></td><td>[0 1 2 3 4] (시작을 안 쓰면 0부터)</td></tr>
 <tr><td><code>np.arange(1, 7)</code></td><td>[1 2 3 4 5 6]</td></tr>
 <tr><td><code>np.arange(0, 10, 2)</code></td><td>[0 2 4 6 8]</td></tr></table>
 <div class="tip">1부터 3까지 → <code>np.arange(1, 4)</code>. "끝 + 1"을 쓴다고 외우세요.</div>`,
@@ -791,7 +798,12 @@ print(b)`},
 <tr><td><code>a * b</code>, <code>a / b</code></td><td>같은 자리끼리 곱하기/나누기</td></tr>
 <tr><td><code>a * 2</code>, <code>a + 10</code></td><td>모든 칸에 적용</td></tr>
 <tr><td><code>a ** 2</code></td><td>모든 칸 제곱</td></tr></table>
-<div class="tip">시험 3번은 <b>결과를 보고 거꾸로</b> 코드를 쓰는 문제예요. 결과의 모양(몇 행 몇 열)과 숫자 규칙을 먼저 찾으세요.</div>`,
+<p><b>모양이 달라도 되는 경우 (브로드캐스팅, 교과서 84~85쪽)</b>: 한 줄짜리 배열은 모자란 줄만큼 <b>복사돼서</b> 계산돼요.</p>
+<pre class="code">np.arange(9).reshape(3, 3) + np.arange(3)
+# [[0 1 2]      [0 1 2]      [[0 2 4]
+#  [3 4 5]   +  [0 1 2]   =   [3 5 7]
+#  [6 7 8]]     [0 1 2]       [6 8 10]]</pre>
+<div class="tip">시험 3번은 <b>결과를 보고 거꾸로</b> 코드를 쓰는 문제예요. 시험지에는 결과 칸이 비어 있어서, 실제 결과는 시험 때 선생님이 줄 거예요. 결과의 모양(몇 행 몇 열)과 숫자 규칙을 먼저 찾으세요.</div>`,
  code:`import numpy as np
 a = np.arange(1, 7).reshape(2, 3)
 b = np.arange(7, 13).reshape(2, 3)
@@ -799,13 +811,14 @@ print(a)
 print(b)
 print(a + b)
 print(a * 2)
-print(a ** 2)`},
-{ t:'code', title:'문제 3-A: 결과 보고 코드 쓰기', body:`<p><code>arange()</code>와 <code>reshape()</code>로 배열 두 개를 만들고, 아래 <b>실행 결과</b>가 나오도록 코드를 쓰세요.</p><p class="dim">힌트: 1~6과 7~12로 만든 2행 3열 배열 두 개</p>`,
+print(a ** 2)
+print(np.arange(9).reshape(3, 3) + np.arange(3))`},
+{ t:'code', title:'문제 3-A: 결과 보고 코드 쓰기', body:`<p><code>arange()</code>와 <code>reshape()</code>로 배열 두 개를 만들고, 오른쪽 <b>목표 출력</b>이 나오도록 코드를 쓰세요.</p><p class="dim">힌트: 1~6과 7~12로 만든 2행 3열 배열 두 개</p>`,
  ref:`import numpy as np\na = np.arange(1, 7).reshape(2, 3)\nb = np.arange(7, 13).reshape(2, 3)\nprint(a + b)`, check:'out', showExpected:true, must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']], hints:['결과가 2행 3열 → reshape(2, 3)','a = 1~6, b = 7~12','print(a + b)']},
-{ t:'code', title:'문제 3-B: 결과 보고 코드 쓰기', body:`<p>아래 실행 결과가 나오도록 <code>arange()</code>, <code>reshape()</code>를 써서 코드를 작성하세요.</p>`,
+{ t:'code', title:'문제 3-B: 결과 보고 코드 쓰기', body:`<p>오른쪽 <b>목표 출력</b>이 나오도록 <code>arange()</code>, <code>reshape()</code>를 써서 코드를 작성하세요.</p>`,
  ref:`import numpy as np\na = np.arange(1, 10).reshape(3, 3)\nprint(a * 10)`, check:'out', showExpected:true, must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']], hints:['3행 3열 → 원소 9개 → arange(1, 10)','모든 칸이 10배','print(a * 10)']},
 { t:'code', title:'백지 테스트: 넘파이', blank:true, body:`<p><b>아무것도 보지 말고</b> 처음부터 쓰세요. 시험 배열을 만들고 <b>행의 중앙값</b>과 <b>열끼리 최댓값</b>을 출력하세요.</p>${NP_TABLE}`,
- ref: NP_A + `\nprint(np.median(a, axis=0))\nprint(np.max(a, axis=1))`, check:'out', hints:['import numpy as np','"행" → axis=0, "열" → axis=1','np.median(a, axis=0) / np.max(a, axis=1)']},
+ ref: NP_A + `\nprint(np.median(a, axis=0))\nprint(np.max(a, axis=1))`, ignore: NPIGN, check:'out', hints:['import numpy as np','"행" → axis=0, "열" → axis=1','np.median(a, axis=0) / np.max(a, axis=1)']},
 { t:'quiz', title:'서술: 넘파이 설명', q:'넘파이(NumPy) 라이브러리를 설명하시오.', kw:['배열','수치|계산','빠르','통계|합계|평균','판다스|기반'], answer: DESC_NP},
 ]},
 
@@ -819,7 +832,7 @@ print(a ** 2)`},
 <p>용어: <b>인덱스(index)</b> = 행 이름 (grandpa, grandma …), <b>칼럼(column)</b> = 열 이름 (age, weight …)</p>`},
 { t:'learn', title:'시리즈 Series: 이름표 달린 한 줄', body:`
 <p><code>pd.Series(값 리스트, index=이름 리스트)</code> — 값 하나하나에 이름(인덱스)이 붙어요.</p>
-<p>데이터프레임의 <b>열 하나</b>가 바로 시리즈예요.</p>
+<p>데이터프레임의 <b>열 하나</b>(또는 행 하나)가 바로 시리즈예요. 출력 끝의 <code>dtype: int64</code>는 값의 종류(정수) 표시예요. 시험 답에는 안 써요.</p>
 <p><b>용어</b>: <b>인덱스(index)</b> = 행 이름 (grandpa, grandma …), <b>칼럼(column)</b> = 열 이름 (age, weight …). 판다스 문제에 계속 나와요.</p>
 <p><b>판다스</b>는 이렇게 이름 붙은 표 데이터를 다루는 라이브러리예요. 한 줄짜리는 <b>시리즈</b>, 표 전체는 <b>데이터프레임</b>이라고 불러요.</p>
 <div class="warn"><code>Series</code>, <code>DataFrame</code>은 <b>대문자</b>로 시작해요. <code>pd.series</code>는 오류!</div>`,
@@ -839,107 +852,114 @@ ${FAMILY_TABLE}`,
  ref: DF_DICT + `\nprint(df)`, check:'out', must:[['\\{','딕셔너리 { }를 써야 해요']], hints:["data = {'age': [60, 70, 12, 45, 42], ...}","df = pd.DataFrame(data, index=[...])","index에 행 이름 5개, 마지막에 print(df)"]},
 { t:'type', title:'타자: 딕셔너리 데이터프레임 (가장 중요)', target: DF_DICT + `\nprint(df)`},
 { t:'learn', title:'방법 ② 배열(2차원 리스트)로 만들기', body:`
-<p>표를 <b>행 단위</b>로 그대로 옮겨요. 이때는 열 이름을 <code>columns=</code>로 따로 줘야 해요.</p>
+<p>표를 <b>행 단위</b>로 그대로 옮겨요. 이때는 열 이름도 따로 줘야 해요. (<code>index=</code>, <code>columns=</code>는 생략하고 순서대로 줘도 돼요: <code>pd.DataFrame(arr, [행 이름], [열 이름])</code>)</p>
 <pre class="code">pd.DataFrame(2차원 리스트, index=[행 이름], columns=[열 이름])</pre>
 <div class="warn">숫자와 문자가 섞인 데이터를 <code>np.array()</code>로 감싸면 <b>숫자까지 전부 문자</b>가 돼요. 그래서 그냥 2차원 리스트를 넣는 게 안전해요.</div>`,
  code: DF_ARR + `\nprint(df)`},
 { t:'learn', title:'방법 ③ 시리즈로 만들기', body:`
-<p>열마다 시리즈를 만든 다음, <code>{'열 이름': 시리즈}</code> 딕셔너리로 묶어요.</p>
-<p>같은 <code>idx</code> 리스트를 변수로 만들어 두면 덜 쓸 수 있어요.</p>`,
+<p><b>교과서 방식</b>(93~94쪽): <b>행마다</b> 시리즈를 하나씩 만들고(시리즈의 index = 열 이름), 그 시리즈들을 <b>리스트</b>로 넣어요.</p>
+<pre class="code">pd.DataFrame([시리즈1, 시리즈2, ...], index=[행 이름])</pre>
+<p>열 이름 리스트를 <code>col</code> 변수로 만들어 두면 덜 쓸 수 있어요.</p>`,
  code: DF_SER + `\nprint(df)`},
-{ t:'code', title:'문제 1 변형: 배열로 만들기', body:`<p>이번엔 <b>2차원 배열(리스트)</b> 방법으로 같은 데이터프레임을 만들고 출력하세요. (<code>columns=</code> 필요)</p>${FAMILY_TABLE}`,
- ref: DF_ARR + `\nprint(df)`, check:'out', must:[['columns','columns=로 열 이름을 넣어야 해요']], hints:['행 하나 = [60, 3.8, 4.4, \'Shark\']','pd.DataFrame(arr, index=[...], columns=[...])']},
+{ t:'code', title:'문제 1 변형: 배열로 만들기', body:`<p>이번엔 <b>2차원 배열(리스트)</b> 방법으로 같은 데이터프레임을 만들고 출력하세요. (열 이름도 따로 줘야 해요)</p>${FAMILY_TABLE}`,
+ ref: DF_ARR + `\nprint(df)`, check:'out', must:[['\\[\\s*\\[','2차원 리스트 [[...], [...]]로 만들어야 해요']], hints:['행 하나 = [60, 3.8, 4.4, \'Shark\']','pd.DataFrame(arr, index=[...], columns=[...])']},
 { t:'code', title:'문제 1 변형: 시리즈로 만들기', body:`<p><b>시리즈</b> 방법으로 같은 데이터프레임을 만들고 출력하세요.</p>${FAMILY_TABLE}`,
- ref: DF_SER + `\nprint(df)`, check:'out', must:[['Series','pd.Series를 써야 해요']], hints:['idx = [...] 먼저','age = pd.Series([...], index=idx) 를 4개','pd.DataFrame({\'age\': age, ...})']},
+ ref: DF_SER + `\nprint(df)`, check:'out', must:[['Series','pd.Series를 써야 해요']], hints:['col = [\'age\', \'weight\', \'height\', \'nickname\']','행마다 a = pd.Series([60, 3.8, 4.4, \'Shark\'], index=col) … 5개','pd.DataFrame([a, b, c, d, e], index=[...])']},
 { t:'learn', title:'열 추출: 대괄호 두 겹', body:`
 <table class="cmp"><tr><th>코드</th><th>결과</th></tr>
 <tr><td><code>df['age']</code></td><td>열 1개 → 시리즈</td></tr>
 <tr><td><code>df[['height', 'nickname']]</code></td><td>열 여러 개 → 데이터프레임</td></tr></table>
 <div class="warn">열 여러 개는 <b>대괄호 두 겹</b> <code>[[ ]]</code>! 바깥은 "뽑아라", 안쪽은 "이름 리스트"예요.</div>`,
- code: DF_DICT + `\nprint(df['age'])\nprint(df[['height', 'nickname']])`},
+ code: DF_DICT + `\nprint(df['age'])\nprint(df[['height', 'nickname']])`, starter: DF_DICT + `\n`},
 { t:'code', title:'문제 2: 열 2개 추출', body:`<p>데이터프레임의 <b>height, nickname</b> 2개 칼럼을 추출해 출력하세요. (데이터프레임 만드는 코드는 미리 넣어 뒀어요)</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df[['height', 'nickname']])`, check:'out', hints:['대괄호 두 겹','print(df[[\'height\', \'nickname\']])']},
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df[['height', 'nickname']])`, check:'out', lenient:true, hints:['대괄호 두 겹','print(df[[\'height\', \'nickname\']])']},
 { t:'learn', title:'행 추출: loc', body:`
 <p>행은 <code>df.loc[ ]</code>로 뽑아요. (<b>loc</b> = location, 이름으로 찾기)</p>
 <table class="cmp"><tr><th>코드</th><th>뜻</th></tr>
 <tr><td><code>df.loc['papa']</code></td><td>행 1개</td></tr>
 <tr><td><code>df.loc[['grandma', 'grandson', 'papa']]</code></td><td>행 여러 개 (두 겹)</td></tr>
 <tr><td><code>df.loc['grandma':'papa']</code></td><td>grandma부터 papa까지 (<b>끝 포함</b>)</td></tr>
-<tr><td><code>df.iloc[1:4]</code></td><td>번호로: 1, 2, 3번 행 (끝 미포함)</td></tr></table>`,
- code: DF_DICT + `\nprint(df.loc[['grandma', 'grandson', 'papa']])\nprint(df.loc['grandma':'papa'])`},
+<tr><td><code>df.iloc[1:4]</code></td><td>(참고) 번호로: 1, 2, 3번 행 (끝 미포함)</td></tr></table>
+<div class="tip">교과서(97쪽)는 grandma~papa를 <code>df.loc['grandma':'papa']</code>로 뽑아요. 리스트 방식과 결과가 같아요.</div>`,
+ code: DF_DICT + `\nprint(df.loc[['grandma', 'grandson', 'papa']])\nprint(df.loc['grandma':'papa'])`, starter: DF_DICT + `\n`},
 { t:'code', title:'문제 3: 행 3개 추출', body:`<p><b>grandma, grandson, papa</b> 3개 인덱스에 해당하는 행을 추출해 출력하세요.</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.loc[['grandma', 'grandson', 'papa']])`, check:'out', hints:['행은 loc','df.loc[[\'grandma\', \'grandson\', \'papa\']]']},
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.loc[['grandma', 'grandson', 'papa']])`, check:'out', lenient:true, hints:['행은 loc','df.loc[[\'grandma\', \'grandson\', \'papa\']] 또는 교과서처럼 df.loc[\'grandma\':\'papa\']']},
 { t:'learn', title:'행과 열 함께 지정', body:`
 <p><code>df.loc[행, 열]</code> — 쉼표 앞이 행, 뒤가 열이에요.</p>
 <pre class="code">df.loc[['grandma', 'grandson'], ['weight', 'height']]
 df.loc['grandma':'grandson', 'weight':'height']   # 범위로도 가능</pre>
 <div class="tip">순서 기억: <b>행 먼저, 열 나중</b>. "loc[누구, 무엇]"</div>`,
- code: DF_DICT + `\nprint(df.loc[['grandma', 'grandson'], ['weight', 'height']])`},
+ code: DF_DICT + `\nprint(df.loc[['grandma', 'grandson'], ['weight', 'height']])`, starter: DF_DICT + `\n`},
 { t:'code', title:'문제 4: 행과 열 지정 추출', body:`<p><b>grandma, grandson</b> 행의 <b>weight, height</b> 열만 추출해 출력하세요.</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.loc[['grandma', 'grandson'], ['weight', 'height']])`, check:'out', hints:['df.loc[행 리스트, 열 리스트]','df.loc[[\'grandma\', \'grandson\'], [\'weight\', \'height\']]']},
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.loc[['grandma', 'grandson'], ['weight', 'height']])`, check:'out', lenient:true, hints:['df.loc[행 리스트, 열 리스트]','df.loc[[\'grandma\', \'grandson\'], [\'weight\', \'height\']]']},
 { t:'learn', title:'열 추가: 맨 끝 / 맨 앞', body:`
 <table class="cmp"><tr><th>위치</th><th>코드</th></tr>
 <tr><td>맨 끝 (문제 5)</td><td><code>df['sex'] = ['M', 'F', 'M', 'M', 'F']</code></td></tr>
 <tr><td>맨 앞 (문제 6)</td><td><code>df.insert(0, 'sex', ['M', 'F', 'M', 'M', 'F'])</code></td></tr></table>
 <p><code>insert(위치 번호, '열 이름', 값)</code> — 위치 0이 맨 앞이에요.</p>
 <div class="warn">값 개수는 행 개수(5개)와 같아야 해요. 다르면 <code>ValueError: Length of values</code> 오류.</div>`,
- code: DF_DICT + `\ndf['sex'] = ['M', 'F', 'M', 'M', 'F']\nprint(df)`},
+ code: DF_DICT + `\ndf['sex'] = ['M', 'F', 'M', 'M', 'F']\nprint(df)`, starter: DF_DICT + `\n`},
 { t:'code', title:'문제 5: 마지막 칼럼에 추가', body:`<p><b>sex</b> 칼럼(M, F, M, M, F)을 <b>마지막</b>에 추가하고 출력하세요.</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf['sex'] = ['M', 'F', 'M', 'M', 'F']\nprint(df)`, check:'out', hints:["df['새 열 이름'] = [값 5개]","df['sex'] = ['M', 'F', 'M', 'M', 'F']"]},
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf['sex'] = ['M', 'F', 'M', 'M', 'F']\nprint(df)`, check:'out', lenient:true, hints:["df['새 열 이름'] = [값 5개]","df['sex'] = ['M', 'F', 'M', 'M', 'F']"]},
 { t:'code', title:'문제 6: 제일 앞에 추가', body:`<p><b>sex</b> 칼럼(M, F, M, M, F)을 <b>제일 앞</b>에 추가하고 출력하세요.</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.insert(0, 'sex', ['M', 'F', 'M', 'M', 'F'])\nprint(df)`, check:'out', hints:['insert(위치, 이름, 값)','df.insert(0, \'sex\', [...])']},
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.insert(0, 'sex', ['M', 'F', 'M', 'M', 'F'])\nprint(df)`, check:'out', lenient:true, hints:['insert(위치, 이름, 값)','df.insert(0, \'sex\', [...])']},
 { t:'learn', title:'행 추가 · 행 값 바꾸기', body:`
 <table class="cmp"><tr><th>할 일</th><th>코드</th></tr>
 <tr><td>새 행 추가 (문제 7)</td><td><code>df.loc['uncle'] = [33, 8.2, 7.0, 'DOC']</code></td></tr>
 <tr><td>그 행 전부 0 (문제 8)</td><td><code>df.loc['uncle'] = 0</code></td></tr></table>
 <p>없는 이름으로 <code>loc</code>에 값을 넣으면 <b>새 행</b>이 생기고, 있는 이름이면 <b>값이 바뀌어요</b>.</p>`,
- code: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df)\ndf.loc['uncle'] = 0\nprint(df)`},
+ code: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df)\ndf.loc['uncle'] = 0\nprint(df)`, starter: DF_DICT + `\n`},
 { t:'code', title:'문제 7: 새 인덱스 행 추가', body:`<p><b>uncle</b> 행 (age 33, weight 8.2, height 7.0, nickname DOC)을 추가하고 출력하세요.</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df)`, check:'out', hints:['df.loc[\'새 행 이름\'] = [값 4개]']},
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df)`, check:'out', lenient:true, hints:['df.loc[\'새 행 이름\'] = [값 4개]']},
 { t:'code', title:'문제 8: uncle 값을 모두 0으로', body:`<p>uncle 행을 추가한 다음, uncle 행의 값을 <b>모두 0</b>으로 바꾸고 출력하세요.</p>`,
- starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.loc['uncle'] = 0\nprint(df)`, check:'out', hints:['df.loc[\'uncle\'] = 0']},
+ starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.loc['uncle'] = 0\nprint(df)`, check:'out', lenient:true, hints:['df.loc[\'uncle\'] = 0']},
 { t:'learn', title:'칸 하나 / 여러 칸 값 바꾸기', body:`
 <p><code>df.loc[행, 열] = 새 값</code></p>
 <pre class="code">df.loc['grandma', 'age'] = 71
 df.loc['grandson', ['weight', 'height']] = [6.0, 6.2]
-df.loc['papa', 'weight'] = 5.7</pre>
+df.loc['papa', 'weight'] = 5.7
+# 교과서(101쪽) 방식: 여러 행·열을 한 줄로
+df.loc[['grandson', 'papa'], ['weight', 'height']] = [[6.0, 6.2], [5.7, 5.4]]</pre>
 <p>문제 9는 표의 <b>빨간/파란 네모 칸</b>이 바뀐 거예요. 전과 후를 비교해서 바뀐 칸만 찾으면 돼요.</p>`,
- code: DF_DICT + `\ndf.loc['grandma', 'age'] = 71\ndf.loc['grandson', ['weight', 'height']] = [6.0, 6.2]\nprint(df)`},
+ code: DF_DICT + `\ndf.loc['grandma', 'age'] = 71\ndf.loc['grandson', ['weight', 'height']] = [6.0, 6.2]\nprint(df)`, starter: DF_DICT + `\n`},
 { t:'code', title:'문제 9: 칼럼 값 변경', body:`<p>아래처럼 값을 바꾸고 출력하세요.</p><ul><li>grandma age: 70 → <b>71</b></li><li>grandson weight 6.3 → <b>6.0</b>, height 6.4 → <b>6.2</b></li><li>papa weight 5.5 → <b>5.7</b>, height 5.7 → <b>5.4</b></li></ul>`,
- starter: DF_DICT + `\ndf.loc['uncle'] = 0\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = 0\ndf.loc['grandma', 'age'] = 71\ndf.loc['grandson', ['weight', 'height']] = [6.0, 6.2]\ndf.loc['papa', ['weight', 'height']] = [5.7, 5.4]\nprint(df)`, check:'out', hints:['df.loc[행, 열] = 값','grandson과 papa는 열 두 개를 리스트로','df.loc[\'papa\', [\'weight\', \'height\']] = [5.7, 5.4]']},
+ starter: DF_DICT + `\ndf.loc['uncle'] = 0\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = 0\ndf.loc['grandma', 'age'] = 71\ndf.loc['grandson', ['weight', 'height']] = [6.0, 6.2]\ndf.loc['papa', ['weight', 'height']] = [5.7, 5.4]\nprint(df)`, check:'out', lenient:true, hints:['df.loc[행, 열] = 값','grandson과 papa는 열 두 개를 리스트로','교과서 한 줄 방식: df.loc[[\'grandson\', \'papa\'], [\'weight\', \'height\']] = [[6.0, 6.2], [5.7, 5.4]]']},
 { t:'learn', title:'인덱스명 · 칼럼명 바꾸기: rename', body:`
 <pre class="code">df = df.rename(index={'grandpa': 'GP', 'grandma': 'GM'})
 df = df.rename(columns={'age': 'A', 'weight': 'W'})</pre>
 <p><code>{'원래 이름': '새 이름'}</code> 딕셔너리로 줘요.</p>
 <div class="warn"><code>rename</code>은 <b>바뀐 복사본</b>을 돌려줘요. <code>df = df.rename(...)</code>으로 다시 저장하거나 <code>inplace=True</code>를 써야 원본이 바뀌어요.</div>
+<p>교과서(101~102쪽) 방식: <code>df.rename(index={...}, inplace=True)</code> → 원본이 바로 바뀌어요.</p>
 <p>한꺼번에 바꾸는 다른 방법: <code>df.index = ['GP', 'GM', 'GS', 'PP', 'MM']</code>, <code>df.columns = ['A', 'W', 'H', 'N']</code></p>`,
- code: DF_DICT + `\ndf2 = df.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM'})\nprint(df2)\ndf3 = df.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'})\nprint(df3)`},
-{ t:'code', title:'문제 10: 인덱스명과 칼럼명 변경', body:`<p>uncle 행이 있는 데이터프레임에서</p><ol><li>인덱스명을 GP, GM, GS, PP, MM, UC로 바꾼 결과를 출력하고</li><li>칼럼명을 A, W, H, N으로 바꾼 결과를 출력하세요.</li></ol>`,
- starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`,
- ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM', 'uncle': 'UC'}))\nprint(df.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'}))`, check:'out', hints:['rename(index={...}) 결과를 print','rename(columns={...}) 결과를 print','첫 번째에서 df를 바꿔버리면 두 번째 결과의 인덱스가 달라져요']},
+ code: DF_DICT + `\ndf2 = df.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM'})\nprint(df2)\ndf3 = df.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'})\nprint(df3)`, starter: DF_DICT + `\n`},
+{ t:'code', title:'문제 10: 인덱스명과 칼럼명 변경', body:`<p>시험지 3쪽처럼 9번까지 값이 바뀌고 uncle 행이 있는 데이터프레임에서</p><ol><li>인덱스명을 GP, GM, GS, PP, MM, UC로 바꾼 결과를 출력하고</li><li>칼럼명을 A, W, H, N으로 바꾼 결과를 출력하세요.</li></ol><p class="dim">두 결과를 각각 따로 출력해도 되고, 교과서처럼 <code>inplace=True</code>로 차례로 바꾸며 출력해도 정답이에요. (시험지 두 표의 uncle 값이 서로 다른 건 시험지 쪽 차이예요)</p>`,
+ starter: DF_DICT + `\n` + ST9 + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`, lenient:true,
+ alt:[DF_DICT + `\n` + ST9 + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM', 'uncle': 'UC'}, inplace=True)\nprint(df)\ndf.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'}, inplace=True)\nprint(df)`],
+ ref: DF_DICT + `\n` + ST9 + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM', 'uncle': 'UC'}))\nprint(df.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'}))`, check:'out', hints:['rename(index={...}) 결과를 print','rename(columns={...}) 결과를 print','교과서 방식: df.rename(index={...}, inplace=True) → print(df) → df.rename(columns={...}, inplace=True) → print(df)']},
 { t:'learn', title:'전치: 행과 열 맞바꾸기', body:`
-<p><code>df.T</code> 또는 <code>df.transpose()</code> — 인덱스가 열 이름이 되고, 열 이름이 인덱스가 돼요.</p>
-<div class="tip">T = Transpose(전치). 괄호 없이 <code>.T</code>만 써요.</div>`,
- code: DF_DICT + `\nprint(df.T)`},
+<p><code>df.transpose()</code> (교과서 103쪽) 또는 줄여서 <code>df.T</code> — 인덱스가 열 이름이 되고, 열 이름이 인덱스가 돼요.</p>
+<div class="tip">transpose = 전치. <code>.T</code>는 괄호 없이 써요.</div>`,
+ code: DF_DICT + `\nprint(df.T)`, starter: DF_DICT + `\n`},
 { t:'code', title:'문제 11: 인덱스와 칼럼 맞바꾸기', body:`<p>데이터프레임의 인덱스와 칼럼을 맞바꿔 출력하세요.</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.T)`, check:'out', hints:['print(df.T)']},
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.transpose())`, check:'out', lenient:true, hints:['print(df.transpose())','또는 print(df.T)']},
 { t:'learn', title:'삭제: drop', body:`
 <table class="cmp"><tr><th>할 일</th><th>코드</th></tr>
-<tr><td>행 삭제</td><td><code>df.drop('uncle')</code> / <code>df.drop(index='uncle')</code></td></tr>
-<tr><td>열 삭제</td><td><code>df.drop('nickname', axis=1)</code> / <code>df.drop(columns='nickname')</code></td></tr>
+<tr><td>행 삭제 (교과서)</td><td><code>df.drop('uncle', axis=0, inplace=True)</code></td></tr>
+<tr><td>열 삭제 (교과서)</td><td><code>df.drop('nickname', axis=1, inplace=True)</code></td></tr>
+<tr><td>다른 방법</td><td><code>df = df.drop('uncle')</code> / <code>df = df.drop(columns='nickname')</code></td></tr>
 <tr><td>한 번에</td><td><code>df.drop(index='uncle', columns='nickname')</code></td></tr></table>
-<div class="warn">열을 지울 때 <code>axis=1</code>을 빼면 행에서 'nickname'을 찾다가 <code>KeyError</code>가 나요. drop도 복사본을 돌려주니까 <code>df = df.drop(...)</code>으로 저장하세요.</div>`,
- code: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf = df.drop('uncle')\ndf = df.drop('nickname', axis=1)\nprint(df)`},
-{ t:'code', title:'문제 12: uncle 행과 nickname 열 삭제', body:`<p><b>uncle 인덱스</b>와 <b>nickname 칼럼</b>을 삭제하고 출력하세요.</p>`,
- starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf = df.drop(index='uncle', columns='nickname')\nprint(df)`, check:'out', hints:['행 삭제 drop(\'uncle\')','열 삭제 drop(\'nickname\', axis=1)','df = df.drop(...)로 저장']},
+<div class="warn">열을 지울 때 <code>axis=1</code>을 빼면 행에서 'nickname'을 찾다가 <code>KeyError</code>가 나요. 넘파이와 같은 규칙: <b>행 → axis=0, 열 → axis=1</b>. <code>inplace=True</code>를 안 쓰면 <code>df = df.drop(...)</code>으로 저장해야 원본이 바뀌어요.</div>`,
+ code: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf = df.drop('uncle')\ndf = df.drop('nickname', axis=1)\nprint(df)`, starter: DF_DICT + `\n`},
+{ t:'code', title:'문제 12: uncle 행과 nickname 열 삭제', body:`<p>시험지 3쪽처럼 9번까지 값이 바뀌고 uncle 행이 있는 데이터프레임에서 <b>uncle 인덱스</b>와 <b>nickname 칼럼</b>을 삭제하고 출력하세요.</p>`,
+ starter: DF_DICT + `\n` + ST9 + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`, ref: DF_DICT + `\n` + ST9 + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.drop('uncle', axis=0, inplace=True)\ndf.drop('nickname', axis=1, inplace=True)\nprint(df)`, check:'out', lenient:true, hints:['교과서: df.drop(\'uncle\', axis=0, inplace=True)','df.drop(\'nickname\', axis=1, inplace=True)','inplace 없이 쓰면 df = df.drop(...)로 저장']},
 { t:'learn', title:'인덱스를 열로 바꾸기: set_index', body:`
 <pre class="code">df.set_index('nickname', inplace=True)</pre>
 <ul><li>nickname 열이 인덱스(행 이름)가 되고, <b>기존 인덱스(grandpa …)는 삭제</b>돼요.</li>
 <li><code>inplace=True</code>: <b>원본을 직접</b> 바꿔요. 안 쓰면 바뀐 <b>복사본</b>만 만들고 원본은 그대로예요.</li>
 <li>같은 효과: <code>df = df.set_index('nickname')</code></li></ul>`,
- code: DF_DICT + `\ndf.set_index('nickname', inplace=True)\nprint(df)`},
-{ t:'code', title:'문제 13: 인덱스를 nickname으로', body:`<p>인덱스를 <b>nickname</b> 칼럼으로 바꾸고 출력하세요. (원본이 바뀌어야 해요)</p>`,
- starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.set_index('nickname', inplace=True)\nprint(df)`, check:'out', hints:['set_index(\'nickname\', inplace=True)']},
+ code: DF_DICT + `\ndf.set_index('nickname', inplace=True)\nprint(df)`, starter: DF_DICT + `\n`},
+{ t:'code', title:'문제 13: 인덱스를 nickname으로', body:`<p>시험지 3쪽처럼 9번까지 값이 바뀌고 uncle 행이 0인 데이터프레임에서, 인덱스를 <b>nickname</b> 칼럼으로 바꾸고 출력하세요. (원본이 바뀌어야 해요)</p><p class="dim">결과 맨 아래 <code>0</code> 행은 uncle이에요. uncle의 nickname이 0이라서 인덱스가 0이 돼요. 시험지 결과와 같아요.</p>`,
+ starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.loc['uncle'] = 0\n` + ST9 + `\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.loc['uncle'] = 0\n` + ST9 + `\ndf.set_index('nickname', inplace=True)\nprint(df)`, check:'out', lenient:true, must:[['inplace\\s*=\\s*True|df\\s*=\\s*df\\.set_index','원본이 바뀌어야 해요: inplace=True 또는 df = df.set_index(...)']], hints:['set_index(\'nickname\', inplace=True)']},
 { t:'quiz', title:'서술: inplace=True', q:'df.set_index(\'nickname\', inplace=True)에서 inplace=True의 의미와, 쓰지 않으면 어떻게 되는지 설명하시오.', kw:['원본','복사본|사본','반영|바뀌|변경'], answer:'inplace=True로 설정하면 원본 데이터프레임이 직접 바뀐다. 설정하지 않으면 원본의 복사본을 새로 만들어 돌려주기 때문에 원본에는 반영되지 않는다. 이때 기존 인덱스는 삭제된다.'},
 { t:'mc', title:'판다스 확인', q:'height, nickname 두 열을 뽑는 코드로 올바른 것은?', opts:["df['height', 'nickname']","df[['height', 'nickname']]","df.loc['height', 'nickname']","df(['height', 'nickname'])"], ans:1, exp:'열 여러 개는 대괄호 두 겹이에요.'},
 { t:'mc', title:'판다스 확인', q:'sex 열을 <b>맨 앞</b>에 추가하는 코드는?', opts:["df['sex'] = [...]","df.loc['sex'] = [...]","df.insert(0, 'sex', [...])","df.insert('sex', 0, [...])"], ans:2, exp:'insert(위치, 이름, 값) 순서예요.'},
@@ -968,7 +988,7 @@ df.set_index('sex', inplace=True)`},
 { t:'learn', title:'맷플롯립이란? (서술형 답안)', body:`<div class="answer">${DESC_MPL}</div>
 <p class="kw">핵심 단어: <span>시각화</span><span>선 그래프·막대·산점도·원그래프</span><span>pyplot → plt</span></p>`},
 { t:'learn', title:'그래프의 기본 4단계', body:`
-<ol><li><b>불러오기</b>: <code>import matplotlib.pyplot as plt</code></li>
+<ol><li><b>불러오기</b>: <code>import matplotlib.pyplot as plt</code> (시험지 4쪽처럼 <code>from matplotlib import pyplot as plt</code>로 써도 같아요)</li>
 <li><b>데이터</b>: <code>x</code> 리스트(가로축), <code>y</code> 리스트(세로축) — 개수가 같아야 해요</li>
 <li><b>그리기</b>: <code>plt.plot(x, y)</code></li>
 <li><b>보여주기</b>: <code>plt.show()</code> ← Thonny에서 이게 없으면 그래프 창이 안 떠요</li></ol>`,
@@ -981,9 +1001,9 @@ plt.show()`},
 <div class="opt3">
 <table class="cmp"><tr><th colspan="2">marker 마커</th></tr><tr><td><code>'o'</code></td><td>● 원</td></tr><tr><td><code>'*'</code></td><td>★ 별</td></tr><tr><td><code>'s'</code></td><td>■ 사각형</td></tr><tr><td><code>'D'</code></td><td>◆ 다이아몬드</td></tr><tr><td><code>'^'</code></td><td>▲ 삼각형</td></tr><tr><td><code>'.'</code></td><td>· 점</td></tr><tr><td><code>'x'</code></td><td>× 엑스</td></tr></table>
 <table class="cmp"><tr><th colspan="2">color 색</th></tr><tr><td><code>'r'</code></td><td>빨강 red</td></tr><tr><td><code>'g'</code></td><td>초록 green</td></tr><tr><td><code>'b'</code></td><td>파랑 blue</td></tr><tr><td><code>'c'</code></td><td>시안 cyan</td></tr><tr><td><code>'m'</code></td><td>마젠타 magenta</td></tr><tr><td><code>'y'</code></td><td>노랑 yellow</td></tr><tr><td><code>'k'</code></td><td>검정 black</td></tr></table>
-<table class="cmp"><tr><th colspan="2">linestyle 선</th></tr><tr><td><code>'-'</code></td><td>━ 실선</td></tr><tr><td><code>'--'</code></td><td>╍ 파선(대시)</td></tr><tr><td><code>':'</code></td><td>┈ 점선</td></tr><tr><td><code>'-.'</code></td><td>━·━ 일점쇄선</td></tr></table>
+<table class="cmp"><tr><th colspan="2">linestyle 선</th></tr><tr><td><code>'-'</code></td><td>━ 실선</td></tr><tr><td><code>'--'</code></td><td>╍ 짧은 선 반복 (<b>교과서는 '점선'이라고 부름</b>)</td></tr><tr><td><code>':'</code></td><td>┈ 아주 짧은 점 반복</td></tr><tr><td><code>'-.'</code></td><td>━·━ 선과 점 번갈아</td></tr></table>
 </div>
-<div class="tip">검정은 b가 아니라 <b>k</b>예요(b는 파랑). 옵션 값은 모두 <b>따옴표</b> 안에!</div>`,
+<div class="tip">검정은 b가 아니라 <b>k</b>예요(b는 파랑). 옵션 값은 모두 <b>따옴표</b> 안에! 선 종류는 이름보다 <b>기호</b>(<code>'--'</code>, <code>':'</code>, <code>'-.'</code>)로 외우세요. 시험 조건도 기호로 나와요("선 종류: --").</div>`,
  code:`import matplotlib.pyplot as plt
 x = [1, 2, 3, 4]
 plt.plot(x, [1, 2, 3, 4], marker='o', color='r', linestyle='-')
@@ -1003,16 +1023,16 @@ plt.show()`},
 <p><code>plt.legend(loc='upper right')</code>처럼 위치도 정할 수 있어요: upper left / upper right / lower left / lower right</p>`,
  code: PHOTO},
 { t:'code', title:'시험 그래프: 사진 그대로', body:`<p>가족의 몸무게(weight)로 아래 조건의 그래프를 그리세요.</p>
-<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ★, 색상: 마젠타(m), 선 종류: --, 범례 label='weight', x축 이름 family, y축 이름 weight</div>`,
+<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ★, 색상: 마젠타(m), 선 종류: --, 범례 label='weight', x축 이름 family, y축 이름 weight</div><table class="tbl"><tr><th></th><th>age</th><th>weight</th></tr><tr><th>grandpa</th><td>60</td><td>3.8</td></tr><tr><th>grandma</th><td>70</td><td>7.2</td></tr><tr><th>grandson</th><td>12</td><td>6.3</td></tr><tr><th>papa</th><td>45</td><td>5.5</td></tr><tr><th>mama</th><td>42</td><td>4.6</td></tr></table>`,
  ref: PHOTO, check:'plot', showExpected:true, hints:['import matplotlib.pyplot as plt','plt.plot(x, y, marker=\'*\', color=\'m\', label=\'weight\', linestyle=\'--\')','xlabel, ylabel, legend, show 4줄']},
 { t:'type', title:'타자: 시험 그래프 (1회차)', target: PHOTO},
 { t:'type', title:'타자: 시험 그래프 (2회차, 더 빠르게)', target: PHOTO},
 { t:'code', title:'변형: 나이 그래프', body:`<p>이번엔 <b>나이(age)</b>로 그리세요. 조건이 바뀌었어요.</p>
-<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ● (원), 색상: 빨강(r), 선 종류: 점선(:), 범례 label='age', x축 family, y축 age</div><p class="dim">age: 60, 70, 12, 45, 42</p>`,
- ref:`import matplotlib.pyplot as plt\nx = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']\ny = [60, 70, 12, 45, 42]\nplt.plot(x, y, marker='o', color='r', label='age', linestyle=':')\nplt.xlabel('family')\nplt.ylabel('age')\nplt.legend()\nplt.show()`, check:'plot', showExpected:true, hints:['원 마커 \'o\', 빨강 \'r\', 점선 \':\'','label=\'age\'와 plt.legend()']},
+<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ● (원), 색상: 빨강(r), 선 종류: <code>':'</code>, 범례 label='age', x축 family, y축 age</div><p class="dim">x: grandpa, grandma, grandson, papa, mama / age: 60, 70, 12, 45, 42</p>`,
+ ref:`import matplotlib.pyplot as plt\nx = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']\ny = [60, 70, 12, 45, 42]\nplt.plot(x, y, marker='o', color='r', label='age', linestyle=':')\nplt.xlabel('family')\nplt.ylabel('age')\nplt.legend()\nplt.show()`, check:'plot', showExpected:true, hints:['원 마커 \'o\', 빨강 \'r\', 선 \':\'','label=\'age\'와 plt.legend()']},
 { t:'code', title:'변형: 키 그래프', body:`<p><b>키(height)</b>로 그리세요.</p>
-<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ◆ (다이아몬드), 색상: 시안(c), 선 종류: 일점쇄선(-.), 범례 label='height', x축 family, y축 height</div><p class="dim">height: 4.4, 5.6, 6.4, 5.7, 7.8</p>`,
- ref:`import matplotlib.pyplot as plt\nx = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']\ny = [4.4, 5.6, 6.4, 5.7, 7.8]\nplt.plot(x, y, marker='D', color='c', label='height', linestyle='-.')\nplt.xlabel('family')\nplt.ylabel('height')\nplt.legend()\nplt.show()`, check:'plot', showExpected:true, hints:['다이아몬드 \'D\' (대문자)','일점쇄선 \'-.\'']},
+<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ◆ (다이아몬드), 색상: 시안(c), 선 종류: <code>'-.'</code>, 범례 label='height', x축 family, y축 height</div><p class="dim">x: grandpa, grandma, grandson, papa, mama / height: 4.4, 5.6, 6.4, 5.7, 7.8</p>`,
+ ref:`import matplotlib.pyplot as plt\nx = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']\ny = [4.4, 5.6, 6.4, 5.7, 7.8]\nplt.plot(x, y, marker='D', color='c', label='height', linestyle='-.')\nplt.xlabel('family')\nplt.ylabel('height')\nplt.legend()\nplt.show()`, check:'plot', showExpected:true, hints:['다이아몬드 \'D\' (대문자)','선 \'-.\'']},
 { t:'code', title:'백지 테스트: 시험 그래프', blank:true, body:`<p><b>아무것도 보지 말고</b> 사진의 그래프를 처음부터 그리세요. (★, 마젠타, --, label='weight', family, weight, 범례)</p><table class="tbl"><tr><th></th><th>age</th><th>weight</th></tr><tr><th>grandpa</th><td>60</td><td>3.8</td></tr><tr><th>grandma</th><td>70</td><td>7.2</td></tr><tr><th>grandson</th><td>12</td><td>6.3</td></tr><tr><th>papa</th><td>45</td><td>5.5</td></tr><tr><th>mama</th><td>42</td><td>4.6</td></tr></table>`,
  ref: PHOTO, check:'plot', hints:['import 2줄','x는 가족 5명, y는 몸무게 5개','plot → xlabel → ylabel → legend → show']},
 { t:'quiz', title:'서술: 맷플롯립 설명', q:'맷플롯립(Matplotlib) 라이브러리를 설명하시오.', kw:['시각화|그래프','선|막대|산점도|원','pyplot|plt'], answer: DESC_MPL},
@@ -1034,41 +1054,42 @@ plt.show()`},
 <tr><td><code>plt.figure(figsize=(5, 5))</code></td><td>그래프 크기 가로 5, 세로 5 (인치)</td></tr>
 <tr><td><code>plt.title('...')</code></td><td>그래프 제목</td></tr>
 <tr><td><code>plt.plot(x, y, 'bo')</code></td><td><b>b</b>=파랑 + <b>o</b>=원 마커, 선 없음</td></tr></table>
-<div class="tip">'bo'처럼 <b>색 + 마커 (+ 선)</b>을 한 문자열로 줄 수 있어요: <code>'r--'</code> 빨간 파선, <code>'g*-'</code> 초록 별 실선, <code>'ks'</code> 검정 사각형 점만.</div>`,
+<div class="tip">'bo'처럼 <b>색 + 마커 (+ 선)</b>을 한 문자열로 줄 수 있어요: <code>'r--'</code> 빨강 + <code>'--'</code> 선, <code>'g*-'</code> 초록 별 실선, <code>'ks'</code> 검정 사각형 점만.</div>`,
  code: PHONE},
-{ t:'fill', title:'빈칸: 스마트폰 그래프', tpl:`import numpy as {{np}}
-import matplotlib.{{pyplot}} as plt
-x=np.{{array}}([1, 3, 5])
-y=np.array([80, 69, 55])
-plt.{{figure}}(figsize=(5, 5))
-plt.{{title}}('smartphone vs exam score')
-plt.{{plot}}(x, y,'{{bo}}')
-plt.{{show}}()`},
+{ t:'fill', title:'빈칸: 스마트폰 그래프', note:'시험지 8쪽은 모든 줄 전체에 밑줄이 있어요. 줄 전체를 그대로 쓰세요.', tpl:`{{import numpy as np}}
+{{import matplotlib.pyplot as plt|from matplotlib import pyplot as plt}}
+{{x=np.array([1, 3, 5])}}
+{{y=np.array([80, 69, 55])}}
+{{plt.figure(figsize=(5, 5))}}
+{{plt.title('smartphone vs exam score')}}
+{{plt.plot(x, y,'bo')|plt.plot(x, y,'ob')}}
+{{plt.show()}}`},
 { t:'code', title:'백지 테스트: 스마트폰 그래프', blank:true, body:`<p>아무것도 보지 말고 스마트폰 사용 시간(1, 3, 5)과 시험 점수(80, 69, 55) 그래프를 그리세요. 크기 5×5, 제목 'smartphone vs exam score', 파란 원 마커.</p>`,
  ref: PHONE, check:'plot', hints:['np.array로 x, y','plt.figure(figsize=(5, 5))','plt.plot(x, y, \'bo\')']},
-{ t:'learn', title:'머신러닝 예측 4단계', body:`
-<div class="flow"><div><b>① 데이터 준비</b><br>x, y 배열</div><div><b>② 모델 선정</b><br>LinearRegression()</div><div><b>③ 학습</b><br>model.fit(x, y)</div><div><b>④ 예측</b><br>model.predict([[2]])</div></div>
+{ t:'learn', title:'머신러닝 예측 3단계', body:`
+<p>시험지 9쪽 코드의 주석 그대로 <b>3단계</b>예요.</p>
+<div class="flow" style="grid-template-columns:repeat(3,1fr)"><div><b>1. 데이터 준비</b><br>x, y 배열</div><div><b>2. 예측 모델 선정 및 모델 학습</b><br>LinearRegression() → fit</div><div><b>3. 모델 예측</b><br>predict([[2]])</div></div>
 <p><b>선형 회귀</b>: 데이터에 가장 잘 맞는 <b>직선</b>(기울기와 절편)을 찾아, 새로운 x의 y를 예측해요.</p>
 <div class="warn">sklearn은 x를 <b>2차원</b>으로 받아요.<br>• 학습: <code>x.reshape(-1, 1)</code> → [[1], [3], [5]]<br>• 예측: <code>[[pre_x]]</code> 대괄호 두 겹</div>
 <p><code>input('질문')</code>은 질문을 보여주고 <b>사용자가 입력한 값</b>을 받는 함수예요. 받은 값은 글자라서 <code>int( )</code>로 감싸서 숫자로 바꿔요. 이 연습장에서는 아래 <b>입력값</b> 칸에 적은 값이 input()으로 들어가요.</p>
 <p><code>from sklearn.linear_model import LinearRegression</code>은 기초 챕터 ⑥에서 본 "도구 하나만 꺼내기"예요. <code>model.fit( )</code>, <code>model.predict( )</code>는 model이 가진 기능(학습, 예측)이에요.</p>`,
  code: LINREG, inputs:'2'},
-{ t:'fill', title:'빈칸: 점수 예측', note:'시험지에서 취소선 그어진 줄(from sklearn…, model = …)은 빈칸으로 안 나올 가능성이 높아요. 그래도 아래 백지 테스트에서는 같이 써봐요.', tpl:`# 1. 데이터 준비
-import numpy as np
-x = np.array([1, 3, 5])
-y = np.array([80, 69, 55])
+{ t:'fill', title:'빈칸: 점수 예측', note:'시험지 9쪽 밑줄 위치 그대로예요. 취소선 줄(from sklearn…, model = …)은 그대로 주어져요.', tpl:`# 1. 데이터 준비
+{{import numpy as np}}
+{{x = np.array([1, 3, 5])}}
+{{y = np.array([80, 69, 55])}}
 
 # 2. 예측 모델 선정 및 모델 학습
 from sklearn.linear_model import LinearRegression
 model = LinearRegression()
-model.{{fit}}(x.{{reshape}}(-1, 1), {{y}})
+model.fit({{x.reshape(-1, 1), y}})
 
 # 3. 모델 예측
-pre_x = {{int}}({{input}}('스마트폰 사용 시간:'))
-y_hat = model.{{predict}}({{[[pre_x]]}})
-print({{y_hat}}, '점')`, inputs:'2'},
-{ t:'code', title:'백지 테스트: 점수 예측', blank:true, body:`<p>아무것도 보지 말고 스마트폰 사용 시간을 입력받아 시험 점수를 예측하는 프로그램을 쓰세요. (입력값 2로 채점)</p><table class="tbl"><tr><th>스마트폰 사용 시간 (x)</th><td>1</td><td>3</td><td>5</td></tr><tr><th>시험 점수 (y)</th><td>80</td><td>69</td><td>55</td></tr></table>`,
- ref: LINREG, inputs:'2', check:'out', hints:['1. np.array로 x, y','2. from sklearn.linear_model import LinearRegression → model = LinearRegression() → model.fit(x.reshape(-1, 1), y)','3. int(input(...)) → model.predict([[pre_x]]) → print(y_hat, \'점\')']},
+{{pre_x = int(input('스마트폰 사용 시간:'))}}
+{{y_hat}} = model.predict({{[[pre_x]]}})
+{{print(y_hat, '점')}}`, inputs:'2'},
+{ t:'code', title:'백지 테스트: 점수 예측', blank:true, body:`<p>아무것도 보지 말고 스마트폰 사용 시간을 입력받아 시험 점수를 예측하는 프로그램을 쓰세요. (입력값 2와 4로 채점. 마지막 출력은 시험지처럼 <code>print(y_hat, '점')</code>. input 안의 질문 문구는 아무거나 써도 돼요)</p><table class="tbl"><tr><th>스마트폰 사용 시간 (x)</th><td>1</td><td>3</td><td>5</td></tr><tr><th>시험 점수 (y)</th><td>80</td><td>69</td><td>55</td></tr></table>`,
+ ref: LINREG, inputs:'2', inputs2:'4', must:[['LinearRegression','LinearRegression 모델을 써야 해요'],['\\.fit\\(','model.fit( )으로 학습해야 해요'],['\\.predict\\(','model.predict( )로 예측해야 해요'],['input\\(','input()으로 입력받아야 해요']], check:'out', hints:['1. np.array로 x, y','2. from sklearn.linear_model import LinearRegression → model = LinearRegression() → model.fit(x.reshape(-1, 1), y)','3. int(input(...)) → model.predict([[pre_x]]) → print(y_hat, \'점\')']},
 { t:'type', title:'타자: 점수 예측', target: LINREG},
 { t:'quiz', title:'서술: 기계학습 과정 설명', q:'스마트폰 사용 시간으로 시험 점수를 예측하는 기계학습 과정을 설명하시오.', kw:['데이터','모델|LinearRegression|선형','학습|fit','예측|predict','reshape|2차원'], answer: DESC_ML},
 { t:'learn', title:'분류: 포도가 거봉인지 아닌지', body:`
@@ -1076,6 +1097,7 @@ print({{y_hat}}, '점')`, inputs:'2'},
 <table class="cmp"><tr><th>코드</th><th>뜻</th></tr>
 <tr><td><code>grape[:, :2]</code></td><td>전체 행, 0~1번 열 → 크기, 무게 (X)</td></tr>
 <tr><td><code>grape[:, 2]</code></td><td>전체 행, 2번 열 → 거봉 여부 (y, 레이블)</td></tr>
+<tr><td><code>X</code>, <code>y</code></td><td>시험지 표 그대로: X = <b>독립 변수</b> 2개(크기, 무게), y = <b>종속 변수</b>(거봉 여부)</td></tr>
 <tr><td><code>model.coef_</code></td><td>학습한 가중치(계수)</td></tr>
 <tr><td><code>model.intercept_</code></td><td>학습한 편향(절편)</td></tr>
 <tr><td><code>float(input(...))</code></td><td>소수 입력받기</td></tr></table>
@@ -1088,42 +1110,43 @@ else :                 # 아니면
 <ul><li><code>==</code>는 <b>같은지 비교</b>예요. (<code>=</code> 하나는 "상자에 넣어라"였죠)</li>
 <li>줄 끝에 콜론 <code>:</code>을 꼭 써요.</li>
 <li>if/else 안쪽 줄은 앞에 <b>공백 4칸</b>(Tab 키) 들여쓰기를 해요. 안 하면 IndentationError가 나요.</li></ul>
-<p>입력값 칸에 <b>두 줄</b>(크기, 무게)을 넣어요.</p>`,
- code: GRAPE, inputs:'26\n650'},
-{ t:'fill', title:'빈칸: 포도 분류', tpl:`import numpy as np
-import matplotlib.pyplot as plt
-grape = np.{{array}}([[19, 300, 0],
+<p>입력값 칸에 <b>두 줄</b>(크기, 무게)을 넣어요.</p>
+<p class="dim">coef_·intercept_ 숫자는 Thonny에서 소수 끝자리가 조금 다를 수 있어요. 예측 결과(거봉/거봉 아님)는 같아요.</p>`,
+ code: GRAPE, inputs:'26\n650', starter: GRAPE.split('\nX = grape')[0] + '\n'},
+{ t:'fill', title:'빈칸: 포도 분류', note:'시험지 10쪽 밑줄 위치 그대로예요. 취소선 줄은 그대로 주어져요.', tpl:`{{import numpy as np}}
+{{import matplotlib.pyplot as plt|from matplotlib import pyplot as plt}}
+{{grape}} = {{np.array}}([[19, 300, 0],
                   [20, 500, 0],
                   [18, 400, 0],
                   [25, 500, 1],
                   [27, 700, 1],
                   [28, 600, 1]])
-X = grape[{{:, :2}}]
-y = grape[{{:, 2}}]
+{{X = grape[:, :2]|X=grape[:,0:2]}}
+{{y = grape[:, 2]|y=grape[:,-1]}}
 print(X)
 print(y)
 
 from sklearn.linear_model import LogisticRegression
 model = LogisticRegression()
-model.{{fit}}({{X}}, {{y}})
+model.fit({{X, y}})
 print(model.coef_)
 print(model.intercept_)
 
-size = {{float}}(input('포도 한 알의 크기는(mm): '))
-weight = {{float}}(input('포도 한 송이의 무게는(g): '))
+{{size = float(input('포도 한 알의 크기는(mm): '))}}
+{{weight = float(input('포도 한 송이의 무게는(g): '))}}
 {{result}} = model.predict({{[[size, weight]]}})
 if({{result==1}}) :
-    print('{{거봉}}')
-{{else}} :
-    print('거봉 아님')`, inputs:'26\n650'},
-{ t:'code', title:'백지 테스트: 포도 분류', blank:true, body:`<p>아무것도 보지 말고 포도 분류 프로그램을 쓰세요. 데이터는 아래 표, 입력은 크기 → 무게 순서예요. (X, y 출력 포함, coef_와 intercept_ 출력은 빼도 돼요)</p>
+    {{print('거봉')}}
+{{else :}}
+    {{print('거봉 아님')}}`, inputs:'26\n650'},
+{ t:'code', title:'백지 테스트: 포도 분류', blank:true, body:`<p>아무것도 보지 말고 포도 분류 프로그램을 쓰세요. 데이터는 아래 표, 입력은 크기 → 무게 순서예요. (X, y 출력 포함, coef_와 intercept_ 출력은 빼도 돼요. 결과는 <code>'거봉'</code> 또는 <code>'거봉 아님'</code>을 출력. input 질문 문구는 아무거나 써도 돼요)</p>
 <table class="tbl"><tr><th>크기(mm)</th><td>19</td><td>20</td><td>18</td><td>25</td><td>27</td><td>28</td></tr><tr><th>무게(g)</th><td>300</td><td>500</td><td>400</td><td>500</td><td>700</td><td>600</td></tr><tr><th>거봉</th><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr></table>`,
- ref: GRAPE.replace("print(model.coef_)\nprint(model.intercept_)\n",""), inputs:'26\n650', check:'out', lenient:'coef', hints:['grape = np.array([[19, 300, 0], ...])','X = grape[:, :2], y = grape[:, 2]','model.fit(X, y) → predict([[size, weight]]) → if/else']},
+ ref: GRAPE.replace("print(model.coef_)\nprint(model.intercept_)\n",""), inputs:'26\n650', inputs2:'20\n400', must:[['LogisticRegression','LogisticRegression 모델을 써야 해요'],['\\.fit\\(','model.fit( )으로 학습해야 해요'],['\\.predict\\(','model.predict( )로 예측해야 해요'],['if','if로 결과를 나눠야 해요'],['else','else를 써야 해요']], check:'out', lenient:'coef', hints:['grape = np.array([[19, 300, 0], ...])','X = grape[:, :2], y = grape[:, 2]','model.fit(X, y) → predict([[size, weight]]) → if/else']},
 { t:'type', title:'타자: 포도 분류', target: GRAPE},
 ]},
 
 /* ================= CH6 모의고사 ================= */
-{ id:'c6', title:'모의고사', short:'EXAM', mins:15, steps:[
+{ id:'c6', title:'모의고사', short:'EXAM', mins:20, steps:[
 { t:'intro', title:'실전 모의고사', body:`<p class="lead">숫자·이름·조건이 <b>살짝 바뀐</b> 문제가 무작위로 나와요. 시험처럼 <b>아무것도 보지 않고</b> 처음부터 쓰세요.</p>
 <ul class="goals"><li>문제마다 <b>새 변형</b> 버튼으로 다른 문제를 계속 뽑을 수 있어요.</li><li>종이에 먼저 손으로 써보고 → 입력해서 채점하면 시험과 가장 비슷해요.</li></ul>`},
 { t:'gen', kind:'np1'},
@@ -1141,7 +1164,7 @@ if({{result==1}}) :
 <label><input type="checkbox"> <code>print()</code> 안 쓰면 Thonny에서 아무것도 안 나온다</label>
 <label><input type="checkbox"> 그래프 마지막엔 <code>plt.show()</code></label>
 <label><input type="checkbox"> 교과서 기준: "행(끼리)" → <code>axis=0</code>, "열(끼리)" → <code>axis=1</code></label>
-<label><input type="checkbox"> 넘파이 함수는 <code>np.이름(a, axis=번호)</code> 모양 (중앙값·where는 이 모양만 됨)</label>
+<label><input type="checkbox"> 통계 함수는 <code>np.이름(a, axis=번호)</code>, any·all은 <code>np.any(조건)</code>, where는 <code>np.where(조건, 참, 거짓)</code></label>
 <label><input type="checkbox"> <code>np.arange(1, 4)</code>는 1, 2, 3 (끝 미포함)</label>
 <label><input type="checkbox"> reshape는 행 × 열 = 원소 개수</label>
 <label><input type="checkbox"> 열 여러 개는 <code>df[['a', 'b']]</code> 두 겹</label>
@@ -1150,9 +1173,9 @@ if({{result==1}}) :
 <label><input type="checkbox"> 열 삭제는 <code>axis=1</code> 또는 <code>columns=</code></label>
 <label><input type="checkbox"> <code>inplace=True</code> = 원본 변경</label>
 <label><input type="checkbox"> <code>label=</code>과 <code>plt.legend()</code>는 세트</label>
-<label><input type="checkbox"> 검정은 <code>'k'</code>, 마젠타는 <code>'m'</code>, 별은 <code>'*'</code>, 파선은 <code>'--'</code></label>
+<label><input type="checkbox"> 검정은 <code>'k'</code>, 마젠타는 <code>'m'</code>, 별은 <code>'*'</code>, 선 종류는 기호로 <code>'--'</code>(교과서: 점선), <code>':'</code>, <code>'-.'</code></label>
 <label><input type="checkbox"> 학습 <code>x.reshape(-1, 1)</code>, 예측 <code>[[pre_x]]</code></label>
-<label><input type="checkbox"> 기계학습 과정: 데이터 준비 → 모델 선정 → 학습(fit) → 예측(predict)</label>
+<label><input type="checkbox"> 기계학습 과정(시험지 3단계): 1. 데이터 준비 → 2. 예측 모델 선정 및 모델 학습(fit) → 3. 모델 예측(predict)</label>
 </div>`},
 ]},
 ];
@@ -1181,7 +1204,7 @@ const q=s=>"'"+s+"'";
 const L=a=>'['+a.map(v=>typeof v==='string'?q(v):v).join(', ')+']';
 const MARKERS=[['o','● 원'],['*','★ 별'],['s','■ 사각형'],['D','◆ 다이아몬드'],['^','▲ 삼각형']];
 const COLORS=[['r','빨강'],['g','초록'],['b','파랑'],['c','시안'],['m','마젠타'],['y','노랑'],['k','검정']];
-const LS=[['-','실선(-)'],['--','파선(--)'],[':','점선(:)'],['-.','일점쇄선(-.)']];
+const LS=[['-',"'-'"],['--',"'--'"],[':',"':'"],['-.',"'-.'"]];
 
 function genStep(kind){
  if(kind==='np1'){
@@ -1189,7 +1212,7 @@ function genStep(kind){
   const rows=useExam?[[1,4,3,7,8],[2,1,-1,3,6],[3,3,4,1,0]]:Array.from({length:3},()=>Array.from({length:5},()=>rnd(12)-2));
   const [f1,f2]=shuffle(NP_FUNCS).slice(0,2);
   return {t:'code',blank:true,title:'모의 넘파이 1: 배열 + 함수 2개',body:`<p>아래 2차원 배열을 만들고 <b>${f1[0]}</b>, <b>${f2[0]}</b>을(를) 차례로 출력하세요.</p>`+npTableHtml(rows),
-   ref:npArrCode(rows)+`\nprint(${f1[1]})\nprint(${f2[1]})`,check:'out',hints:['import numpy as np → a = np.array([[...], [...], [...]])','교과서 기준: "행" → axis=0, "열" → axis=1',`정답 함수: ${f1[1]}, ${f2[1]}`]};
+   ref:npArrCode(rows)+`\nprint(${f1[1]})\nprint(${f2[1]})`,ignore:npArrCode(rows)+`\nprint(a)`,check:'out',hints:['import numpy as np → a = np.array([[...], [...], [...]])','교과서 기준: "행" → axis=0, "열" → axis=1',`정답 함수: ${f1[1]}, ${f2[1]}`]};
  }
  if(kind==='np2'){
   const o=pick([{n:3,s:[3,1],from:1},{n:4,s:[4,1],from:1},{n:6,s:[2,3],from:1},{n:6,s:[3,2],from:1},{n:8,s:[2,4],from:1},{n:12,s:[3,4],from:0},{n:5,s:[5,1],from:2}]);
@@ -1206,14 +1229,16 @@ function genStep(kind){
    {r:`a = np.arange(1, 7).reshape(2, 3)\nprint(a ** 2)`,h:'2행 3열, 모든 칸 제곱'},
    {r:`a = np.arange(0, 8).reshape(2, 4)\nprint(a + 10)`,h:'0~7로 2행 4열, 모든 칸 + 10'},
    {r:`a = np.arange(2, 8).reshape(2, 3)\nb = np.arange(1, 7).reshape(2, 3)\nprint(a / b)`,h:'2~7과 1~6으로 2행 3열, 나누기'},
+   {r:`a = np.arange(9).reshape(3, 3)\nprint(a)`,h:'교과서 84쪽: 0~8로 3행 3열'},
+   {r:`a = np.arange(9).reshape(3, 3)\nprint(a + np.arange(3))`,h:'교과서 85쪽 브로드캐스팅: 3행 3열 + 한 줄 [0 1 2]'},
+   {r:`a = np.arange(3).reshape(3, 1)\nprint(a + np.arange(3))`,h:'교과서 85쪽 브로드캐스팅: 3행 1열 + 한 줄 [0 1 2]'},
   ]);
-  return {t:'code',blank:true,title:'모의 넘파이 3: 결과 보고 코드 쓰기',body:`<p><code>arange()</code>와 <code>reshape()</code>로 배열을 만들고, 아래 <b>실행 결과</b>가 나오도록 코드를 쓰세요.</p>`,
+  return {t:'code',blank:true,title:'모의 넘파이 3: 결과 보고 코드 쓰기',body:`<p><code>arange()</code>와 <code>reshape()</code>로 배열을 만들고, 오른쪽 <b>목표 출력</b>이 나오도록 코드를 쓰세요.</p>`,
    ref:'import numpy as np\n'+o.r,check:'out',showExpected:true,must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']],hints:['결과의 행·열 개수부터 세기',o.h]};
  }
  if(kind==='pd1'){
-  const m=pick([['딕셔너리',DF_DICT,'\\{'],['배열(2차원 리스트)',DF_ARR,'columns'],['시리즈',DF_SER,'Series']]);
-  return {t:'code',blank:true,title:'모의 판다스 1: 데이터프레임 만들기',body:`<p><b>${m[0]}</b>를 이용해 아래 데이터프레임을 만들고 출력하세요.</p>`+FAMILY_TABLE,
-   ref:m[1]+'\nprint(df)',check:'out',must:[[m[2],m[0]+' 방법을 써야 해요']],hints:['import pandas as pd','index에 행 이름 5개']};
+  return {t:'code',blank:true,title:'모의 판다스 1: 데이터프레임 만들기',body:`<p>배열·시리즈·딕셔너리 중 <b>자신 있는 방법 하나</b>로 아래 데이터프레임을 만들고 출력하세요. (시험도 1개 선택)</p>`+FAMILY_TABLE,
+   ref:DF_DICT+'\nprint(df)',check:'out',hints:['import pandas as pd','딕셔너리: data = {\'age\': [...], ...} → pd.DataFrame(data, index=[...])']};
  }
  if(kind==='pdx'){
   const tasks=[
@@ -1231,19 +1256,19 @@ function genStep(kind){
    ()=>[`인덱스를 <b>nickname</b> 칼럼으로 바꾸고 (원본 변경) 출력하세요.`,`df.set_index('nickname', inplace=True)\nprint(df)`],
   ];
   const [desc,code]=pick(tasks)();
-  return {t:'code',title:'모의 판다스: 2~13번 변형',body:`<p>가족 데이터프레임(df)에서 ${desc}</p><p class="dim">df를 만드는 코드는 넣어 뒀어요. 그 아래에 이어서 쓰세요.</p>`,starter:DF_DICT+'\n\n',ref:DF_DICT+'\n'+code,check:'out',hints:['열 여러 개 [[ ]], 행은 loc, 추가는 df[...]= 또는 insert, 삭제는 drop','정답 코드의 첫 줄: '+code.split('\n')[0]]};
+  return {t:'code',title:'모의 판다스: 2~13번 변형',body:`<p>가족 데이터프레임(df)에서 ${desc}</p><p class="dim">df를 만드는 코드는 넣어 뒀어요. 그 아래에 이어서 쓰세요.</p>`,starter:DF_DICT+'\n\n',ref:DF_DICT+'\n'+code,check:'out',lenient:true,hints:['열 여러 개 [[ ]], 행은 loc, 추가는 df[...]= 또는 insert, 삭제는 drop','정답 코드의 첫 줄: '+code.split('\n')[0]]};
  }
  if(kind==='plot'){
   const col=pick(['weight','age','height']);const mk=pick(MARKERS),cl=pick(COLORS),ls=pick(LS);
   const ref=`import matplotlib.pyplot as plt\nx = ${L(FAM)}\ny = ${L(COLS[col])}\nplt.plot(x, y, marker=${q(mk[0])}, color=${q(cl[0])}, label=${q(col)}, linestyle=${q(ls[0])})\nplt.xlabel('family')\nplt.ylabel(${q(col)})\nplt.legend()\nplt.show()`;
-  return {t:'code',blank:true,title:'모의 맷플롯립: 조건 그래프',body:`<p>가족의 <b>${col}</b> 데이터(${COLS[col].join(', ')})로 그래프를 그리세요.</p><div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ${mk[1]}, 색상: ${cl[1]}(${cl[0]}), 선 종류: ${ls[1]}, 범례 label='${col}', x축 family, y축 ${col}</div>`,
+  return {t:'code',blank:true,title:'모의 맷플롯립: 조건 그래프',body:`<p>가족(grandpa, grandma, grandson, papa, mama)의 <b>${col}</b> 데이터(${COLS[col].join(', ')})로 그래프를 그리세요.</p><div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ${mk[1]}, 색상: ${cl[1]}(${cl[0]}), 선 종류: ${ls[1]}, 범례 label='${col}', x축 family, y축 ${col}</div>`,
    ref,check:'plot',showExpected:true,hints:['옵션표 다시 떠올리기: marker / color / linestyle',`marker='${mk[0]}', color='${cl[0]}', linestyle='${ls[0]}'`]};
  }
  if(kind==='ml'){
   const o=pick([{x:[1,3,5],y:[80,69,55],p:2},{x:[1,2,4],y:[90,82,64],p:3},{x:[2,4,6],y:[85,70,52],p:5},{x:[1,3,5],y:[80,69,55],p:4}]);
   const ref=`import numpy as np\nx = np.array(${L(o.x)})\ny = np.array(${L(o.y)})\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(x.reshape(-1, 1), y)\npre_x = int(input('스마트폰 사용 시간:'))\ny_hat = model.predict([[pre_x]])\nprint(y_hat, '점')`;
-  return {t:'code',blank:true,title:'모의 머신러닝: 점수 예측',body:`<p>스마트폰 사용 시간 <b>${o.x.join(', ')}시간</b>일 때 시험 점수가 <b>${o.y.join(', ')}점</b>이었어요. 사용 시간을 입력받아 점수를 예측하는 프로그램을 쓰세요. (입력값 ${o.p}로 채점)</p>`,
-   ref,inputs:String(o.p),check:'out',hints:['fit에는 x.reshape(-1, 1)','predict에는 [[pre_x]]']};
+  return {t:'code',blank:true,title:'모의 머신러닝: 점수 예측',body:`<p>스마트폰 사용 시간 <b>${o.x.join(', ')}시간</b>일 때 시험 점수가 <b>${o.y.join(', ')}점</b>이었어요. 사용 시간을 입력받아 점수를 예측하는 프로그램을 쓰세요. (입력값 ${o.p}와 ${o.p+1}로 채점, 마지막 출력은 <code>print(y_hat, '점')</code>)</p>`,
+   ref,inputs:String(o.p),inputs2:String(o.p+1),check:'out',must:[['LinearRegression','LinearRegression 모델을 써야 해요'],['\\.fit\\(','fit으로 학습'],['\\.predict\\(','predict로 예측'],['input\\(','input()으로 입력']],hints:['fit에는 x.reshape(-1, 1)','predict에는 [[pre_x]]','마지막은 print(y_hat, \'점\')']};
  }
 }
 
@@ -1325,7 +1350,14 @@ def _run(src, stdin):
     _S['imgs'] = []; _S['shown'] = False; _S['figs'] = []
     plt.close('all'); plt.rcdefaults()
     lines = [s for s in stdin.split('\\n')] if stdin.strip() else []
-    buf = io.StringIO()
+    buf = io.StringIO(); gbuf = io.StringIO()
+    class _Tee:
+        n = 0
+        def write(self, t):
+            _Tee.n += len(t)
+            if _Tee.n > 200000: raise RuntimeError('출력이 너무 많아요 (반복이 끝나지 않는지 확인하세요)')
+            buf.write(t); gbuf.write(t); return len(t)
+        def flush(self): pass
     def _inp(prompt=''):
         buf.write(str(prompt))
         if not lines:
@@ -1335,8 +1367,21 @@ def _run(src, stdin):
     g = {'__name__': '__main__', '__builtins__': builtins}
     err = None
     try:
-        with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(io.StringIO()):
-            exec(compile(src, '<my>', 'exec'), g)
+        import time as _tm
+        _t0 = _tm.time()
+        def _lt(f, e, a):
+            if _tm.time() - _t0 > 5: raise TimeoutError('5초 넘게 실행돼서 멈췄어요')
+            return _lt
+        def _tr(f, e, a):
+            return _lt if f.f_code.co_filename == '<my>' else None
+        with contextlib.redirect_stdout(_Tee()), contextlib.redirect_stderr(io.StringIO()):
+            sys.settrace(_tr)
+            try:
+                exec(compile(src, '<my>', 'exec'), g)
+            finally:
+                sys.settrace(None)
+    except SystemExit:
+        pass
     except SyntaxError as e:
         err = {'type': type(e).__name__, 'msg': str(e.msg), 'line': e.lineno, 'text': (e.text or '').rstrip()}
     except BaseException as e:
@@ -1347,7 +1392,7 @@ def _run(src, stdin):
         builtins.input = old_inp
     leftover = _snap() if plt.get_fignums() else []
     plt.close('all')
-    return json.dumps({'out': buf.getvalue(), 'err': err, 'figs': _S['figs'], 'noshow': leftover, 'shown': _S['shown']})
+    return json.dumps({'out': buf.getvalue(), 'gout': gbuf.getvalue(), 'err': err, 'figs': _S['figs'], 'noshow': leftover, 'shown': _S['shown']})
 `;
 let PY=null, pyState='loading';
 const pyReady=(async()=>{
@@ -1382,7 +1427,7 @@ async function runRef(step){
 function explain(err){
   if(!err) return '';
   const m=err.msg||'', t=err.type;
-  const nm=m.match(/name '(\w+)' is not defined/);
+  const nm=m.match(/name '([^']+)' is not defined/);
   if(t==='EOFError') return '프로그램이 input()으로 값을 기다리는데 입력값이 없어요. 아래 <b>입력값</b> 칸에 한 줄에 하나씩 적어주세요.';
   if(nm){const n=nm[1];
     if(n==='np') return '<code>np</code>를 몰라요. 맨 위에 <code>import numpy as np</code>를 썼나요?';
@@ -1409,9 +1454,16 @@ function explain(err){
   if(/not a valid value for (ls|linestyle)|Unrecognized marker|not a valid value for color|Invalid RGBA|is not a valid color/.test(m)) return 'marker / color / linestyle 값이 잘못됐어요. 옵션표를 확인하세요 (예: \'*\', \'m\', \'--\').';
   if(/x and y must have same first dimension/.test(m)) return 'x와 y의 개수가 달라요.';
   if(/not subscriptable/.test(m)&&/builtin_function|function/.test(m)) return /np\.array\s*\[/.test(err.text||'')?'<code>np.array</code> 바로 뒤에 <b>소괄호 <code>(</code></b>가 빠졌어요. <code>np.array([[...], [...]])</code>처럼 <code>np.array(</code>로 열고 맨 끝을 <code>]])</code>로 닫으세요.':'함수 이름 바로 뒤에 대괄호 <code>[ ]</code>를 붙였어요. 함수는 <b>소괄호 <code>( )</code></b>로 실행해요. 예: <code>np.array([...])</code>, <code>print(x)</code>';
+  if(t==='TimeoutError') return '5초 넘게 끝나지 않아서 멈췄어요. 반복(while)이 끝나는지 확인하세요.';
+  if(/출력이 너무 많아요/.test(m)) return '출력이 너무 많아서 멈췄어요. 반복이 끝나지 않는지 확인하세요.';
+  if(/format string/.test(m)) return "plot의 세 번째 값(예: <code>'bo'</code>, <code>'m*--'</code>)에 쓸 수 없는 글자가 있어요. 색 한 글자 + 마커 + 선 모양으로 써요.";
+  if(/No axis named|is not callable/.test(m)) return '<code>loc</code>나 열 선택은 소괄호가 아니라 <b>대괄호</b>예요: <code>df.loc[\'grandpa\']</code>, <code>df[[\'age\']]</code>';
+  if(/could not be broadcast/.test(m)) return '두 배열의 모양(행×열)이 맞지 않아 계산할 수 없어요. reshape 결과의 모양을 확인하세요.';
+  if(/All arrays must be of the same length/.test(m)) return '딕셔너리 각 열의 값 개수가 서로 달라요. 모두 5개인지 세어 보세요.';
+  if(t==='IndexError') return '없는 칸 번호를 썼어요. 칸 번호는 0부터 시작해요.';
   if(t==='TypeError') return '함수에 넣은 값의 종류나 개수가 맞지 않아요. 괄호 안 순서와 <code>이름=값</code>을 확인하세요.';
   if(t==='ValueError') return '값이 맞지 않아요. 개수와 모양을 확인하세요.';
-  return '오류가 났어요. 표시된 줄을 확인하거나 코치에게 물어보세요.';
+  return '오류가 났어요. 표시된 줄의 철자, 괄호, 따옴표, 쉼표를 확인하세요.';
 }
 
 /* ===== 유틸 ===== */
@@ -1424,8 +1476,17 @@ let PROFS={list:[]},PID=null,S=fresh();
 try{PROFS=JSON.parse(localStorage.getItem(PKEY)||'null')||{list:[]}}catch(e){}
 const savePro=()=>{try{localStorage.setItem(PKEY,JSON.stringify(PROFS))}catch(e){}};
 // 예전(프로필 없던 때) 기록을 첫 프로필로 옮기기
-try{const old=localStorage.getItem('pyexam-v2');if(old&&!PROFS.list.length){PROFS.list.push({id:'p0',name:'내 기록'});localStorage.setItem('pyexam-v2:p0',old);savePro()}}catch(e){}
-const save=()=>{if(!PID)return;S.posKey=FLAT[S.pos]&&FLAT[S.pos].key;try{localStorage.setItem('pyexam-v2:'+PID,JSON.stringify(S))}catch(e){}};
+try{const old=localStorage.getItem('pyexam-v2');if(old&&!PROFS.list.length&&!PROFS.migrated){PROFS.list.push({id:'p0',name:'내 기록'});localStorage.setItem('pyexam-v2:p0',old);PROFS.migrated=true;savePro()}}catch(e){}
+const TAB=Math.random().toString(36).slice(2);
+const OWN=id=>'pyexam-owner:'+id;
+let SAVE_OK=true,STALE=false;
+function staleLock(){if(STALE)return;STALE=true;PID=null;document.body.insertAdjacentHTML('beforeend','<div class="pf-overlay"><div class="pf-box"><h1>다른 탭에서 이 프로필을 열었어요</h1><p>진도가 섞이지 않도록 이 탭은 멈췄어요. 기록은 그 탭에 안전하게 저장되고 있어요. 이 탭은 닫아 주세요.</p></div></div>')}
+const save=()=>{if(!PID||STALE)return;S.posKey=FLAT[S.pos]&&FLAT[S.pos].key;try{
+  const o=localStorage.getItem(OWN(PID));if(o&&o!==TAB){staleLock();return}
+  localStorage.setItem('pyexam-v2:'+PID,JSON.stringify(S));SAVE_OK=true}catch(e){if(SAVE_OK)toast('⚠️ <b>이 브라우저에 기록이 저장되지 않고 있어요.</b> 시크릿 창이거나 저장이 막혀 있어요.');SAVE_OK=false}};
+addEventListener('storage',e=>{if(PID&&e.key===OWN(PID)&&e.newValue&&e.newValue!==TAB)staleLock()});
+addEventListener('pagehide',()=>save());
+document.addEventListener('visibilitychange',()=>{if(document.hidden)save()});
 const loadState=id=>{let x=fresh();try{const v=JSON.parse(localStorage.getItem('pyexam-v2:'+id)||'null');if(v)x=Object.assign(x,v)}catch(e){}return x};
 
 /* 평면 단계 목록 */
@@ -1436,16 +1497,21 @@ const OLDKEYS=[];  // 타자 단계가 있던 시절의 순서 (예전 위치 �
 CHAPTERS.forEach((c,ci)=>c.steps.forEach((s,si)=>{OLDKEYS.push(c.id+'-'+si);if(!HIDE(s))FLAT.push({ci,si,key:c.id+'-'+si,raw:s})}));
 CHAPTERS.forEach((c,ci)=>{c.vis=FLAT.filter(f=>f.ci===ci)});
 // 저장된 위치를 키 기준으로 복원 (posKey 없으면 예전 번호 → 키로 변환)
-function fixPos(x){let k=x.posKey;if(!k||FLAT.findIndex(f=>f.key===k)<0){k=OLDKEYS[x.pos]||OLDKEYS[0]}
+function fixPos(x){let k=x.posKey;if(!k||OLDKEYS.indexOf(k)<0){k=OLDKEYS[x.pos]||OLDKEYS[0]}
   let i=FLAT.findIndex(f=>f.key===k);if(i<0){const oi=OLDKEYS.indexOf(k);for(let j=oi+1;j<OLDKEYS.length&&i<0;j++)i=FLAT.findIndex(f=>f.key===OLDKEYS[j])}
+  if(i<0)i=Math.min(x.pos||0,FLAT.length-1);
   x.pos=Math.max(0,i);x.posKey=FLAT[x.pos].key;return x}
-const GEN={};
-function stepAt(i){const f=FLAT[i];if(f.raw.t==='gen'){if(!GEN[f.key])GEN[f.key]=genStep(f.raw.kind);return GEN[f.key]}return f.raw}
+const GEN={};  // 프로필 없을 때만 쓰는 임시 저장
+function stepAt(i){const f=FLAT[i];if(f.raw.t!=='gen')return f.raw;
+  const box=PID?(S.gen=S.gen||{}):GEN;
+  if(!box[f.key]||box[f.key].kind!==f.raw.kind){box[f.key]=Object.assign(genStep(f.raw.kind),{kind:f.raw.kind});if(PID)save()}
+  return box[f.key]}
 if(S.pos>=FLAT.length)S.pos=0;
 
 /* ===== 타이머 ===== */
 let tickLast=Date.now();
-setInterval(()=>{const n=Date.now();if(PID&&!document.hidden)S.elapsed+=Math.min(n-tickLast,5000);tickLast=n;renderTimer();if(n%10000<1000)save()},1000);
+let lastSave=0;
+setInterval(()=>{const n=Date.now();if(PID&&!STALE&&!document.hidden)S.elapsed+=Math.min(n-tickLast,5000);tickLast=n;renderTimer();if(n-lastSave>=10000){lastSave=n;save()}},1000);
 function fmt(ms){const s=Math.floor(ms/1000);return Math.floor(s/3600)+':'+String(Math.floor(s/60)%60).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
 function renderTimer(){const t=$('#timer');if(!t)return;t.innerHTML=`<b>${fmt(S.elapsed)}</b><span>/ 3:00:00</span>`;const p=Math.min(1,S.elapsed/(180*60000));t.style.setProperty('--p',p)}
 function setPyPill(msg){const p=$('#pypill');if(!p)return;p.className='pypill '+pyState;p.textContent=pyState==='ready'?'파이썬 준비 완료':pyState==='error'?'파이썬 로딩 실패 · 새로고침':'파이썬 불러오는 중…';if(msg)p.title=msg}
@@ -1474,11 +1540,15 @@ document.addEventListener('click',e=>{
 });
 let SCR=false;
 function go(i){if(i<0||i>=FLAT.length)return;SCR=false;S.pos=i;save();render();window.scrollTo(0,0)}
-function markDone(k){S.done[k]=true;save();renderNav();if(FLAT[S.pos].key===k)$('#next').classList.add('pulse')}
+function markDone(k){if(!PID)return;S.done[k]=true;save();renderNav();if(FLAT[S.pos].key===k)$('#next').classList.add('pulse')}
 
 /* ===== 편집기 ===== */
 let ED=null, LAST={out:'',err:null};
 function makeEditor(host,code,opts={}){
+  if(!window.CodeMirror){const ta=document.createElement('textarea');ta.className='fallback-ed';ta.spellcheck=false;ta.value=code;host.appendChild(ta);
+    ta.oninput=()=>opts.onChange&&opts.onChange(ta.value);
+    ta.onkeydown=e=>{if(e.key==='Tab'){e.preventDefault();document.execCommand('insertText',false,'    ')}if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();opts.onRun&&opts.onRun()}};
+    return {getValue:()=>ta.value,setValue:v=>{ta.value=v;opts.onChange&&opts.onChange(v)},focus:()=>ta.focus(),refresh(){},addLineClass(){},removeLineClass(){},lineCount:()=>ta.value.split('\n').length}}
   const cm=CodeMirror(host,{value:code,mode:'python',theme:'pitch',lineNumbers:true,indentUnit:4,tabSize:4,matchBrackets:true,lineWrapping:false,viewportMargin:Infinity,
     extraKeys:{'Tab':c=>c.somethingSelected()?c.indentSelection('add'):c.replaceSelection('    '),'Ctrl-Enter':()=>opts.onRun&&opts.onRun(),'Cmd-Enter':()=>opts.onRun&&opts.onRun()}});
   if(opts.onChange)cm.on('change',()=>opts.onChange(cm.getValue()));
@@ -1504,11 +1574,11 @@ function showResult(r){
   if(!r.out&&!r.err&&!r.figs.length&&!r.noshow.length) html='<span class="dim">출력이 없어요. 결과를 보려면 print( )를 써야 해요 (Thonny는 자동으로 안 보여줘요).</span>';
   pre.innerHTML=html;pre.classList.remove('empty');
   let f='';
-  if(r.err) f+=`<div class="explain"><b>코치 해설</b> ${r.err.line?`<span class="ln">${r.err.line}번째 줄: <code>${esc((r.err.text||'').trim())}</code></span>`:''}<p>${explain(r.err)}</p><button class="ghost sm ask-err">AI 코치에게 물어보기</button></div>`;
+  if(r.err) f+=`<div class="explain"><b>${NOCOACH?'오류 해설':'코치 해설'}</b> ${r.err.line?`<span class="ln">${r.err.line}번째 줄: <code>${esc((r.err.text||'').trim())}</code></span>`:''}<p>${explain(r.err)}</p><button class="ghost sm ask-err">AI 코치에게 물어보기</button></div>`;
   r.figs.forEach(g=>f+=`<img class="fig" src="data:image/png;base64,${g.img}" alt="실행한 그래프">`);
-  if(r.noshow.length){f+=`<div class="warnbox"><b>plt.show()가 없어요.</b> Thonny에서는 그래프 창이 안 떠요. 참고로 그려질 그래프는 아래와 같아요.</div>`;r.noshow.forEach(g=>f+=`<img class="fig dimmed" src="data:image/png;base64,${g.img}" alt="표시되지 않은 그래프">`)}
+  if(r.noshow.length&&!r.err){f+=`<div class="warnbox"><b>plt.show()가 없어요.</b> Thonny에서는 그래프 창이 안 떠요. 참고로 그려질 그래프는 아래와 같아요.</div>`;r.noshow.forEach(g=>f+=`<img class="fig dimmed" src="data:image/png;base64,${g.img}" alt="표시되지 않은 그래프">`)}
   figs.innerHTML=f;
-  if(ED&&r.err&&r.err.line){const ln=r.err.line-1;ED.addLineClass(ln,'background','cm-errline');setTimeout(()=>ED&&ED.removeLineClass(ln,'background','cm-errline'),4000)}
+  if(ED&&r.err&&r.err.line&&r.err.line<=ED.lineCount()){const ln=r.err.line-1;ED.addLineClass(ln,'background','cm-errline');setTimeout(()=>ED&&ED.removeLineClass(ln,'background','cm-errline'),4000)}
   const a=$('.ask-err');if(a)a.onclick=()=>coachAsk('이 오류가 왜 났는지 설명해 주고, 어떻게 고치면 되는지 힌트를 줘.');
 }
 async function doRun(code,stdin){
@@ -1521,7 +1591,7 @@ async function doRun(code,stdin){
 /* ===== 채점 ===== */
 const norm=s=>s.replace(/\r/g,'').split('\n').map(l=>l.replace(/\s+$/,'')).join('\n').replace(/\n+$/,'');
 const MK={'o':'원','*':'별','s':'사각형','D':'다이아몬드','^':'삼각형','.':'점','x':'엑스','None':'없음','':'없음'};
-const LSN={'-':'실선','--':'파선','-.':'일점쇄선',':':'점선','None':'선 없음'};
+const LSN={'-':"'-'",'--':"'--'",'-.':"'-.'",':':"':'",'None':'선 없음'};
 const CN={'#ff0000':'빨강 r','#008000':'초록 g','#0000ff':'파랑 b','#00bfbf':'시안 c','#bf00bf':'마젠타 m','#bfbf00':'노랑 y','#000000':'검정 k','#1f77b4':'기본 파랑(색 지정 안 함)'};
 const nx=v=>{const n=Number(v);return isFinite(n)&&v!==''?String(n):v};
 function comparePlots(u,r){
@@ -1530,9 +1600,9 @@ function comparePlots(u,r){
   const uf=u.figs[0],rf=r.figs[0];const ua=uf.axes[0]||{lines:[]},ra=rf.axes[0]||{lines:[]};
   if(ua.lines.length!==ra.lines.length)probs.push(`선(plot)의 개수가 달라요: 목표 ${ra.lines.length}개, 내 그래프 ${ua.lines.length}개`);
   ra.lines.forEach((rl,i)=>{const ul=ua.lines[i];if(!ul)return;
-    if(ul.marker!==rl.marker)probs.push(`마커가 달라요: 목표 <code>'${rl.marker}'</code>(${MK[rl.marker]||''}), 내 코드 <code>'${ul.marker}'</code>(${MK[ul.marker]||''})`);
-    if(ul.color!==rl.color)probs.push(`색이 달라요: 목표 ${CN[rl.color]||rl.color}, 내 코드 ${CN[ul.color]||ul.color}`);
-    if(ul.ls!==rl.ls)probs.push(`선 종류가 달라요: 목표 ${LSN[rl.ls]||rl.ls} <code>'${rl.ls}'</code>, 내 코드 ${LSN[ul.ls]||ul.ls}`);
+    if(ul.marker!==rl.marker)probs.push(`마커가 달라요: 목표 <code>'${esc(rl.marker)}'</code>(${MK[rl.marker]||''}), 내 코드 <code>'${esc(ul.marker)}'</code>(${MK[ul.marker]||''})`);
+    if(ul.color!==rl.color)probs.push(`색이 달라요: 목표 ${CN[rl.color]||rl.color}, 내 코드 ${CN[ul.color]||ul.color}${/^#ff00ff|^#00ffff|^#ffff00/.test(ul.color)?' (<code>\'magenta\'</code> 같은 이름 말고 한 글자 <code>\'m\'</code>, <code>\'c\'</code>, <code>\'y\'</code>로 쓰세요)':''}`);
+    if(ul.ls!==rl.ls)probs.push(`선 종류가 달라요: 목표 <code>${LSN[rl.ls]||esc(rl.ls)}</code>, 내 코드 <code>${LSN[ul.ls]||esc(ul.ls)}</code>`);
     if(ul.label!==rl.label)probs.push(`label이 달라요: 목표 <code>'${esc(rl.label)}'</code>, 내 코드 <code>'${esc(ul.label)}'</code>`);
     if(ul.x.map(nx).join('|')!==rl.x.map(nx).join('|'))probs.push(`x 데이터가 달라요: 목표 [${rl.x.map(nx).join(', ')}]`);
     if(ul.y.map(nx).join('|')!==rl.y.map(nx).join('|'))probs.push(`y 데이터가 달라요: 목표 [${rl.y.map(nx).join(', ')}]`);
@@ -1548,7 +1618,7 @@ function comparePlots(u,r){
 const FAILS={};
 /* 오프라인 힌트: 내 코드와 기준 코드에서 처음 달라진 줄 찾기 (주석·띄어쓰기 무시) */
 function lineDiff(mine,ref,label){
-  const clean=t=>t.split('\n').map(l=>({raw:l.trim(),k:l.replace(/\s+#.*$|^\s*#.*$/,'').replace(/\s+/g,'')})).filter(x=>x.k);
+  const clean=t=>t.split('\n').map(l=>({raw:l.trim(),k:l.replace(/\s+#.*$|^\s*#.*$/,'').replace(/\s+/g,'').replace(/"/g,"'")})).filter(x=>x.k);
   const a=clean(mine),b=clean(ref);
   for(let i=0;i<b.length;i++){
     if(!a[i]) return `<b>${i+1}번째 줄</b>부터 빠졌어요. ${label}의 다음 줄을 이어서 쓰세요.<div class="diff"><div><span>${label}</span><pre>${esc(b[i].raw.replace(/\s+#.*$/,''))}</pre></div><div><span>내 코드</span><pre>(없음)</pre></div></div>`;
@@ -1562,24 +1632,41 @@ function lineDiff(mine,ref,label){
   return '';
 }
 function isSubseq(exp,got){const e=exp.split('\n'),g=got.split('\n');let j=0;for(const l of g){if(j<e.length&&l===e[j])j++}return j===e.length}
+const sq=x=>x.split('\n').map(l=>l.replace(/\s+/g,'')).filter(l=>l).join('\n');
+// 학생 출력 정리: 배열 a를 먼저 출력한 줄 빼기, '이름표 [...]' 같은 이름표 떼기 (넘파이 문제)
+async function cleanOut(step,txt){
+  let lines=sq(txt).split('\n');
+  if(step.ignore){const ig=await runPy(step.ignore,'');const blk=sq(ig.gout||ig.out).split('\n');
+    // 배열 a를 출력한 연속된 줄 덩어리만 빼기
+    for(let i=0;i+blk.length<=lines.length;i++){if(blk.every((b,k)=>lines[i+k]===b)){lines.splice(i,blk.length);break}}}
+  if(step.ignore) lines=lines.map(l=>/\[/.test(l)?l.replace(/^[^\[\d\-]+(?=\[)/,''):l.replace(/^[^\dTF\-\[]+(?=(True|False)$)/,''));
+  return lines.join('\n');
+}
+async function sameOut(step,uo,ro){const a=await cleanOut(step,uo),b=sq(ro);return step.lenient?isSubseq(b,a):a===b}
 async function doCheck(step,key,code,stdin){
+  const pid=PID;
   const v=$('#verdict');v.hidden=false;v.className='verdict wait';v.innerHTML='채점 중…';
-  const [u,r]=await Promise.all([doRun(code,stdin),runRef(step)]);
-  if(!u){v.hidden=true;return}
+  let u,r;
+  try{[u,r]=await Promise.all([doRun(code,stdin),runRef(step)])}catch(e){v.hidden=true;toast('파이썬을 불러오지 못했어요. 새로고침해 주세요.');return}
+  if(!u||PID!==pid){v.hidden=true;return}
   let probs=[];
-  if(u.err) probs.push('오류가 나서 끝까지 실행되지 않았어요. 아래 <b>코치 해설</b>을 보세요.');
+  if(u.err) probs.push(`오류가 나서 끝까지 실행되지 않았어요. 아래 <b>${NOCOACH?'오류 해설':'코치 해설'}</b>을 보세요.`);
   else if(step.check==='plot') probs=comparePlots(u,r);
   else{
-    const a=norm(u.out),b=norm(r.out);
-    const sq=x=>x.split('\n').map(l=>l.replace(/\s+/g,'')).filter(l=>l).join('\n');
-    const ok=step.lenient?isSubseq(sq(b),sq(a)):sq(a)===sq(b);
-    if(!ok){
+    const uo=u.gout!=null?u.gout:u.out, ro=r.gout!=null?r.gout:r.out;
+    let ok=await sameOut(step,uo,ro);
+    if(!ok&&step.alt){for(const alt of step.alt){const ar=await runPy(alt,step.inputs||'');if(await sameOut(step,uo,ar.gout!=null?ar.gout:ar.out)){ok=true;break}}}
+    if(ok&&step.inputs2){const u2=await runPy(code,step.inputs2),r2=await runPy(step.ref,step.inputs2);
+      if(u2.err||!(await sameOut(step,u2.gout,r2.gout))){ok=false;probs.push(`다른 입력값(<code>${esc(step.inputs2).replace(/\n/g,', ')}</code>)으로도 확인했는데 결과가 달라요. 결과를 직접 print하지 말고 모델로 예측하게 쓰세요.`)}}
+    const a=norm(uo),b=norm(ro);
+    if(!ok&&!probs.length){
       if(!a) probs.push('출력이 없어요. <code>print( )</code>로 결과를 출력하세요.');
       else{const al=a.split('\n').filter(l=>l.trim()),bl=b.split('\n').filter(l=>l.trim());const z=l=>(l||'').replace(/\s+/g,'');let i=0;while(i<Math.max(al.length,bl.length)&&z(al[i])===z(bl[i]))i++;
         probs.push(`출력이 목표와 달라요. <b>${i+1}번째 줄</b>부터 달라요.<div class="diff"><div><span>목표</span><pre>${esc(bl[i]??'(없음)')}</pre></div><div><span>내 출력</span><pre>${esc(al[i]??'(없음)')}</pre></div></div>`)}
     }
   }
-  (step.must||[]).forEach(([re,msg])=>{if(!new RegExp(re).test(code))probs.push(msg)});
+  const codeNC=code.split('\n').map(l=>l.replace(/(^|\s)#.*$/,'')).join('\n');
+  (step.must||[]).forEach(([re,msg])=>{if(!new RegExp(re).test(codeNC))probs.push(msg)});
   if(!probs.length){v.className='verdict pass';v.innerHTML='<b>통과!</b> 목표와 똑같아요. 아래 <b>다음 →</b>을 누르세요.';markDone(key);const ms=$('#mission');if(ms){ms.classList.add('done');ms.querySelector('.ms-h').innerHTML='<span class="ms-tag">할 일</span><span class="ms-ok">✓ 통과함</span>'}}
   else{const F=(FAILS[key]=(FAILS[key]||0)+1);let hint='';
     if(step.t==='learn'){const dd=lineDiff(code,step.code,'예제');if(dd)hint=`<div class="autohint"><b>힌트</b> ${dd}</div>`}
@@ -1599,7 +1686,7 @@ function render(){
     main.className='main t-scratch';
     main.innerHTML=`<section class="lesson-col"><div class="eyebrow">FREE <span>빈 연습장</span></div><h1>빈 연습장</h1><div class="lesson">
      <p>아무것도 없는 빈 칸이에요. 시험지에 쓰듯이 <b>처음부터 끝까지 직접</b> 써보세요.</p>
-     <ul><li>쓴 코드는 자동 저장돼요. 다른 단계에 갔다 와도 그대로 있어요.</li><li><b>▶ 실행</b>(<kbd>Ctrl</kbd>+<kbd>Enter</kbd>)으로 Thonny처럼 실행돼요.</li><li>막히면 <b>AI 코치에게 질문</b>을 누르면 이 코드를 보고 도와줘요.</li></ul>
+     <ul><li>쓴 코드는 자동 저장돼요. 다른 단계에 갔다 와도 그대로 있어요.</li><li><b>▶ 실행</b>(<kbd>Ctrl</kbd>+<kbd>Enter</kbd>)으로 Thonny처럼 실행돼요.</li><li class="coach-only">막히면 <b>AI 코치에게 질문</b>을 누르면 이 코드를 보고 도와줘요.</li></ul>
      <div class="tip">추천 연습: 판다스 데이터프레임 만들기 → 시험 그래프 → 점수 예측을 아무것도 안 보고 이어서 써보기</div>
      <p class="dim">돌아가려면 아래 <b>빈 연습장</b> 버튼을 다시 누르거나 <b>다음 →</b>/<b>← 이전</b>을 누르세요.</p></div></section>
      <section class="ws-col">${workspaceHTML({title:'빈 연습장',showInputs:true})}</section>`;
@@ -1612,7 +1699,9 @@ function render(){
   if(step.t==='intro'||step.t==='finish'){
     main.innerHTML=`<section class="solo intro">${eyebrow}<h1>${step.title}</h1>${step.body}</section>`;
     if(step.t==='intro') markDone(key);
-    if(step.t==='finish'){markDone(key);const d=FLAT.filter(f=>S.done[f.key]).length;main.querySelector('.solo').insertAdjacentHTML('beforeend',`<p class="dim">완료한 단계: ${d} / ${FLAT.length} · 학습 시간 ${fmt(S.elapsed)}</p><button class="ghost" id="restart">처음부터 다시 하기 (기록 지우기)</button>`);$('#restart').onclick=()=>{S={pos:0,done:{},codes:{},elapsed:0};save();render()}}
+    if(step.t==='finish'){markDone(key);const d=FLAT.filter(f=>S.done[f.key]).length;main.querySelector('.solo').insertAdjacentHTML('beforeend',`<p class="dim">완료한 단계: ${d} / ${FLAT.length} · 학습 시간 ${fmt(S.elapsed)}</p><div class="runrow"><button class="ghost" id="gofirst">처음 단계로 가기 (기록 유지)</button><button class="ghost" id="restart">기록 지우고 처음부터</button></div>`);$('#gofirst').onclick=()=>go(0);
+      const rb=$('#restart');rb.onclick=()=>{if(!rb.classList.contains('arm')){rb.classList.add('arm');rb.textContent='정말 전부 지울까요? 한 번 더 누르면 지워져요';setTimeout(()=>{rb.classList.remove('arm');rb.textContent='기록 지우고 처음부터'},4000);return}
+        try{localStorage.setItem('pyexam-backup:'+PID,JSON.stringify(S))}catch(e){}S=fresh();save();render()}}
     return;
   }
   if(step.t==='learn'&&!step.code){main.innerHTML=`<section class="solo">${eyebrow}<h1>${step.title}</h1><div class="lesson">${step.body}</div></section>`;markDone(key);return}
@@ -1628,7 +1717,7 @@ function render(){
   const isPlot=G.check==='plot';
   const todo=isCode
     ? `왼쪽 문제를 읽고, 아래 빈 칸에 코드를 직접 써서 <b>▶ 실행</b>하세요. 실행 결과가 아래 <b>목표 ${isPlot?'그래프':'출력'}</b>와 똑같으면 통과예요.${step.starter?' (데이터프레임 만드는 코드는 미리 넣어 뒀어요. 그 아래에 이어서 쓰세요.)':''}`
-    : `왼쪽 <b>예제 코드</b>를 아래 빈 칸에 <b>한 글자도 빠짐없이 똑같이</b> 입력하고 <b>▶ 실행</b>하세요. 결과가 아래 <b>목표 ${isPlot?'그래프':'출력'}</b>와 똑같으면 통과예요. <span class="dim"># 뒤의 설명(주석)은 안 써도 돼요.</span>`;
+    : `왼쪽 <b>예제 코드</b>를 아래 빈 칸에 똑같이 입력하고 <b>▶ 실행</b>하세요. 결과가 아래 <b>목표 ${isPlot?'그래프':'출력'}</b>와 같으면 통과예요.${step.starter?' <b>데이터 만드는 코드는 미리 넣어 뒀어요.</b> 그 아래 새 줄만 치면 돼요.':''} <span class="dim"># 뒤의 설명(주석)은 안 써도 돼요.</span>`;
   main.innerHTML=`<section class="lesson-col">${eyebrow}<h1>${step.title} ${regen}</h1><div class="lesson">${step.body||''}</div>${example}
    ${step.blank?'<div class="blanknote">백지 테스트: 먼저 <b>종이에 손으로</b> 써 본 다음 입력하면 시험 연습 효과가 가장 커요.</div>':''}
    ${isCode?'<div class="hints" id="hints"></div>':''}
@@ -1636,16 +1725,16 @@ function render(){
    <div class="mission ${S.done[key]?'done':''}" id="mission"><div class="ms-h"><span class="ms-tag">할 일</span>${S.done[key]?'<span class="ms-ok">✓ 통과함</span>':'<span class="ms-lock">통과하면 다음으로 넘어갈 수 있어요</span>'}</div>
     <p>${todo}</p>${G.inputs?`<p class="dim">입력값 칸에 <code>${esc(G.inputs).replace(/\n/g,'</code>, <code>')}</code> 이(가) 들어가 있어요. 그대로 두세요.</p>`:''}
     <div class="target" id="target"><div class="tg-h">목표 ${isPlot?'그래프':'출력'}</div><div class="tg-b"><span class="dim">목표 결과 만드는 중…</span></div></div></div>
-   ${workspaceHTML({title:'내 코드',reset:isCode&&!!step.starter,showInputs:!!G.inputs||/input\(/.test(G.ref||'')})}</section>`;
+   ${workspaceHTML({title:'내 코드',reset:!!step.starter,showInputs:!!G.inputs||/input\(/.test(G.ref||'')})}</section>`;
   const ck=isCode?key:'w:'+key;
-  const init=S.codes[ck]!=null?S.codes[ck]:(isCode?(step.starter||''):'');
+  const init=S.codes[ck]!=null?S.codes[ck]:(step.starter||'');
   if(G.inputs)$('#stdin').value=G.inputs;
   const grade=()=>doCheck(G,key,ED.getValue(),$('#stdin').value);
   ED=makeEditor($('#ed'),init,{onRun:grade,onChange:v=>{S.codes[ck]=v;save();$('#inpwrap').hidden=!(G.inputs||/input\(/.test(v))}});
   $('#run').onclick=grade;
   $('#clear').onclick=()=>{ED.setValue('');ED.focus()};
   if($('#reset'))$('#reset').onclick=()=>{ED.setValue(step.starter||'');delete S.codes[ck];save()};
-  if(regen)$('#regen').onclick=()=>{delete GEN[key];delete S.codes[key];delete S.done[key];save();render()};
+  if(regen)$('#regen').onclick=()=>{delete GEN[key];if(S.gen)delete S.gen[key];delete S.codes[key];save();render();toast('새 변형 문제예요. 통과 기록은 그대로 있어요.')};
   if(isCode){
     let hi=0;const H=$('#hints');
     const drawHints=()=>{H.innerHTML=step.hints.slice(0,hi).map((h,i)=>`<div class="hint"><span>힌트 ${i+1}</span><code>${esc(h)}</code></div>`).join('')+
@@ -1755,6 +1844,7 @@ const COACH_RULES=`너는 한국 고등학교 2학년 '소프트웨어와 생활
 - 학생은 파이썬 기초만 알고 넘파이·판다스·맷플롯립은 이번에 처음 배운다.
 - 실제 시험은 종이에 손으로 코드를 쓰는 방식이고, 학교 실습 환경은 Thonny다(구글 코랩 아님: 결과는 print()로, 그래프는 plt.show()로 봐야 한다).
 - 시험 범위: 넘파이(2차원 배열·합계/중앙값/평균/최댓값/최솟값/분산/표준편차/any/all/where, arange, reshape, 배열 연산), 판다스(시리즈·데이터프레임 생성, 열/행 추출, loc, 열·행 추가, insert, 값 변경, rename, T, drop, set_index·inplace), 맷플롯립(plot의 marker·color·linestyle·label, xlabel, ylabel, legend, show), 스마트폰 시간-점수 그래프(figure, title, 'bo'), LinearRegression 예측과 기계학습 과정 설명, LogisticRegression 포도 분류. 문제는 숫자·이름·조건이 살짝 바뀌어 나올 수 있다.
+- 선 종류는 기호('-', '--', ':', '-.')로 말한다. 교과서는 '--'를 '점선'이라고 부른다. 시리즈로 데이터프레임 만들기는 교과서처럼 행마다 Series를 만들어 리스트로 넣는다. drop은 axis(행 0, 열 1)와 inplace=True, 전치는 transpose(), rename은 inplace=True 방식도 인정한다.
 - axis는 학교 교과서 기준을 따른다: '행끼리/행별/행의 원소 합계' = axis=0, '열끼리/열별' = axis=1. 넘파이 함수는 교과서처럼 np.sum(a, axis=0) 형식을 우선한다.
 - 한국어로, 친근한 존댓말로, 짧게(보통 3~8줄) 답한다. 핵심부터 말한다.
 - 학생이 정답을 달라고 하기 전에는 전체 정답 코드를 주지 말고, 틀린 부분을 짚어주고 고칠 방향과 작은 코드 조각만 준다.
@@ -1802,7 +1892,7 @@ $('#coach-stop').onclick=()=>coachCtl&&coachCtl.abort();
 /* ===== 프로필 ===== */
 function showProfiles(){
   save();const o=$('#profiles');o.hidden=false;
-  const cards=PROFS.list.map(p=>{const st=loadState(p.id);const n=FLAT.filter(f=>st.done[f.key]).length;const pct=Math.round(n/FLAT.length*100);
+  const cards=[...PROFS.list].sort((a,b)=>(b.id===PROFS.last)-(a.id===PROFS.last)).map(p=>{const st=loadState(p.id);const n=FLAT.filter(f=>st.done[f.key]).length;const pct=Math.round(n/FLAT.length*100);
     return `<div class="pf-card ${p.id===PID?'cur':''}"><button class="pf-pick" data-id="${p.id}"><b>${esc(p.name)}</b><span class="pf-bar" style="--p:${pct/100}"></span><span class="pf-meta">진도 ${pct}% · 학습 ${fmt(st.elapsed)}</span></button><button class="pf-del ghost sm" data-id="${p.id}">삭제</button></div>`}).join('');
   o.innerHTML=`<div class="pf-box"><div class="eyebrow">PROFILE <span>프로필</span></div><h1>누가 공부하나요?</h1>
    <p class="dim">프로필마다 진도, 내가 쓴 코드, 학습 시간이 따로 저장돼요. 기록은 이 컴퓨터의 이 브라우저에만 저장돼요.</p>
@@ -1816,13 +1906,13 @@ function showProfiles(){
     if(id===PID){PID=null;S=fresh()}showProfiles()});
   $('#pfnew').onsubmit=e=>{e.preventDefault();const nm=$('#pfname').value.trim();if(!nm){$('#pfname').focus();return}
     const btn=$('#pfnew button');if(btn.disabled)return;btn.disabled=true;
-    const same=PROFS.list.find(p=>p.name===nm);if(same)return useProfile(same.id);
+    const nk=x=>x.replace(/\s+/g,'').toLowerCase();const same=PROFS.list.find(p=>nk(p.name)===nk(nm));if(same)return useProfile(same.id);
     const id='p'+Date.now().toString(36);PROFS.list.push({id,name:nm});savePro();useProfile(id)};
   const c=$('#pfclose');if(c)c.onclick=()=>{o.hidden=true};
   setTimeout(()=>{const i=$('#pfname');if(i&&!PROFS.list.length)i.focus()},0);
 }
 function useProfile(id){
-  save();PID=id;S=fixPos(loadState(id));PROFS.last=id;savePro();
+  save();STALE=false;PID=id;S=fixPos(loadState(id));try{localStorage.setItem(OWN(id),TAB)}catch(e){}PROFS.last=id;savePro();
   const p=PROFS.list.find(x=>x.id===id);$('#who').innerHTML=`<span>👤</span> ${esc(p?p.name:'')}`;
   $('#profiles').hidden=true;SCR=false;tickLast=Date.now();coachTurns=[];render();renderTimer();
 }
@@ -1834,8 +1924,9 @@ $('#next').onclick=()=>{if(SCR)return go(S.pos);
   if(!S.done[FLAT[S.pos].key]){toast('🔒 <b>이 단계를 통과해야 넘어갈 수 있어요.</b> 오른쪽 위 <b>할 일</b>을 확인하세요.');const m=$('.mission');if(m){m.classList.remove('shake');void m.offsetWidth;m.classList.add('shake')}return}
   if(S.pos<FLAT.length-1)go(S.pos+1)};
 $('#scratch-btn').onclick=()=>{SCR=!SCR;render()};
-$('#timer-reset').onclick=()=>{S.elapsed=0;tickLast=Date.now();save();renderTimer()};
-document.addEventListener('keydown',e=>{if(e.altKey&&e.key==='ArrowRight'){e.preventDefault();$('#next').click()}if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();$('#prev').click()}});
+$('#timer-reset').onclick=()=>{const b=$('#timer-reset');if(!b.classList.contains('arm')){b.classList.add('arm');b.textContent='한 번 더 누르면 0으로';setTimeout(()=>{b.classList.remove('arm');b.textContent='↺ 타이머 초기화'},3000);return}
+  b.classList.remove('arm');b.textContent='↺ 타이머 초기화';S.elapsed=0;tickLast=Date.now();save();renderTimer()};
+document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input,textarea,.CodeMirror'))return;if(e.altKey&&e.key==='ArrowRight'){e.preventDefault();$('#next').click()}if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();$('#prev').click()}});
 setPyPill();renderTimer();render();updateCoachAvail();showProfiles();
 
 /* 자체 점검: 모든 정답 코드가 오류 없이 도는지 (개발용) */
