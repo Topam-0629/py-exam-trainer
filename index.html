@@ -1,0 +1,1806 @@
+<title>PY 수행평가 트레이닝</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+.CodeMirror{font-family:monospace;height:300px;color:#000;direction:ltr}.CodeMirror-lines{padding:4px 0}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{padding:0 4px}.CodeMirror-gutter-filler,.CodeMirror-scrollbar-filler{background-color:#fff}.CodeMirror-gutters{border-right:1px solid #ddd;background-color:#f7f7f7;white-space:nowrap}.CodeMirror-linenumber{padding:0 3px 0 5px;min-width:20px;text-align:right;color:#999;white-space:nowrap}.CodeMirror-guttermarker{color:#000}.CodeMirror-guttermarker-subtle{color:#999}.CodeMirror-cursor{border-left:1px solid #000;border-right:none;width:0}.CodeMirror div.CodeMirror-secondarycursor{border-left:1px solid silver}.cm-fat-cursor .CodeMirror-cursor{width:auto;border:0!important;background:#7e7}.cm-fat-cursor div.CodeMirror-cursors{z-index:1}.cm-fat-cursor .CodeMirror-line::selection,.cm-fat-cursor .CodeMirror-line>span::selection,.cm-fat-cursor .CodeMirror-line>span>span::selection{background:0 0}.cm-fat-cursor .CodeMirror-line::-moz-selection,.cm-fat-cursor .CodeMirror-line>span::-moz-selection,.cm-fat-cursor .CodeMirror-line>span>span::-moz-selection{background:0 0}.cm-fat-cursor{caret-color:transparent}@-moz-keyframes blink{50%{background-color:transparent}}@-webkit-keyframes blink{50%{background-color:transparent}}@keyframes blink{50%{background-color:transparent}}.cm-tab{display:inline-block;text-decoration:inherit}.CodeMirror-rulers{position:absolute;left:0;right:0;top:-50px;bottom:0;overflow:hidden}.CodeMirror-ruler{border-left:1px solid #ccc;top:0;bottom:0;position:absolute}.cm-s-default .cm-header{color:#00f}.cm-s-default .cm-quote{color:#090}.cm-negative{color:#d44}.cm-positive{color:#292}.cm-header,.cm-strong{font-weight:700}.cm-em{font-style:italic}.cm-link{text-decoration:underline}.cm-strikethrough{text-decoration:line-through}.cm-s-default .cm-keyword{color:#708}.cm-s-default .cm-atom{color:#219}.cm-s-default .cm-number{color:#164}.cm-s-default .cm-def{color:#00f}.cm-s-default .cm-variable-2{color:#05a}.cm-s-default .cm-type,.cm-s-default .cm-variable-3{color:#085}.cm-s-default .cm-comment{color:#a50}.cm-s-default .cm-string{color:#a11}.cm-s-default .cm-string-2{color:#f50}.cm-s-default .cm-meta{color:#555}.cm-s-default .cm-qualifier{color:#555}.cm-s-default .cm-builtin{color:#30a}.cm-s-default .cm-bracket{color:#997}.cm-s-default .cm-tag{color:#170}.cm-s-default .cm-attribute{color:#00c}.cm-s-default .cm-hr{color:#999}.cm-s-default .cm-link{color:#00c}.cm-s-default .cm-error{color:red}.cm-invalidchar{color:red}.CodeMirror-composing{border-bottom:2px solid}div.CodeMirror span.CodeMirror-matchingbracket{color:#0b0}div.CodeMirror span.CodeMirror-nonmatchingbracket{color:#a22}.CodeMirror-matchingtag{background:rgba(255,150,0,.3)}.CodeMirror-activeline-background{background:#e8f2ff}.CodeMirror{position:relative;overflow:hidden;background:#fff}.CodeMirror-scroll{overflow:scroll!important;margin-bottom:-50px;margin-right:-50px;padding-bottom:50px;height:100%;outline:0;position:relative;z-index:0}.CodeMirror-sizer{position:relative;border-right:50px solid transparent}.CodeMirror-gutter-filler,.CodeMirror-hscrollbar,.CodeMirror-scrollbar-filler,.CodeMirror-vscrollbar{position:absolute;z-index:6;display:none;outline:0}.CodeMirror-vscrollbar{right:0;top:0;overflow-x:hidden;overflow-y:scroll}.CodeMirror-hscrollbar{bottom:0;left:0;overflow-y:hidden;overflow-x:scroll}.CodeMirror-scrollbar-filler{right:0;bottom:0}.CodeMirror-gutter-filler{left:0;bottom:0}.CodeMirror-gutters{position:absolute;left:0;top:0;min-height:100%;z-index:3}.CodeMirror-gutter{white-space:normal;height:100%;display:inline-block;vertical-align:top;margin-bottom:-50px}.CodeMirror-gutter-wrapper{position:absolute;z-index:4;background:0 0!important;border:none!important}.CodeMirror-gutter-background{position:absolute;top:0;bottom:0;z-index:4}.CodeMirror-gutter-elt{position:absolute;cursor:default;z-index:4}.CodeMirror-gutter-wrapper ::selection{background-color:transparent}.CodeMirror-gutter-wrapper ::-moz-selection{background-color:transparent}.CodeMirror-lines{cursor:text;min-height:1px}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;border-width:0;background:0 0;font-family:inherit;font-size:inherit;margin:0;white-space:pre;word-wrap:normal;line-height:inherit;color:inherit;z-index:2;position:relative;overflow:visible;-webkit-tap-highlight-color:transparent;-webkit-font-variant-ligatures:contextual;font-variant-ligatures:contextual}.CodeMirror-wrap pre.CodeMirror-line,.CodeMirror-wrap pre.CodeMirror-line-like{word-wrap:break-word;white-space:pre-wrap;word-break:normal}.CodeMirror-linebackground{position:absolute;left:0;right:0;top:0;bottom:0;z-index:0}.CodeMirror-linewidget{position:relative;z-index:2;padding:.1px}.CodeMirror-rtl pre{direction:rtl}.CodeMirror-code{outline:0}.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber,.CodeMirror-scroll,.CodeMirror-sizer{-moz-box-sizing:content-box;box-sizing:content-box}.CodeMirror-measure{position:absolute;width:100%;height:0;overflow:hidden;visibility:hidden}.CodeMirror-cursor{position:absolute;pointer-events:none}.CodeMirror-measure pre{position:static}div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:3}div.CodeMirror-dragcursors{visibility:visible}.CodeMirror-focused div.CodeMirror-cursors{visibility:visible}.CodeMirror-selected{background:#d9d9d9}.CodeMirror-focused .CodeMirror-selected{background:#d7d4f0}.CodeMirror-crosshair{cursor:crosshair}.CodeMirror-line::selection,.CodeMirror-line>span::selection,.CodeMirror-line>span>span::selection{background:#d7d4f0}.CodeMirror-line::-moz-selection,.CodeMirror-line>span::-moz-selection,.CodeMirror-line>span>span::-moz-selection{background:#d7d4f0}.cm-searching{background-color:#ffa;background-color:rgba(255,255,0,.4)}.cm-force-border{padding-right:.1px}@media print{.CodeMirror div.CodeMirror-cursors{visibility:hidden}}.cm-tab-wrap-hack:after{content:''}span.CodeMirror-selectedtext{background:0 0}
+/* 레이아웃: 상단 챕터 바 + 좌(설명)/우(코드) 2단 + 하단 이동 바, 오른쪽 코치 서랍. 경기장 야간 조명 같은 블랙 + 네온 그린 */
+:root{
+  --bg:#060807; --panel:#0c110f; --panel2:#111814; --raise:#16201b; --line:#1f2c25; --line2:#2a3a31;
+  --fg:#e9f5ee; --fg2:#b9cdc2; --dim:#7d9488;
+  --accent:#1cf28a; --accent2:#0fbf6a; --accent-ink:#02160b; --glow:rgba(28,242,138,.28);
+  --gold:#ffd34a; --bad:#ff5468; --bad-bg:rgba(255,84,104,.12); --good-bg:rgba(28,242,138,.10);
+  --code:#080c0a;
+  --f-display:"Black Han Sans","Noto Sans KR",system-ui,sans-serif;
+  --f-body:"Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--f-body);margin:0;overflow:hidden;
+  background-image:radial-gradient(1200px 500px at 70% -200px,rgba(28,242,138,.10),transparent 60%),repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.012) 46px 47px)}
+.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;transition:padding-right .25s}
+body.coach-open .app{padding-right:min(420px,40vw)}
+button{font:inherit;color:inherit;cursor:pointer}
+code,kbd,pre{font-family:var(--f-mono)}
+code{background:var(--raise);border:1px solid var(--line);border-radius:4px;padding:.05em .35em;font-size:.88em;color:#c9ffe2}
+kbd{font-size:.75em;border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 .35em;color:var(--fg2)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* 상단 바 */
+.top{display:flex;align-items:center;gap:14px;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0a0f0c,#070a08)}
+.logo{font:24px/1 var(--f-display);letter-spacing:.02em;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo i{font-style:normal;background:var(--accent);color:var(--accent-ink);padding:4px 9px 3px;transform:skewX(-14deg);display:inline-block;box-shadow:0 0 18px var(--glow)}
+.logo i b{display:inline-block;transform:skewX(14deg);font-weight:400}
+.chapters{display:flex;gap:4px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.chap{position:relative;flex:1 1 0;min-width:88px;border:0;background:var(--panel2);padding:7px 14px 8px;transform:skewX(-14deg);text-align:left;overflow:hidden;border-bottom:3px solid var(--line2)}
+.chap>*{display:block;transform:skewX(14deg)}
+.chap::before{content:"";position:absolute;inset:auto 0 -3px 0;height:3px;background:var(--accent);transform-origin:left;transform:scaleX(var(--f,0));transition:transform .4s}
+.chap .cn{font:11px/1 var(--f-mono);color:var(--dim)}
+.chap .ct{font:15px/1.3 var(--f-display);margin-top:3px;white-space:nowrap}
+.chap .cm{font-size:11px;color:var(--dim);line-height:1.2}
+.chap.on{background:var(--accent);color:var(--accent-ink);box-shadow:0 0 22px var(--glow)}
+.chap.on .cn,.chap.on .cm{color:#063a20}
+.chap:hover:not(.on){background:var(--raise)}
+.timer{--p:0;min-width:150px;text-align:left;margin-left:8px;font-family:var(--f-mono);line-height:1.1}
+.timer b{font-size:22px;color:var(--accent)} .timer span{font-size:12px;color:var(--dim);margin-left:4px}
+.timer::after{content:"";display:block;height:3px;margin-top:5px;background:linear-gradient(90deg,var(--accent) calc(var(--p)*100%),var(--line) 0)}
+.pypill{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--line2);color:var(--dim);white-space:nowrap}
+.pypill.ready{color:var(--accent);border-color:rgba(28,242,138,.4)} .pypill.error{color:var(--bad);border-color:var(--bad)}
+.pypill.loading::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:6px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.2}}
+.coachbtn{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:10px 20px;font-size:15px;font-weight:700;transform:skewX(-14deg)}
+.coachbtn span{display:inline-block;transform:skewX(14deg)}
+body.coach-open .coachbtn{background:var(--accent);color:var(--accent-ink)}
+
+.dotsbar{display:flex;align-items:center;gap:12px;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);background:var(--panel)}
+.dots{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.dot{width:22px;height:8px;border:0;background:var(--line2);transform:skewX(-20deg);padding:0}
+.dot.ok{background:var(--accent2)} .dot.on{background:var(--fg);box-shadow:0 0 10px rgba(255,255,255,.5)}
+.dot.t-code,.dot.t-gen{height:12px} .dot.t-type{height:12px;background-image:repeating-linear-gradient(90deg,transparent 0 3px,rgba(0,0,0,.35) 3px 5px)}
+.stepinfo{font-size:13px;color:var(--fg2);white-space:nowrap}
+
+/* 본문 */
+.main{min-height:0;display:grid;grid-template-columns:minmax(0,44fr) minmax(0,56fr)}
+.main.t-intro,.main.t-finish,.main.t-mc,.main.t-quiz,.main.t-type,.main.t-learn:has(.solo){display:block;overflow-y:auto}
+.lesson-col{overflow-y:auto;padding:28px max(28px,env(safe-area-inset-left,0px)) 40px 36px;border-right:1px solid var(--line)}
+.ws-col{overflow-y:auto;padding:20px max(20px,env(safe-area-inset-right,0px)) 32px 20px;background:var(--panel)}
+.solo{max-width:880px;margin:0 auto;padding:40px max(24px,env(safe-area-inset-right,0px)) 60px max(24px,env(safe-area-inset-left,0px))}
+.solo.wide{max-width:1100px}
+.eyebrow{font:13px/1 var(--f-mono);letter-spacing:.14em;color:var(--accent);margin-bottom:10px;display:flex;gap:10px;align-items:center}
+.eyebrow span{letter-spacing:0;font-family:var(--f-body);font-weight:700;color:var(--accent-ink);background:var(--accent);padding:3px 8px 2px;transform:skewX(-14deg)}
+h1{font:34px/1.2 var(--f-display);margin:0 0 18px;text-wrap:balance;font-weight:400;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.intro h1{font-size:46px}
+.lesson{font-size:17px;line-height:1.8;max-width:68ch}
+.lesson p{margin:0 0 14px} .lesson ul,.lesson ol,.solo ul,.solo ol{padding-left:1.3em;margin:0 0 14px} .lesson li{margin:4px 0}
+.lead{font-size:20px;line-height:1.7;color:var(--fg);max-width:60ch}
+.dim{color:var(--dim);font-size:14px} .bad{color:var(--bad)}
+.tip,.warn,.blanknote{border-left:4px solid var(--accent);background:var(--good-bg);padding:12px 16px;margin:16px 0;font-size:15.5px;line-height:1.7}
+.warn{border-color:var(--gold);background:rgba(255,211,74,.08)}
+.blanknote{border-color:var(--fg2);background:var(--panel2)}
+.answer{background:var(--panel2);border:1px solid var(--line2);padding:16px 18px;line-height:1.85;font-size:16.5px;margin:12px 0}
+.kw{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px;color:var(--dim)}
+.kw span{color:var(--accent);border:1px solid rgba(28,242,138,.35);padding:1px 9px;border-radius:99px}
+pre.code{background:var(--code);border:1px solid var(--line);padding:12px 14px;overflow-x:auto;font-size:14.5px;line-height:1.6;color:#c9ffe2}
+.goals{list-style:none;padding:0!important;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-top:20px!important}
+.goals li{background:var(--panel2);border:1px solid var(--line);padding:10px 14px;position:relative;padding-left:30px}
+.goals li::before{content:"";position:absolute;left:12px;top:19px;width:8px;height:8px;background:var(--accent);transform:skewX(-14deg)}
+.exam-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0}
+.exam-map>div{background:var(--panel2);border:1px solid var(--line);padding:14px 16px;font-size:15px;line-height:1.7}
+.tag{display:inline-block;font:15px/1 var(--f-display);color:var(--accent-ink);background:var(--accent);padding:4px 10px 3px;margin-bottom:8px;transform:skewX(-14deg)}
+table.tbl,table.cmp{border-collapse:collapse;font-size:14.5px;margin:12px 0;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:4px 12px;border-bottom:1px solid var(--line);text-align:center}
+.tbl th{color:var(--fg2);font-weight:500} .tbl tr:first-child th{color:var(--accent);font-weight:700}
+.tbl.np td{border:1px solid var(--line2);font-family:var(--f-mono);min-width:34px}
+.tbl.np tr:first-child td{background:rgba(255,120,40,.18)} .tbl.np td:first-child{background:rgba(255,211,74,.15)}
+.cmp th,.cmp td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+.cmp th{background:var(--panel2);color:var(--accent);font-weight:700}
+.cmp td.bad{color:var(--bad)} .cmp td.good{color:var(--accent)}
+.opt3{display:flex;gap:12px;flex-wrap:wrap} .opt3 .cmp{margin:0}
+.axis-fig{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.axf{background:var(--panel2);border:1px solid var(--line2);padding:12px 14px;font-size:15px;line-height:1.7}
+.axf b{color:var(--accent);font-size:17px} .axf span{color:var(--gold);font-size:14px}
+.shape-demo{display:flex;align-items:center;gap:18px;margin:14px 0;font-family:var(--f-mono)}
+.shape-demo i{font-style:normal;display:block;width:34px;height:30px;line-height:30px;text-align:center;background:rgba(255,211,74,.85);color:#231a00;border:1px solid #6b5600;font-weight:700}
+.row3{display:flex} .col3{display:flex;flex-direction:column} .shape-demo span{color:var(--dim)}
+.boxes{display:flex;align-items:flex-end;gap:4px;margin:14px 0;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;font-family:var(--f-mono)}
+.boxes .lbl{font-weight:700;color:var(--accent);margin-right:8px;align-self:center;font-size:17px}
+.boxes .bx{display:flex;flex-direction:column;align-items:center;gap:4px}
+.boxes .bx i,.boxes .bx em{font-style:normal;font-size:12px;color:var(--gold)}
+.boxes .bx b{display:block;min-width:44px;padding:10px 8px;white-space:nowrap;text-align:center;border:2px solid var(--accent2);background:rgba(28,242,138,.07);font-weight:600;font-size:15px}
+.example{margin-top:18px;border:1px solid var(--line2);background:var(--code)}
+.ex-h{display:flex;align-items:center;gap:8px;padding:7px 12px;border-bottom:1px solid var(--line);background:var(--panel2);font:14px/1 var(--f-display);color:var(--accent)}
+.example>pre{margin:0;padding:12px 14px;font-size:14.5px;line-height:1.6;overflow-x:auto;color:#c9ffe2}
+.exout{border-top:1px dashed var(--line2);padding:8px 12px 12px}
+.ex-oh{font-size:12px;color:var(--dim);margin-bottom:4px}
+.exout pre{margin:0;font-size:14px;line-height:1.5;overflow-x:auto;color:#e6fff1}
+.exout .fig{margin-top:8px}
+.selfnote{border-left:4px solid var(--accent);background:var(--good-bg);padding:10px 14px;margin-bottom:12px;font-size:15px;line-height:1.7}
+.selfnote b:first-child{display:block;font:17px/1.3 var(--f-display);color:var(--accent);margin-bottom:2px}
+.scratchbtn{border-color:var(--fg2);color:var(--fg2)} .scratchbtn.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.mission{border:2px solid var(--gold);background:rgba(255,211,74,.06);padding:12px 14px;margin-bottom:14px}
+.mission.done{border-color:var(--accent);background:var(--good-bg)}
+.mission p{margin:8px 0 0;font-size:15.5px;line-height:1.7}
+.mission .target{margin-top:10px}
+.ms-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ms-tag{font:16px/1 var(--f-display);background:var(--gold);color:#241a00;padding:5px 10px 4px;transform:skewX(-12deg)}
+.mission.done .ms-tag{background:var(--accent);color:var(--accent-ink)}
+.ms-lock{font-size:13px;color:var(--gold)} .ms-ok{font-weight:700;color:var(--accent)}
+.mission.solo-m{margin:4px 0 20px}
+.mission.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+#next.locked{background:var(--panel2);color:var(--fg2);border-color:var(--line2);box-shadow:none}
+.chap.locked{opacity:.45} .dot.locked{opacity:.35}
+#toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--fg);color:var(--bg);padding:12px 20px;font-size:15px;opacity:0;pointer-events:none;transition:all .2s;z-index:30;max-width:90vw}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.whobtn{border:1px solid var(--line2);background:var(--panel2);color:var(--fg);padding:6px 12px;font-size:14px;white-space:nowrap;max-width:180px;overflow:hidden;text-overflow:ellipsis}
+.whobtn:hover{border-color:var(--accent)}
+.pf-overlay{position:fixed;inset:0;z-index:40;background:rgba(3,6,4,.94);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:8vh max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.pf-box{width:min(720px,100%)}
+.pf-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:18px 0}
+.pf-card{position:relative;display:flex;flex-direction:column;background:var(--panel2);border:1px solid var(--line2)}
+.pf-card.cur{border-color:var(--accent)}
+.pf-pick{border:0;background:none;text-align:left;padding:14px 14px 10px;display:flex;flex-direction:column;gap:6px}
+.pf-pick:hover{background:var(--raise)}
+.pf-pick b{font:20px/1.2 var(--f-display);font-weight:400}
+.pf-bar{height:4px;background:linear-gradient(90deg,var(--accent) calc(var(--p)*100%),var(--line) 0)}
+.pf-meta{font-size:13px;color:var(--dim);font-family:var(--f-mono)}
+.pf-del{align-self:flex-end;margin:0 8px 8px;font-size:12px}
+.pf-del.arm{border-color:var(--bad);color:var(--bad)}
+.pf-new{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px}
+.pf-new input{flex:1;min-width:200px;background:var(--code);border:1px solid var(--line2);color:var(--fg);padding:10px 12px;font:16px var(--f-body)}
+.pf-new input:focus{outline:none;border-color:var(--accent)}
+body.no-coach .coach,body.no-coach #coach-btn,body.no-coach .ask-err,body.no-coach #askfail,body.no-coach #askcoach,body.no-coach #qai,body.no-coach .coach-only{display:none!important}
+.autohint{margin-top:8px;padding:8px 12px;background:rgba(255,211,74,.08);border-left:3px solid var(--gold);font-size:14.5px;line-height:1.7}
+.autohint>b:first-child{color:var(--gold);margin-right:6px}
+.photo-cond{border:1px dashed var(--accent);padding:10px 14px;margin:12px 0;font-size:15px;background:rgba(28,242,138,.05)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:14px 0}
+.flow div{background:var(--panel2);border:1px solid var(--line2);padding:10px;text-align:center;font-size:14px;clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%,8% 50%)}
+.flow b{color:var(--accent)}
+.steps-list li{margin:8px 0}
+.q{font-size:20px;line-height:1.7;margin:6px 0 18px}
+
+/* 목표 / 힌트 */
+.target{margin-top:18px;border:1px solid var(--line2);background:var(--code)}
+.tg-h{font:13px/1 var(--f-display);letter-spacing:.06em;padding:9px 12px;border-bottom:1px solid var(--line);color:var(--accent);background:var(--panel2)}
+.tg-b{padding:10px 12px;overflow-x:auto} .tg-b pre{margin:0;font-size:14px;line-height:1.5;color:#dff}
+.hints{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.hint{background:var(--panel2);border:1px solid var(--line);padding:8px 12px;font-size:14px;display:flex;gap:10px;align-items:baseline}
+.hint span{color:var(--gold);font-weight:700;white-space:nowrap;font-size:13px}
+.hint code{background:none;border:0;padding:0;white-space:pre-wrap}
+.hint-btns{display:flex;gap:6px;flex-wrap:wrap}
+.ans{border:1px solid var(--gold);background:rgba(255,211,74,.05);padding:10px 12px}
+.ans-h{display:flex;justify-content:space-between;align-items:center;color:var(--gold);font-weight:700;font-size:14px}
+.ans pre{margin:8px 0;font-size:14px;overflow-x:auto}
+
+/* 작업 영역 */
+.ws{display:flex;flex-direction:column;gap:10px}
+.ws-bar{display:flex;align-items:center;gap:10px}
+.ws-title{font:17px/1 var(--f-display)} .ws-sub{font-size:12px;color:var(--dim)} .sp{flex:1}
+.ed{border:1px solid var(--line2);background:var(--code);min-height:220px}
+.ed:focus-within{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 0 24px rgba(28,242,138,.12)}
+.runrow{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.btn{border:0;padding:10px 20px;font-weight:700;font-size:15px;transform:skewX(-12deg)}
+.btn>*{transform:skewX(12deg)}
+.btn.run{background:var(--accent);color:var(--accent-ink);box-shadow:0 0 18px var(--glow)}
+.btn.run:hover{background:#4dffa6} .btn.run:disabled{opacity:.6}
+.btn.run kbd{color:#064a28;border-color:#0b7a42;margin-left:6px}
+.btn.check{background:transparent;color:var(--accent);outline:2px solid var(--accent);outline-offset:-2px}
+.btn.check:hover{background:var(--good-bg)}
+.ghost{background:transparent;border:1px solid var(--line2);color:var(--fg2);padding:7px 14px;font-size:14px}
+.ghost:hover{border-color:var(--accent);color:var(--accent)} .ghost.sm{padding:4px 10px;font-size:13px}
+.inp{display:flex;align-items:stretch;flex:1;min-width:220px;border:1px solid var(--line2)}
+.inp span{font-size:12px;color:var(--gold);padding:6px 8px;background:var(--panel2);writing-mode:horizontal-tb;display:flex;align-items:center}
+.inp textarea{flex:1;background:var(--code);color:var(--fg);border:0;font:14px/1.4 var(--f-mono);padding:6px 8px;resize:vertical;min-height:38px}
+.out{border:1px solid var(--line2);background:var(--code)}
+.out-h{font-size:12px;color:var(--dim);padding:6px 12px;border-bottom:1px solid var(--line);letter-spacing:.04em}
+.out-h span{color:var(--line2)}
+#outpre{margin:0;padding:10px 12px;font-size:14px;line-height:1.5;min-height:60px;overflow-x:auto;white-space:pre;color:#e6fff1}
+#outpre.empty{color:var(--dim)}
+.errline{color:var(--bad);display:block;margin-top:4px}
+#figs{padding:0 12px 12px;display:flex;flex-direction:column;gap:8px}
+.fig{max-width:100%;background:#fff;display:block;border:1px solid var(--line2)} .fig.dimmed{opacity:.5}
+.explain{border:1px solid var(--bad);background:var(--bad-bg);padding:10px 12px;font-size:14.5px;line-height:1.7}
+.explain b{color:var(--bad);margin-right:6px} .explain p{margin:4px 0 8px} .explain .ln{font-size:13px;color:var(--fg2)}
+.warnbox{border:1px solid var(--gold);background:rgba(255,211,74,.08);padding:8px 12px;font-size:14px}
+.verdict{padding:12px 16px;font-size:15px;line-height:1.7}
+.verdict.wait{background:var(--panel2);color:var(--dim)}
+.verdict.pass{background:var(--accent);color:var(--accent-ink);box-shadow:0 0 30px var(--glow);animation:pop .35s}
+.verdict.fail{background:var(--bad-bg);border:1px solid var(--bad)}
+.verdict ul{margin:6px 0;padding-left:1.2em} .verdict code{color:#fff}
+@keyframes pop{0%{transform:scale(.96)}60%{transform:scale(1.02)}100%{transform:none}}
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.diff span{font-size:12px;color:var(--dim)} .diff pre{margin:2px 0 0;background:var(--code);padding:6px 8px;overflow-x:auto;font-size:13px}
+
+/* CodeMirror 테마 */
+.CodeMirror{height:auto;min-height:220px;background:var(--code);color:#e6fff1;font:15px/1.6 var(--f-mono)}
+.CodeMirror-scroll{min-height:220px}
+.cm-s-pitch .CodeMirror-gutters{background:#0a100d;border-right:1px solid var(--line)}
+.cm-s-pitch .CodeMirror-linenumber{color:#3f5a4c}
+.cm-s-pitch .CodeMirror-cursor{border-left:2px solid var(--accent)}
+.cm-s-pitch .CodeMirror-selected,.cm-s-pitch.CodeMirror-focused .CodeMirror-selected{background:rgba(28,242,138,.18)}
+.cm-s-pitch .cm-keyword{color:#ff7ab6} .cm-s-pitch .cm-string{color:#ffd34a} .cm-s-pitch .cm-number{color:#7cc7ff}
+.cm-s-pitch .cm-comment{color:#5f7a6c;font-style:italic} .cm-s-pitch .cm-builtin{color:#1cf28a} .cm-s-pitch .cm-def{color:#1cf28a}
+.cm-s-pitch .cm-variable{color:#e6fff1} .cm-s-pitch .cm-property{color:#9fe8c4} .cm-s-pitch .cm-operator{color:#b9cdc2}
+.cm-s-pitch .CodeMirror-matchingbracket{color:#fff!important;background:rgba(28,242,138,.3)}
+.cm-errline{background:rgba(255,84,104,.18)}
+
+/* 빈칸 */
+.fillcode{background:var(--code);border:1px solid var(--line2);padding:14px 16px;font-size:15px;line-height:2.1;overflow-x:auto;margin:0;color:#e6fff1}
+.blank{font:600 15px var(--f-mono);background:#0f1a14;color:var(--accent);border:0;border-bottom:2px solid var(--accent);padding:1px 4px;text-align:center;min-width:3ch}
+.blank:focus{outline:none;background:#163024}
+.blank.ok{border-color:var(--accent);background:rgba(28,242,138,.15)} .blank.no{border-color:var(--bad);color:var(--bad);background:var(--bad-bg)}
+
+/* 객관식 / 서술 */
+.opts{display:grid;gap:8px}
+.opt{display:flex;align-items:center;gap:14px;background:var(--panel2);border:1px solid var(--line2);padding:12px 16px;text-align:left}
+.opt span{font:18px/1 var(--f-display);color:var(--accent);width:22px}
+.opt code{background:none;border:0;font-size:15px}
+.opt:hover{border-color:var(--accent)} .opt.right{border-color:var(--accent);background:var(--good-bg)} .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.exp{margin-top:14px;padding:12px 16px} .exp.good{background:var(--good-bg);border-left:4px solid var(--accent)} .exp.bad{background:var(--bad-bg);border-left:4px solid var(--bad)}
+.qa{width:100%;box-sizing:border-box;background:var(--code);color:var(--fg);border:1px solid var(--line2);padding:12px 14px;font:16px/1.8 var(--f-body);resize:vertical;margin-bottom:10px}
+.qa:focus{border-color:var(--accent);outline:none}
+.kwres{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0}
+.kwres span{padding:2px 10px;border-radius:99px;font-size:14px} .kwres .ok{background:var(--good-bg);color:var(--accent)} .kwres .no{background:var(--bad-bg);color:var(--bad)}
+
+/* 타자 */
+.typestats{display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.typestats>div{background:var(--panel2);border:1px solid var(--line);padding:6px 14px;min-width:96px;transform:skewX(-10deg)}
+.typestats>div>*{transform:skewX(10deg);display:inline-block}
+.typestats span{font-size:12px;color:var(--dim);display:block!important} .typestats b{font:26px/1.1 var(--f-mono);color:var(--accent)} .typestats i{font-style:normal;font-size:12px;color:var(--dim);margin-left:3px}
+.typebox{position:relative;background:var(--code);border:1px solid var(--line2);cursor:text;max-height:56vh;overflow:auto}
+.typebox:focus-within{border-color:var(--accent);box-shadow:0 0 24px rgba(28,242,138,.12)}
+#tview{margin:0;padding:18px 20px;font:18px/1.75 var(--f-mono);white-space:pre}
+#tview .todo{color:#3e5649} #tview .ok{color:#e9fff3} #tview .no{color:#fff;background:var(--bad);border-radius:2px}
+#tview .caret{display:inline-block;width:2px;height:1.2em;background:var(--accent);vertical-align:-.2em;margin-right:-2px;animation:blink 1s steps(1) infinite;box-shadow:0 0 8px var(--accent)}
+#tin{position:absolute;inset:0;opacity:0;resize:none;width:100%;height:100%;border:0;padding:0;caret-color:transparent}
+
+.checklist{display:grid;gap:6px} .checklist label{display:flex;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);padding:9px 14px;font-size:15.5px;cursor:pointer}
+.checklist input{accent-color:var(--accent);width:18px;height:18px}
+
+/* 하단 */
+.foot{display:flex;align-items:center;gap:12px;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));border-top:1px solid var(--line);background:#070a08}
+.navbtn{border:1px solid var(--line2);background:var(--panel2);padding:10px 22px;font-weight:700;transform:skewX(-14deg);font-size:15px}
+.navbtn:disabled{opacity:.35;cursor:default}
+#next{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);min-width:150px;font-size:17px}
+#next.pulse{animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--glow)}50%{box-shadow:0 0 0 10px rgba(28,242,138,0),0 0 26px var(--glow)}}
+.foot .hintkeys{font-size:12px;color:var(--dim)}
+
+/* 코치 서랍 */
+.coach{position:fixed;top:0;right:0;bottom:0;width:min(420px,40vw);background:var(--panel);border-left:1px solid var(--accent);transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;z-index:20;box-shadow:-20px 0 40px rgba(0,0,0,.5);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body.coach-open .coach{transform:none}
+.coach-h{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.coach-h b{font:20px/1 var(--f-display)} .coach-h span{font-size:12px;color:var(--dim)}
+#coach-log{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.msg{padding:10px 12px;font-size:14.5px;line-height:1.7;max-width:92%;overflow-wrap:anywhere}
+.msg.me{align-self:flex-end;background:var(--raise);border:1px solid var(--line2)}
+.msg.ai{align-self:flex-start;background:#0a1a12;border-left:3px solid var(--accent)}
+.msg pre{background:var(--code);padding:8px 10px;overflow-x:auto;font-size:13px;margin:6px 0;white-space:pre}
+.msg.hello{color:var(--fg2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px 0}
+.chip{border:1px solid var(--line2);background:transparent;padding:4px 10px;font-size:13px;border-radius:99px;color:var(--fg2)}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.coach-in{display:flex;gap:6px;padding:10px 16px 14px}
+.coach-in textarea{flex:1;background:var(--code);color:var(--fg);border:1px solid var(--line2);padding:8px 10px;font:14px/1.5 var(--f-body);resize:none}
+.coach-in textarea:focus{outline:none;border-color:var(--accent)}
+#coach-send{background:var(--accent);color:var(--accent-ink);border:0;padding:0 16px;font-weight:700}
+#coach-send:disabled{opacity:.4}
+#coach-note{margin:0 16px 8px;font-size:13px;color:var(--gold)}
+
+@media (max-width:900px){
+  body{overflow:auto} .app{height:auto;min-height:100%}
+  .main{display:block} .lesson-col{border-right:0;border-bottom:1px solid var(--line);padding:22px max(16px,env(safe-area-inset-left,0px)) 24px max(16px,env(safe-area-inset-right,0px))}
+  .ws-col{padding:16px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
+  .exam-map,.axis-fig,.flow{grid-template-columns:1fr} .logo{display:none} .coach{width:100%} body.coach-open .app{padding-right:0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+<div class="app">
+  <header class="top">
+    <div class="logo"><i><b>PY</b></i>수행평가</div>
+    <nav class="chapters" id="chapters" aria-label="챕터"></nav>
+    <button class="whobtn" id="who" title="프로필 바꾸기"><span>👤</span> 프로필</button>
+    <span class="pypill loading" id="pypill">파이썬 불러오는 중…</span>
+  </header>
+  <div class="dotsbar"><div class="dots" id="dots"></div><span class="stepinfo" id="stepinfo"></span></div>
+  <main class="main" id="main"></main>
+  <footer class="foot">
+    <button class="navbtn" id="prev">← 이전</button>
+    <div class="timer" id="timer" title="학습 시간 / 목표 3시간"></div>
+    <button class="ghost sm" id="timer-reset" title="학습 시간을 0으로 되돌려요">↺ 타이머 초기화</button>
+    <span class="hintkeys"><kbd>Alt</kbd>+<kbd>←</kbd> <kbd>→</kbd> 로도 이동</span>
+    <span class="sp"></span>
+    <button class="coachbtn scratchbtn" id="scratch-btn"><span>빈 연습장</span></button>
+    <button class="coachbtn" id="coach-btn"><span>AI 코치에게 질문</span></button>
+    <button class="navbtn" id="next">다음 →</button>
+  </footer>
+</div>
+<div class="pf-overlay" id="profiles" hidden></div>
+<aside class="coach" aria-label="AI 코치">
+  <div class="coach-h"><b>AI 코치</b><span>지금 보고 있는 문제와 내 코드를 같이 보고 답해요</span><span class="sp"></span><button class="ghost sm" id="coach-stop" hidden>멈춤</button><button class="ghost sm" id="coach-x">닫기</button></div>
+  <div id="coach-log"><div class="msg ai hello">무엇이든 물어보세요. 막힌 코드, 오류, 개념, 서술형 답안 채점까지 도와줄게요. 정답 코드는 달라고 할 때만 보여줄게요.</div></div>
+  <p id="coach-note" hidden>AI 코치는 claude.ai에 로그인한 상태에서만 동작해요.</p>
+  <div class="chips">
+    <button class="chip" data-q="이 문제 힌트 하나만 줘. 정답은 아직 주지 마.">힌트 하나만</button>
+    <button class="chip" data-q="내 코드 봐줘. 틀린 데가 있으면 어디인지 알려줘.">내 코드 봐줘</button>
+    <button class="chip" data-q="지금 배우는 개념을 더 쉽게, 비유를 들어서 다시 설명해줘.">더 쉽게 설명</button>
+    <button class="chip" data-q="이 내용으로 시험에 나올 만한 변형 문제를 하나 내줘. 답은 내가 쓴 다음에 알려줘.">변형 문제 내줘</button>
+    <button class="chip" data-q="정답 코드를 보여주고 한 줄씩 설명해줘.">정답 + 해설</button>
+  </div>
+  <div class="coach-in"><textarea id="coach-in" rows="2" placeholder="질문을 입력하세요 (Enter 전송, Shift+Enter 줄바꿈)"></textarea><button id="coach-send">전송</button></div>
+</aside>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+<script src="py/pyodide.js"></script>
+<script>window.NO_COACH=true;</script>
+<script>
+/* ===== 커리큘럼 데이터 =====
+ step 종류
+  intro : 챕터 시작 카드
+  learn : 설명(왼쪽) + 예제 실행(오른쪽, code 있을 때)
+  code  : 문제 풀이 (ref = 정답 코드, check = 'out' | 'plot')
+  type  : 타자 연습 (target)
+  fill  : 빈칸 채우기 (tpl 안의 {{정답|다른정답}})
+  quiz  : 서술형 쓰기 (kw = 핵심 단어, answer = 모범 답안)
+  mc    : 객관식
+*/
+const IDX = "['grandpa', 'grandma', 'grandson', 'papa', 'mama']";
+const DF_DICT = `import pandas as pd
+data = {'age': [60, 70, 12, 45, 42],
+        'weight': [3.8, 7.2, 6.3, 5.5, 4.6],
+        'height': [4.4, 5.6, 6.4, 5.7, 7.8],
+        'nickname': ['Shark', 'Audrey', 'Smurf', 'Tongk', 'JJ']}
+df = pd.DataFrame(data, index=${IDX})`;
+const DF_ARR = `import pandas as pd
+arr = [[60, 3.8, 4.4, 'Shark'],
+       [70, 7.2, 5.6, 'Audrey'],
+       [12, 6.3, 6.4, 'Smurf'],
+       [45, 5.5, 5.7, 'Tongk'],
+       [42, 4.6, 7.8, 'JJ']]
+df = pd.DataFrame(arr, index=${IDX},
+                  columns=['age', 'weight', 'height', 'nickname'])`;
+const DF_SER = `import pandas as pd
+idx = ${IDX}
+age = pd.Series([60, 70, 12, 45, 42], index=idx)
+weight = pd.Series([3.8, 7.2, 6.3, 5.5, 4.6], index=idx)
+height = pd.Series([4.4, 5.6, 6.4, 5.7, 7.8], index=idx)
+nickname = pd.Series(['Shark', 'Audrey', 'Smurf', 'Tongk', 'JJ'], index=idx)
+df = pd.DataFrame({'age': age, 'weight': weight,
+                   'height': height, 'nickname': nickname})`;
+const NP_A = `import numpy as np
+a = np.array([[1, 4, 3, 7, 8],
+              [2, 1, -1, 3, 6],
+              [3, 3, 4, 1, 0]])`;
+const PHOTO = `import matplotlib.pyplot as plt
+import numpy as np
+x=['grandpa', 'grandma', 'grandson','papa', 'mama']
+y=[3.8, 7.2, 6.3, 5.5, 4.6]
+plt.plot(x,y, marker='*',color='m',label='weight',linestyle='--')
+plt.xlabel('family')
+plt.ylabel('weight')
+plt.legend()
+plt.show()`;
+const PHONE = `import numpy as np
+import matplotlib.pyplot as plt
+x=np.array([1, 3, 5])
+y=np.array([80, 69, 55])
+plt.figure(figsize=(5, 5))
+plt.title('smartphone vs exam score')
+plt.plot(x, y,'bo')
+plt.show()`;
+const LINREG = `# 1. 데이터 준비
+import numpy as np
+x = np.array([1, 3, 5])
+y = np.array([80, 69, 55])
+
+# 2. 예측 모델 선정 및 모델 학습
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(x.reshape(-1, 1), y)
+
+# 3. 모델 예측
+pre_x = int(input('스마트폰 사용 시간:'))
+y_hat = model.predict([[pre_x]])
+print(y_hat, '점')`;
+const GRAPE = `import numpy as np
+import matplotlib.pyplot as plt
+grape = np.array([[19, 300, 0],
+                  [20, 500, 0],
+                  [18, 400, 0],
+                  [25, 500, 1],
+                  [27, 700, 1],
+                  [28, 600, 1]])
+X = grape[:, :2]
+y = grape[:, 2]
+print(X)
+print(y)
+
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model.fit(X, y)
+print(model.coef_)
+print(model.intercept_)
+
+size = float(input('포도 한 알의 크기는(mm): '))
+weight = float(input('포도 한 송이의 무게는(g): '))
+result = model.predict([[size, weight]])
+if(result==1) :
+    print('거봉')
+else :
+    print('거봉 아님')`;
+
+const FAMILY_TABLE = `<table class="tbl"><tr><th></th><th>age</th><th>weight</th><th>height</th><th>nickname</th></tr>
+<tr><th>grandpa</th><td>60</td><td>3.8</td><td>4.4</td><td>Shark</td></tr>
+<tr><th>grandma</th><td>70</td><td>7.2</td><td>5.6</td><td>Audrey</td></tr>
+<tr><th>grandson</th><td>12</td><td>6.3</td><td>6.4</td><td>Smurf</td></tr>
+<tr><th>papa</th><td>45</td><td>5.5</td><td>5.7</td><td>Tongk</td></tr>
+<tr><th>mama</th><td>42</td><td>4.6</td><td>7.8</td><td>JJ</td></tr></table>`;
+const NP_TABLE = `<table class="tbl np"><tr><td>1</td><td>4</td><td>3</td><td>7</td><td>8</td></tr>
+<tr><td>2</td><td>1</td><td>-1</td><td>3</td><td>6</td></tr>
+<tr><td>3</td><td>3</td><td>4</td><td>1</td><td>0</td></tr></table>`;
+
+const DESC_NP = '넘파이(NumPy)는 파이썬에서 다차원 배열(ndarray)을 만들고 빠르게 계산하기 위한 수치 계산 라이브러리이다. 배열끼리의 사칙연산과 합계·평균·중앙값·최댓값·최솟값·분산·표준편차 같은 통계 함수를 제공하며, 판다스·맷플롯립·머신러닝 라이브러리의 기반이 된다.';
+const DESC_PD = '판다스(pandas)는 행과 열로 이루어진 표 형태의 데이터를 쉽게 다루고 분석하기 위한 파이썬 라이브러리이다. 1차원 자료구조인 시리즈(Series)와 2차원 표 자료구조인 데이터프레임(DataFrame)을 제공하며, 데이터의 추출·추가·수정·삭제와 통계 계산을 할 수 있다. 넘파이를 기반으로 만들어졌다.';
+const DESC_MPL = '맷플롯립(Matplotlib)은 파이썬에서 데이터를 선 그래프, 막대그래프, 산점도, 원그래프 등 다양한 그래프로 시각화하는 라이브러리이다. 주로 pyplot 모듈을 plt라는 이름으로 불러와 plot(), xlabel(), legend(), show() 같은 함수로 그래프를 그린다.';
+const DESC_ML = '① 데이터 준비: 독립 변수 x(스마트폰 사용 시간)와 종속 변수 y(시험 점수)를 넘파이 배열로 준비한다. ② 모델 선정: 숫자 값을 예측하므로 선형 회귀 모델 LinearRegression()을 만든다. ③ 모델 학습: fit()에 x와 y를 넣어 데이터의 규칙(기울기·절편)을 학습한다. 이때 x는 reshape(-1, 1)로 2차원으로 바꿔야 한다. ④ 예측: predict()에 새로운 값(예: 2시간)을 2차원 [[ ]] 형태로 넣어 시험 점수를 예측한다.';
+
+const CHAPTERS = [
+/* ================= CH0 ================= */
+{ id:'c0', title:'시작', short:'START', mins:5, steps:[
+{ t:'intro', title:'3시간 수행평가 트레이닝', body:`
+<p class="lead">이 과정만 끝내면 수행평가에 나오는 코드를 <b>빈 종이에 처음부터</b> 쓸 수 있게 돼요.</p>
+<div class="exam-map">
+ <div><span class="tag">넘파이</span>1. 라이브러리 설명 + 2차원 배열 + 함수 2개<br>2. arange → reshape 모양 바꾸기<br>3. arange·reshape로 연산 결과 맞추기</div>
+ <div><span class="tag">판다스</span>1. 라이브러리 설명 + 데이터프레임 만들기 (배열·시리즈·딕셔너리 중 1개)<br>2~13번 중 5개: 추출·추가·수정·이름 변경·전치·삭제·인덱스 변경</div>
+ <div><span class="tag">맷플롯립</span>라이브러리 설명 + 가족 몸무게 그래프 (★, 마젠타, --, 범례)</div>
+ <div><span class="tag">머신러닝</span>스마트폰 사용 시간 그래프 · 시험 점수 예측(LinearRegression) · 기계학습 과정 설명 · 포도 거봉 분류(LogisticRegression)</div>
+</div>
+<div class="warn"><b>시험은 종이에 손으로 써요.</b> 그래서 이 과정은 ① 이해 → ② 따라 치기 → ③ 아무것도 안 보고 쓰기 → ④ 숫자·이름이 바뀐 변형 문제 순서로 반복해요.</div>`},
+{ t:'learn', title:'연습장 사용법', body:`
+<ul class="steps-list">
+<li>모든 단계 오른쪽 위에 <b>할 일</b>이 있어요. 거기 적힌 대로 하면 돼요.</li>
+<li><b>▶ 실행</b> 또는 <kbd>Ctrl</kbd>+<kbd>Enter</kbd>: 코드를 실행하고 <b>바로 채점</b>해요. 목표 결과와 똑같으면 통과.</li>
+<li><b>통과해야만 다음 단계로</b> 넘어갈 수 있어요.</li>
+<li><b>힌트</b>: 막히면 한 단계씩 힌트를 열어요. 그래도 안 되면 <b>정답 보기</b>.</li>
+<li><b>개념 단계</b>: 왼쪽에 예제 코드, 오른쪽은 <b>빈 칸</b>이에요. 예제를 보고 처음부터 직접 똑같이 쳐서 실행하세요.</li>
+<li><b>빈 연습장</b>(아래): 언제든 아무것도 없는 칸에서 처음부터 써볼 수 있어요.</li>
+<li class="coach-only"><b>AI 코치에게 질문</b>(아래): 진짜 AI 코치에게 내 코드와 오류를 보내고 물어볼 수 있어요.</li>
+<li><b>타자 연습</b>: 회색 글자 위에 그대로 따라 치세요. 틀린 글자는 빨갛게 표시돼요.</li>
+<li><b>다음 →</b> 또는 <kbd>Alt</kbd>+<kbd>→</kbd>: 통과한 뒤 다음 단계로 넘어가요.</li></ul>
+<div class="tip">진행 상황은 이 브라우저에 자동 저장돼요. 창을 닫았다 열어도 이어서 할 수 있어요.</div>`,
+ code:`print('준비 완료!')`},
+]},
+
+/* ================= CH1 ================= */
+{ id:'c1', title:'파이썬 기초', short:'BASIC', mins:25, steps:[
+{ t:'intro', title:'파이썬, 진짜 처음부터', body:`<p class="lead">리스트, 딕셔너리 몰라도 괜찮아요. 여기서 <b>처음부터</b> 하나씩 해요. 이 챕터만 끝내면 시험 코드에 나오는 기호( <code>[ ]</code> <code>{ }</code> <code>( )</code> <code>=</code> <code>.</code> )가 무슨 뜻인지 다 읽을 수 있어요.</p>
+<ul class="goals"><li>print: 화면에 보여주기</li><li>변수: 이름 붙인 상자</li><li>리스트: 칸이 여러 개인 상자</li><li>딕셔너리: 이름표 붙은 칸</li><li>함수와 import</li></ul>`},
+
+{ t:'learn', title:'① print: 화면에 보여줘', body:`
+<p>컴퓨터는 시키지 않으면 아무것도 <b>보여주지 않아요</b>. 화면에 보여달라고 시키는 명령이 <code>print( )</code>예요.</p>
+<table class="cmp"><tr><th>코드</th><th>화면</th><th>설명</th></tr>
+<tr><td><code>print('안녕')</code></td><td>안녕</td><td>따옴표 안 = <b>글자</b> 그대로</td></tr>
+<tr><td><code>print(3 + 4)</code></td><td>7</td><td>따옴표 없음 = <b>숫자</b>, 계산해요</td></tr>
+<tr><td><code>print('3 + 4')</code></td><td>3 + 4</td><td>따옴표가 있으니 그냥 글자</td></tr></table>
+<div class="tip"><b>규칙 하나</b>: 글자는 따옴표 <code>' '</code>로 감싸고, 숫자는 그냥 써요.</div>
+<p>아래 예제를 보고, 오른쪽 <b>빈 칸</b>에 예제를 그대로 직접 쳐서 실행해 보세요.</p>`,
+ code:`print('안녕')
+print(3 + 4)
+print('3 + 4')
+print(10 * 3)    # * 는 곱하기`},
+
+{ t:'code', title:'해보기: print', body:`<p>오른쪽 빈 칸에 코드를 써서 아래처럼 나오게 하세요.</p><pre class="code">hello
+12</pre><p class="dim">첫 줄은 글자 hello, 둘째 줄은 3 × 4를 계산한 값이에요.</p>`,
+ ref:`print('hello')\nprint(3 * 4)`, check:'out', hints:["글자는 따옴표: print('hello')","곱하기는 * 기호: print(3 * 4)"]},
+
+{ t:'learn', title:'② 변수: 이름표 붙인 상자', body:`
+<p><b>변수</b>는 값을 넣어두는 <b>상자</b>예요. 상자에 이름표를 붙여서, 나중에 이름으로 꺼내 써요.</p>
+<div class="boxes"><div class="bx"><em>age</em><b>17</b></div><div class="bx"><em>name</em><b>'민수'</b></div></div>
+<pre class="code">age = 17        # age라는 상자에 17을 넣어라
+name = '민수'   # name이라는 상자에 글자 '민수'를 넣어라</pre>
+<div class="warn"><code>=</code>는 수학의 "같다"가 <b>아니에요</b>. <b>"오른쪽 값을 왼쪽 상자에 넣어라"</b>라는 뜻이에요.</div>
+<p>꺼낼 때는 이름만 쓰면 돼요: <code>print(age)</code> → 17. 이때 이름에는 따옴표를 붙이지 않아요.</p>`,
+ code:`age = 17
+name = '민수'
+print(age)
+print(name)
+print(age + 1)   # 상자 안의 17에 1을 더해서 보여줘`},
+
+{ t:'mc', title:'확인: 변수', q:`다음 코드를 실행하면 화면에 뭐가 나올까요?<pre class="code">x = 5
+x = 8
+print(x)</pre>`, opts:['5','8','x','5 8'], ans:1, exp:'상자 x에 5를 넣었다가 8로 바꿔 넣었어요. 상자에는 마지막에 넣은 값 8이 들어 있어요.'},
+
+{ t:'code', title:'해보기: 변수', body:`<p><code>weight</code>라는 변수에 <b>3.8</b>을 넣고, 그 값을 출력하세요. 그다음 줄에 <code>weight</code>에 2를 곱한 값도 출력하세요.</p><pre class="code">3.8
+7.6</pre>`,
+ ref:`weight = 3.8\nprint(weight)\nprint(weight * 2)`, check:'out', hints:['weight = 3.8','print(weight)','print(weight * 2)']},
+
+{ t:'learn', title:'③ 리스트: 칸이 여러 개인 상자', body:`
+<p>가족 5명의 몸무게를 저장하려면 상자가 5개 필요해요. 그런데 상자 5개를 따로 만들면 귀찮죠. 그래서 <b>칸이 여러 개인 상자 하나</b>를 써요. 이게 <b>리스트</b>예요.</p>
+<pre class="code">y = [3.8, 7.2, 6.3, 5.5, 4.6]</pre>
+<div class="boxes long"><span class="lbl">y</span><div class="bx"><i>0</i><b>3.8</b></div><div class="bx"><i>1</i><b>7.2</b></div><div class="bx"><i>2</i><b>6.3</b></div><div class="bx"><i>3</i><b>5.5</b></div><div class="bx"><i>4</i><b>4.6</b></div></div>
+<ul><li>대괄호 <code>[ ]</code>로 감싸고</li><li>값과 값 사이에 쉼표 <code>,</code></li><li>글자를 넣을 땐 하나하나 따옴표: <code>['grandpa', 'grandma']</code></li></ul>
+<div class="tip">시험의 <code>x=['grandpa', 'grandma', ...]</code>, <code>y=[3.8, 7.2, ...]</code>가 바로 리스트예요.</div>`,
+ code:`y = [3.8, 7.2, 6.3, 5.5, 4.6]
+x = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']
+print(y)
+print(x)`},
+
+{ t:'learn', title:'칸 번호는 0부터', body:`
+<p>리스트의 각 칸에는 번호(<b>인덱스</b>)가 붙어 있어요. 그런데 번호가 <b>1이 아니라 0부터</b> 시작해요.</p>
+<div class="boxes long"><span class="lbl">x</span><div class="bx"><i>0</i><b>'grandpa'</b></div><div class="bx"><i>1</i><b>'grandma'</b></div><div class="bx"><i>2</i><b>'grandson'</b></div><div class="bx"><i>3</i><b>'papa'</b></div><div class="bx"><i>4</i><b>'mama'</b></div></div>
+<table class="cmp"><tr><th>코드</th><th>결과</th></tr>
+<tr><td><code>x[0]</code></td><td>grandpa (첫 번째)</td></tr>
+<tr><td><code>x[1]</code></td><td>grandma (두 번째)</td></tr>
+<tr><td><code>x[4]</code></td><td>mama (다섯 번째 = 마지막)</td></tr>
+<tr><td><code>len(x)</code></td><td>5 (칸 개수)</td></tr></table>
+<div class="warn">5칸짜리 리스트의 마지막 번호는 5가 아니라 <b>4</b>예요. <code>x[5]</code>는 오류가 나요.</div>`,
+ code:`x = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']
+print(x[0])
+print(x[1])
+print(x[4])
+print(len(x))`},
+
+{ t:'mc', title:'확인: 인덱스', q:`<code>y = [3.8, 7.2, 6.3, 5.5, 4.6]</code>일 때 <code>print(y[2])</code>의 결과는?`, opts:['7.2','6.3','5.5','오류'], ans:1, exp:'번호는 0부터: y[0]=3.8, y[1]=7.2, y[2]=6.3이에요.'},
+
+{ t:'code', title:'해보기: 리스트', body:`<p>시험 점수 80, 69, 55를 담은 리스트 <code>score</code>를 만들고,</p><ol><li>리스트 전체를 출력하고</li><li><b>두 번째</b> 점수만 출력하세요.</li></ol><pre class="code">[80, 69, 55]
+69</pre>`,
+ ref:`score = [80, 69, 55]\nprint(score)\nprint(score[1])`, check:'out', hints:['score = [80, 69, 55]','두 번째는 번호 1','print(score[1])']},
+
+{ t:'learn', title:'리스트 안에 리스트 = 표', body:`
+<p>리스트의 칸 안에 또 리스트를 넣을 수 있어요. 그러면 <b>줄(행)이 여러 개인 표</b>가 돼요. 이걸 <b>2차원 리스트</b>라고 해요.</p>
+<pre class="code">table = [[1, 4, 3],
+         [2, 1, -1]]</pre>
+<table class="tbl np"><tr><td>1</td><td>4</td><td>3</td></tr><tr><td>2</td><td>1</td><td>-1</td></tr></table>
+<ul><li>바깥 <code>[ ]</code> = 표 전체</li><li>안쪽 <code>[ ]</code> 하나 = <b>한 줄(행)</b></li><li><code>table[1]</code> = 두 번째 줄 [2, 1, -1]</li><li><code>table[1][2]</code> = 두 번째 줄의 세 번째 칸 → -1</li></ul>
+<div class="tip">넘파이 시험 1번의 배열이 바로 이 모양이에요. 줄을 바꿔 써도 괜찮아요. 쉼표와 괄호 짝만 맞으면 돼요.</div>`,
+ code:`table = [[1, 4, 3],
+         [2, 1, -1]]
+print(table)
+print(table[1])
+print(table[1][2])`},
+
+{ t:'code', title:'해보기: 2차원 리스트', body:`<p>아래 표를 2차원 리스트 <code>t</code>로 만들어 출력하세요.</p><table class="tbl np"><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table><pre class="code">[[1, 2, 3], [4, 5, 6]]</pre>`,
+ ref:`t = [[1, 2, 3], [4, 5, 6]]\nprint(t)`, check:'out', hints:['한 줄 = [1, 2, 3]','두 줄을 바깥 [ ]로 감싸기: [[1, 2, 3], [4, 5, 6]]']},
+
+{ t:'learn', title:'④ 딕셔너리: 이름표 붙은 칸', body:`
+<p>리스트는 칸을 <b>번호</b>(0, 1, 2…)로 찾았죠. <b>딕셔너리</b>는 칸을 <b>이름</b>으로 찾아요. 영어사전처럼 "단어 → 뜻"을 짝지어 저장해요.</p>
+<pre class="code">info = {'name': '민수', 'age': 17}</pre>
+<div class="boxes"><span class="lbl">info</span><div class="bx"><i>'name'</i><b>'민수'</b></div><div class="bx"><i>'age'</i><b>17</b></div></div>
+<ul><li>중괄호 <code>{ }</code>로 감싸요 (리스트는 대괄호 <code>[ ]</code>)</li>
+<li><code>'이름': 값</code> — 이름을 <b>키(key)</b>, 값을 <b>밸류(value)</b>라고 해요</li>
+<li>키와 값 사이는 콜론 <code>:</code>, 짝과 짝 사이는 쉼표 <code>,</code></li>
+<li>꺼낼 때: <code>info['age']</code> → 17 (대괄호 안에 <b>키 이름</b>)</li></ul>`,
+ code:`info = {'name': '민수', 'age': 17}
+print(info)
+print(info['name'])
+print(info['age'])`},
+
+{ t:'code', title:'해보기: 딕셔너리', body:`<p>키 <code>'nickname'</code>에 <code>'Shark'</code>, 키 <code>'age'</code>에 <code>60</code>이 들어 있는 딕셔너리 <code>grandpa</code>를 만들고, <b>age 값만</b> 출력하세요.</p><pre class="code">60</pre>`,
+ ref:`grandpa = {'nickname': 'Shark', 'age': 60}\nprint(grandpa['age'])`, check:'out', hints:["{'키': 값, '키': 값}","grandpa = {'nickname': 'Shark', 'age': 60}","print(grandpa['age'])"]},
+
+{ t:'learn', title:'딕셔너리 + 리스트 = 판다스 표의 재료', body:`
+<p>딕셔너리의 값 자리에 <b>리스트</b>를 넣을 수 있어요. 이게 판다스 시험 1번의 핵심이에요.</p>
+<pre class="code">data = {'age': [60, 70, 12],
+        'nickname': ['Shark', 'Audrey', 'Smurf']}</pre>
+<p>이걸 표로 바꾸면 <b>키가 열 이름</b>, <b>리스트가 그 열의 값</b>이 돼요.</p>
+<table class="tbl"><tr><th></th><th>age</th><th>nickname</th></tr><tr><th>0</th><td>60</td><td>Shark</td></tr><tr><th>1</th><td>70</td><td>Audrey</td></tr><tr><th>2</th><td>12</td><td>Smurf</td></tr></table>
+<div class="tip">지금은 "딕셔너리 → 표가 된다"는 것만 기억하세요. 표로 바꾸는 방법은 판다스 챕터에서 배워요.</div>`,
+ code:`data = {'age': [60, 70, 12],
+        'nickname': ['Shark', 'Audrey', 'Smurf']}
+print(data['age'])
+print(data['nickname'][0])   # nickname 리스트의 첫 칸`},
+
+{ t:'mc', title:'확인: 괄호 구별', q:'다음 중 <b>딕셔너리</b>는?', opts:["[60, 70, 12]","{'age': 60, 'weight': 3.8}","print(60)","(60, 70)"], ans:1, exp:'중괄호 { } 안에 \'키\': 값 짝이 있으면 딕셔너리예요. [ ]는 리스트, 이름( )은 함수 실행이에요.'},
+
+{ t:'learn', title:'괄호 세 종류 정리', body:`
+<table class="cmp"><tr><th>괄호</th><th>뜻</th><th>시험 코드 예</th></tr>
+<tr><td><code>[ ]</code> 대괄호</td><td>① 리스트 만들기<br>② 칸 꺼내기</td><td><code>[3.8, 7.2]</code><br><code>x[0]</code>, <code>df['age']</code></td></tr>
+<tr><td><code>{ }</code> 중괄호</td><td>딕셔너리 만들기</td><td><code>{'age': [60, 70]}</code></td></tr>
+<tr><td><code>( )</code> 소괄호</td><td>함수 실행 (기계에 재료 넣기)</td><td><code>print(x)</code>, <code>plt.show()</code></td></tr></table>
+<div class="tip">시험 코드에서 괄호가 헷갈리면 이 표로 돌아오세요.</div>`},
+
+{ t:'learn', title:'⑤ 함수: 재료를 넣으면 일을 하는 기계', body:`
+<p><b>함수</b>는 <code>이름( )</code> 모양이에요. 괄호 안에 재료를 넣으면 일을 해요.</p>
+<ul><li><code>print('안녕')</code> — 화면에 보여주는 기계</li><li><code>len([1, 2, 3])</code> — 칸 개수를 세는 기계 → 3</li></ul>
+<p>재료 말고 <b>옵션</b>도 줄 수 있어요. <code>옵션이름=값</code> 모양이에요.</p>
+<pre class="code">print('a', 'b', sep='-')   # sep 옵션: 사이에 - 넣기 → a-b</pre>
+<p>시험에 나오는 옵션들이 다 이 모양이에요: <code>marker='*'</code>, <code>color='m'</code>, <code>axis=1</code>, <code>index=[...]</code>, <code>inplace=True</code></p>
+<div class="tip">순서: 재료 먼저, 옵션(<code>이름=값</code>)은 뒤에. 옵션끼리는 순서 상관없어요.</div>`,
+ code:`print('a', 'b', 'c')
+print('a', 'b', 'c', sep='-')
+print(len([3.8, 7.2, 6.3]))`},
+
+{ t:'learn', title:'⑥ import: 도구 상자 꺼내기', body:`
+<p>파이썬에 기본으로 없는 기능은 <b>라이브러리</b>(도구 상자)를 불러와서 써요.</p>
+<pre class="code">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt</pre>
+<ul><li><code>import numpy</code> = numpy 도구 상자를 꺼내라</li><li><code>as np</code> = 앞으로 짧게 <b>np</b>라고 부를게</li></ul>
+<p>그다음부터는 <code>np.array( )</code>, <code>pd.DataFrame( )</code>, <code>plt.plot( )</code>처럼 <b>별명 + 점 + 함수</b>로 써요. 점(<code>.</code>)은 "~ 안에 있는"이라는 뜻이에요.</p>
+<div class="warn">맨 위에 import를 안 쓰면 <code>NameError: name 'np' is not defined</code> 오류가 나요.</div>`,
+ code:`import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+print('도구 상자 3개 준비 완료')`},
+
+{ t:'learn', title:'⑦ Thonny는 print를 해야 보여요', body:`
+<p>학교 컴퓨터의 <b>Thonny</b>는 코드를 위에서 아래로 실행하고, <b>print 한 것만</b> 화면에 보여줘요.</p>
+<table class="cmp"><tr><th>코드</th><th>Thonny 화면</th></tr>
+<tr><td><code>x = 3</code><br><code>x</code></td><td class="bad">아무것도 안 나옴</td></tr>
+<tr><td><code>x = 3</code><br><code>print(x)</code></td><td class="good">3</td></tr></table>
+<div class="warn">인터넷에서 본 코랩 코드는 마지막 줄에 <code>df</code>만 써도 표가 나오지만, <b>시험에서는 꼭 <code>print(df)</code></b>로 써야 해요. 그래프는 <code>plt.show()</code>.</div>
+<p>이 연습장도 Thonny와 똑같이 동작해요.</p>`,
+ code:`x = 3
+x          # 아무것도 안 나와요
+print(x)   # 이것만 나와요`},
+
+{ t:'code', title:'기초 종합 문제', body:`<p>지금까지 배운 걸 다 써보세요.</p><ol><li>가족 이름 리스트 <code>x</code>: grandpa, grandma, grandson</li><li>나이 리스트 <code>age</code>: 60, 70, 12</li><li><code>x</code>의 <b>첫 번째</b> 이름과 <code>age</code>의 <b>마지막</b> 나이를 출력</li></ol><pre class="code">grandpa
+12</pre>`,
+ ref:`x = ['grandpa', 'grandma', 'grandson']\nage = [60, 70, 12]\nprint(x[0])\nprint(age[2])`, check:'out', hints:["글자 리스트는 따옴표: ['grandpa', ...]",'첫 번째는 [0], 3칸짜리의 마지막은 [2]']},
+
+{ t:'type', title:'타자: 리스트와 딕셔너리', target:`x = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']
+y = [3.8, 7.2, 6.3, 5.5, 4.6]
+print(x[0])
+data = {'age': [60, 70, 12],
+        'nickname': ['Shark', 'Audrey', 'Smurf']}
+print(data['age'])`},
+{ t:'type', title:'타자: import 세 줄', target:`import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt`},
+]},
+
+/* ================= CH2 넘파이 ================= */
+{ id:'c2', title:'넘파이', short:'NUMPY', mins:35, steps:[
+{ t:'intro', title:'넘파이 NumPy', body:`<p class="lead">시험 넘파이 3문제: <b>① 라이브러리 설명 + 2차원 배열 + 함수 2개</b>, <b>② arange → reshape</b>, <b>③ arange·reshape로 연산</b>.</p>
+${NP_TABLE}
+<ul class="goals"><li>2차원 배열 만들기</li><li>axis=0과 axis=1 구분하기</li><li>합계·중앙값·평균·최댓값·최솟값·분산·표준편차·any·all·where</li><li>arange, reshape, 배열 연산</li></ul>`},
+{ t:'learn', title:'넘파이란? (서술형 답안)', body:`
+<p>시험 1번은 <b>"넘파이 라이브러리를 설명하고"</b>로 시작해요. 아래 답안을 이해하고 핵심 단어를 외우세요.</p>
+<div class="answer">${DESC_NP}</div>
+<p class="kw">핵심 단어: <span>다차원 배열</span><span>수치 계산</span><span>빠른 계산</span><span>통계 함수</span><span>판다스·맷플롯립의 기반</span></p>`},
+{ t:'learn', title:'np.array로 2차원 배열 만들기', body:`
+<p><code>np.array( )</code> 안에 <b>2차원 리스트</b>를 넣으면 넘파이 배열이 돼요.</p>
+${NP_TABLE}
+<ul><li>바깥 대괄호 <code>[ ]</code> 안에 <b>한 줄(행)마다</b> 대괄호 하나씩</li>
+<li><code>a.shape</code> → (행 수, 열 수) = (3, 5)</li>
+<li><code>a.ndim</code> → 차원 수 = 2</li></ul>
+<div class="warn">괄호 짝: <code>np.array([ [..], [..], [..] ])</code>. 맨 끝은 <code>]])</code>예요.</div>`,
+ code: NP_A + `
+print(a)
+print(a.shape)
+print(a.ndim)`},
+{ t:'code', title:'문제: 시험 배열 만들기', body:`<p>아래 배열을 넘파이로 만들어 <code>a</code>에 저장하고 출력하세요.</p>${NP_TABLE}`,
+ ref: NP_A + `\nprint(a)`, check:'out', hints:['맨 위에 import numpy as np','a = np.array([[1, 4, 3, 7, 8], ... ])','세 줄 모두 넣고 print(a)']},
+{ t:'type', title:'타자: 시험 배열', target: NP_A + `\nprint(a)`},
+{ t:'learn', title:'axis: 방향이 핵심', body:`
+<p>함수에 <code>axis</code>를 넣으면 <b>어느 방향으로 계산할지</b> 정해요. 시험에서 가장 많이 헷갈리는 부분이에요.</p>
+<div class="axis-fig">
+ <div class="axf"><b>axis=0 ↓ (세로)</b><br>위아래로 계산 → <b>열마다</b> 결과 1개<br>결과 개수 = 열 개수 = 5개<br><span>"열의 합계", "열끼리 최댓값"</span></div>
+ <div class="axf"><b>axis=1 → (가로)</b><br>옆으로 계산 → <b>행마다</b> 결과 1개<br>결과 개수 = 행 개수 = 3개<br><span>"행의 합계", "행끼리 최댓값"</span></div>
+</div>
+<div class="tip">외우는 법: <b>행</b>은 가로줄이니까 <b>가로(→)로 더하면</b> 행의 합계 = <code>axis=1</code>. <b>열</b>은 세로줄이니까 <code>axis=0</code>.</div>
+<p>axis를 안 쓰면 <b>전체</b>를 계산해요.</p>`,
+ code: NP_A + `
+print(a.sum())          # 전체 합계
+print(a.sum(axis=0))    # 열의 합계 (5개)
+print(a.sum(axis=1))    # 행의 합계 (3개)`},
+{ t:'mc', title:'axis 확인', q:'3행 5열 배열에서 <b>행의 평균</b>을 구하려면?', opts:['a.mean(axis=0)','a.mean(axis=1)','a.mean()','np.mean(a, 0)'], ans:1, exp:'행마다 결과 1개 → 가로로 계산 → axis=1. 결과는 3개가 나와요.'},
+{ t:'learn', title:'합계 · 평균 · 중앙값', body:`
+<table class="cmp"><tr><th>구하는 것</th><th>코드 (둘 다 정답)</th></tr>
+<tr><td>합계</td><td><code>a.sum(axis=1)</code> / <code>np.sum(a, axis=1)</code></td></tr>
+<tr><td>평균</td><td><code>a.mean(axis=1)</code> / <code>np.mean(a, axis=1)</code></td></tr>
+<tr><td>중앙값</td><td><code>np.median(a, axis=1)</code> <b>만</b> 가능</td></tr></table>
+<div class="warn"><b>중앙값은 <code>a.median()</code>이 없어요!</b> 반드시 <code>np.median(a, axis=...)</code>로 써요. 시험에서 제일 많이 틀리는 곳이에요.</div>
+<p>중앙값: 크기 순으로 줄 세웠을 때 가운데 값. 행 [2, 1, -1, 3, 6] → 정렬 [-1, 1, 2, 3, 6] → 중앙값 2.</p>`,
+ code: NP_A + `
+print('행의 합계', a.sum(axis=1))
+print('열의 평균', a.mean(axis=0))
+print('행의 중앙값', np.median(a, axis=1))`},
+{ t:'learn', title:'최댓값 · 최솟값 · 분산 · 표준편차', body:`
+<table class="cmp"><tr><th>구하는 것</th><th>코드</th></tr>
+<tr><td>최댓값</td><td><code>a.max(axis=0)</code> / <code>np.max(a, axis=0)</code></td></tr>
+<tr><td>최솟값</td><td><code>a.min(axis=0)</code> / <code>np.min(a, axis=0)</code></td></tr>
+<tr><td>분산</td><td><code>a.var(axis=1)</code> / <code>np.var(a, axis=1)</code></td></tr>
+<tr><td>표준편차</td><td><code>a.std(axis=1)</code> / <code>np.std(a, axis=1)</code></td></tr></table>
+<p><b>"행(열)끼리 최댓값"</b> = 각 행(열) 안에서 가장 큰 값. 분산은 값이 평균에서 얼마나 퍼져 있는지, 표준편차는 분산의 제곱근이에요.</p>
+<div class="tip">영어 이름으로 외우기: max 최대, min 최소, var(variance) 분산, std(standard deviation) 표준편차</div>`,
+ code: NP_A + `
+print('열끼리 최댓값', a.max(axis=0))
+print('열끼리 최솟값', a.min(axis=0))
+print('행끼리 분산', a.var(axis=1))
+print('행끼리 표준편차', a.std(axis=1))`},
+{ t:'learn', title:'조건 선별: any · all · where', body:`
+<p><code>a &gt; 5</code>처럼 조건을 쓰면 칸마다 True/False가 나와요. 이걸 함수에 넣어요.</p>
+<table class="cmp"><tr><th>함수</th><th>뜻</th><th>예</th></tr>
+<tr><td><code>np.any</code></td><td>하나라도 True면 True</td><td><code>np.any(a &gt; 5, axis=1)</code></td></tr>
+<tr><td><code>np.all</code></td><td>전부 True여야 True</td><td><code>np.all(a &gt; 0, axis=1)</code></td></tr>
+<tr><td><code>np.where</code></td><td>조건이면 A, 아니면 B</td><td><code>np.where(a &gt; 3, a, 0)</code></td></tr></table>
+<p><code>np.where(조건, 참일 때 값, 거짓일 때 값)</code> — 세 칸을 기억하세요. 조건만 넣으면 <b>True인 위치(행 번호, 열 번호)</b>를 알려줘요.</p>`,
+ code: NP_A + `
+print(a > 5)
+print('5보다 큰 값이 있는 행?', np.any(a > 5, axis=1))
+print('모두 0보다 큰 행?', np.all(a > 0, axis=1))
+print(np.where(a > 3, a, 0))   # 3보다 크면 그대로, 아니면 0
+print(np.where(a < 0))         # 음수의 위치`},
+{ t:'code', title:'문제 1-A: 행의 합계 + 열의 중앙값', body:`<p>시험 배열 <code>a</code>를 만들고 <b>행의 원소 합계</b>와 <b>열의 중앙값</b>을 차례로 출력하세요.</p>${NP_TABLE}`,
+ ref: NP_A + `\nprint(a.sum(axis=1))\nprint(np.median(a, axis=0))`, check:'out', hints:['행의 합계 → 가로로 더하기 → axis=1','중앙값은 np.median(a, axis=0) 형태','print(a.sum(axis=1)) 다음 줄에 print(np.median(a, axis=0))']},
+{ t:'code', title:'문제 1-B: 열의 평균 + 행끼리 최솟값', body:`<p>시험 배열로 <b>열의 평균</b>과 <b>행끼리 최솟값</b>을 출력하세요.</p>`,
+ ref: NP_A + `\nprint(a.mean(axis=0))\nprint(a.min(axis=1))`, check:'out', hints:['열 → axis=0, 행 → axis=1','a.mean(axis=0)','a.min(axis=1)']},
+{ t:'code', title:'문제 1-C: 분산과 표준편차', body:`<p>시험 배열로 <b>열끼리 분산</b>과 <b>열끼리 표준편차</b>를 출력하세요.</p>`,
+ ref: NP_A + `\nprint(a.var(axis=0))\nprint(a.std(axis=0))`, check:'out', hints:['분산 var, 표준편차 std','열끼리 → axis=0']},
+{ t:'code', title:'문제 1-D: 조건 선별', body:`<p>시험 배열로 다음 두 가지를 출력하세요.</p><ol><li>각 <b>열</b>에 6보다 큰 값이 <b>하나라도</b> 있는지 (any)</li><li>0보다 작은 값은 0으로 바꾸고 나머지는 그대로 둔 배열 (where)</li></ol>`,
+ ref: NP_A + `\nprint(np.any(a > 6, axis=0))\nprint(np.where(a < 0, 0, a))`, check:'out', hints:['열마다 → axis=0','np.any(a > 6, axis=0)','np.where(조건, 참일 때, 거짓일 때) → np.where(a < 0, 0, a)']},
+{ t:'learn', title:'arange: 연속된 숫자 배열', body:`
+<p><code>np.arange(시작, 끝, 간격)</code> — <b>끝 숫자는 포함하지 않아요.</b></p>
+<table class="cmp"><tr><th>코드</th><th>결과</th></tr>
+<tr><td><code>np.arange(1, 4)</code></td><td>[1 2 3]</td></tr>
+<tr><td><code>np.arange(5)</code></td><td>[0 1 2 3 4]</td></tr>
+<tr><td><code>np.arange(1, 7)</code></td><td>[1 2 3 4 5 6]</td></tr>
+<tr><td><code>np.arange(0, 10, 2)</code></td><td>[0 2 4 6 8]</td></tr></table>
+<div class="tip">1부터 3까지 → <code>np.arange(1, 4)</code>. "끝 + 1"을 쓴다고 외우세요.</div>`,
+ code:`import numpy as np
+print(np.arange(1, 4))
+print(np.arange(1, 7))
+print(np.arange(0, 10, 2))`},
+{ t:'learn', title:'reshape: 모양 바꾸기', body:`
+<p><code>배열.reshape(행, 열)</code> — 원소는 그대로, 모양만 바꿔요.</p>
+<div class="shape-demo"><div class="row3"><i>1</i><i>2</i><i>3</i></div><span>reshape(3, 1) ⇒</span><div class="col3"><i>1</i><i>2</i><i>3</i></div></div>
+<ul><li><b>행 × 열 = 원소 개수</b>가 맞아야 해요. 6개 → (2, 3) 또는 (3, 2) 가능, (4, 2)는 오류.</li>
+<li><code>-1</code>은 "알아서 계산해" → <code>reshape(-1, 1)</code> = 세로 한 줄</li>
+<li>arange와 이어서 한 줄로: <code>np.arange(1, 7).reshape(2, 3)</code></li></ul>`,
+ code:`import numpy as np
+a = np.arange(1, 4)
+print(a)
+b = a.reshape(3, 1)
+print(b)
+c = np.arange(1, 7).reshape(2, 3)
+print(c)`},
+{ t:'code', title:'문제 2: 차원 변경', body:`<p><code>arange()</code>로 [1 2 3] 배열을 만들어 출력한 뒤, <code>reshape()</code>로 <b>3행 1열</b>로 바꿔 출력하세요.</p>
+<div class="shape-demo"><div class="row3"><i>1</i><i>2</i><i>3</i></div><span>⇒</span><div class="col3"><i>1</i><i>2</i><i>3</i></div></div>`,
+ ref:`import numpy as np\na = np.arange(1, 4)\nprint(a)\nb = a.reshape(3, 1)\nprint(b)`, check:'out', must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']], hints:['np.arange(1, 4) → [1 2 3]','a.reshape(3, 1)','두 번 print 하기']},
+{ t:'type', title:'타자: 문제 2', target:`import numpy as np
+a = np.arange(1, 4)
+print(a)
+b = a.reshape(3, 1)
+print(b)`},
+{ t:'learn', title:'배열 연산', body:`
+<p>모양이 같은 두 배열은 <b>같은 자리끼리</b> 계산돼요. 숫자 하나와 계산하면 <b>모든 칸</b>에 적용돼요.</p>
+<table class="cmp"><tr><th>코드</th><th>뜻</th></tr>
+<tr><td><code>a + b</code>, <code>a - b</code></td><td>같은 자리끼리 더하기/빼기</td></tr>
+<tr><td><code>a * b</code>, <code>a / b</code></td><td>같은 자리끼리 곱하기/나누기</td></tr>
+<tr><td><code>a * 2</code>, <code>a + 10</code></td><td>모든 칸에 적용</td></tr>
+<tr><td><code>a ** 2</code></td><td>모든 칸 제곱</td></tr></table>
+<div class="tip">시험 3번은 <b>결과를 보고 거꾸로</b> 코드를 쓰는 문제예요. 결과의 모양(몇 행 몇 열)과 숫자 규칙을 먼저 찾으세요.</div>`,
+ code:`import numpy as np
+a = np.arange(1, 7).reshape(2, 3)
+b = np.arange(7, 13).reshape(2, 3)
+print(a)
+print(b)
+print(a + b)
+print(a * 2)
+print(a ** 2)`},
+{ t:'code', title:'문제 3-A: 결과 보고 코드 쓰기', body:`<p><code>arange()</code>와 <code>reshape()</code>로 배열 두 개를 만들고, 아래 <b>실행 결과</b>가 나오도록 코드를 쓰세요.</p><p class="dim">힌트: 1~6과 7~12로 만든 2행 3열 배열 두 개</p>`,
+ ref:`import numpy as np\na = np.arange(1, 7).reshape(2, 3)\nb = np.arange(7, 13).reshape(2, 3)\nprint(a + b)`, check:'out', showExpected:true, must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']], hints:['결과가 2행 3열 → reshape(2, 3)','a = 1~6, b = 7~12','print(a + b)']},
+{ t:'code', title:'문제 3-B: 결과 보고 코드 쓰기', body:`<p>아래 실행 결과가 나오도록 <code>arange()</code>, <code>reshape()</code>를 써서 코드를 작성하세요.</p>`,
+ ref:`import numpy as np\na = np.arange(1, 10).reshape(3, 3)\nprint(a * 10)`, check:'out', showExpected:true, must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']], hints:['3행 3열 → 원소 9개 → arange(1, 10)','모든 칸이 10배','print(a * 10)']},
+{ t:'code', title:'백지 테스트: 넘파이', blank:true, body:`<p><b>아무것도 보지 말고</b> 처음부터 쓰세요. 시험 배열을 만들고 <b>행의 중앙값</b>과 <b>열끼리 최댓값</b>을 출력하세요.</p>`,
+ ref: NP_A + `\nprint(np.median(a, axis=1))\nprint(a.max(axis=0))`, check:'out', hints:['import numpy as np','중앙값은 np.median','열끼리 → axis=0']},
+{ t:'quiz', title:'서술: 넘파이 설명', q:'넘파이(NumPy) 라이브러리를 설명하시오.', kw:['배열','수치|계산','빠르','통계|합계|평균','판다스|기반'], answer: DESC_NP},
+]},
+
+/* ================= CH3 판다스 ================= */
+{ id:'c3', title:'판다스', short:'PANDAS', mins:52, steps:[
+{ t:'intro', title:'판다스 pandas', body:`<p class="lead">판다스는 <b>1번(데이터프레임 만들기)</b>은 무조건, <b>2~13번 중 5개</b>가 나와요. 그래서 12개 전부 연습해요.</p>${FAMILY_TABLE}
+<ul class="goals"><li>시리즈와 데이터프레임</li><li>딕셔너리 · 배열 · 시리즈로 만들기</li><li>추출 <code>[[ ]]</code>, <code>loc</code></li><li>추가 · 수정 · 이름 변경 · 전치 · 삭제 · 인덱스 변경</li></ul>`},
+{ t:'learn', title:'판다스란? (서술형 답안)', body:`
+<div class="answer">${DESC_PD}</div>
+<p class="kw">핵심 단어: <span>표 형태(행과 열)</span><span>시리즈(1차원)</span><span>데이터프레임(2차원)</span><span>추출·추가·수정·삭제</span><span>넘파이 기반</span></p>
+<p>용어: <b>인덱스(index)</b> = 행 이름 (grandpa, grandma …), <b>칼럼(column)</b> = 열 이름 (age, weight …)</p>`},
+{ t:'learn', title:'시리즈 Series: 이름표 달린 한 줄', body:`
+<p><code>pd.Series(값 리스트, index=이름 리스트)</code> — 값 하나하나에 이름(인덱스)이 붙어요.</p>
+<p>데이터프레임의 <b>열 하나</b>가 바로 시리즈예요.</p>
+<div class="warn"><code>Series</code>, <code>DataFrame</code>은 <b>대문자</b>로 시작해요. <code>pd.series</code>는 오류!</div>`,
+ code:`import pandas as pd
+age = pd.Series([60, 70, 12, 45, 42],
+                index=['grandpa', 'grandma', 'grandson', 'papa', 'mama'])
+print(age)
+print(age['papa'])`},
+{ t:'learn', title:'방법 ① 딕셔너리로 만들기 (추천)', body:`
+<p>시험 1번은 세 가지 방법 중 <b>1개 선택</b>이에요. 가장 쉽고 실수가 적은 <b>딕셔너리 방법</b>을 기본으로 외우세요.</p>
+<ol><li>딕셔너리: <code>'열 이름': [그 열의 값 5개]</code></li>
+<li><code>pd.DataFrame(딕셔너리, index=[행 이름 5개])</code></li>
+<li><code>print(df)</code></li></ol>
+${FAMILY_TABLE}`,
+ code: DF_DICT + `\nprint(df)`},
+{ t:'code', title:'문제 1: 딕셔너리로 데이터프레임', body:`<p>딕셔너리를 이용해 아래 데이터프레임을 만들고 출력하세요.</p>${FAMILY_TABLE}`,
+ ref: DF_DICT + `\nprint(df)`, check:'out', must:[['\\{','딕셔너리 { }를 써야 해요']], hints:["data = {'age': [60, 70, 12, 45, 42], ...}","df = pd.DataFrame(data, index=[...])","index에 행 이름 5개, 마지막에 print(df)"]},
+{ t:'type', title:'타자: 딕셔너리 데이터프레임 (가장 중요)', target: DF_DICT + `\nprint(df)`},
+{ t:'learn', title:'방법 ② 배열(2차원 리스트)로 만들기', body:`
+<p>표를 <b>행 단위</b>로 그대로 옮겨요. 이때는 열 이름을 <code>columns=</code>로 따로 줘야 해요.</p>
+<pre class="code">pd.DataFrame(2차원 리스트, index=[행 이름], columns=[열 이름])</pre>
+<div class="warn">숫자와 문자가 섞인 데이터를 <code>np.array()</code>로 감싸면 <b>숫자까지 전부 문자</b>가 돼요. 그래서 그냥 2차원 리스트를 넣는 게 안전해요.</div>`,
+ code: DF_ARR + `\nprint(df)`},
+{ t:'learn', title:'방법 ③ 시리즈로 만들기', body:`
+<p>열마다 시리즈를 만든 다음, <code>{'열 이름': 시리즈}</code> 딕셔너리로 묶어요.</p>
+<p>같은 <code>idx</code> 리스트를 변수로 만들어 두면 덜 쓸 수 있어요.</p>`,
+ code: DF_SER + `\nprint(df)`},
+{ t:'code', title:'문제 1 변형: 배열로 만들기', body:`<p>이번엔 <b>2차원 배열(리스트)</b> 방법으로 같은 데이터프레임을 만들고 출력하세요. (<code>columns=</code> 필요)</p>`,
+ ref: DF_ARR + `\nprint(df)`, check:'out', must:[['columns','columns=로 열 이름을 넣어야 해요']], hints:['행 하나 = [60, 3.8, 4.4, \'Shark\']','pd.DataFrame(arr, index=[...], columns=[...])']},
+{ t:'code', title:'문제 1 변형: 시리즈로 만들기', body:`<p><b>시리즈</b> 방법으로 같은 데이터프레임을 만들고 출력하세요.</p>`,
+ ref: DF_SER + `\nprint(df)`, check:'out', must:[['Series','pd.Series를 써야 해요']], hints:['idx = [...] 먼저','age = pd.Series([...], index=idx) 를 4개','pd.DataFrame({\'age\': age, ...})']},
+{ t:'learn', title:'열 추출: 대괄호 두 겹', body:`
+<table class="cmp"><tr><th>코드</th><th>결과</th></tr>
+<tr><td><code>df['age']</code></td><td>열 1개 → 시리즈</td></tr>
+<tr><td><code>df[['height', 'nickname']]</code></td><td>열 여러 개 → 데이터프레임</td></tr></table>
+<div class="warn">열 여러 개는 <b>대괄호 두 겹</b> <code>[[ ]]</code>! 바깥은 "뽑아라", 안쪽은 "이름 리스트"예요.</div>`,
+ code: DF_DICT + `\nprint(df['age'])\nprint(df[['height', 'nickname']])`},
+{ t:'code', title:'문제 2: 열 2개 추출', body:`<p>데이터프레임의 <b>height, nickname</b> 2개 칼럼을 추출해 출력하세요. (데이터프레임 만드는 코드는 미리 넣어 뒀어요)</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df[['height', 'nickname']])`, check:'out', hints:['대괄호 두 겹','print(df[[\'height\', \'nickname\']])']},
+{ t:'learn', title:'행 추출: loc', body:`
+<p>행은 <code>df.loc[ ]</code>로 뽑아요. (<b>loc</b> = location, 이름으로 찾기)</p>
+<table class="cmp"><tr><th>코드</th><th>뜻</th></tr>
+<tr><td><code>df.loc['papa']</code></td><td>행 1개</td></tr>
+<tr><td><code>df.loc[['grandma', 'grandson', 'papa']]</code></td><td>행 여러 개 (두 겹)</td></tr>
+<tr><td><code>df.loc['grandma':'papa']</code></td><td>grandma부터 papa까지 (<b>끝 포함</b>)</td></tr>
+<tr><td><code>df.iloc[1:4]</code></td><td>번호로: 1, 2, 3번 행 (끝 미포함)</td></tr></table>`,
+ code: DF_DICT + `\nprint(df.loc[['grandma', 'grandson', 'papa']])\nprint(df.loc['grandma':'papa'])`},
+{ t:'code', title:'문제 3: 행 3개 추출', body:`<p><b>grandma, grandson, papa</b> 3개 인덱스에 해당하는 행을 추출해 출력하세요.</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.loc[['grandma', 'grandson', 'papa']])`, check:'out', hints:['행은 loc','df.loc[[\'grandma\', \'grandson\', \'papa\']]']},
+{ t:'learn', title:'행과 열 함께 지정', body:`
+<p><code>df.loc[행, 열]</code> — 쉼표 앞이 행, 뒤가 열이에요.</p>
+<pre class="code">df.loc[['grandma', 'grandson'], ['weight', 'height']]
+df.loc['grandma':'grandson', 'weight':'height']   # 범위로도 가능</pre>
+<div class="tip">순서 기억: <b>행 먼저, 열 나중</b>. "loc[누구, 무엇]"</div>`,
+ code: DF_DICT + `\nprint(df.loc[['grandma', 'grandson'], ['weight', 'height']])`},
+{ t:'code', title:'문제 4: 행과 열 지정 추출', body:`<p><b>grandma, grandson</b> 행의 <b>weight, height</b> 열만 추출해 출력하세요.</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.loc[['grandma', 'grandson'], ['weight', 'height']])`, check:'out', hints:['df.loc[행 리스트, 열 리스트]','df.loc[[\'grandma\', \'grandson\'], [\'weight\', \'height\']]']},
+{ t:'learn', title:'열 추가: 맨 끝 / 맨 앞', body:`
+<table class="cmp"><tr><th>위치</th><th>코드</th></tr>
+<tr><td>맨 끝 (문제 5)</td><td><code>df['sex'] = ['M', 'F', 'M', 'M', 'F']</code></td></tr>
+<tr><td>맨 앞 (문제 6)</td><td><code>df.insert(0, 'sex', ['M', 'F', 'M', 'M', 'F'])</code></td></tr></table>
+<p><code>insert(위치 번호, '열 이름', 값)</code> — 위치 0이 맨 앞이에요.</p>
+<div class="warn">값 개수는 행 개수(5개)와 같아야 해요. 다르면 <code>ValueError: Length of values</code> 오류.</div>`,
+ code: DF_DICT + `\ndf['sex'] = ['M', 'F', 'M', 'M', 'F']\nprint(df)`},
+{ t:'code', title:'문제 5: 마지막 칼럼에 추가', body:`<p><b>sex</b> 칼럼(M, F, M, M, F)을 <b>마지막</b>에 추가하고 출력하세요.</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf['sex'] = ['M', 'F', 'M', 'M', 'F']\nprint(df)`, check:'out', hints:["df['새 열 이름'] = [값 5개]","df['sex'] = ['M', 'F', 'M', 'M', 'F']"]},
+{ t:'code', title:'문제 6: 제일 앞에 추가', body:`<p><b>sex</b> 칼럼(M, F, M, M, F)을 <b>제일 앞</b>에 추가하고 출력하세요.</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.insert(0, 'sex', ['M', 'F', 'M', 'M', 'F'])\nprint(df)`, check:'out', hints:['insert(위치, 이름, 값)','df.insert(0, \'sex\', [...])']},
+{ t:'learn', title:'행 추가 · 행 값 바꾸기', body:`
+<table class="cmp"><tr><th>할 일</th><th>코드</th></tr>
+<tr><td>새 행 추가 (문제 7)</td><td><code>df.loc['uncle'] = [33, 8.2, 7.0, 'DOC']</code></td></tr>
+<tr><td>그 행 전부 0 (문제 8)</td><td><code>df.loc['uncle'] = 0</code></td></tr></table>
+<p>없는 이름으로 <code>loc</code>에 값을 넣으면 <b>새 행</b>이 생기고, 있는 이름이면 <b>값이 바뀌어요</b>.</p>`,
+ code: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df)\ndf.loc['uncle'] = 0\nprint(df)`},
+{ t:'code', title:'문제 7: 새 인덱스 행 추가', body:`<p><b>uncle</b> 행 (age 33, weight 8.2, height 7.0, nickname DOC)을 추가하고 출력하세요.</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df)`, check:'out', hints:['df.loc[\'새 행 이름\'] = [값 4개]']},
+{ t:'code', title:'문제 8: uncle 값을 모두 0으로', body:`<p>uncle 행을 추가한 다음, uncle 행의 값을 <b>모두 0</b>으로 바꾸고 출력하세요.</p>`,
+ starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.loc['uncle'] = 0\nprint(df)`, check:'out', hints:['df.loc[\'uncle\'] = 0']},
+{ t:'learn', title:'칸 하나 / 여러 칸 값 바꾸기', body:`
+<p><code>df.loc[행, 열] = 새 값</code></p>
+<pre class="code">df.loc['grandma', 'age'] = 71
+df.loc['grandson', ['weight', 'height']] = [6.0, 6.2]
+df.loc['papa', 'weight'] = 5.7</pre>
+<p>문제 9는 표의 <b>빨간/파란 네모 칸</b>이 바뀐 거예요. 전과 후를 비교해서 바뀐 칸만 찾으면 돼요.</p>`,
+ code: DF_DICT + `\ndf.loc['grandma', 'age'] = 71\ndf.loc['grandson', ['weight', 'height']] = [6.0, 6.2]\nprint(df)`},
+{ t:'code', title:'문제 9: 칼럼 값 변경', body:`<p>아래처럼 값을 바꾸고 출력하세요.</p><ul><li>grandma age: 70 → <b>71</b></li><li>grandson weight 6.3 → <b>6.0</b>, height 6.4 → <b>6.2</b></li><li>papa weight 5.5 → <b>5.7</b>, height 5.7 → <b>5.4</b></li></ul>`,
+ starter: DF_DICT + `\ndf.loc['uncle'] = 0\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = 0\ndf.loc['grandma', 'age'] = 71\ndf.loc['grandson', ['weight', 'height']] = [6.0, 6.2]\ndf.loc['papa', ['weight', 'height']] = [5.7, 5.4]\nprint(df)`, check:'out', hints:['df.loc[행, 열] = 값','grandson과 papa는 열 두 개를 리스트로','df.loc[\'papa\', [\'weight\', \'height\']] = [5.7, 5.4]']},
+{ t:'learn', title:'인덱스명 · 칼럼명 바꾸기: rename', body:`
+<pre class="code">df = df.rename(index={'grandpa': 'GP', 'grandma': 'GM'})
+df = df.rename(columns={'age': 'A', 'weight': 'W'})</pre>
+<p><code>{'원래 이름': '새 이름'}</code> 딕셔너리로 줘요.</p>
+<div class="warn"><code>rename</code>은 <b>바뀐 복사본</b>을 돌려줘요. <code>df = df.rename(...)</code>으로 다시 저장하거나 <code>inplace=True</code>를 써야 원본이 바뀌어요.</div>
+<p>한꺼번에 바꾸는 다른 방법: <code>df.index = ['GP', 'GM', 'GS', 'PP', 'MM']</code>, <code>df.columns = ['A', 'W', 'H', 'N']</code></p>`,
+ code: DF_DICT + `\ndf2 = df.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM'})\nprint(df2)\ndf3 = df.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'})\nprint(df3)`},
+{ t:'code', title:'문제 10: 인덱스명과 칼럼명 변경', body:`<p>uncle 행이 있는 데이터프레임에서</p><ol><li>인덱스명을 GP, GM, GS, PP, MM, UC로 바꾼 결과를 출력하고</li><li>칼럼명을 A, W, H, N으로 바꾼 결과를 출력하세요.</li></ol>`,
+ starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`,
+ ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\nprint(df.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM', 'uncle': 'UC'}))\nprint(df.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'}))`, check:'out', hints:['rename(index={...}) 결과를 print','rename(columns={...}) 결과를 print','첫 번째에서 df를 바꿔버리면 두 번째 결과의 인덱스가 달라져요']},
+{ t:'learn', title:'전치: 행과 열 맞바꾸기', body:`
+<p><code>df.T</code> 또는 <code>df.transpose()</code> — 인덱스가 열 이름이 되고, 열 이름이 인덱스가 돼요.</p>
+<div class="tip">T = Transpose(전치). 괄호 없이 <code>.T</code>만 써요.</div>`,
+ code: DF_DICT + `\nprint(df.T)`},
+{ t:'code', title:'문제 11: 인덱스와 칼럼 맞바꾸기', body:`<p>데이터프레임의 인덱스와 칼럼을 맞바꿔 출력하세요.</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\nprint(df.T)`, check:'out', hints:['print(df.T)']},
+{ t:'learn', title:'삭제: drop', body:`
+<table class="cmp"><tr><th>할 일</th><th>코드</th></tr>
+<tr><td>행 삭제</td><td><code>df.drop('uncle')</code> / <code>df.drop(index='uncle')</code></td></tr>
+<tr><td>열 삭제</td><td><code>df.drop('nickname', axis=1)</code> / <code>df.drop(columns='nickname')</code></td></tr>
+<tr><td>한 번에</td><td><code>df.drop(index='uncle', columns='nickname')</code></td></tr></table>
+<div class="warn">열을 지울 때 <code>axis=1</code>을 빼면 행에서 'nickname'을 찾다가 <code>KeyError</code>가 나요. drop도 복사본을 돌려주니까 <code>df = df.drop(...)</code>으로 저장하세요.</div>`,
+ code: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf = df.drop('uncle')\ndf = df.drop('nickname', axis=1)\nprint(df)`},
+{ t:'code', title:'문제 12: uncle 행과 nickname 열 삭제', body:`<p><b>uncle 인덱스</b>와 <b>nickname 칼럼</b>을 삭제하고 출력하세요.</p>`,
+ starter: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\n\n`, ref: DF_DICT + `\ndf.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf = df.drop(index='uncle', columns='nickname')\nprint(df)`, check:'out', hints:['행 삭제 drop(\'uncle\')','열 삭제 drop(\'nickname\', axis=1)','df = df.drop(...)로 저장']},
+{ t:'learn', title:'인덱스를 열로 바꾸기: set_index', body:`
+<pre class="code">df.set_index('nickname', inplace=True)</pre>
+<ul><li>nickname 열이 인덱스(행 이름)가 되고, <b>기존 인덱스(grandpa …)는 삭제</b>돼요.</li>
+<li><code>inplace=True</code>: <b>원본을 직접</b> 바꿔요. 안 쓰면 바뀐 <b>복사본</b>만 만들고 원본은 그대로예요.</li>
+<li>같은 효과: <code>df = df.set_index('nickname')</code></li></ul>
+<div class="tip">시험지 문제 13 밑의 설명 문장이 바로 이 내용이에요. 서술형으로 나올 수 있어요.</div>`,
+ code: DF_DICT + `\ndf.set_index('nickname', inplace=True)\nprint(df)`},
+{ t:'code', title:'문제 13: 인덱스를 nickname으로', body:`<p>인덱스를 <b>nickname</b> 칼럼으로 바꾸고 출력하세요. (원본이 바뀌어야 해요)</p>`,
+ starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.set_index('nickname', inplace=True)\nprint(df)`, check:'out', hints:['set_index(\'nickname\', inplace=True)']},
+{ t:'quiz', title:'서술: inplace=True', q:'df.set_index(\'nickname\', inplace=True)에서 inplace=True의 의미와, 쓰지 않으면 어떻게 되는지 설명하시오.', kw:['원본','복사본|사본','반영|바뀌|변경'], answer:'inplace=True로 설정하면 원본 데이터프레임이 직접 바뀐다. 설정하지 않으면 원본의 복사본을 새로 만들어 돌려주기 때문에 원본에는 반영되지 않는다. 이때 기존 인덱스는 삭제된다.'},
+{ t:'mc', title:'판다스 확인', q:'height, nickname 두 열을 뽑는 코드로 올바른 것은?', opts:["df['height', 'nickname']","df[['height', 'nickname']]","df.loc['height', 'nickname']","df(['height', 'nickname'])"], ans:1, exp:'열 여러 개는 대괄호 두 겹이에요.'},
+{ t:'mc', title:'판다스 확인', q:'sex 열을 <b>맨 앞</b>에 추가하는 코드는?', opts:["df['sex'] = [...]","df.loc['sex'] = [...]","df.insert(0, 'sex', [...])","df.insert('sex', 0, [...])"], ans:2, exp:'insert(위치, 이름, 값) 순서예요.'},
+{ t:'code', title:'백지 테스트: 판다스 ①', blank:true, body:`<p><b>아무것도 보지 말고</b> 딕셔너리로 가족 데이터프레임을 만든 뒤, <b>age, weight 열</b>만 추출해 출력하세요.</p>`,
+ ref: DF_DICT + `\nprint(df[['age', 'weight']])`, check:'out', hints:['import pandas as pd','딕셔너리 → pd.DataFrame(data, index=[...])','df[[\'age\', \'weight\']]']},
+{ t:'code', title:'백지 테스트: 판다스 ②', blank:true, body:`<p>데이터프레임을 만들고 <b>aunt</b> 행 (age 38, weight 5.1, height 6.6, nickname Mia)을 추가한 뒤, <b>nickname 칼럼을 삭제</b>하고 출력하세요.</p>`,
+ ref: DF_DICT + `\ndf.loc['aunt'] = [38, 5.1, 6.6, 'Mia']\ndf = df.drop('nickname', axis=1)\nprint(df)`, check:'out', hints:['df.loc[\'aunt\'] = [...]','df = df.drop(\'nickname\', axis=1)']},
+{ t:'type', title:'타자: 판다스 핵심 모음', target:`print(df[['height', 'nickname']])
+print(df.loc[['grandma', 'grandson', 'papa']])
+print(df.loc[['grandma', 'grandson'], ['weight', 'height']])
+df['sex'] = ['M', 'F', 'M', 'M', 'F']
+df.insert(0, 'blood', ['A', 'B', 'O', 'A', 'AB'])
+df.loc['uncle'] = [33, 8.2, 7.0, 'DOC']
+df.loc['uncle'] = 0
+df.loc['grandma', 'age'] = 71
+print(df.T)
+df = df.drop(index='uncle', columns='nickname')
+df.set_index('sex', inplace=True)`},
+]},
+
+/* ================= CH4 맷플롯립 ================= */
+{ id:'c4', title:'맷플롯립', short:'GRAPH', mins:20, steps:[
+{ t:'intro', title:'맷플롯립 Matplotlib', body:`<p class="lead">시험 그래프는 <b>사진 속 가족 몸무게 그래프 1개</b>예요. 단, <b>마커·색·선 종류가 바뀌어 나올 수 있으니</b> 옵션표를 확실히 외워요.</p>
+<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ★, 그래프 색상: 마젠타(m), 선 종류: -- · 범례(label='weight')</div>
+<ul class="goals"><li>plot의 기본 구조</li><li>marker · color · linestyle 옵션표</li><li>xlabel · ylabel · label · legend · show</li></ul>`},
+{ t:'learn', title:'맷플롯립이란? (서술형 답안)', body:`<div class="answer">${DESC_MPL}</div>
+<p class="kw">핵심 단어: <span>시각화</span><span>선 그래프·막대·산점도·원그래프</span><span>pyplot → plt</span></p>`},
+{ t:'learn', title:'그래프의 기본 4단계', body:`
+<ol><li><b>불러오기</b>: <code>import matplotlib.pyplot as plt</code></li>
+<li><b>데이터</b>: <code>x</code> 리스트(가로축), <code>y</code> 리스트(세로축) — 개수가 같아야 해요</li>
+<li><b>그리기</b>: <code>plt.plot(x, y)</code></li>
+<li><b>보여주기</b>: <code>plt.show()</code> ← Thonny에서 이게 없으면 그래프 창이 안 떠요</li></ol>`,
+ code:`import matplotlib.pyplot as plt
+x = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']
+y = [3.8, 7.2, 6.3, 5.5, 4.6]
+plt.plot(x, y)
+plt.show()`},
+{ t:'learn', title:'옵션표: marker · color · linestyle', body:`
+<div class="opt3">
+<table class="cmp"><tr><th colspan="2">marker 마커</th></tr><tr><td><code>'o'</code></td><td>● 원</td></tr><tr><td><code>'*'</code></td><td>★ 별</td></tr><tr><td><code>'s'</code></td><td>■ 사각형</td></tr><tr><td><code>'D'</code></td><td>◆ 다이아몬드</td></tr><tr><td><code>'^'</code></td><td>▲ 삼각형</td></tr><tr><td><code>'.'</code></td><td>· 점</td></tr><tr><td><code>'x'</code></td><td>× 엑스</td></tr></table>
+<table class="cmp"><tr><th colspan="2">color 색</th></tr><tr><td><code>'r'</code></td><td>빨강 red</td></tr><tr><td><code>'g'</code></td><td>초록 green</td></tr><tr><td><code>'b'</code></td><td>파랑 blue</td></tr><tr><td><code>'c'</code></td><td>시안 cyan</td></tr><tr><td><code>'m'</code></td><td>마젠타 magenta</td></tr><tr><td><code>'y'</code></td><td>노랑 yellow</td></tr><tr><td><code>'k'</code></td><td>검정 black</td></tr></table>
+<table class="cmp"><tr><th colspan="2">linestyle 선</th></tr><tr><td><code>'-'</code></td><td>━ 실선</td></tr><tr><td><code>'--'</code></td><td>╍ 파선(대시)</td></tr><tr><td><code>':'</code></td><td>┈ 점선</td></tr><tr><td><code>'-.'</code></td><td>━·━ 일점쇄선</td></tr></table>
+</div>
+<div class="tip">검정은 b가 아니라 <b>k</b>예요(b는 파랑). 옵션 값은 모두 <b>따옴표</b> 안에!</div>`,
+ code:`import matplotlib.pyplot as plt
+x = [1, 2, 3, 4]
+plt.plot(x, [1, 2, 3, 4], marker='o', color='r', linestyle='-')
+plt.plot(x, [2, 3, 4, 5], marker='s', color='b', linestyle='--')
+plt.plot(x, [3, 4, 5, 6], marker='D', color='g', linestyle=':')
+plt.plot(x, [4, 5, 6, 7], marker='^', color='k', linestyle='-.')
+plt.show()`},
+{ t:'learn', title:'축 이름 · 범례', body:`
+<table class="cmp"><tr><th>코드</th><th>하는 일</th></tr>
+<tr><td><code>plt.xlabel('family')</code></td><td>가로축 이름</td></tr>
+<tr><td><code>plt.ylabel('weight')</code></td><td>세로축 이름</td></tr>
+<tr><td><code>plt.plot(..., label='weight')</code></td><td>범례에 표시될 이름</td></tr>
+<tr><td><code>plt.legend()</code></td><td>범례 상자 표시</td></tr>
+<tr><td><code>plt.title('제목')</code></td><td>그래프 제목</td></tr></table>
+<div class="warn"><code>label=</code>만 쓰고 <code>plt.legend()</code>를 빼면 범례가 안 나와요. <b>둘은 세트</b>예요. (사진에서 빨간 글씨 두 곳)</div>
+<p><code>plt.legend(loc='upper right')</code>처럼 위치도 정할 수 있어요: upper left / upper right / lower left / lower right</p>`,
+ code: PHOTO},
+{ t:'code', title:'시험 그래프: 사진 그대로', body:`<p>가족의 몸무게(weight)로 아래 조건의 그래프를 그리세요.</p>
+<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ★, 색상: 마젠타(m), 선 종류: --, 범례 label='weight', x축 이름 family, y축 이름 weight</div>`,
+ ref: PHOTO, check:'plot', showExpected:true, hints:['import matplotlib.pyplot as plt','plt.plot(x, y, marker=\'*\', color=\'m\', label=\'weight\', linestyle=\'--\')','xlabel, ylabel, legend, show 4줄']},
+{ t:'type', title:'타자: 시험 그래프 (1회차)', target: PHOTO},
+{ t:'type', title:'타자: 시험 그래프 (2회차, 더 빠르게)', target: PHOTO},
+{ t:'code', title:'변형: 나이 그래프', body:`<p>이번엔 <b>나이(age)</b>로 그리세요. 조건이 바뀌었어요.</p>
+<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ● (원), 색상: 빨강(r), 선 종류: 점선(:), 범례 label='age', x축 family, y축 age</div><p class="dim">age: 60, 70, 12, 45, 42</p>`,
+ ref:`import matplotlib.pyplot as plt\nx = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']\ny = [60, 70, 12, 45, 42]\nplt.plot(x, y, marker='o', color='r', label='age', linestyle=':')\nplt.xlabel('family')\nplt.ylabel('age')\nplt.legend()\nplt.show()`, check:'plot', showExpected:true, hints:['원 마커 \'o\', 빨강 \'r\', 점선 \':\'','label=\'age\'와 plt.legend()']},
+{ t:'code', title:'변형: 키 그래프', body:`<p><b>키(height)</b>로 그리세요.</p>
+<div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ◆ (다이아몬드), 색상: 시안(c), 선 종류: 일점쇄선(-.), 범례 label='height', x축 family, y축 height</div><p class="dim">height: 4.4, 5.6, 6.4, 5.7, 7.8</p>`,
+ ref:`import matplotlib.pyplot as plt\nx = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']\ny = [4.4, 5.6, 6.4, 5.7, 7.8]\nplt.plot(x, y, marker='D', color='c', label='height', linestyle='-.')\nplt.xlabel('family')\nplt.ylabel('height')\nplt.legend()\nplt.show()`, check:'plot', showExpected:true, hints:['다이아몬드 \'D\' (대문자)','일점쇄선 \'-.\'']},
+{ t:'code', title:'백지 테스트: 시험 그래프', blank:true, body:`<p><b>아무것도 보지 말고</b> 사진의 그래프를 처음부터 그리세요. (★, 마젠타, --, label='weight', family, weight, 범례)</p>`,
+ ref: PHOTO, check:'plot', hints:['import 2줄','x는 가족 5명, y는 몸무게 5개','plot → xlabel → ylabel → legend → show']},
+{ t:'quiz', title:'서술: 맷플롯립 설명', q:'맷플롯립(Matplotlib) 라이브러리를 설명하시오.', kw:['시각화|그래프','선|막대|산점도|원','pyplot|plt'], answer: DESC_MPL},
+]},
+
+/* ================= CH5 머신러닝 ================= */
+{ id:'c5', title:'머신러닝', short:'AI', mins:28, steps:[
+{ t:'intro', title:'스마트폰 · 예측 · 포도 분류', body:`<p class="lead">시험지 8~10쪽: <b>밑줄 채우기</b> 형식이에요. 코드 흐름을 이해하면 빈칸이 어디든 채울 수 있어요.</p>
+<ul class="goals"><li>독립 변수 x, 종속 변수 y</li><li>스마트폰 사용 시간 그래프 (figure, title, 'bo')</li><li>LinearRegression으로 점수 예측 + 기계학습 과정 설명</li><li>LogisticRegression으로 거봉 분류</li></ul>
+<div class="tip">이 연습장의 sklearn은 연습용 경량판이라 계수 숫자가 실제와 약간 다를 수 있어요. 코드 작성법과 예측 결과는 같아요.</div>`},
+{ t:'learn', title:'독립 변수와 종속 변수', body:`
+<table class="cmp"><tr><th></th><th>뜻</th><th>예</th></tr>
+<tr><td><b>독립 변수 x</b></td><td>원인, 입력값</td><td>스마트폰 사용 시간 1, 3, 5시간</td></tr>
+<tr><td><b>종속 변수 y</b></td><td>결과, 예측할 값</td><td>시험 점수 80, 69, 55점</td></tr></table>
+<p>"2시간 쓰면 몇 점?" → x가 2일 때 y를 <b>예측</b>하는 게 목표예요.</p>`},
+{ t:'learn', title:'스마트폰 사용 시간 그래프', body:`
+<table class="cmp"><tr><th>코드</th><th>뜻</th></tr>
+<tr><td><code>np.array([1, 3, 5])</code></td><td>넘파이 배열로 데이터 준비</td></tr>
+<tr><td><code>plt.figure(figsize=(5, 5))</code></td><td>그래프 크기 가로 5, 세로 5 (인치)</td></tr>
+<tr><td><code>plt.title('...')</code></td><td>그래프 제목</td></tr>
+<tr><td><code>plt.plot(x, y, 'bo')</code></td><td><b>b</b>=파랑 + <b>o</b>=원 마커, 선 없음</td></tr></table>
+<div class="tip">'bo'처럼 <b>색 + 마커 (+ 선)</b>을 한 문자열로 줄 수 있어요: <code>'r--'</code> 빨간 파선, <code>'g*-'</code> 초록 별 실선, <code>'ks'</code> 검정 사각형 점만.</div>`,
+ code: PHONE},
+{ t:'fill', title:'빈칸: 스마트폰 그래프', tpl:`import numpy as {{np}}
+import matplotlib.{{pyplot}} as plt
+x=np.{{array}}([1, 3, 5])
+y=np.array([80, 69, 55])
+plt.{{figure}}(figsize=(5, 5))
+plt.{{title}}('smartphone vs exam score')
+plt.{{plot}}(x, y,'{{bo}}')
+plt.{{show}}()`},
+{ t:'code', title:'백지 테스트: 스마트폰 그래프', blank:true, body:`<p>아무것도 보지 말고 스마트폰 사용 시간(1, 3, 5)과 시험 점수(80, 69, 55) 그래프를 그리세요. 크기 5×5, 제목 'smartphone vs exam score', 파란 원 마커.</p>`,
+ ref: PHONE, check:'plot', hints:['np.array로 x, y','plt.figure(figsize=(5, 5))','plt.plot(x, y, \'bo\')']},
+{ t:'learn', title:'머신러닝 예측 4단계', body:`
+<div class="flow"><div><b>① 데이터 준비</b><br>x, y 배열</div><div><b>② 모델 선정</b><br>LinearRegression()</div><div><b>③ 학습</b><br>model.fit(x, y)</div><div><b>④ 예측</b><br>model.predict([[2]])</div></div>
+<p><b>선형 회귀</b>: 데이터에 가장 잘 맞는 <b>직선</b>(기울기와 절편)을 찾아, 새로운 x의 y를 예측해요.</p>
+<div class="warn">sklearn은 x를 <b>2차원</b>으로 받아요.<br>• 학습: <code>x.reshape(-1, 1)</code> → [[1], [3], [5]]<br>• 예측: <code>[[pre_x]]</code> 대괄호 두 겹</div>
+<p><code>input()</code>은 글자로 받으니 <code>int()</code>로 숫자로 바꿔요. 실행할 때 <b>입력값</b> 칸에 적은 값이 input()으로 들어가요.</p>`,
+ code: LINREG, inputs:'2'},
+{ t:'fill', title:'빈칸: 점수 예측', note:'시험지에서 취소선 그어진 줄(from sklearn…, model = …)은 빈칸으로 안 나올 가능성이 높아요. 그래도 아래 백지 테스트에서는 같이 써봐요.', tpl:`# 1. 데이터 준비
+import numpy as np
+x = np.array([1, 3, 5])
+y = np.array([80, 69, 55])
+
+# 2. 예측 모델 선정 및 모델 학습
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.{{fit}}(x.{{reshape}}(-1, 1), {{y}})
+
+# 3. 모델 예측
+pre_x = {{int}}({{input}}('스마트폰 사용 시간:'))
+y_hat = model.{{predict}}({{[[pre_x]]}})
+print({{y_hat}}, '점')`, inputs:'2'},
+{ t:'code', title:'백지 테스트: 점수 예측', blank:true, body:`<p>아무것도 보지 말고 스마트폰 사용 시간을 입력받아 시험 점수를 예측하는 프로그램을 쓰세요. (입력값 2로 채점)</p>`,
+ ref: LINREG, inputs:'2', check:'out', hints:['1. np.array로 x, y','2. from sklearn.linear_model import LinearRegression → model = LinearRegression() → model.fit(x.reshape(-1, 1), y)','3. int(input(...)) → model.predict([[pre_x]]) → print(y_hat, \'점\')']},
+{ t:'type', title:'타자: 점수 예측', target: LINREG},
+{ t:'quiz', title:'서술: 기계학습 과정 설명', q:'스마트폰 사용 시간으로 시험 점수를 예측하는 기계학습 과정을 설명하시오.', kw:['데이터','모델|LinearRegression|선형','학습|fit','예측|predict','reshape|2차원'], answer: DESC_ML},
+{ t:'learn', title:'분류: 포도가 거봉인지 아닌지', body:`
+<p><b>회귀</b>는 숫자(점수)를 예측하고, <b>분류</b>는 종류(거봉 1 / 아님 0)를 예측해요. 이진 분류에는 <b>LogisticRegression</b>(로지스틱 회귀)을 써요.</p>
+<table class="cmp"><tr><th>코드</th><th>뜻</th></tr>
+<tr><td><code>grape[:, :2]</code></td><td>전체 행, 0~1번 열 → 크기, 무게 (X)</td></tr>
+<tr><td><code>grape[:, 2]</code></td><td>전체 행, 2번 열 → 거봉 여부 (y, 레이블)</td></tr>
+<tr><td><code>model.coef_</code></td><td>학습한 가중치(계수)</td></tr>
+<tr><td><code>model.intercept_</code></td><td>학습한 편향(절편)</td></tr>
+<tr><td><code>float(input(...))</code></td><td>소수 입력받기</td></tr></table>
+<div class="tip">슬라이싱 <code>[행, 열]</code>: <code>:</code>만 쓰면 전체, <code>:2</code>는 0번~1번(2 미포함).</div>
+<p>입력값 칸에 <b>두 줄</b>(크기, 무게)을 넣어요.</p>`,
+ code: GRAPE, inputs:'26\n650'},
+{ t:'fill', title:'빈칸: 포도 분류', tpl:`import numpy as np
+import matplotlib.pyplot as plt
+grape = np.{{array}}([[19, 300, 0],
+                  [20, 500, 0],
+                  [18, 400, 0],
+                  [25, 500, 1],
+                  [27, 700, 1],
+                  [28, 600, 1]])
+X = grape[{{:, :2}}]
+y = grape[{{:, 2}}]
+print(X)
+print(y)
+
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model.{{fit}}({{X}}, {{y}})
+print(model.coef_)
+print(model.intercept_)
+
+size = {{float}}(input('포도 한 알의 크기는(mm): '))
+weight = {{float}}(input('포도 한 송이의 무게는(g): '))
+{{result}} = model.predict({{[[size, weight]]}})
+if({{result==1}}) :
+    print('{{거봉}}')
+{{else}} :
+    print('거봉 아님')`, inputs:'26\n650'},
+{ t:'code', title:'백지 테스트: 포도 분류', blank:true, body:`<p>아무것도 보지 말고 포도 분류 프로그램을 쓰세요. 데이터는 아래 표, 입력은 크기 → 무게 순서예요. (X, y 출력 포함, coef_와 intercept_ 출력은 빼도 돼요)</p>
+<table class="tbl"><tr><th>크기(mm)</th><td>19</td><td>20</td><td>18</td><td>25</td><td>27</td><td>28</td></tr><tr><th>무게(g)</th><td>300</td><td>500</td><td>400</td><td>500</td><td>700</td><td>600</td></tr><tr><th>거봉</th><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr></table>`,
+ ref: GRAPE.replace("print(model.coef_)\nprint(model.intercept_)\n",""), inputs:'26\n650', check:'out', lenient:'coef', hints:['grape = np.array([[19, 300, 0], ...])','X = grape[:, :2], y = grape[:, 2]','model.fit(X, y) → predict([[size, weight]]) → if/else']},
+{ t:'type', title:'타자: 포도 분류', target: GRAPE},
+]},
+
+/* ================= CH6 모의고사 ================= */
+{ id:'c6', title:'모의고사', short:'EXAM', mins:15, steps:[
+{ t:'intro', title:'실전 모의고사', body:`<p class="lead">숫자·이름·조건이 <b>살짝 바뀐</b> 문제가 무작위로 나와요. 시험처럼 <b>아무것도 보지 않고</b> 처음부터 쓰세요.</p>
+<ul class="goals"><li>문제마다 <b>새 변형</b> 버튼으로 다른 문제를 계속 뽑을 수 있어요.</li><li>종이에 먼저 손으로 써보고 → 입력해서 채점하면 시험과 가장 비슷해요.</li></ul>`},
+{ t:'gen', kind:'np1'},
+{ t:'gen', kind:'np2'},
+{ t:'gen', kind:'np3'},
+{ t:'gen', kind:'pd1'},
+{ t:'gen', kind:'pdx'},
+{ t:'gen', kind:'pdx'},
+{ t:'gen', kind:'pdx'},
+{ t:'gen', kind:'plot'},
+{ t:'gen', kind:'ml'},
+{ t:'quiz', title:'서술 종합: 세 라이브러리', q:'넘파이, 판다스, 맷플롯립을 각각 한두 문장으로 설명하시오.', kw:['배열','수치|계산','표|행과 열','시리즈|데이터프레임','시각화|그래프'], answer: DESC_NP + '\n\n' + DESC_PD + '\n\n' + DESC_MPL},
+{ t:'finish', title:'시험 직전 체크리스트', body:`
+<div class="checklist">
+<label><input type="checkbox"> <code>print()</code> 안 쓰면 Thonny에서 아무것도 안 나온다</label>
+<label><input type="checkbox"> 그래프 마지막엔 <code>plt.show()</code></label>
+<label><input type="checkbox"> 행 → <code>axis=1</code>, 열 → <code>axis=0</code></label>
+<label><input type="checkbox"> 중앙값은 <code>np.median(a, axis=...)</code></label>
+<label><input type="checkbox"> <code>np.arange(1, 4)</code>는 1, 2, 3 (끝 미포함)</label>
+<label><input type="checkbox"> reshape는 행 × 열 = 원소 개수</label>
+<label><input type="checkbox"> 열 여러 개는 <code>df[['a', 'b']]</code> 두 겹</label>
+<label><input type="checkbox"> 행은 <code>df.loc[ ]</code>, 행+열은 <code>df.loc[행, 열]</code></label>
+<label><input type="checkbox"> 맨 앞 열 추가 <code>df.insert(0, '이름', 값)</code></label>
+<label><input type="checkbox"> 열 삭제는 <code>axis=1</code> 또는 <code>columns=</code></label>
+<label><input type="checkbox"> <code>inplace=True</code> = 원본 변경</label>
+<label><input type="checkbox"> <code>label=</code>과 <code>plt.legend()</code>는 세트</label>
+<label><input type="checkbox"> 검정은 <code>'k'</code>, 마젠타는 <code>'m'</code>, 별은 <code>'*'</code>, 파선은 <code>'--'</code></label>
+<label><input type="checkbox"> 학습 <code>x.reshape(-1, 1)</code>, 예측 <code>[[pre_x]]</code></label>
+<label><input type="checkbox"> 기계학습 과정: 데이터 준비 → 모델 선정 → 학습(fit) → 예측(predict)</label>
+</div>`},
+]},
+];
+
+/* ===== 모의고사 변형 생성기 ===== */
+function rnd(n){return Math.floor(Math.random()*n)}
+function pick(a){return a[rnd(a.length)]}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(i+1);[a[i],a[j]]=[a[j],a[i]]}return a}
+function npArrCode(rows){return 'import numpy as np\na = np.array(['+rows.map((r,i)=>(i?'              ':'')+'['+r.join(', ')+']').join(',\n')+'])'}
+function npTableHtml(rows){return '<table class="tbl np">'+rows.map(r=>'<tr>'+r.map(v=>'<td>'+v+'</td>').join('')+'</tr>').join('')+'</table>'}
+const NP_FUNCS=[
+ ['행의 원소 합계','a.sum(axis=1)'],['열의 원소 합계','a.sum(axis=0)'],
+ ['행의 중앙값','np.median(a, axis=1)'],['열의 중앙값','np.median(a, axis=0)'],
+ ['행의 평균','a.mean(axis=1)'],['열의 평균','a.mean(axis=0)'],
+ ['행끼리 최댓값','a.max(axis=1)'],['열끼리 최댓값','a.max(axis=0)'],
+ ['행끼리 최솟값','a.min(axis=1)'],['열끼리 최솟값','a.min(axis=0)'],
+ ['행끼리 분산','a.var(axis=1)'],['열끼리 분산','a.var(axis=0)'],
+ ['행끼리 표준편차','a.std(axis=1)'],['열끼리 표준편차','a.std(axis=0)'],
+ ['각 행에 5보다 큰 값이 하나라도 있는지 (any)','np.any(a > 5, axis=1)'],
+ ['각 열의 값이 모두 0보다 큰지 (all)','np.all(a > 0, axis=0)'],
+ ['3보다 큰 값은 그대로, 나머지는 0인 배열 (where)','np.where(a > 3, a, 0)'],
+];
+const FAM=['grandpa','grandma','grandson','papa','mama'];
+const COLS={age:[60,70,12,45,42],weight:[3.8,7.2,6.3,5.5,4.6],height:[4.4,5.6,6.4,5.7,7.8],nickname:['Shark','Audrey','Smurf','Tongk','JJ']};
+const q=s=>"'"+s+"'";
+const L=a=>'['+a.map(v=>typeof v==='string'?q(v):v).join(', ')+']';
+const MARKERS=[['o','● 원'],['*','★ 별'],['s','■ 사각형'],['D','◆ 다이아몬드'],['^','▲ 삼각형']];
+const COLORS=[['r','빨강'],['g','초록'],['b','파랑'],['c','시안'],['m','마젠타'],['y','노랑'],['k','검정']];
+const LS=[['-','실선(-)'],['--','파선(--)'],[':','점선(:)'],['-.','일점쇄선(-.)']];
+
+function genStep(kind){
+ if(kind==='np1'){
+  const useExam=Math.random()<0.5;
+  const rows=useExam?[[1,4,3,7,8],[2,1,-1,3,6],[3,3,4,1,0]]:Array.from({length:3},()=>Array.from({length:5},()=>rnd(12)-2));
+  const [f1,f2]=shuffle(NP_FUNCS).slice(0,2);
+  return {t:'code',blank:true,title:'모의 넘파이 1: 배열 + 함수 2개',body:`<p>아래 2차원 배열을 만들고 <b>${f1[0]}</b>, <b>${f2[0]}</b>을(를) 차례로 출력하세요.</p>`+npTableHtml(rows),
+   ref:npArrCode(rows)+`\nprint(${f1[1]})\nprint(${f2[1]})`,check:'out',hints:['import numpy as np → a = np.array([[...], [...], [...]])','행 → axis=1, 열 → axis=0',`정답 함수: ${f1[1]}, ${f2[1]}`]};
+ }
+ if(kind==='np2'){
+  const o=pick([{n:3,s:[3,1],from:1},{n:4,s:[4,1],from:1},{n:6,s:[2,3],from:1},{n:6,s:[3,2],from:1},{n:8,s:[2,4],from:1},{n:12,s:[3,4],from:0},{n:5,s:[5,1],from:2}]);
+  const end=o.from+o.n;
+  return {t:'code',blank:true,title:'모의 넘파이 2: arange → reshape',body:`<p><code>arange()</code>로 ${o.from}부터 ${end-1}까지의 배열을 만들어 출력한 뒤, <code>reshape()</code>로 <b>${o.s[0]}행 ${o.s[1]}열</b>로 바꿔 출력하세요.</p>`,
+   ref:`import numpy as np\na = np.arange(${o.from}, ${end})\nprint(a)\nb = a.reshape(${o.s[0]}, ${o.s[1]})\nprint(b)`,check:'out',must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']],hints:[`끝 숫자는 포함 안 됨 → np.arange(${o.from}, ${end})`,`a.reshape(${o.s[0]}, ${o.s[1]})`]};
+ }
+ if(kind==='np3'){
+  const o=pick([
+   {r:`a = np.arange(1, 7).reshape(2, 3)\nb = np.arange(7, 13).reshape(2, 3)\nprint(a + b)`,h:'1~6, 7~12로 2행 3열 두 개, 더하기'},
+   {r:`a = np.arange(1, 7).reshape(2, 3)\nb = np.arange(7, 13).reshape(2, 3)\nprint(b - a)`,h:'1~6, 7~12로 2행 3열 두 개, 빼기'},
+   {r:`a = np.arange(1, 7).reshape(3, 2)\nb = np.arange(7, 13).reshape(3, 2)\nprint(a * b)`,h:'3행 2열 두 개, 같은 자리끼리 곱하기'},
+   {r:`a = np.arange(1, 10).reshape(3, 3)\nprint(a * 2)`,h:'3행 3열, 모든 칸 × 2'},
+   {r:`a = np.arange(1, 7).reshape(2, 3)\nprint(a ** 2)`,h:'2행 3열, 모든 칸 제곱'},
+   {r:`a = np.arange(0, 8).reshape(2, 4)\nprint(a + 10)`,h:'0~7로 2행 4열, 모든 칸 + 10'},
+   {r:`a = np.arange(2, 8).reshape(2, 3)\nb = np.arange(1, 7).reshape(2, 3)\nprint(a / b)`,h:'2~7과 1~6으로 2행 3열, 나누기'},
+  ]);
+  return {t:'code',blank:true,title:'모의 넘파이 3: 결과 보고 코드 쓰기',body:`<p><code>arange()</code>와 <code>reshape()</code>로 배열을 만들고, 아래 <b>실행 결과</b>가 나오도록 코드를 쓰세요.</p>`,
+   ref:'import numpy as np\n'+o.r,check:'out',showExpected:true,must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']],hints:['결과의 행·열 개수부터 세기',o.h]};
+ }
+ if(kind==='pd1'){
+  const m=pick([['딕셔너리',DF_DICT,'\\{'],['배열(2차원 리스트)',DF_ARR,'columns'],['시리즈',DF_SER,'Series']]);
+  return {t:'code',blank:true,title:'모의 판다스 1: 데이터프레임 만들기',body:`<p><b>${m[0]}</b>를 이용해 아래 데이터프레임을 만들고 출력하세요.</p>`+FAMILY_TABLE,
+   ref:m[1]+'\nprint(df)',check:'out',must:[[m[2],m[0]+' 방법을 써야 해요']],hints:['import pandas as pd','index에 행 이름 5개']};
+ }
+ if(kind==='pdx'){
+  const tasks=[
+   ()=>{const c=shuffle(Object.keys(COLS)).slice(0,2);return [`<b>${c.join(', ')}</b> 2개의 칼럼을 추출해 출력하세요.`,`print(df[${L(c)}])`]},
+   ()=>{const r=shuffle(FAM).slice(0,3).sort((a,b)=>FAM.indexOf(a)-FAM.indexOf(b));return [`<b>${r.join(', ')}</b> 3개의 인덱스에 해당하는 행을 추출해 출력하세요.`,`print(df.loc[${L(r)}])`]},
+   ()=>{const r=shuffle(FAM).slice(0,2).sort((a,b)=>FAM.indexOf(a)-FAM.indexOf(b));const c=shuffle(['age','weight','height']).slice(0,2);return [`<b>${r.join(', ')}</b> 행의 <b>${c.join(', ')}</b> 열만 추출해 출력하세요.`,`print(df.loc[${L(r)}, ${L(c)}])`]},
+   ()=>{const o=pick([['sex',['M','F','M','M','F']],['blood',['A','B','O','A','AB']],['city',['Seoul','Busan','Seoul','Daegu','Busan']]]);return [`<b>${o[0]}</b> 칼럼 (${o[1].join(', ')})을 <b>마지막</b>에 추가하고 출력하세요.`,`df[${q(o[0])}] = ${L(o[1])}\nprint(df)`]},
+   ()=>{const o=pick([['sex',['M','F','M','M','F']],['blood',['A','B','O','A','AB']]]);return [`<b>${o[0]}</b> 칼럼 (${o[1].join(', ')})을 <b>제일 앞</b>에 추가하고 출력하세요.`,`df.insert(0, ${q(o[0])}, ${L(o[1])})\nprint(df)`]},
+   ()=>{const o=pick([['uncle',[33,8.2,7.0,'DOC']],['aunt',[38,5.1,6.6,'Mia']],['baby',[1,0.9,2.1,'Boo']]]);return [`<b>${o[0]}</b> 행 (age ${o[1][0]}, weight ${o[1][1]}, height ${o[1][2]}, nickname ${o[1][3]})을 추가하고 출력하세요.`,`df.loc[${q(o[0])}] = ${L(o[1])}\nprint(df)`]},
+   ()=>[`<b>uncle</b> 행 (33, 8.2, 7.0, DOC)을 추가한 뒤, uncle 행의 값을 <b>모두 0</b>으로 바꿔 출력하세요.`,`df.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.loc['uncle'] = 0\nprint(df)`],
+   ()=>{const r=pick(FAM),r2=pick(FAM.filter(x=>x!==r));const v=COLS.age[FAM.indexOf(r)]+1;return [`<b>${r}</b>의 age를 <b>${v}</b>로, <b>${r2}</b>의 weight와 height를 <b>5.0, 6.0</b>으로 바꿔 출력하세요.`,`df.loc[${q(r)}, 'age'] = ${v}\ndf.loc[${q(r2)}, ['weight', 'height']] = [5.0, 6.0]\nprint(df)`]},
+   ()=>Math.random()<0.5?[`인덱스명을 <b>GP, GM, GS, PP, MM</b>으로 바꿔 출력하세요.`,`df = df.rename(index={'grandpa': 'GP', 'grandma': 'GM', 'grandson': 'GS', 'papa': 'PP', 'mama': 'MM'})\nprint(df)`]:[`칼럼명을 <b>A, W, H, N</b>으로 바꿔 출력하세요.`,`df = df.rename(columns={'age': 'A', 'weight': 'W', 'height': 'H', 'nickname': 'N'})\nprint(df)`],
+   ()=>[`인덱스와 칼럼을 <b>맞바꿔</b> 출력하세요.`,`print(df.T)`],
+   ()=>{const r=pick(FAM),c=pick(['age','weight','height','nickname']);return [`<b>${r}</b> 인덱스와 <b>${c}</b> 칼럼을 삭제하고 출력하세요.`,`df = df.drop(index=${q(r)}, columns=${q(c)})\nprint(df)`]},
+   ()=>[`인덱스를 <b>nickname</b> 칼럼으로 바꾸고 (원본 변경) 출력하세요.`,`df.set_index('nickname', inplace=True)\nprint(df)`],
+  ];
+  const [desc,code]=pick(tasks)();
+  return {t:'code',title:'모의 판다스: 2~13번 변형',body:`<p>가족 데이터프레임(df)에서 ${desc}</p><p class="dim">df를 만드는 코드는 넣어 뒀어요. 그 아래에 이어서 쓰세요.</p>`,starter:DF_DICT+'\n\n',ref:DF_DICT+'\n'+code,check:'out',hints:['열 여러 개 [[ ]], 행은 loc, 추가는 df[...]= 또는 insert, 삭제는 drop','정답 코드의 첫 줄: '+code.split('\n')[0]]};
+ }
+ if(kind==='plot'){
+  const col=pick(['weight','age','height']);const mk=pick(MARKERS),cl=pick(COLORS),ls=pick(LS);
+  const ref=`import matplotlib.pyplot as plt\nx = ${L(FAM)}\ny = ${L(COLS[col])}\nplt.plot(x, y, marker=${q(mk[0])}, color=${q(cl[0])}, label=${q(col)}, linestyle=${q(ls[0])})\nplt.xlabel('family')\nplt.ylabel(${q(col)})\nplt.legend()\nplt.show()`;
+  return {t:'code',blank:true,title:'모의 맷플롯립: 조건 그래프',body:`<p>가족의 <b>${col}</b> 데이터(${COLS[col].join(', ')})로 그래프를 그리세요.</p><div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ${mk[1]}, 색상: ${cl[1]}(${cl[0]}), 선 종류: ${ls[1]}, 범례 label='${col}', x축 family, y축 ${col}</div>`,
+   ref,check:'plot',showExpected:true,hints:['옵션표 다시 떠올리기: marker / color / linestyle',`marker='${mk[0]}', color='${cl[0]}', linestyle='${ls[0]}'`]};
+ }
+ if(kind==='ml'){
+  const o=pick([{x:[1,3,5],y:[80,69,55],p:2},{x:[1,2,4],y:[90,82,64],p:3},{x:[2,4,6],y:[85,70,52],p:5},{x:[1,3,5],y:[80,69,55],p:4}]);
+  const ref=`import numpy as np\nx = np.array(${L(o.x)})\ny = np.array(${L(o.y)})\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(x.reshape(-1, 1), y)\npre_x = int(input('스마트폰 사용 시간:'))\ny_hat = model.predict([[pre_x]])\nprint(y_hat, '점')`;
+  return {t:'code',blank:true,title:'모의 머신러닝: 점수 예측',body:`<p>스마트폰 사용 시간 <b>${o.x.join(', ')}시간</b>일 때 시험 점수가 <b>${o.y.join(', ')}점</b>이었어요. 사용 시간을 입력받아 점수를 예측하는 프로그램을 쓰세요. (입력값 ${o.p}로 채점)</p>`,
+   ref,inputs:String(o.p),check:'out',hints:['fit에는 x.reshape(-1, 1)','predict에는 [[pre_x]]']};
+ }
+}
+
+/* ===== 파이썬 엔진 (Pyodide, Thonny처럼 스크립트 실행) ===== */
+const WHEELS=["w_six-1.16.0-py2.py3-none-any.wasm","w_pytz-2024.1-py2.py3-none-any.wasm","w_python_dateutil-2.9.0.post0-py2.py3-none-any.wasm","w_numpy-1.26.4-cp312-cp312-pyodide_2024_0_wasm32.wasm","w_pandas-2.2.0-cp312-cp312-pyodide_2024_0_wasm32.wasm","w_packaging-23.2-py3-none-any.wasm","w_pyparsing-3.1.2-py3-none-any.wasm","w_cycler-0.12.1-py3-none-any.wasm","w_kiwisolver-1.4.5-cp312-cp312-pyodide_2024_0_wasm32.wasm","w_fonttools-4.51.0-py3-none-any.wasm","w_pillow-10.2.0-cp312-cp312-pyodide_2024_0_wasm32.wasm","w_matplotlib-3.5.2-cp312-cp312-pyodide_2024_0_wasm32.wasm","w_matplotlib_pyodide-0.2.2-py3-none-any.wasm"];
+const SK_SHIM = `import numpy as _np
+class LinearRegression:
+    def fit(self, X, y):
+        X = _np.asarray(X, float); y = _np.asarray(y, float)
+        if X.ndim != 2:
+            raise ValueError("Expected 2D array, got 1D array instead. Reshape your data using array.reshape(-1, 1)")
+        A = _np.hstack([X, _np.ones((len(X), 1))])
+        w = _np.linalg.lstsq(A, y, rcond=None)[0]
+        self.coef_ = w[:-1]; self.intercept_ = w[-1]
+        return self
+    def predict(self, X):
+        X = _np.asarray(X, float)
+        if X.ndim != 2:
+            raise ValueError("Expected 2D array, got 1D array instead. Reshape your data using array.reshape(-1, 1)")
+        return X @ self.coef_ + self.intercept_
+    def __repr__(self): return "LinearRegression()"
+class LogisticRegression:
+    def __init__(self, C=1.0, max_iter=100, **kw):
+        self.C = C
+    def fit(self, X, y):
+        X = _np.asarray(X, float); y = _np.asarray(y)
+        if X.ndim != 2:
+            raise ValueError("Expected 2D array, got 1D array instead. Reshape your data using array.reshape(-1, 1)")
+        self.classes_ = _np.unique(y); t = (y == self.classes_[-1]).astype(float)
+        n, d = X.shape; w = _np.zeros(d + 1); Xb = _np.hstack([X, _np.ones((n, 1))])
+        R = _np.eye(d + 1) / self.C; R[d, d] = 0
+        for _ in range(100):
+            p = 1 / (1 + _np.exp(-(Xb @ w)))
+            g = Xb.T @ (p - t) + R @ w
+            H = Xb.T @ (Xb * (p * (1 - p))[:, None]) + R + 1e-9 * _np.eye(d + 1)
+            s = _np.linalg.solve(H, g); w -= s
+            if _np.abs(s).max() < 1e-10: break
+        self.coef_ = w[:d].reshape(1, -1); self.intercept_ = _np.array([w[d]])
+        return self
+    def predict(self, X):
+        X = _np.asarray(X, float)
+        if X.ndim != 2:
+            raise ValueError("Expected 2D array, got 1D array instead. Reshape your data using array.reshape(-1, 1)")
+        z = X @ self.coef_[0] + self.intercept_[0]
+        return _np.where(z > 0, self.classes_[-1], self.classes_[0])
+    def __repr__(self): return "LogisticRegression()"
+`;
+const HARNESS = `
+import sys, io, json, base64, builtins, traceback, warnings, contextlib
+sys.path.insert(0, '/home/pyodide')
+warnings.filterwarnings('ignore')
+import numpy as np
+import matplotlib
+matplotlib.use('agg')
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+_S = {'imgs': [], 'shown': False, 'figs': []}
+def _snap():
+    out = []
+    for n in plt.get_fignums():
+        f = plt.figure(n); axs = []
+        for ax in f.axes:
+            lines = []
+            for l in ax.get_lines():
+                lab = str(l.get_label())
+                try: ys = [float(v) for v in np.asarray(l.get_ydata(), dtype=float)]
+                except Exception: ys = [str(v) for v in l.get_ydata()]
+                lines.append({'marker': str(l.get_marker()), 'color': mcolors.to_hex(l.get_color()), 'ls': str(l.get_linestyle()), 'label': '' if lab.startswith('_') else lab, 'x': [str(v) for v in l.get_xdata()], 'y': ys})
+            axs.append({'lines': lines, 'title': ax.get_title(), 'xlabel': ax.get_xlabel(), 'ylabel': ax.get_ylabel(), 'legend': ax.get_legend() is not None, 'colls': len(ax.collections), 'patches': len(ax.patches)})
+        b = io.BytesIO(); f.savefig(b, format='png', dpi=80)
+        out.append({'size': [round(float(v), 2) for v in f.get_size_inches()], 'axes': axs, 'img': base64.b64encode(b.getvalue()).decode()})
+    return out
+def _show(*a, **k):
+    _S['shown'] = True
+    _S['figs'].extend(_snap())
+    plt.close('all')
+plt.show = _show
+def _run(src, stdin):
+    _S['imgs'] = []; _S['shown'] = False; _S['figs'] = []
+    plt.close('all'); plt.rcdefaults()
+    lines = [s for s in stdin.split('\\n')] if stdin.strip() else []
+    buf = io.StringIO()
+    def _inp(prompt=''):
+        buf.write(str(prompt))
+        if not lines:
+            raise EOFError('입력값이 없어요')
+        v = lines.pop(0); buf.write(v + '\\n'); return v
+    old_inp = builtins.input; builtins.input = _inp
+    g = {'__name__': '__main__', '__builtins__': builtins}
+    err = None
+    try:
+        with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(io.StringIO()):
+            exec(compile(src, '<my>', 'exec'), g)
+    except SyntaxError as e:
+        err = {'type': type(e).__name__, 'msg': str(e.msg), 'line': e.lineno, 'text': (e.text or '').rstrip()}
+    except BaseException as e:
+        fr = [f for f in traceback.extract_tb(e.__traceback__) if f.filename == '<my>']
+        ln = fr[-1].lineno if fr else None
+        err = {'type': type(e).__name__, 'msg': str(e), 'line': ln, 'text': (src.split('\\n')[ln-1] if ln else '')}
+    finally:
+        builtins.input = old_inp
+    leftover = _snap() if plt.get_fignums() else []
+    plt.close('all')
+    return json.dumps({'out': buf.getvalue(), 'err': err, 'figs': _S['figs'], 'noshow': leftover, 'shown': _S['shown']})
+`;
+let PY=null, pyState='loading';
+const pyReady=(async()=>{
+  try{
+    const base=new URL('py/',location.href).href;
+    const py=await loadPyodide({indexURL:base,stdLibURL:base+'stdlib.wasm'});
+    const bufs=await Promise.all(WHEELS.map(w=>fetch(base+w).then(r=>{if(!r.ok)throw new Error(w+' '+r.status);return r.arrayBuffer()})));
+    for(const b of bufs) await py.unpackArchive(b,'wheel');
+    py.FS.mkdirTree('/home/pyodide/sklearn');
+    py.FS.writeFile('/home/pyodide/sklearn/__init__.py','');
+    py.FS.writeFile('/home/pyodide/sklearn/linear_model.py',SK_SHIM);
+    await py.runPythonAsync(HARNESS);
+    await py.runPythonAsync('import pandas');
+    PY=py; pyState='ready'; setPyPill();
+    return py;
+  }catch(e){pyState='error';setPyPill(String(e));throw e}
+})();
+async function runPy(src, stdin=''){
+  await pyReady;
+  const fn=PY.globals.get('_run');
+  const r=JSON.parse(fn(src,stdin)); fn.destroy();
+  return r;
+}
+const refCache={};
+async function runRef(step){
+  const k=step.ref+'\u0000'+(step.inputs||'');
+  if(!refCache[k]) refCache[k]=runPy(step.ref,step.inputs||'');
+  return refCache[k];
+}
+
+/* ===== 오류 해설 ===== */
+function explain(err){
+  if(!err) return '';
+  const m=err.msg||'', t=err.type;
+  const nm=m.match(/name '(\w+)' is not defined/);
+  if(t==='EOFError') return '프로그램이 input()으로 값을 기다리는데 입력값이 없어요. 아래 <b>입력값</b> 칸에 한 줄에 하나씩 적어주세요.';
+  if(nm){const n=nm[1];
+    if(n==='np') return '<code>np</code>를 몰라요. 맨 위에 <code>import numpy as np</code>를 썼나요?';
+    if(n==='pd') return '<code>pd</code>를 몰라요. 맨 위에 <code>import pandas as pd</code>를 썼나요?';
+    if(n==='plt') return '<code>plt</code>를 몰라요. 맨 위에 <code>import matplotlib.pyplot as plt</code>를 썼나요?';
+    if(['LinearRegression','LogisticRegression'].includes(n)) return `<code>${n}</code>를 몰라요. <code>from sklearn.linear_model import ${n}</code>을 먼저 쓰세요.`;
+    return `<code>${n}</code>라는 이름이 아직 없어요. 철자(대소문자)를 확인하거나, 이 변수를 만들기 전에 쓰지 않았는지 보세요. 문자라면 따옴표 <code>'${n}'</code>가 필요해요.`;}
+  if(t==='KeyError') return `${esc(m)} 라는 행/열 이름을 찾을 수 없어요. 철자와 대소문자를 확인하세요. 열 여러 개는 <code>df[['a', 'b']]</code> 두 겹, 행은 <code>df.loc[...]</code>, 열을 drop할 땐 <code>axis=1</code>이에요.`;
+  if(t==='IndentationError') return '들여쓰기(줄 앞 공백)가 맞지 않아요. if/else 안쪽 줄만 4칸 들여 쓰고, 나머지 줄은 맨 앞에서 시작하세요.';
+  if(t==='SyntaxError'){
+    if(/never closed|unmatched|unexpected EOF|was never closed|does not match/.test(m)) return '괄호 <code>( ) [ ] { }</code> 짝이 안 맞아요. 여는 괄호와 닫는 괄호 개수를 세어 보세요.';
+    if(/unterminated string|EOL/.test(m)) return '따옴표가 닫히지 않았어요. <code>\'...\'</code> 짝을 확인하세요.';
+    if(/Perhaps you forgot a comma/.test(m)) return '값 사이에 쉼표 <code>,</code>가 빠진 것 같아요.';
+    if(/expected ':'/.test(m)) return 'if / else 줄 끝에 콜론 <code>:</code>이 필요해요.';
+    return '문법 오류예요. 표시된 줄에서 쉼표, 콜론, 괄호, 따옴표를 확인하세요.';}
+  if(/cannot reshape/.test(m)) return 'reshape의 <b>행 × 열</b>이 원소 개수와 달라요. 예: 원소 6개 → (2, 3) 또는 (3, 2).';
+  if(/Expected 2D array/.test(m)) return 'sklearn은 2차원 입력이 필요해요. 학습은 <code>x.reshape(-1, 1)</code>, 예측은 <code>[[pre_x]]</code>처럼 대괄호 두 겹으로.';
+  if(/Length of values|does not match length of index|Columns must be same length/.test(m)) return '넣는 값의 개수가 행(또는 열) 개수와 달라요. 개수를 세어 보세요.';
+  if(/cannot set a row with mismatched columns/.test(m)) return '새 행의 값 개수가 열 개수와 달라요.';
+  if(/has no attribute 'median'/.test(m)) return '배열에는 <code>.median()</code>이 없어요. <code>np.median(a, axis=...)</code>로 쓰세요.';
+  if(t==='AttributeError'){const a=m.match(/has no attribute '(\w+)'/);return `<code>${a?a[1]:''}</code>라는 함수/속성이 없어요. 철자와 대소문자를 확인하세요. (예: DataFrame, Series는 대문자, set_index, reshape는 소문자)`;}
+  if(t==='ModuleNotFoundError'||t==='ImportError') return 'import할 이름의 철자를 확인하세요: <code>numpy</code>, <code>pandas</code>, <code>matplotlib.pyplot</code>, <code>sklearn.linear_model</code>';
+  if(/could not convert string to float|invalid literal for int/.test(m)) return '입력값이 숫자가 아니에요. 입력값 칸에 숫자만 적어주세요.';
+  if(/not a valid value for (ls|linestyle)|Unrecognized marker|not a valid value for color|Invalid RGBA|is not a valid color/.test(m)) return 'marker / color / linestyle 값이 잘못됐어요. 옵션표를 확인하세요 (예: \'*\', \'m\', \'--\').';
+  if(/x and y must have same first dimension/.test(m)) return 'x와 y의 개수가 달라요.';
+  if(t==='TypeError') return '함수에 넣은 값의 종류나 개수가 맞지 않아요. 괄호 안 순서와 <code>이름=값</code>을 확인하세요.';
+  if(t==='ValueError') return '값이 맞지 않아요. 개수와 모양을 확인하세요.';
+  return '오류가 났어요. 표시된 줄을 확인하거나 코치에게 물어보세요.';
+}
+
+/* ===== 유틸 ===== */
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const strip=h=>{const d=document.createElement('div');d.innerHTML=h||'';return d.textContent.replace(/\s+\n/g,'\n').trim()};
+const PKEY='pyexam-profiles';
+const fresh=()=>({pos:0,done:{},codes:{},elapsed:0});
+let PROFS={list:[]},PID=null,S=fresh();
+try{PROFS=JSON.parse(localStorage.getItem(PKEY)||'null')||{list:[]}}catch(e){}
+const savePro=()=>{try{localStorage.setItem(PKEY,JSON.stringify(PROFS))}catch(e){}};
+// 예전(프로필 없던 때) 기록을 첫 프로필로 옮기기
+try{const old=localStorage.getItem('pyexam-v2');if(old&&!PROFS.list.length){PROFS.list.push({id:'p0',name:'내 기록'});localStorage.setItem('pyexam-v2:p0',old);savePro()}}catch(e){}
+const save=()=>{if(!PID)return;try{localStorage.setItem('pyexam-v2:'+PID,JSON.stringify(S))}catch(e){}};
+const loadState=id=>{let x=fresh();try{const v=JSON.parse(localStorage.getItem('pyexam-v2:'+id)||'null');if(v)x=Object.assign(x,v)}catch(e){}return x};
+
+/* 평면 단계 목록 */
+const FLAT=[];
+CHAPTERS.forEach((c,ci)=>c.steps.forEach((s,si)=>FLAT.push({ci,si,key:c.id+'-'+si,raw:s})));
+const GEN={};
+function stepAt(i){const f=FLAT[i];if(f.raw.t==='gen'){if(!GEN[f.key])GEN[f.key]=genStep(f.raw.kind);return GEN[f.key]}return f.raw}
+if(S.pos>=FLAT.length)S.pos=0;
+
+/* ===== 타이머 ===== */
+let tickLast=Date.now();
+setInterval(()=>{const n=Date.now();if(PID&&!document.hidden)S.elapsed+=Math.min(n-tickLast,5000);tickLast=n;renderTimer();if(n%10000<1000)save()},1000);
+function fmt(ms){const s=Math.floor(ms/1000);return Math.floor(s/3600)+':'+String(Math.floor(s/60)%60).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function renderTimer(){const t=$('#timer');if(!t)return;t.innerHTML=`<b>${fmt(S.elapsed)}</b><span>/ 3:00:00</span>`;const p=Math.min(1,S.elapsed/(180*60000));t.style.setProperty('--p',p)}
+function setPyPill(msg){const p=$('#pypill');if(!p)return;p.className='pypill '+pyState;p.textContent=pyState==='ready'?'파이썬 준비 완료':pyState==='error'?'파이썬 로딩 실패 · 새로고침':'파이썬 불러오는 중…';if(msg)p.title=msg}
+
+/* ===== 헤더 / 진행 ===== */
+/* 잠금: 통과한 단계까지 + 처음으로 통과 못 한 단계까지만 갈 수 있음 */
+function reach(){for(let i=0;i<FLAT.length;i++)if(!S.done[FLAT[i].key])return i;return FLAT.length-1}
+function renderNav(){
+  const cur=FLAT[S.pos],R=reach();
+  $('#chapters').innerHTML=CHAPTERS.map((c,ci)=>{
+    const keys=c.steps.map((_,si)=>c.id+'-'+si);const d=keys.filter(k=>S.done[k]).length;
+    const first=FLAT.findIndex(f=>f.ci===ci);const lock=first>R;
+    return `<button class="chap ${ci===cur.ci?'on':''} ${lock?'locked':''}" data-ci="${ci}" style="--f:${d/keys.length}" ${lock?'title="앞 챕터를 통과해야 열려요"':''}><span class="cn">${lock?'🔒':String(ci).padStart(2,'0')}</span><span class="ct">${c.title}</span><span class="cm">${c.mins}분</span></button>`}).join('');
+  const ch=CHAPTERS[cur.ci];
+  $('#dots').innerHTML=ch.steps.map((s,si)=>{const k=ch.id+'-'+si;const idx=FLAT.findIndex(f=>f.key===k);const st=stepAt(idx);return `<button class="dot ${si===cur.si?'on':''} ${S.done[k]?'ok':''} ${idx>R?'locked':''} t-${st.t}" data-k="${k}" title="${esc(st.title||'')}"></button>`}).join('');
+  $('#stepinfo').textContent=`${ch.title} · ${cur.si+1} / ${ch.steps.length}`;
+  $('#prev').disabled=S.pos===0&&!SCR;
+  const nx=$('#next');const ok=SCR||S.done[cur.key];
+  nx.classList.toggle('locked',!ok);
+  nx.innerHTML=SCR?'단계로 돌아가기':!ok?'🔒 통과하면 다음':S.pos===FLAT.length-1?'완료':'다음 →';
+}
+function toast(msg){let t=$('#toast');if(!t){t=document.createElement('div');t.id='toast';document.body.appendChild(t)}t.innerHTML=msg;t.className='show';clearTimeout(t._h);t._h=setTimeout(()=>t.className='',2600)}
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.chap');if(c){const i=FLAT.findIndex(f=>f.ci===+c.dataset.ci);if(i>reach())toast('🔒 앞 단계를 모두 통과해야 열려요.');else go(i);return}
+  const d=e.target.closest('.dot');if(d){const i=FLAT.findIndex(f=>f.key===d.dataset.k);if(i>reach())toast('🔒 앞 단계를 먼저 통과하세요.');else go(i);return}
+});
+let SCR=false;
+function go(i){if(i<0||i>=FLAT.length)return;SCR=false;S.pos=i;save();render();window.scrollTo(0,0)}
+function markDone(k){S.done[k]=true;save();renderNav();if(FLAT[S.pos].key===k)$('#next').classList.add('pulse')}
+
+/* ===== 편집기 ===== */
+let ED=null, LAST={out:'',err:null};
+function makeEditor(host,code,opts={}){
+  const cm=CodeMirror(host,{value:code,mode:'python',theme:'pitch',lineNumbers:true,indentUnit:4,tabSize:4,matchBrackets:true,lineWrapping:false,viewportMargin:Infinity,
+    extraKeys:{'Tab':c=>c.somethingSelected()?c.indentSelection('add'):c.replaceSelection('    '),'Ctrl-Enter':()=>opts.onRun&&opts.onRun(),'Cmd-Enter':()=>opts.onRun&&opts.onRun()}});
+  if(opts.onChange)cm.on('change',()=>opts.onChange(cm.getValue()));
+  return cm;
+}
+function workspaceHTML(opts){return `
+<div class="ws">
+  <div class="ws-bar"><span class="ws-title">${opts.title||'코드 연습장'}</span><span class="ws-sub">Thonny처럼 실행돼요</span>
+   <span class="sp"></span>${opts.reset?'<button class="ghost sm" id="reset">처음 코드로</button>':''}<button class="ghost sm" id="clear">지우기</button></div>
+  <div class="ed" id="ed"></div>
+  <div class="runrow">
+    <button class="btn run" id="run">▶ 실행 <kbd>Ctrl+Enter</kbd></button>
+    <label class="inp" ${opts.showInputs?'':'hidden'} id="inpwrap"><span>입력값</span><textarea id="stdin" rows="2" spellcheck="false" placeholder="input()에 들어갈 값 (한 줄에 하나)"></textarea></label>
+  </div>
+  <div class="verdict" id="verdict" hidden></div>
+  <div class="out" id="out"><div class="out-h">실행 결과 <span>(Thonny 셸)</span></div><pre id="outpre" class="empty">▶ 실행을 누르면 여기에 결과가 나와요</pre><div id="figs"></div></div>
+</div>`}
+function showResult(r){
+  LAST={out:r.out,err:r.err};
+  const pre=$('#outpre'),figs=$('#figs');
+  let html=r.out?esc(r.out):'';
+  if(r.err){html+=`<span class="errline">${esc(r.err.type)}: ${esc(r.err.msg)}${r.err.line?` (${r.err.line}번째 줄)`:''}</span>`;}
+  if(!r.out&&!r.err&&!r.figs.length&&!r.noshow.length) html='<span class="dim">출력이 없어요. 결과를 보려면 print( )를 써야 해요 (Thonny는 자동으로 안 보여줘요).</span>';
+  pre.innerHTML=html;pre.classList.remove('empty');
+  let f='';
+  if(r.err) f+=`<div class="explain"><b>코치 해설</b> ${r.err.line?`<span class="ln">${r.err.line}번째 줄: <code>${esc((r.err.text||'').trim())}</code></span>`:''}<p>${explain(r.err)}</p><button class="ghost sm ask-err">AI 코치에게 물어보기</button></div>`;
+  r.figs.forEach(g=>f+=`<img class="fig" src="data:image/png;base64,${g.img}" alt="실행한 그래프">`);
+  if(r.noshow.length){f+=`<div class="warnbox"><b>plt.show()가 없어요.</b> Thonny에서는 그래프 창이 안 떠요. 참고로 그려질 그래프는 아래와 같아요.</div>`;r.noshow.forEach(g=>f+=`<img class="fig dimmed" src="data:image/png;base64,${g.img}" alt="표시되지 않은 그래프">`)}
+  figs.innerHTML=f;
+  if(ED&&r.err&&r.err.line){const ln=r.err.line-1;ED.addLineClass(ln,'background','cm-errline');setTimeout(()=>ED&&ED.removeLineClass(ln,'background','cm-errline'),4000)}
+  const a=$('.ask-err');if(a)a.onclick=()=>coachAsk('이 오류가 왜 났는지 설명해 주고, 어떻게 고치면 되는지 힌트를 줘.');
+}
+async function doRun(code,stdin){
+  const b=$('#run');b.disabled=true;b.textContent=pyState==='ready'?'실행 중…':'파이썬 준비 중…';
+  try{const r=await runPy(code,stdin);showResult(r);return r}
+  catch(e){$('#outpre').textContent='실행 환경 오류: '+e;return null}
+  finally{b.disabled=false;b.innerHTML='▶ 실행 <kbd>Ctrl+Enter</kbd>'}
+}
+
+/* ===== 채점 ===== */
+const norm=s=>s.replace(/\r/g,'').split('\n').map(l=>l.replace(/\s+$/,'')).join('\n').replace(/\n+$/,'');
+const MK={'o':'원','*':'별','s':'사각형','D':'다이아몬드','^':'삼각형','.':'점','x':'엑스','None':'없음','':'없음'};
+const LSN={'-':'실선','--':'파선','-.':'일점쇄선',':':'점선','None':'선 없음'};
+const CN={'#ff0000':'빨강 r','#008000':'초록 g','#0000ff':'파랑 b','#00bfbf':'시안 c','#bf00bf':'마젠타 m','#bfbf00':'노랑 y','#000000':'검정 k','#1f77b4':'기본 파랑(색 지정 안 함)'};
+const nx=v=>{const n=Number(v);return isFinite(n)&&v!==''?String(n):v};
+function comparePlots(u,r){
+  const probs=[];
+  if(!u.figs.length){probs.push(u.noshow.length?'<code>plt.show()</code>가 없어서 그래프가 안 떠요.':'그래프가 그려지지 않았어요. <code>plt.plot(...)</code>과 <code>plt.show()</code>를 확인하세요.');return probs}
+  const uf=u.figs[0],rf=r.figs[0];const ua=uf.axes[0]||{lines:[]},ra=rf.axes[0]||{lines:[]};
+  if(ua.lines.length!==ra.lines.length)probs.push(`선(plot)의 개수가 달라요: 목표 ${ra.lines.length}개, 내 그래프 ${ua.lines.length}개`);
+  ra.lines.forEach((rl,i)=>{const ul=ua.lines[i];if(!ul)return;
+    if(ul.marker!==rl.marker)probs.push(`마커가 달라요: 목표 <code>'${rl.marker}'</code>(${MK[rl.marker]||''}), 내 코드 <code>'${ul.marker}'</code>(${MK[ul.marker]||''})`);
+    if(ul.color!==rl.color)probs.push(`색이 달라요: 목표 ${CN[rl.color]||rl.color}, 내 코드 ${CN[ul.color]||ul.color}`);
+    if(ul.ls!==rl.ls)probs.push(`선 종류가 달라요: 목표 ${LSN[rl.ls]||rl.ls} <code>'${rl.ls}'</code>, 내 코드 ${LSN[ul.ls]||ul.ls}`);
+    if(ul.label!==rl.label)probs.push(`label이 달라요: 목표 <code>'${esc(rl.label)}'</code>, 내 코드 <code>'${esc(ul.label)}'</code>`);
+    if(ul.x.map(nx).join('|')!==rl.x.map(nx).join('|'))probs.push(`x 데이터가 달라요: 목표 [${rl.x.map(nx).join(', ')}]`);
+    if(ul.y.map(nx).join('|')!==rl.y.map(nx).join('|'))probs.push(`y 데이터가 달라요: 목표 [${rl.y.map(nx).join(', ')}]`);
+  });
+  if(ua.xlabel!==ra.xlabel)probs.push(`x축 이름이 달라요: 목표 <code>'${esc(ra.xlabel)}'</code>, 내 코드 <code>'${esc(ua.xlabel)}'</code>`);
+  if(ua.ylabel!==ra.ylabel)probs.push(`y축 이름이 달라요: 목표 <code>'${esc(ra.ylabel)}'</code>, 내 코드 <code>'${esc(ua.ylabel)}'</code>`);
+  if(ua.title!==ra.title)probs.push(`제목이 달라요: 목표 <code>'${esc(ra.title)}'</code>`);
+  if(ua.legend!==ra.legend)probs.push(ra.legend?'범례가 없어요. <code>plt.legend()</code>를 넣으세요.':'범례는 필요 없어요.');
+  if(rf.size.join()!==uf.size.join())probs.push(`그래프 크기가 달라요: 목표 figsize=(${rf.size.join(', ')})`);
+  return probs;
+}
+
+const FAILS={};
+/* 오프라인 힌트: 내 코드와 기준 코드에서 처음 달라진 줄 찾기 (주석·띄어쓰기 무시) */
+function lineDiff(mine,ref,label){
+  const clean=t=>t.split('\n').map(l=>({raw:l.trim(),k:l.replace(/\s+#.*$|^\s*#.*$/,'').replace(/\s+/g,'')})).filter(x=>x.k);
+  const a=clean(mine),b=clean(ref);
+  for(let i=0;i<b.length;i++){
+    if(!a[i]) return `<b>${i+1}번째 줄</b>부터 빠졌어요. ${label}의 다음 줄을 이어서 쓰세요.<div class="diff"><div><span>${label}</span><pre>${esc(b[i].raw.replace(/\s+#.*$/,''))}</pre></div><div><span>내 코드</span><pre>(없음)</pre></div></div>`;
+    if(a[i].k!==b[i].k){
+      // 어느 글자부터 다른지
+      let j=0;const x=a[i].k,y=b[i].k;while(j<x.length&&x[j]===y[j])j++;
+      return `<b>${i+1}번째 줄</b>이 ${label}${label==='정답'?'과':'와'} 달라요${j<y.length?` (<code>${esc(y.slice(Math.max(0,j-3),j+6))}</code> 근처)`:''}.<div class="diff"><div><span>${label}</span><pre>${esc(b[i].raw.replace(/\s+#.*$/,''))}</pre></div><div><span>내 코드</span><pre>${esc(a[i].raw)}</pre></div></div>`;
+    }
+  }
+  if(a.length>b.length) return `${label}에 없는 줄이 더 있어요: <code>${esc(a[b.length].raw)}</code>`;
+  return '';
+}
+function isSubseq(exp,got){const e=exp.split('\n'),g=got.split('\n');let j=0;for(const l of g){if(j<e.length&&l===e[j])j++}return j===e.length}
+async function doCheck(step,key,code,stdin){
+  const v=$('#verdict');v.hidden=false;v.className='verdict wait';v.innerHTML='채점 중…';
+  const [u,r]=await Promise.all([doRun(code,stdin),runRef(step)]);
+  if(!u){v.hidden=true;return}
+  let probs=[];
+  if(u.err) probs.push('오류가 나서 끝까지 실행되지 않았어요. 아래 <b>코치 해설</b>을 보세요.');
+  else if(step.check==='plot') probs=comparePlots(u,r);
+  else{
+    const a=norm(u.out),b=norm(r.out);
+    const sq=x=>x.split('\n').map(l=>l.replace(/\s+/g,'')).filter(l=>l).join('\n');
+    const ok=step.lenient?isSubseq(sq(b),sq(a)):sq(a)===sq(b);
+    if(!ok){
+      if(!a) probs.push('출력이 없어요. <code>print( )</code>로 결과를 출력하세요.');
+      else{const al=a.split('\n').filter(l=>l.trim()),bl=b.split('\n').filter(l=>l.trim());const z=l=>(l||'').replace(/\s+/g,'');let i=0;while(i<Math.max(al.length,bl.length)&&z(al[i])===z(bl[i]))i++;
+        probs.push(`출력이 목표와 달라요. <b>${i+1}번째 줄</b>부터 달라요.<div class="diff"><div><span>목표</span><pre>${esc(bl[i]??'(없음)')}</pre></div><div><span>내 출력</span><pre>${esc(al[i]??'(없음)')}</pre></div></div>`)}
+    }
+  }
+  (step.must||[]).forEach(([re,msg])=>{if(!new RegExp(re).test(code))probs.push(msg)});
+  if(!probs.length){v.className='verdict pass';v.innerHTML='<b>통과!</b> 목표와 똑같아요. 아래 <b>다음 →</b>을 누르세요.';markDone(key);const ms=$('#mission');if(ms){ms.classList.add('done');ms.querySelector('.ms-h').innerHTML='<span class="ms-tag">할 일</span><span class="ms-ok">✓ 통과함</span>'}}
+  else{const F=(FAILS[key]=(FAILS[key]||0)+1);let hint='';
+    if(step.t==='learn'){const dd=lineDiff(code,step.code,'예제');if(dd)hint=`<div class="autohint"><b>힌트</b> ${dd}</div>`}
+    else{const hs=step.hints||[];const n=Math.min(F,hs.length);if(n)hint=`<div class="autohint"><b>힌트 ${n}/${hs.length}</b> <code>${esc(hs[n-1])}</code>${n<hs.length?'<span class="dim"> · 또 틀리면 다음 힌트가 나와요</span>':''}</div>`;
+      if(F>=3){const dd=lineDiff(code,step.ref,'정답');if(dd)hint+=`<div class="autohint"><b>정답과 비교</b> ${dd}</div>`}}
+    v.className='verdict fail';v.innerHTML='<b>아직이에요.</b><ul>'+probs.map(p=>'<li>'+p+'</li>').join('')+'</ul>'+hint+'<button class="ghost sm" id="askfail">AI 코치에게 물어보기</button>';$('#askfail').onclick=()=>coachAsk('채점에서 틀렸다고 나와. 뭐가 문제인지 힌트를 줘. 정답 코드는 아직 주지 마.')}
+}
+
+/* ===== 단계별 화면 ===== */
+function render(){
+  renderNav();
+  const f=FLAT[S.pos],step=stepAt(S.pos),key=f.key,main=$('#main');
+  ED=null;LAST={out:'',err:null};$('#next').classList.remove('pulse');
+  main.className='main t-'+step.t;
+  $('#scratch-btn').classList.toggle('on',SCR);
+  if(SCR){
+    main.className='main t-scratch';
+    main.innerHTML=`<section class="lesson-col"><div class="eyebrow">FREE <span>빈 연습장</span></div><h1>빈 연습장</h1><div class="lesson">
+     <p>아무것도 없는 빈 칸이에요. 시험지에 쓰듯이 <b>처음부터 끝까지 직접</b> 써보세요.</p>
+     <ul><li>쓴 코드는 자동 저장돼요. 다른 단계에 갔다 와도 그대로 있어요.</li><li><b>▶ 실행</b>(<kbd>Ctrl</kbd>+<kbd>Enter</kbd>)으로 Thonny처럼 실행돼요.</li><li>막히면 <b>AI 코치에게 질문</b>을 누르면 이 코드를 보고 도와줘요.</li></ul>
+     <div class="tip">추천 연습: 판다스 데이터프레임 만들기 → 시험 그래프 → 점수 예측을 아무것도 안 보고 이어서 써보기</div>
+     <p class="dim">돌아가려면 아래 <b>빈 연습장</b> 버튼을 다시 누르거나 <b>다음 →</b>/<b>← 이전</b>을 누르세요.</p></div></section>
+     <section class="ws-col">${workspaceHTML({title:'빈 연습장',showInputs:true})}</section>`;
+    ED=makeEditor($('#ed'),S.codes.__scratch||'',{onRun:()=>doRun(ED.getValue(),$('#stdin').value),onChange:v=>{S.codes.__scratch=v;save()}});
+    $('#run').onclick=()=>doRun(ED.getValue(),$('#stdin').value);
+    $('#clear').onclick=()=>{ED.setValue('');ED.focus()};
+    setTimeout(()=>{ED.refresh();ED.focus()},0);return;
+  }
+  const eyebrow=`<div class="eyebrow">${CHAPTERS[f.ci].short} <span>${({intro:'시작',learn:'개념',code:step.blank?'백지 테스트':'문제',type:'타자 연습',fill:'빈칸 채우기',quiz:'서술형',mc:'확인 문제',finish:'마무리'})[step.t]||''}</span></div>`;
+  if(step.t==='intro'||step.t==='finish'){
+    main.innerHTML=`<section class="solo intro">${eyebrow}<h1>${step.title}</h1>${step.body}</section>`;
+    if(step.t==='intro') markDone(key);
+    if(step.t==='finish'){markDone(key);const d=Object.keys(S.done).length;main.querySelector('.solo').insertAdjacentHTML('beforeend',`<p class="dim">완료한 단계: ${d} / ${FLAT.length} · 학습 시간 ${fmt(S.elapsed)}</p><button class="ghost" id="restart">처음부터 다시 하기 (기록 지우기)</button>`);$('#restart').onclick=()=>{S={pos:0,done:{},codes:{},elapsed:0};save();render()}}
+    return;
+  }
+  if(step.t==='learn'&&!step.code){main.innerHTML=`<section class="solo">${eyebrow}<h1>${step.title}</h1><div class="lesson">${step.body}</div></section>`;markDone(key);return}
+  if(step.t==='mc') return renderMC(main,step,key,eyebrow);
+  if(step.t==='quiz') return renderQuiz(main,step,key,eyebrow);
+  if(step.t==='type') return renderType(main,step,key,eyebrow);
+  if(step.t==='fill') return renderFill(main,step,key,eyebrow);
+  /* learn(code) / code : 둘 다 "할 일" + 목표 결과 + 실행하면 채점 */
+  const isCode=step.t==='code';
+  const G=isCode?step:Object.assign({},step,{ref:step.code,check:/plt\.(plot|scatter|bar|pie)/.test(step.code)?'plot':'out'});
+  const regen=FLAT[S.pos].raw.t==='gen'?'<button class="ghost sm" id="regen">새 변형 문제</button>':'';
+  const example=!isCode?`<div class="example"><div class="ex-h"><span>예제 코드 · 이걸 오른쪽 빈 칸에 그대로 입력하세요</span></div><pre>${esc(step.code)}</pre></div>`:'';
+  const isPlot=G.check==='plot';
+  const todo=isCode
+    ? `왼쪽 문제를 읽고, 아래 빈 칸에 코드를 직접 써서 <b>▶ 실행</b>하세요. 실행 결과가 아래 <b>목표 ${isPlot?'그래프':'출력'}</b>와 똑같으면 통과예요.${step.starter?' (데이터프레임 만드는 코드는 미리 넣어 뒀어요. 그 아래에 이어서 쓰세요.)':''}`
+    : `왼쪽 <b>예제 코드</b>를 아래 빈 칸에 <b>한 글자도 빠짐없이 똑같이</b> 입력하고 <b>▶ 실행</b>하세요. 결과가 아래 <b>목표 ${isPlot?'그래프':'출력'}</b>와 똑같으면 통과예요. <span class="dim"># 뒤의 설명(주석)은 안 써도 돼요.</span>`;
+  main.innerHTML=`<section class="lesson-col">${eyebrow}<h1>${step.title} ${regen}</h1><div class="lesson">${step.body||''}</div>${example}
+   ${step.blank?'<div class="blanknote">백지 테스트: 먼저 <b>종이에 손으로</b> 써 본 다음 입력하면 시험 연습 효과가 가장 커요.</div>':''}
+   ${isCode?'<div class="hints" id="hints"></div>':''}
+  </section><section class="ws-col">
+   <div class="mission ${S.done[key]?'done':''}" id="mission"><div class="ms-h"><span class="ms-tag">할 일</span>${S.done[key]?'<span class="ms-ok">✓ 통과함</span>':'<span class="ms-lock">통과하면 다음으로 넘어갈 수 있어요</span>'}</div>
+    <p>${todo}</p>${G.inputs?`<p class="dim">입력값 칸에 <code>${esc(G.inputs).replace(/\n/g,'</code>, <code>')}</code> 이(가) 들어가 있어요. 그대로 두세요.</p>`:''}
+    <div class="target" id="target"><div class="tg-h">목표 ${isPlot?'그래프':'출력'}</div><div class="tg-b"><span class="dim">목표 결과 만드는 중…</span></div></div></div>
+   ${workspaceHTML({title:'내 코드',reset:isCode&&!!step.starter,showInputs:!!G.inputs||/input\(/.test(G.ref||'')})}</section>`;
+  const ck=isCode?key:'w:'+key;
+  const init=S.codes[ck]!=null?S.codes[ck]:(isCode?(step.starter||''):'');
+  if(G.inputs)$('#stdin').value=G.inputs;
+  const grade=()=>doCheck(G,key,ED.getValue(),$('#stdin').value);
+  ED=makeEditor($('#ed'),init,{onRun:grade,onChange:v=>{S.codes[ck]=v;save();$('#inpwrap').hidden=!(G.inputs||/input\(/.test(v))}});
+  $('#run').onclick=grade;
+  $('#clear').onclick=()=>{ED.setValue('');ED.focus()};
+  if($('#reset'))$('#reset').onclick=()=>{ED.setValue(step.starter||'');delete S.codes[ck];save()};
+  if(regen)$('#regen').onclick=()=>{delete GEN[key];delete S.codes[key];delete S.done[key];save();render()};
+  if(isCode){
+    let hi=0;const H=$('#hints');
+    const drawHints=()=>{H.innerHTML=step.hints.slice(0,hi).map((h,i)=>`<div class="hint"><span>힌트 ${i+1}</span><code>${esc(h)}</code></div>`).join('')+
+      `<div class="hint-btns">${hi<step.hints.length?`<button class="ghost sm" id="morehint">힌트 ${hi+1} 보기</button>`:''}<button class="ghost sm" id="showans">정답 코드 보기</button><button class="ghost sm" id="askcoach">코치에게 질문</button></div>`;
+      const m=$('#morehint');if(m)m.onclick=()=>{hi++;drawHints()};
+      $('#showans').onclick=()=>{H.insertAdjacentHTML('beforeend',`<div class="ans"><div class="ans-h">정답 코드</div><pre>${esc(step.ref)}</pre><p class="dim">정답을 봤으면 보면서 직접 쳐서 통과하고, 다음에 다시 안 보고 써보세요.</p></div>`);$('#showans').remove()};
+      $('#askcoach').onclick=()=>openCoach();
+    };drawHints();
+  }
+  runRef(G).then(r=>{const tb=$('#target .tg-b');if(!tb||FLAT[S.pos].key!==key)return;
+    if(isPlot){tb.innerHTML=r.figs.map(g=>`<img class="fig" src="data:image/png;base64,${g.img}" alt="목표 그래프">`).join('')}
+    else tb.innerHTML=`<pre>${esc(norm(r.out))}</pre>`;
+    if(r.err)tb.innerHTML='<span class="bad">정답 코드 오류: '+esc(r.err.msg)+'</span>';
+  }).catch(()=>{});
+  setTimeout(()=>{if(ED){ED.refresh();ED.focus()}},0);
+}
+
+const ms=(k,txt)=>`<div class="mission solo-m ${S.done[k]?'done':''}" id="mission"><div class="ms-h"><span class="ms-tag">할 일</span>${S.done[k]?'<span class="ms-ok">✓ 통과함</span>':'<span class="ms-lock">통과하면 다음으로 넘어갈 수 있어요</span>'}</div><p>${txt}</p></div>`;
+const msPass=()=>{const m=$('#mission');if(m){m.classList.add('done');m.querySelector('.ms-h').innerHTML='<span class="ms-tag">할 일</span><span class="ms-ok">✓ 통과함</span>'}};
+function renderMC(main,step,key,eyebrow){
+  main.innerHTML=`<section class="solo">${eyebrow}<h1>${step.title}</h1>${ms(key,'보기 중 <b>정답을 골라야</b> 통과예요. 틀려도 다시 고를 수 있어요.')}<div class="q">${step.q}</div><div class="opts">${step.opts.map((o,i)=>`<button class="opt" data-i="${i}"><span>${'ABCD'[i]}</span><code>${esc(o)}</code></button>`).join('')}</div><div class="exp" id="exp" hidden></div></section>`;
+  main.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;main.querySelectorAll('.opt').forEach(x=>x.classList.remove('right','wrong'));
+    b.classList.add(i===step.ans?'right':'wrong');main.querySelector(`.opt[data-i="${step.ans}"]`).classList.add('right');
+    const e=$('#exp');e.hidden=false;e.className='exp '+(i===step.ans?'good':'bad');e.innerHTML=(i===step.ans?'<b>정답! 통과예요.</b> ':'<b>틀렸어요. 다시 골라보세요.</b> ')+(i===step.ans?step.exp:'');if(i===step.ans){markDone(key);msPass()}else main.querySelector(`.opt[data-i="${step.ans}"]`).classList.remove('right')});
+}
+function renderQuiz(main,step,key,eyebrow){
+  main.innerHTML=`<section class="solo">${eyebrow}<h1>${step.title}</h1>${ms(key,`아래 칸에 답을 직접 쓰고 <b>핵심 단어 확인</b>을 누르세요. 핵심 단어 <b>${Math.ceil(step.kw.length*0.6)}개 이상</b>(전체 ${step.kw.length}개 중) 들어가면 통과예요.`)}<div class="q">${esc(step.q)}</div>
+  <p class="dim">시험지에 쓴다고 생각하고, 모범 답안을 보지 말고 직접 써보세요.</p>
+  <textarea id="qa" class="qa" rows="6" placeholder="여기에 답을 써보세요">${esc(S.codes[key]||'')}</textarea>
+  <div class="runrow"><button class="btn check" id="qcheck">핵심 단어 확인</button><button class="ghost" id="qai">AI 코치에게 채점받기</button><button class="ghost" id="qshow">모범 답안 보기</button></div>
+  <div id="qres"></div></section>`;
+  $('#qa').oninput=e=>{S.codes[key]=e.target.value;save()};
+  $('#qcheck').onclick=()=>{const t=$('#qa').value;const res=step.kw.map(k=>({k:k.split('|')[0],ok:k.split('|').some(w=>t.includes(w))}));const n=res.filter(r=>r.ok).length;
+    $('#qres').innerHTML=`<div class="kwres"><b>핵심 단어 ${n} / ${res.length}</b> ${res.map(r=>`<span class="${r.ok?'ok':'no'}">${r.ok?'✓':'✗'} ${r.k}</span>`).join('')}</div>`;if(n>=Math.ceil(res.length*0.6)){markDone(key);msPass();$('#qres').insertAdjacentHTML('afterbegin','<div class="verdict pass"><b>통과!</b> 아래 <b>다음 →</b>을 누르세요.</div>')}else $('#qres').insertAdjacentHTML('afterbegin',`<div class="verdict fail">핵심 단어가 ${Math.ceil(res.length*0.6)}개 이상 있어야 통과예요. 빠진 단어(빨간색)를 넣어서 다시 써보세요.</div>`)};
+  $('#qshow').onclick=()=>{$('#qres').insertAdjacentHTML('beforeend',`<div class="answer">${esc(step.answer).replace(/\n/g,'<br>')}</div>`);$('#qshow').remove()};
+  $('#qai').onclick=()=>coachAsk(`서술형 문제: "${step.q}"\n내 답안:\n${$('#qa').value||'(아직 안 씀)'}\n\n모범 답안 기준으로 10점 만점 채점하고, 빠진 핵심 내용을 알려줘. 모범 답안: ${step.answer}`);
+}
+function renderFill(main,step,key,eyebrow){
+  const parts=[];let last=0;const re=/\{\{(.+?)\}\}/g;let m;
+  while((m=re.exec(step.tpl))){parts.push({s:step.tpl.slice(last,m.index)});parts.push({a:m[1].split('|')});last=re.lastIndex}
+  parts.push({s:step.tpl.slice(last)});
+  let bi=0;const html=parts.map(p=>p.s!=null?esc(p.s):`<input class="blank" data-b="${bi++}" style="width:${Math.max(3,p.a[0].length+1.5)}ch" spellcheck="false" autocomplete="off">`).join('');
+  main.innerHTML=`<section class="lesson-col">${eyebrow}<h1>${step.title}</h1>${ms(key,'오른쪽 코드의 <b>빈칸을 전부</b> 채우고 <b>✓ 채점</b>을 누르세요. <b>모든 칸이 맞아야</b> 통과예요. <kbd>Tab</kbd>으로 다음 칸으로 가요.')}<div class="lesson"><p>시험지의 <b>밑줄 채우기</b>와 같은 형식이에요.</p>${step.note?`<div class="tip">${step.note}</div>`:''}</div><div class="hints" id="hints"></div></section>
+  <section class="ws-col"><div class="ws"><div class="ws-bar"><span class="ws-title">빈칸 채우기</span><span class="sp"></span><button class="ghost sm" id="fillans">정답 보기</button></div>
+  <pre class="fillcode">${html}</pre>
+  <div class="runrow"><button class="btn check" id="fcheck">✓ 채점</button><button class="btn run" id="run">▶ 실행</button>
+  <label class="inp" ${step.inputs?'':'hidden'}><span>입력값</span><textarea id="stdin" rows="2" spellcheck="false">${esc(step.inputs||'')}</textarea></label></div>
+  <div class="verdict" id="verdict" hidden></div>
+  <div class="out" id="out"><div class="out-h">실행 결과</div><pre id="outpre" class="empty">▶ 실행을 누르면 채운 코드가 실행돼요</pre><div id="figs"></div></div></div></section>`;
+  const blanks=parts.filter(p=>p.a);const ins=[...main.querySelectorAll('.blank')];
+  const saved=S.codes[key];if(Array.isArray(saved))ins.forEach((x,i)=>x.value=saved[i]||'');
+  ins.forEach(x=>x.oninput=()=>{S.codes[key]=ins.map(y=>y.value);save();x.classList.remove('ok','no')});
+  const nz=s=>s.replace(/\s+/g,'').replace(/"/g,"'");
+  const build=()=>{let i=0;return parts.map(p=>p.s!=null?p.s:ins[i++].value).join('')};
+  $('#fcheck').onclick=()=>{let n=0;ins.forEach((x,i)=>{const ok=blanks[i].a.some(a=>nz(a)===nz(x.value));x.classList.toggle('ok',ok);x.classList.toggle('no',!ok);if(ok)n++});
+    const v=$('#verdict');v.hidden=false;if(n===ins.length){v.className='verdict pass';v.innerHTML=`<b>전부 정답! 통과예요.</b> ${n} / ${ins.length} · 아래 <b>다음 →</b>을 누르세요.`;markDone(key);msPass()}else{v.className='verdict fail';v.innerHTML=`<b>${n} / ${ins.length}</b> 맞았어요. 빨간 칸을 다시 보세요.`}};
+  $('#run').onclick=()=>doRun(build(),$('#stdin').value);
+  $('#fillans').onclick=()=>{$('#hints').innerHTML=`<div class="ans"><div class="ans-h">빈칸 정답 (보고 직접 입력하세요)</div><pre>${blanks.map((b,i)=>(i+1)+'. '+esc(b.a[0])).join('\n')}</pre></div>`};
+  ins[0]&&ins[0].focus();
+}
+function renderType(main,step,key,eyebrow){
+  const T=step.target;
+  main.innerHTML=`<section class="solo wide">${eyebrow}<h1>${step.title}</h1>${ms(key,'아래 상자를 클릭하고 회색 코드를 <b>처음부터 끝까지 그대로</b> 치세요. 끝까지 쳤을 때 <b>정확도 90% 이상</b>이면 통과예요.')}
+  <div class="typestats"><div><span>속도</span><b id="ts-cpm">0</b><i>타/분</i></div><div><span>정확도</span><b id="ts-acc">100</b><i>%</i></div><div><span>진행</span><b id="ts-prog">0</b><i>%</i></div><div><span>시간</span><b id="ts-time">0.0</b><i>초</i></div><span class="sp"></span><button class="ghost sm" id="tretry">다시 하기</button></div>
+  <div class="typebox" id="tbox"><pre id="tview"></pre><textarea id="tin" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea></div>
+  <p class="dim">회색 코드를 그대로 따라 치세요. <kbd>Enter</kbd>를 누르면 다음 줄 들여쓰기는 자동으로 들어가요. 틀린 글자는 빨갛게 보여요.</p>
+  <div class="verdict" id="verdict" hidden></div></section>`;
+  const tin=$('#tin'),tv=$('#tview');let t0=0,timer=null,errs=0,best=S.codes[key];
+  const draw=()=>{const v=tin.value;let h='';
+    for(let i=0;i<T.length;i++){const c=T[i];const show=c==='\n'?'↵\n':esc(c);
+      if(i===v.length)h+='<span class="caret"></span>';
+      if(i<v.length){h+=v[i]===c?`<span class="ok">${c==='\n'?'\n':esc(c)}</span>`:`<span class="no">${c===' '?'·':show}</span>`}
+      else h+=`<span class="todo">${c==='\n'?'\n':esc(c)}</span>`}
+    if(v.length>=T.length)h+='<span class="caret"></span>';
+    tv.innerHTML=h;
+    let ok=0;for(let i=0;i<v.length;i++)if(v[i]===T[i])ok++;
+    const sec=t0?(Date.now()-t0)/1000:0;
+    $('#ts-cpm').textContent=sec>1?Math.round(ok/sec*60):0;
+    $('#ts-acc').textContent=v.length?Math.round(ok/v.length*100):100;
+    $('#ts-prog').textContent=Math.round(v.length/T.length*100);
+    const c=tv.querySelector('.caret');if(c)c.scrollIntoView({block:'nearest'});
+    if(v.length>=T.length){clearInterval(timer);timer=null;const acc=Math.round(ok/v.length*100),cpm=Math.round(ok/sec*60);
+      const vv=$('#verdict');vv.hidden=false;vv.className='verdict '+(acc>=90?'pass':'fail');
+      vv.innerHTML=acc>=90?`<b>완료!</b> ${cpm}타/분 · 정확도 ${acc}%${best?` · 이전 기록 ${best}타/분`:''}. 한 번 더 하면 더 빨라져요.`:`정확도 ${acc}%예요. 90% 이상이면 통과! <b>다시 하기</b>로 한 번 더.`;
+      if(acc>=90){markDone(key);msPass();if(!best||cpm>best){S.codes[key]=cpm;save()}}}
+  };
+  tin.addEventListener('keydown',e=>{
+    if(e.key==='Tab'){e.preventDefault();ins('    ')}
+    else if(e.key==='Enter'&&!e.isComposing){e.preventDefault();const p=tin.value.length;const nl=T.indexOf('\n',p);let ind='';
+      if(nl>=0){const m=T.slice(nl+1).match(/^ */);ind=m?m[0]:''}ins('\n'+ind)}
+  });
+  function ins(s){const v=tin.value+s;tin.value=v.slice(0,T.length);start();draw()}
+  function start(){if(!t0){t0=Date.now();timer=setInterval(()=>{$('#ts-time').textContent=((Date.now()-t0)/1000).toFixed(1);draw()},500)}}
+  tin.addEventListener('input',()=>{if(tin.value.length>T.length)tin.value=tin.value.slice(0,T.length);start();draw()});
+  tin.addEventListener('click',()=>{tin.selectionStart=tin.selectionEnd=tin.value.length});
+  $('#tbox').onclick=()=>tin.focus();
+  $('#tretry').onclick=()=>{tin.value='';t0=0;clearInterval(timer);timer=null;$('#ts-time').textContent='0.0';$('#verdict').hidden=true;draw();tin.focus()};
+  draw();tin.focus();
+}
+
+/* ===== AI 코치 (claude.ai sample 기능) ===== */
+let SAMPLE=null, coachTurns=[], coachCtl=null;
+const NOCOACH=!!window.NO_COACH;if(NOCOACH)document.body.classList.add('no-coach');
+(async()=>{if(NOCOACH)return;try{if(window.claude&&claude.use){SAMPLE=await claude.use('sample')}}catch(e){}updateCoachAvail()})();
+function updateCoachAvail(){const n=$('#coach-note');if(!n)return;n.hidden=!!SAMPLE;$('#coach-send').disabled=!SAMPLE}
+const COACH_RULES=`너는 한국 고등학교 2학년 '소프트웨어와 생활' 수행평가 대비 파이썬 코치다.
+- 학생은 파이썬 기초만 알고 넘파이·판다스·맷플롯립은 이번에 처음 배운다.
+- 실제 시험은 종이에 손으로 코드를 쓰는 방식이고, 학교 실습 환경은 Thonny다(구글 코랩 아님: 결과는 print()로, 그래프는 plt.show()로 봐야 한다).
+- 시험 범위: 넘파이(2차원 배열·합계/중앙값/평균/최댓값/최솟값/분산/표준편차/any/all/where, arange, reshape, 배열 연산), 판다스(시리즈·데이터프레임 생성, 열/행 추출, loc, 열·행 추가, insert, 값 변경, rename, T, drop, set_index·inplace), 맷플롯립(plot의 marker·color·linestyle·label, xlabel, ylabel, legend, show), 스마트폰 시간-점수 그래프(figure, title, 'bo'), LinearRegression 예측과 기계학습 과정 설명, LogisticRegression 포도 분류. 문제는 숫자·이름·조건이 살짝 바뀌어 나올 수 있다.
+- 한국어로, 친근한 존댓말로, 짧게(보통 3~8줄) 답한다. 핵심부터 말한다.
+- 학생이 정답을 달라고 하기 전에는 전체 정답 코드를 주지 말고, 틀린 부분을 짚어주고 고칠 방향과 작은 코드 조각만 준다.
+- 코드는 \`\`\`python 블록으로 짧게. 시험에서 외우기 쉬운 형태를 우선한다.`;
+function stepContext(){
+  const f=FLAT[S.pos],st=stepAt(S.pos);
+  let c=`[현재 학습 단계] ${CHAPTERS[f.ci].title} > ${st.title||''} (${st.t})\n`;
+  if(st.body)c+=`[문제/설명]\n${strip(st.body).slice(0,1500)}\n`;
+  if(st.q)c+=`[질문] ${strip(st.q)}\n`;
+  if(ED)c+=`[학생이 지금 쓴 코드]\n${ED.getValue()||'(비어 있음)'}\n`;
+  if(st.t==='fill'){const ins=[...document.querySelectorAll('.blank')];c+=`[빈칸 문제 코드]\n${st.tpl}\n[학생이 채운 빈칸] ${ins.map(x=>x.value||'_').join(' / ')}\n`}
+  if(LAST.out||LAST.err)c+=`[마지막 실행 결과]\n${(LAST.out||'').slice(0,1500)}${LAST.err?`\n오류: ${LAST.err.type}: ${LAST.err.msg} (${LAST.err.line}번째 줄)`:''}\n`;
+  if(st.ref&&st.t==='code')c+=`[참고용 정답 코드 - 학생이 요청하기 전엔 통째로 보여주지 말 것]\n${st.ref}\n`;
+  return c;
+}
+function openCoach(){if(NOCOACH)return;document.body.classList.add('coach-open');$('#coach-in').focus()}
+$('#coach-btn').onclick=()=>document.body.classList.toggle('coach-open');
+$('#coach-x').onclick=()=>document.body.classList.remove('coach-open');
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>coachAsk(c.dataset.q));
+$('#coach-send').onclick=()=>{const v=$('#coach-in').value.trim();if(v){$('#coach-in').value='';coachAsk(v)}};
+$('#coach-in').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();$('#coach-send').click()}});
+function md(t){return esc(t).replace(/```(?:python)?\n?([\s\S]*?)```/g,(m,c)=>`<pre>${c.replace(/\n$/,'')}</pre>`).replace(/`([^`\n]+)`/g,'<code>$1</code>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>').replace(/<pre>([\s\S]*?)<\/pre>/g,(m,c)=>'<pre>'+c.replace(/<br>/g,'\n')+'</pre>')}
+async function coachAsk(question){
+  if(NOCOACH)return;
+  openCoach();
+  const log=$('#coach-log');
+  log.insertAdjacentHTML('beforeend',`<div class="msg me">${esc(question)}</div>`);
+  const bub=document.createElement('div');bub.className='msg ai';bub.innerHTML='<span class="dim">생각하는 중…</span>';log.appendChild(bub);log.scrollTop=log.scrollHeight;
+  if(!SAMPLE){bub.innerHTML='AI 코치는 claude.ai에 로그인한 상태로 이 페이지를 열었을 때만 동작해요. 대신 문제 화면의 <b>힌트</b>와 <b>코치 해설</b>을 이용하세요.';return}
+  coachCtl&&coachCtl.abort();coachCtl=new AbortController();
+  const userMsg=stepContext()+'\n[학생 질문]\n'+question;
+  const turns=[{role:'user',content:COACH_RULES},...coachTurns.slice(-6),{role:'user',content:userMsg}];
+  $('#coach-stop').hidden=false;
+  try{
+    const r=await SAMPLE(turns,{cache:false,signal:coachCtl.signal,onText:({text})=>{bub.innerHTML=md(text);log.scrollTop=log.scrollHeight}});
+    coachTurns.push({role:'user',content:question},{role:'assistant',content:r.text});
+  }catch(e){
+    const code=e&&e.code;
+    if(code==='cancelled'){if(!e.text)bub.innerHTML='<span class="dim">멈췄어요.</span>'}
+    else bub.innerHTML=(e.text?md(e.text)+'<br>':'')+'<span class="bad">'+({not_granted:'AI 코치 사용이 허용되지 않았어요. 페이지의 권한 설정에서 허용할 수 있어요.',rate_limited:'요청이 많아요. 잠시 후 다시 물어보세요.',session_expired:'claude.ai에 다시 로그인해 주세요.',sampling_disabled:'이 계정에서는 AI 코치를 쓸 수 없어요.'}[code]||'답변을 받지 못했어요. 다시 시도해 주세요.')+'</span>';
+  }finally{$('#coach-stop').hidden=true}
+}
+$('#coach-stop').onclick=()=>coachCtl&&coachCtl.abort();
+
+/* ===== 프로필 ===== */
+function showProfiles(){
+  save();const o=$('#profiles');o.hidden=false;
+  const cards=PROFS.list.map(p=>{const st=loadState(p.id);const n=Object.keys(st.done).length;const pct=Math.round(n/FLAT.length*100);
+    return `<div class="pf-card ${p.id===PID?'cur':''}"><button class="pf-pick" data-id="${p.id}"><b>${esc(p.name)}</b><span class="pf-bar" style="--p:${pct/100}"></span><span class="pf-meta">진도 ${pct}% · 학습 ${fmt(st.elapsed)}</span></button><button class="pf-del ghost sm" data-id="${p.id}">삭제</button></div>`}).join('');
+  o.innerHTML=`<div class="pf-box"><div class="eyebrow">PROFILE <span>프로필</span></div><h1>누가 공부하나요?</h1>
+   <p class="dim">프로필마다 진도, 내가 쓴 코드, 학습 시간이 따로 저장돼요. 기록은 이 컴퓨터의 이 브라우저에만 저장돼요.</p>
+   <div class="pf-list">${cards||'<p class="dim">아직 프로필이 없어요. 아래에서 이름을 넣고 만들어 주세요.</p>'}</div>
+   <form class="pf-new" id="pfnew"><input id="pfname" maxlength="20" placeholder="이름 (예: 2-3 김민수)" autocomplete="off"><button class="btn run" type="submit"><span>＋ 새 프로필 만들기</span></button></form>
+   ${PID?'<button class="ghost" id="pfclose">닫고 계속하기</button>':''}</div>`;
+  o.querySelectorAll('.pf-pick').forEach(b=>b.onclick=()=>useProfile(b.dataset.id));
+  o.querySelectorAll('.pf-del').forEach(b=>b.onclick=()=>{
+    if(!b.classList.contains('arm')){b.classList.add('arm');b.textContent='정말 삭제? 한 번 더';setTimeout(()=>{b.classList.remove('arm');b.textContent='삭제'},3000);return}
+    const id=b.dataset.id;PROFS.list=PROFS.list.filter(p=>p.id!==id);savePro();try{localStorage.removeItem('pyexam-v2:'+id)}catch(e){}
+    if(id===PID){PID=null;S=fresh()}showProfiles()});
+  $('#pfnew').onsubmit=e=>{e.preventDefault();const nm=$('#pfname').value.trim();if(!nm){$('#pfname').focus();return}
+    const id='p'+Date.now().toString(36);PROFS.list.push({id,name:nm});savePro();useProfile(id)};
+  const c=$('#pfclose');if(c)c.onclick=()=>{o.hidden=true};
+  setTimeout(()=>{const i=$('#pfname');if(i&&!PROFS.list.length)i.focus()},0);
+}
+function useProfile(id){
+  save();PID=id;S=loadState(id);if(S.pos>=FLAT.length)S.pos=0;PROFS.last=id;savePro();
+  const p=PROFS.list.find(x=>x.id===id);$('#who').innerHTML=`<span>👤</span> ${esc(p?p.name:'')}`;
+  $('#profiles').hidden=true;SCR=false;tickLast=Date.now();coachTurns=[];render();renderTimer();
+}
+$('#who').onclick=showProfiles;
+
+/* ===== 이동 ===== */
+$('#prev').onclick=()=>SCR?go(S.pos):go(S.pos-1);
+$('#next').onclick=()=>{if(SCR)return go(S.pos);
+  if(!S.done[FLAT[S.pos].key]){toast('🔒 <b>이 단계를 통과해야 넘어갈 수 있어요.</b> 오른쪽 위 <b>할 일</b>을 확인하세요.');const m=$('.mission');if(m){m.classList.remove('shake');void m.offsetWidth;m.classList.add('shake')}return}
+  if(S.pos<FLAT.length-1)go(S.pos+1)};
+$('#scratch-btn').onclick=()=>{SCR=!SCR;render()};
+$('#timer-reset').onclick=()=>{S.elapsed=0;tickLast=Date.now();save();renderTimer()};
+document.addEventListener('keydown',e=>{if(e.altKey&&e.key==='ArrowRight'){e.preventDefault();$('#next').click()}if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();$('#prev').click()}});
+setPyPill();renderTimer();render();updateCoachAvail();showProfiles();
+
+/* 자체 점검: 모든 정답 코드가 오류 없이 도는지 (개발용) */
+window.__selfTest=async()=>{const bad=[];for(let i=0;i<FLAT.length;i++){const s=stepAt(i);const code=s.ref||(s.t==='learn'&&s.code);if(!code)continue;const r=await runPy(code,s.inputs||'');if(r.err)bad.push([FLAT[i].key,s.title,r.err.type,r.err.msg]);}
+ for(const k of ['np1','np2','np3','pd1','pdx','pdx','pdx','pdx','pdx','pdx','plot','ml'])for(let j=0;j<4;j++){const s=genStep(k);const r=await runPy(s.ref,s.inputs||'');if(r.err)bad.push([k,s.title,r.err.type,r.err.msg,s.ref])}
+ return bad};
+
+</script>
