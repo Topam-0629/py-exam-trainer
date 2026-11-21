@@ -1,4 +1,12 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>PY 수행평가 트레이닝</title>
+</head>
+<body>
+
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +25,7 @@
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:dark;
 }
+[hidden]{display:none!important}
 html,body{height:100%}
 body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--f-body);margin:0;overflow:hidden;
   background-image:radial-gradient(1200px 500px at 70% -200px,rgba(28,242,138,.10),transparent 60%),repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.012) 46px 47px)}
@@ -1777,6 +1786,8 @@ function showProfiles(){
     const id=b.dataset.id;PROFS.list=PROFS.list.filter(p=>p.id!==id);savePro();try{localStorage.removeItem('pyexam-v2:'+id)}catch(e){}
     if(id===PID){PID=null;S=fresh()}showProfiles()});
   $('#pfnew').onsubmit=e=>{e.preventDefault();const nm=$('#pfname').value.trim();if(!nm){$('#pfname').focus();return}
+    const btn=$('#pfnew button');if(btn.disabled)return;btn.disabled=true;
+    const same=PROFS.list.find(p=>p.name===nm);if(same)return useProfile(same.id);
     const id='p'+Date.now().toString(36);PROFS.list.push({id,name:nm});savePro();useProfile(id)};
   const c=$('#pfclose');if(c)c.onclick=()=>{o.hidden=true};
   setTimeout(()=>{const i=$('#pfname');if(i&&!PROFS.list.length)i.focus()},0);
@@ -1804,3 +1815,6 @@ window.__selfTest=async()=>{const bad=[];for(let i=0;i<FLAT.length;i++){const s=
  return bad};
 
 </script>
+
+</body>
+</html>
