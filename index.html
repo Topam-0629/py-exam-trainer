@@ -1769,7 +1769,7 @@ function showProfiles(){
   o.innerHTML=`<div class="pf-box"><div class="eyebrow">PROFILE <span>프로필</span></div><h1>누가 공부하나요?</h1>
    <p class="dim">프로필마다 진도, 내가 쓴 코드, 학습 시간이 따로 저장돼요. 기록은 이 컴퓨터의 이 브라우저에만 저장돼요.</p>
    <div class="pf-list">${cards||'<p class="dim">아직 프로필이 없어요. 아래에서 이름을 넣고 만들어 주세요.</p>'}</div>
-   <form class="pf-new" id="pfnew"><input id="pfname" maxlength="20" placeholder="이름 (예: 2-3 김민수)" autocomplete="off"><button class="btn run" type="submit"><span>＋ 새 프로필 만들기</span></button></form>
+   <form class="pf-new" id="pfnew"><input id="pfname" maxlength="20" placeholder="이름 (예: 용가리)" autocomplete="off"><button class="btn run" type="submit"><span>＋ 새 프로필 만들기</span></button></form>
    ${PID?'<button class="ghost" id="pfclose">닫고 계속하기</button>':''}</div>`;
   o.querySelectorAll('.pf-pick').forEach(b=>b.onclick=()=>useProfile(b.dataset.id));
   o.querySelectorAll('.pf-del').forEach(b=>b.onclick=()=>{
