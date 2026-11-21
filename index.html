@@ -744,11 +744,11 @@ print(np.where(a > 3, a, 0))   # 3보다 크면 그대로, 아니면 0
 print(np.where(a < 0))         # 음수의 위치`},
 { t:'code', title:'문제 1-A: 행의 합계 + 열의 중앙값', body:`<p>시험 배열 <code>a</code>를 만들고 <b>행의 원소 합계</b>와 <b>열의 중앙값</b>을 차례로 출력하세요.</p>${NP_TABLE}`,
  ref: NP_A + `\nprint(a.sum(axis=1))\nprint(np.median(a, axis=0))`, check:'out', hints:['행의 합계 → 가로로 더하기 → axis=1','중앙값은 np.median(a, axis=0) 형태','print(a.sum(axis=1)) 다음 줄에 print(np.median(a, axis=0))']},
-{ t:'code', title:'문제 1-B: 열의 평균 + 행끼리 최솟값', body:`<p>시험 배열로 <b>열의 평균</b>과 <b>행끼리 최솟값</b>을 출력하세요.</p>`,
+{ t:'code', title:'문제 1-B: 열의 평균 + 행끼리 최솟값', body:`<p>시험 배열로 <b>열의 평균</b>과 <b>행끼리 최솟값</b>을 출력하세요.</p>${NP_TABLE}`,
  ref: NP_A + `\nprint(a.mean(axis=0))\nprint(a.min(axis=1))`, check:'out', hints:['열 → axis=0, 행 → axis=1','a.mean(axis=0)','a.min(axis=1)']},
-{ t:'code', title:'문제 1-C: 분산과 표준편차', body:`<p>시험 배열로 <b>열끼리 분산</b>과 <b>열끼리 표준편차</b>를 출력하세요.</p>`,
+{ t:'code', title:'문제 1-C: 분산과 표준편차', body:`<p>시험 배열로 <b>열끼리 분산</b>과 <b>열끼리 표준편차</b>를 출력하세요.</p>${NP_TABLE}`,
  ref: NP_A + `\nprint(a.var(axis=0))\nprint(a.std(axis=0))`, check:'out', hints:['분산 var, 표준편차 std','열끼리 → axis=0']},
-{ t:'code', title:'문제 1-D: 조건 선별', body:`<p>시험 배열로 다음 두 가지를 출력하세요.</p><ol><li>각 <b>열</b>에 6보다 큰 값이 <b>하나라도</b> 있는지 (any)</li><li>0보다 작은 값은 0으로 바꾸고 나머지는 그대로 둔 배열 (where)</li></ol>`,
+{ t:'code', title:'문제 1-D: 조건 선별', body:`<p>시험 배열로 다음 두 가지를 출력하세요.</p><ol><li>각 <b>열</b>에 6보다 큰 값이 <b>하나라도</b> 있는지 (any)</li><li>0보다 작은 값은 0으로 바꾸고 나머지는 그대로 둔 배열 (where)</li></ol>${NP_TABLE}`,
  ref: NP_A + `\nprint(np.any(a > 6, axis=0))\nprint(np.where(a < 0, 0, a))`, check:'out', hints:['열마다 → axis=0','np.any(a > 6, axis=0)','np.where(조건, 참일 때, 거짓일 때) → np.where(a < 0, 0, a)']},
 { t:'learn', title:'arange: 연속된 숫자 배열', body:`
 <p><code>np.arange(시작, 끝, 간격)</code> — <b>끝 숫자는 포함하지 않아요.</b></p>
@@ -803,7 +803,7 @@ print(a ** 2)`},
  ref:`import numpy as np\na = np.arange(1, 7).reshape(2, 3)\nb = np.arange(7, 13).reshape(2, 3)\nprint(a + b)`, check:'out', showExpected:true, must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']], hints:['결과가 2행 3열 → reshape(2, 3)','a = 1~6, b = 7~12','print(a + b)']},
 { t:'code', title:'문제 3-B: 결과 보고 코드 쓰기', body:`<p>아래 실행 결과가 나오도록 <code>arange()</code>, <code>reshape()</code>를 써서 코드를 작성하세요.</p>`,
  ref:`import numpy as np\na = np.arange(1, 10).reshape(3, 3)\nprint(a * 10)`, check:'out', showExpected:true, must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']], hints:['3행 3열 → 원소 9개 → arange(1, 10)','모든 칸이 10배','print(a * 10)']},
-{ t:'code', title:'백지 테스트: 넘파이', blank:true, body:`<p><b>아무것도 보지 말고</b> 처음부터 쓰세요. 시험 배열을 만들고 <b>행의 중앙값</b>과 <b>열끼리 최댓값</b>을 출력하세요.</p>`,
+{ t:'code', title:'백지 테스트: 넘파이', blank:true, body:`<p><b>아무것도 보지 말고</b> 처음부터 쓰세요. 시험 배열을 만들고 <b>행의 중앙값</b>과 <b>열끼리 최댓값</b>을 출력하세요.</p>${NP_TABLE}`,
  ref: NP_A + `\nprint(np.median(a, axis=1))\nprint(a.max(axis=0))`, check:'out', hints:['import numpy as np','중앙값은 np.median','열끼리 → axis=0']},
 { t:'quiz', title:'서술: 넘파이 설명', q:'넘파이(NumPy) 라이브러리를 설명하시오.', kw:['배열','수치|계산','빠르','통계|합계|평균','판다스|기반'], answer: DESC_NP},
 ]},
@@ -846,9 +846,9 @@ ${FAMILY_TABLE}`,
 <p>열마다 시리즈를 만든 다음, <code>{'열 이름': 시리즈}</code> 딕셔너리로 묶어요.</p>
 <p>같은 <code>idx</code> 리스트를 변수로 만들어 두면 덜 쓸 수 있어요.</p>`,
  code: DF_SER + `\nprint(df)`},
-{ t:'code', title:'문제 1 변형: 배열로 만들기', body:`<p>이번엔 <b>2차원 배열(리스트)</b> 방법으로 같은 데이터프레임을 만들고 출력하세요. (<code>columns=</code> 필요)</p>`,
+{ t:'code', title:'문제 1 변형: 배열로 만들기', body:`<p>이번엔 <b>2차원 배열(리스트)</b> 방법으로 같은 데이터프레임을 만들고 출력하세요. (<code>columns=</code> 필요)</p>${FAMILY_TABLE}`,
  ref: DF_ARR + `\nprint(df)`, check:'out', must:[['columns','columns=로 열 이름을 넣어야 해요']], hints:['행 하나 = [60, 3.8, 4.4, \'Shark\']','pd.DataFrame(arr, index=[...], columns=[...])']},
-{ t:'code', title:'문제 1 변형: 시리즈로 만들기', body:`<p><b>시리즈</b> 방법으로 같은 데이터프레임을 만들고 출력하세요.</p>`,
+{ t:'code', title:'문제 1 변형: 시리즈로 만들기', body:`<p><b>시리즈</b> 방법으로 같은 데이터프레임을 만들고 출력하세요.</p>${FAMILY_TABLE}`,
  ref: DF_SER + `\nprint(df)`, check:'out', must:[['Series','pd.Series를 써야 해요']], hints:['idx = [...] 먼저','age = pd.Series([...], index=idx) 를 4개','pd.DataFrame({\'age\': age, ...})']},
 { t:'learn', title:'열 추출: 대괄호 두 겹', body:`
 <table class="cmp"><tr><th>코드</th><th>결과</th></tr>
@@ -942,9 +942,9 @@ df = df.rename(columns={'age': 'A', 'weight': 'W'})</pre>
 { t:'quiz', title:'서술: inplace=True', q:'df.set_index(\'nickname\', inplace=True)에서 inplace=True의 의미와, 쓰지 않으면 어떻게 되는지 설명하시오.', kw:['원본','복사본|사본','반영|바뀌|변경'], answer:'inplace=True로 설정하면 원본 데이터프레임이 직접 바뀐다. 설정하지 않으면 원본의 복사본을 새로 만들어 돌려주기 때문에 원본에는 반영되지 않는다. 이때 기존 인덱스는 삭제된다.'},
 { t:'mc', title:'판다스 확인', q:'height, nickname 두 열을 뽑는 코드로 올바른 것은?', opts:["df['height', 'nickname']","df[['height', 'nickname']]","df.loc['height', 'nickname']","df(['height', 'nickname'])"], ans:1, exp:'열 여러 개는 대괄호 두 겹이에요.'},
 { t:'mc', title:'판다스 확인', q:'sex 열을 <b>맨 앞</b>에 추가하는 코드는?', opts:["df['sex'] = [...]","df.loc['sex'] = [...]","df.insert(0, 'sex', [...])","df.insert('sex', 0, [...])"], ans:2, exp:'insert(위치, 이름, 값) 순서예요.'},
-{ t:'code', title:'백지 테스트: 판다스 ①', blank:true, body:`<p><b>아무것도 보지 말고</b> 딕셔너리로 가족 데이터프레임을 만든 뒤, <b>age, weight 열</b>만 추출해 출력하세요.</p>`,
+{ t:'code', title:'백지 테스트: 판다스 ①', blank:true, body:`<p><b>아무것도 보지 말고</b> 딕셔너리로 가족 데이터프레임을 만든 뒤, <b>age, weight 열</b>만 추출해 출력하세요.</p>${FAMILY_TABLE}`,
  ref: DF_DICT + `\nprint(df[['age', 'weight']])`, check:'out', hints:['import pandas as pd','딕셔너리 → pd.DataFrame(data, index=[...])','df[[\'age\', \'weight\']]']},
-{ t:'code', title:'백지 테스트: 판다스 ②', blank:true, body:`<p>데이터프레임을 만들고 <b>aunt</b> 행 (age 38, weight 5.1, height 6.6, nickname Mia)을 추가한 뒤, <b>nickname 칼럼을 삭제</b>하고 출력하세요.</p>`,
+{ t:'code', title:'백지 테스트: 판다스 ②', blank:true, body:`<p>데이터프레임을 만들고 <b>aunt</b> 행 (age 38, weight 5.1, height 6.6, nickname Mia)을 추가한 뒤, <b>nickname 칼럼을 삭제</b>하고 출력하세요.</p>${FAMILY_TABLE}`,
  ref: DF_DICT + `\ndf.loc['aunt'] = [38, 5.1, 6.6, 'Mia']\ndf = df.drop('nickname', axis=1)\nprint(df)`, check:'out', hints:['df.loc[\'aunt\'] = [...]','df = df.drop(\'nickname\', axis=1)']},
 { t:'type', title:'타자: 판다스 핵심 모음', target:`print(df[['height', 'nickname']])
 print(df.loc[['grandma', 'grandson', 'papa']])
@@ -1012,7 +1012,7 @@ plt.show()`},
 { t:'code', title:'변형: 키 그래프', body:`<p><b>키(height)</b>로 그리세요.</p>
 <div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ◆ (다이아몬드), 색상: 시안(c), 선 종류: 일점쇄선(-.), 범례 label='height', x축 family, y축 height</div><p class="dim">height: 4.4, 5.6, 6.4, 5.7, 7.8</p>`,
  ref:`import matplotlib.pyplot as plt\nx = ['grandpa', 'grandma', 'grandson', 'papa', 'mama']\ny = [4.4, 5.6, 6.4, 5.7, 7.8]\nplt.plot(x, y, marker='D', color='c', label='height', linestyle='-.')\nplt.xlabel('family')\nplt.ylabel('height')\nplt.legend()\nplt.show()`, check:'plot', showExpected:true, hints:['다이아몬드 \'D\' (대문자)','일점쇄선 \'-.\'']},
-{ t:'code', title:'백지 테스트: 시험 그래프', blank:true, body:`<p><b>아무것도 보지 말고</b> 사진의 그래프를 처음부터 그리세요. (★, 마젠타, --, label='weight', family, weight, 범례)</p>`,
+{ t:'code', title:'백지 테스트: 시험 그래프', blank:true, body:`<p><b>아무것도 보지 말고</b> 사진의 그래프를 처음부터 그리세요. (★, 마젠타, --, label='weight', family, weight, 범례)</p><table class="tbl"><tr><th></th><th>age</th><th>weight</th></tr><tr><th>grandpa</th><td>60</td><td>3.8</td></tr><tr><th>grandma</th><td>70</td><td>7.2</td></tr><tr><th>grandson</th><td>12</td><td>6.3</td></tr><tr><th>papa</th><td>45</td><td>5.5</td></tr><tr><th>mama</th><td>42</td><td>4.6</td></tr></table>`,
  ref: PHOTO, check:'plot', hints:['import 2줄','x는 가족 5명, y는 몸무게 5개','plot → xlabel → ylabel → legend → show']},
 { t:'quiz', title:'서술: 맷플롯립 설명', q:'맷플롯립(Matplotlib) 라이브러리를 설명하시오.', kw:['시각화|그래프','선|막대|산점도|원','pyplot|plt'], answer: DESC_MPL},
 ]},
@@ -1066,7 +1066,7 @@ model.{{fit}}(x.{{reshape}}(-1, 1), {{y}})
 pre_x = {{int}}({{input}}('스마트폰 사용 시간:'))
 y_hat = model.{{predict}}({{[[pre_x]]}})
 print({{y_hat}}, '점')`, inputs:'2'},
-{ t:'code', title:'백지 테스트: 점수 예측', blank:true, body:`<p>아무것도 보지 말고 스마트폰 사용 시간을 입력받아 시험 점수를 예측하는 프로그램을 쓰세요. (입력값 2로 채점)</p>`,
+{ t:'code', title:'백지 테스트: 점수 예측', blank:true, body:`<p>아무것도 보지 말고 스마트폰 사용 시간을 입력받아 시험 점수를 예측하는 프로그램을 쓰세요. (입력값 2로 채점)</p><table class="tbl"><tr><th>스마트폰 사용 시간 (x)</th><td>1</td><td>3</td><td>5</td></tr><tr><th>시험 점수 (y)</th><td>80</td><td>69</td><td>55</td></tr></table>`,
  ref: LINREG, inputs:'2', check:'out', hints:['1. np.array로 x, y','2. from sklearn.linear_model import LinearRegression → model = LinearRegression() → model.fit(x.reshape(-1, 1), y)','3. int(input(...)) → model.predict([[pre_x]]) → print(y_hat, \'점\')']},
 { t:'type', title:'타자: 점수 예측', target: LINREG},
 { t:'quiz', title:'서술: 기계학습 과정 설명', q:'스마트폰 사용 시간으로 시험 점수를 예측하는 기계학습 과정을 설명하시오.', kw:['데이터','모델|LinearRegression|선형','학습|fit','예측|predict','reshape|2차원'], answer: DESC_ML},
