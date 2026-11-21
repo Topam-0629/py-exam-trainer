@@ -478,7 +478,6 @@ const CHAPTERS = [
 <li><b>개념 단계</b>: 왼쪽에 예제 코드, 오른쪽은 <b>빈 칸</b>이에요. 예제를 보고 처음부터 직접 똑같이 쳐서 실행하세요.</li>
 <li><b>빈 연습장</b>(아래): 언제든 아무것도 없는 칸에서 처음부터 써볼 수 있어요.</li>
 <li class="coach-only"><b>AI 코치에게 질문</b>(아래): 진짜 AI 코치에게 내 코드와 오류를 보내고 물어볼 수 있어요.</li>
-<li><b>타자 연습</b>: 회색 글자 위에 그대로 따라 치세요. 틀린 글자는 빨갛게 표시돼요.</li>
 <li><b>다음 →</b> 또는 <kbd>Alt</kbd>+<kbd>→</kbd>: 통과한 뒤 다음 단계로 넘어가요.</li></ul>
 <div class="tip">진행 상황은 이 브라우저에 자동 저장돼요. 창을 닫았다 열어도 이어서 할 수 있어요.</div>`,
  code:`print('준비 완료!')`},
@@ -926,8 +925,7 @@ df = df.rename(columns={'age': 'A', 'weight': 'W'})</pre>
 <pre class="code">df.set_index('nickname', inplace=True)</pre>
 <ul><li>nickname 열이 인덱스(행 이름)가 되고, <b>기존 인덱스(grandpa …)는 삭제</b>돼요.</li>
 <li><code>inplace=True</code>: <b>원본을 직접</b> 바꿔요. 안 쓰면 바뀐 <b>복사본</b>만 만들고 원본은 그대로예요.</li>
-<li>같은 효과: <code>df = df.set_index('nickname')</code></li></ul>
-<div class="tip">시험지 문제 13 밑의 설명 문장이 바로 이 내용이에요. 서술형으로 나올 수 있어요.</div>`,
+<li>같은 효과: <code>df = df.set_index('nickname')</code></li></ul>`,
  code: DF_DICT + `\ndf.set_index('nickname', inplace=True)\nprint(df)`},
 { t:'code', title:'문제 13: 인덱스를 nickname으로', body:`<p>인덱스를 <b>nickname</b> 칼럼으로 바꾸고 출력하세요. (원본이 바뀌어야 해요)</p>`,
  starter: DF_DICT + `\n\n`, ref: DF_DICT + `\ndf.set_index('nickname', inplace=True)\nprint(df)`, check:'out', hints:['set_index(\'nickname\', inplace=True)']},
@@ -1405,12 +1403,20 @@ try{PROFS=JSON.parse(localStorage.getItem(PKEY)||'null')||{list:[]}}catch(e){}
 const savePro=()=>{try{localStorage.setItem(PKEY,JSON.stringify(PROFS))}catch(e){}};
 // 예전(프로필 없던 때) 기록을 첫 프로필로 옮기기
 try{const old=localStorage.getItem('pyexam-v2');if(old&&!PROFS.list.length){PROFS.list.push({id:'p0',name:'내 기록'});localStorage.setItem('pyexam-v2:p0',old);savePro()}}catch(e){}
-const save=()=>{if(!PID)return;try{localStorage.setItem('pyexam-v2:'+PID,JSON.stringify(S))}catch(e){}};
+const save=()=>{if(!PID)return;S.posKey=FLAT[S.pos]&&FLAT[S.pos].key;try{localStorage.setItem('pyexam-v2:'+PID,JSON.stringify(S))}catch(e){}};
 const loadState=id=>{let x=fresh();try{const v=JSON.parse(localStorage.getItem('pyexam-v2:'+id)||'null');if(v)x=Object.assign(x,v)}catch(e){}return x};
 
 /* 평면 단계 목록 */
 const FLAT=[];
-CHAPTERS.forEach((c,ci)=>c.steps.forEach((s,si)=>FLAT.push({ci,si,key:c.id+'-'+si,raw:s})));
+// 화면에서 뺀 단계: 타자 연습, 서술형(서술 문제 + 서술형 답안 설명)
+const HIDE=s=>s.t==='type'||s.t==='quiz'||/서술형/.test(s.title||'');
+const OLDKEYS=[];  // 타자 단계가 있던 시절의 순서 (예전 위치 이전용)
+CHAPTERS.forEach((c,ci)=>c.steps.forEach((s,si)=>{OLDKEYS.push(c.id+'-'+si);if(!HIDE(s))FLAT.push({ci,si,key:c.id+'-'+si,raw:s})}));
+CHAPTERS.forEach((c,ci)=>{c.vis=FLAT.filter(f=>f.ci===ci)});
+// 저장된 위치를 키 기준으로 복원 (posKey 없으면 예전 번호 → 키로 변환)
+function fixPos(x){let k=x.posKey;if(!k||FLAT.findIndex(f=>f.key===k)<0){k=OLDKEYS[x.pos]||OLDKEYS[0]}
+  let i=FLAT.findIndex(f=>f.key===k);if(i<0){const oi=OLDKEYS.indexOf(k);for(let j=oi+1;j<OLDKEYS.length&&i<0;j++)i=FLAT.findIndex(f=>f.key===OLDKEYS[j])}
+  x.pos=Math.max(0,i);x.posKey=FLAT[x.pos].key;return x}
 const GEN={};
 function stepAt(i){const f=FLAT[i];if(f.raw.t==='gen'){if(!GEN[f.key])GEN[f.key]=genStep(f.raw.kind);return GEN[f.key]}return f.raw}
 if(S.pos>=FLAT.length)S.pos=0;
@@ -1428,12 +1434,12 @@ function reach(){for(let i=0;i<FLAT.length;i++)if(!S.done[FLAT[i].key])return i;
 function renderNav(){
   const cur=FLAT[S.pos],R=reach();
   $('#chapters').innerHTML=CHAPTERS.map((c,ci)=>{
-    const keys=c.steps.map((_,si)=>c.id+'-'+si);const d=keys.filter(k=>S.done[k]).length;
+    const keys=c.vis.map(f=>f.key);const d=keys.filter(k=>S.done[k]).length;
     const first=FLAT.findIndex(f=>f.ci===ci);const lock=first>R;
     return `<button class="chap ${ci===cur.ci?'on':''} ${lock?'locked':''}" data-ci="${ci}" style="--f:${d/keys.length}" ${lock?'title="앞 챕터를 통과해야 열려요"':''}><span class="cn">${lock?'🔒':String(ci).padStart(2,'0')}</span><span class="ct">${c.title}</span><span class="cm">${c.mins}분</span></button>`}).join('');
   const ch=CHAPTERS[cur.ci];
-  $('#dots').innerHTML=ch.steps.map((s,si)=>{const k=ch.id+'-'+si;const idx=FLAT.findIndex(f=>f.key===k);const st=stepAt(idx);return `<button class="dot ${si===cur.si?'on':''} ${S.done[k]?'ok':''} ${idx>R?'locked':''} t-${st.t}" data-k="${k}" title="${esc(st.title||'')}"></button>`}).join('');
-  $('#stepinfo').textContent=`${ch.title} · ${cur.si+1} / ${ch.steps.length}`;
+  $('#dots').innerHTML=ch.vis.map(f=>{const k=f.key;const idx=FLAT.indexOf(f);const st=stepAt(idx);return `<button class="dot ${f===cur?'on':''} ${S.done[k]?'ok':''} ${idx>R?'locked':''} t-${st.t}" data-k="${k}" title="${esc(st.title||'')}"></button>`}).join('');
+  $('#stepinfo').textContent=`${ch.title} · ${ch.vis.indexOf(cur)+1} / ${ch.vis.length}`;
   $('#prev').disabled=S.pos===0&&!SCR;
   const nx=$('#next');const ok=SCR||S.done[cur.key];
   nx.classList.toggle('locked',!ok);
@@ -1584,7 +1590,7 @@ function render(){
   if(step.t==='intro'||step.t==='finish'){
     main.innerHTML=`<section class="solo intro">${eyebrow}<h1>${step.title}</h1>${step.body}</section>`;
     if(step.t==='intro') markDone(key);
-    if(step.t==='finish'){markDone(key);const d=Object.keys(S.done).length;main.querySelector('.solo').insertAdjacentHTML('beforeend',`<p class="dim">완료한 단계: ${d} / ${FLAT.length} · 학습 시간 ${fmt(S.elapsed)}</p><button class="ghost" id="restart">처음부터 다시 하기 (기록 지우기)</button>`);$('#restart').onclick=()=>{S={pos:0,done:{},codes:{},elapsed:0};save();render()}}
+    if(step.t==='finish'){markDone(key);const d=FLAT.filter(f=>S.done[f.key]).length;main.querySelector('.solo').insertAdjacentHTML('beforeend',`<p class="dim">완료한 단계: ${d} / ${FLAT.length} · 학습 시간 ${fmt(S.elapsed)}</p><button class="ghost" id="restart">처음부터 다시 하기 (기록 지우기)</button>`);$('#restart').onclick=()=>{S={pos:0,done:{},codes:{},elapsed:0};save();render()}}
     return;
   }
   if(step.t==='learn'&&!step.code){main.innerHTML=`<section class="solo">${eyebrow}<h1>${step.title}</h1><div class="lesson">${step.body}</div></section>`;markDone(key);return}
@@ -1773,7 +1779,7 @@ $('#coach-stop').onclick=()=>coachCtl&&coachCtl.abort();
 /* ===== 프로필 ===== */
 function showProfiles(){
   save();const o=$('#profiles');o.hidden=false;
-  const cards=PROFS.list.map(p=>{const st=loadState(p.id);const n=Object.keys(st.done).length;const pct=Math.round(n/FLAT.length*100);
+  const cards=PROFS.list.map(p=>{const st=loadState(p.id);const n=FLAT.filter(f=>st.done[f.key]).length;const pct=Math.round(n/FLAT.length*100);
     return `<div class="pf-card ${p.id===PID?'cur':''}"><button class="pf-pick" data-id="${p.id}"><b>${esc(p.name)}</b><span class="pf-bar" style="--p:${pct/100}"></span><span class="pf-meta">진도 ${pct}% · 학습 ${fmt(st.elapsed)}</span></button><button class="pf-del ghost sm" data-id="${p.id}">삭제</button></div>`}).join('');
   o.innerHTML=`<div class="pf-box"><div class="eyebrow">PROFILE <span>프로필</span></div><h1>누가 공부하나요?</h1>
    <p class="dim">프로필마다 진도, 내가 쓴 코드, 학습 시간이 따로 저장돼요. 기록은 이 컴퓨터의 이 브라우저에만 저장돼요.</p>
@@ -1793,7 +1799,7 @@ function showProfiles(){
   setTimeout(()=>{const i=$('#pfname');if(i&&!PROFS.list.length)i.focus()},0);
 }
 function useProfile(id){
-  save();PID=id;S=loadState(id);if(S.pos>=FLAT.length)S.pos=0;PROFS.last=id;savePro();
+  save();PID=id;S=fixPos(loadState(id));PROFS.last=id;savePro();
   const p=PROFS.list.find(x=>x.id===id);$('#who').innerHTML=`<span>👤</span> ${esc(p?p.name:'')}`;
   $('#profiles').hidden=true;SCR=false;tickLast=Date.now();coachTurns=[];render();renderTimer();
 }
