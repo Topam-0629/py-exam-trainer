@@ -1505,7 +1505,7 @@ const loadState=id=>{let x=fresh();try{const v=JSON.parse(localStorage.getItem('
 /* 평면 단계 목록 */
 const FLAT=[];
 // 화면에서 뺀 단계: 타자 연습, 서술형(서술 문제 + 서술형 답안 설명)
-const HIDE=s=>s.t==='type'||s.t==='quiz'||s.t==='fill'||/서술형/.test(s.title||'');
+const HIDE=s=>s.t==='type'||s.t==='quiz'||/서술형/.test(s.title||'');
 const OLDKEYS=[];  // 타자 단계가 있던 시절의 순서 (예전 위치 이전용)
 CHAPTERS.forEach((c,ci)=>c.steps.forEach((s,si)=>{OLDKEYS.push(c.id+'-'+si);if(!HIDE(s))FLAT.push({ci,si,key:c.id+'-'+si,raw:s})}));
 CHAPTERS.forEach((c,ci)=>{c.vis=FLAT.filter(f=>f.ci===ci)});
@@ -1532,7 +1532,7 @@ function setPyPill(msg){const p=$('#pypill');if(!p)return;p.className='pypill '+
 /* ===== 헤더 / 진행 ===== */
 /* 잠금: 통과한 단계까지 + 처음으로 통과 못 한 단계까지만 갈 수 있음 */
 // 읽기만 하는 화면(intro, 코드 없는 설명)은 잠금 판단에서 뺌 → 나중에 생긴 설명 화면 때문에 뒤가 잠기지 않음
-const READONLY=f=>f.raw.t==='intro'||(f.raw.t==='learn'&&!f.raw.code);
+const READONLY=f=>f.raw.t==='intro'||f.raw.t==='fill'||(f.raw.t==='learn'&&!f.raw.code);
 function reach(){for(let i=0;i<FLAT.length;i++)if(!S.done[FLAT[i].key]&&!READONLY(FLAT[i]))return i;return FLAT.length-1}
 function renderNav(){
   const cur=FLAT[S.pos],R=reach();
@@ -1555,7 +1555,7 @@ document.addEventListener('click',e=>{
 });
 let SCR=false;
 function go(i){if(i<0||i>=FLAT.length)return;SCR=false;S.pos=i;save();render();window.scrollTo(0,0)}
-function markDone(k){if(!PID)return;S.done[k]=true;save();renderNav();if(FLAT[S.pos].key===k)$('#next').classList.add('pulse')}
+function markDone(k){if(!PID){toast('⚠️ <b>프로필이 연결돼 있지 않아서 통과 기록을 저장하지 못했어요.</b> 프로필을 다시 골라 주세요.');showProfiles();return}S.done[k]=true;save();renderNav();if(FLAT[S.pos].key===k)$('#next').classList.add('pulse')}
 
 /* ===== 편집기 ===== */
 let ED=null, LAST={out:'',err:null};
@@ -1818,7 +1818,7 @@ function renderFill(main,step,key,eyebrow){
       if(same){v.className='verdict pass';v.innerHTML=`<b>통과!</b> 시험지와 글자가 다른 칸(빨간 칸)이 ${ins.length-n}개 있지만, 실행 결과는 시험지 코드와 같아요. 시험에서는 시험지 형태가 안전하니 <b>정답 보기</b>로 한 번 확인해 두세요.`;markDone(key);msPass()}
       else{v.className='verdict fail';v.innerHTML=`<b>${n} / ${ins.length}</b> 맞았어요. 빨간 칸을 다시 보세요.${u.err?` (실행 오류: ${esc(u.err.type)}: ${esc(u.err.msg)})`:' 실행 결과도 시험지 코드와 달라요.'}`}
     }catch(e){v.className='verdict fail';v.innerHTML=`<b>${n} / ${ins.length}</b> 맞았어요. 빨간 칸을 다시 보세요.`}})()};
-  $('#run').onclick=()=>doRun(build(),$('#stdin').value);
+  $('#run').onclick=()=>{doRun(build(),$('#stdin').value);$('#fcheck').click()};
   $('#fillans').onclick=()=>{$('#hints').innerHTML=`<div class="ans"><div class="ans-h">빈칸 정답 (보고 직접 입력하세요)</div><pre>${blanks.map((b,i)=>(i+1)+'. '+esc(b.a[0])).join('\n')}</pre></div>`};
   ins[0]&&ins[0].focus();
 }
