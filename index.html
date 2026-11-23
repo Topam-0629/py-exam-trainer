@@ -1505,7 +1505,7 @@ const loadState=id=>{let x=fresh();try{const v=JSON.parse(localStorage.getItem('
 /* 평면 단계 목록 */
 const FLAT=[];
 // 화면에서 뺀 단계: 타자 연습, 서술형(서술 문제 + 서술형 답안 설명)
-const HIDE=s=>s.t==='type'||s.t==='quiz'||/서술형/.test(s.title||'');
+const HIDE=s=>s.t==='type'||s.t==='quiz'||s.t==='fill'||/서술형/.test(s.title||'');
 const OLDKEYS=[];  // 타자 단계가 있던 시절의 순서 (예전 위치 이전용)
 CHAPTERS.forEach((c,ci)=>c.steps.forEach((s,si)=>{OLDKEYS.push(c.id+'-'+si);if(!HIDE(s))FLAT.push({ci,si,key:c.id+'-'+si,raw:s})}));
 CHAPTERS.forEach((c,ci)=>{c.vis=FLAT.filter(f=>f.ci===ci)});
