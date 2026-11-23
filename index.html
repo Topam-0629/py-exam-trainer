@@ -1238,6 +1238,15 @@ if({{result==1}}) :
 ]},
 ];
 
+/* 모의고사용 작은 데이터 (방법을 아는지만 보기) */
+const MINI1 = `import pandas as pd
+data = {'age': [10, 20, 30], 'height': [1.1, 1.2, 1.3]}
+df = pd.DataFrame(data, index=['a', 'b', 'c'])`;
+const MINI1_TABLE = `<table class="tbl"><tr><th></th><th>age</th><th>height</th></tr><tr><th>a</th><td>10</td><td>1.1</td></tr><tr><th>b</th><td>20</td><td>1.2</td></tr><tr><th>c</th><td>30</td><td>1.3</td></tr></table>`;
+const MINI = `import pandas as pd
+data = {'age': [10, 20, 30], 'height': [1.1, 1.2, 1.3], 'name': ['A', 'B', 'C']}
+df = pd.DataFrame(data, index=['a', 'b', 'c'])`;
+const MINI_TABLE = `<table class="tbl"><tr><th></th><th>age</th><th>height</th><th>name</th></tr><tr><th>a</th><td>10</td><td>1.1</td><td>A</td></tr><tr><th>b</th><td>20</td><td>1.2</td><td>B</td></tr><tr><th>c</th><td>30</td><td>1.3</td><td>C</td></tr></table>`;
 /* ===== 모의고사 변형 생성기 ===== */
 function rnd(n){return Math.floor(Math.random()*n)}
 function pick(a){return a[rnd(a.length)]}
@@ -1266,11 +1275,10 @@ const LS=[['-',"'-'"],['--',"'--'"],[':',"':'"],['-.',"'-.'"]];
 
 function genStep(kind){
  if(kind==='np1'){
-  const useExam=Math.random()<0.5;
-  const rows=useExam?[[1,4,3,7,8],[2,1,-1,3,6],[3,3,4,1,0]]:Array.from({length:3},()=>Array.from({length:5},()=>rnd(12)-2));
+  const rows=[[1,2,3],[4,5,6]];
   const [f1,f2]=shuffle(NP_FUNCS).slice(0,2);
   return {t:'code',blank:true,title:'모의 넘파이 1: 배열 + 함수 2개',body:`<p>아래 2차원 배열을 만들고 <b>${f1[0]}</b>, <b>${f2[0]}</b>을(를) 차례로 출력하세요.</p>`+npTableHtml(rows),
-   ref:npArrCode(rows)+`\nprint(${f1[1]})\nprint(${f2[1]})`,ignore:npArrCode(rows)+`\nprint(a)`,check:'out',hints:['import numpy as np → a = np.array([[...], [...], [...]])','교과서 기준: "행" → axis=0, "열" → axis=1',`정답 함수: ${f1[1]}, ${f2[1]}`]};
+   ref:npArrCode(rows)+`\nprint(${f1[1]})\nprint(${f2[1]})`,ignore:npArrCode(rows)+`\nprint(a)`,check:'out',hints:['import numpy as np → a = np.array([[1, 2, 3], [4, 5, 6]])','교과서 기준: "행" → axis=0, "열" → axis=1',`정답 함수: ${f1[1]}, ${f2[1]}`]};
  }
  if(kind==='np2'){
   const o=pick([{n:3,s:[3,1],from:1},{n:4,s:[4,1],from:1},{n:6,s:[2,3],from:1},{n:6,s:[3,2],from:1},{n:8,s:[2,4],from:1},{n:12,s:[3,4],from:0},{n:5,s:[5,1],from:2}]);
@@ -1295,41 +1303,42 @@ function genStep(kind){
    ref:'import numpy as np\n'+o.r,check:'out',showExpected:true,must:[['arange','arange()를 써야 해요'],['reshape','reshape()를 써야 해요']],hints:['결과의 행·열 개수부터 세기',o.h]};
  }
  if(kind==='pd1'){
-  return {t:'code',blank:true,title:'모의 판다스 1: 데이터프레임 만들기',body:`<p>배열·시리즈·딕셔너리 중 <b>자신 있는 방법 하나</b>로 아래 데이터프레임을 만들고 출력하세요. (시험도 1개 선택)</p>`+FAMILY_TABLE,
-   ref:DF_DICT+'\nprint(df)',check:'out',hints:['import pandas as pd','딕셔너리: data = {\'age\': [...], ...} → pd.DataFrame(data, index=[...])']};
+  return {t:'code',blank:true,title:'모의 판다스 1: 데이터프레임 만들기',body:`<p>배열·시리즈·딕셔너리 중 <b>자신 있는 방법 하나</b>로 아래 데이터프레임을 만들고 출력하세요. (시험도 1개 선택)</p>`+MINI1_TABLE,
+   ref:MINI1+'\nprint(df)',check:'out',hints:['import pandas as pd',"딕셔너리: data = {'age': [10, 20, 30], 'height': [1.1, 1.2, 1.3]}","df = pd.DataFrame(data, index=['a', 'b', 'c'])"]};
  }
  const PDN=/^pd(\d+)$/.exec(kind);
  if(kind==='pdx'||(PDN&&+PDN[1]>=2)){
+  const R=['a','b','c'], C=['age','height','name'];
+  const ord=(arr,ref)=>arr.slice().sort((x,y)=>ref.indexOf(x)-ref.indexOf(y));
   const tasks=[
-   ()=>{const c=shuffle(Object.keys(COLS)).slice(0,2);return [`<b>${c.join(', ')}</b> 2개의 칼럼을 추출해 출력하세요.`,`print(df[${L(c)}])`]},
-   ()=>{const r=shuffle(FAM).slice(0,3).sort((a,b)=>FAM.indexOf(a)-FAM.indexOf(b));return [`<b>${r.join(', ')}</b> 3개의 인덱스에 해당하는 행을 추출해 출력하세요.`,`print(df.loc[${L(r)}])`]},
-   ()=>{const r=shuffle(FAM).slice(0,2).sort((a,b)=>FAM.indexOf(a)-FAM.indexOf(b));const c=shuffle(['age','weight','height']).slice(0,2);return [`<b>${r.join(', ')}</b> 행의 <b>${c.join(', ')}</b> 열만 추출해 출력하세요.`,`print(df.loc[${L(r)}, ${L(c)}])`]},
-   ()=>{const o=pick([['sex',['M','F','M','M','F']],['blood',['A','B','O','A','AB']],['city',['Seoul','Busan','Seoul','Daegu','Busan']]]);return [`<b>${o[0]}</b> 칼럼 (${o[1].join(', ')})을 <b>마지막</b>에 추가하고 출력하세요.`,`df[${q(o[0])}] = ${L(o[1])}\nprint(df)`]},
-   ()=>{const o=pick([['sex',['M','F','M','M','F']],['blood',['A','B','O','A','AB']]]);return [`<b>${o[0]}</b> 칼럼 (${o[1].join(', ')})을 <b>제일 앞</b>에 추가하고 출력하세요.`,`df.insert(0, ${q(o[0])}, ${L(o[1])})\nprint(df)`]},
-   ()=>{const o=pick([['uncle',[33,8.2,7.0,'DOC']],['aunt',[38,5.1,6.6,'Mia']],['baby',[1,0.9,2.1,'Boo']]]);return [`<b>${o[0]}</b> 행 (age ${o[1][0]}, weight ${o[1][1]}, height ${o[1][2]}, nickname ${o[1][3]})을 추가하고 출력하세요.`,`df.loc[${q(o[0])}] = ${L(o[1])}\nprint(df)`]},
-   ()=>[`<b>uncle</b> 행 (33, 8.2, 7.0, DOC)을 추가한 뒤, uncle 행의 값을 <b>모두 0</b>으로 바꿔 출력하세요.`,`df.loc['uncle'] = [33, 8.2, 7.0, 'DOC']\ndf.loc['uncle'] = 0\nprint(df)`],
-   ()=>{const r=pick(FAM),r2=pick(FAM.filter(x=>x!==r));const v=COLS.age[FAM.indexOf(r)]+1;return [`<b>${r}</b>의 age를 <b>${v}</b>로, <b>${r2}</b>의 weight와 height를 <b>5.0, 6.0</b>으로 바꿔 출력하세요.`,`df.loc[${q(r)}, 'age'] = ${v}\ndf.loc[${q(r2)}, ['weight', 'height']] = [5.0, 6.0]\nprint(df)`]},
-   ()=>{const o=pick([['GP','GM','GS','PP','MM'],['G1','G2','G3','P','M']]),c=pick([['A','W','H','N'],['나이','몸무게','키','별명']]);return [`① 인덱스명을 <b>${o.join(', ')}</b>로 바꾼 결과를 출력하고, ② 칼럼명을 <b>${c.join(', ')}</b>로 바꾼 결과를 출력하세요. (각각 원래 df에서)`,`print(df.rename(index={${FAM.map((f,i)=>q(f)+': '+q(o[i])).join(', ')}}))\nprint(df.rename(columns={${Object.keys(COLS).map((k,i)=>q(k)+': '+q(c[i])).join(', ')}}))`]},
+   ()=>{const c=ord(shuffle(C).slice(0,2),C);return [`<b>${c.join(', ')}</b> 2개의 칼럼을 추출해 출력하세요.`,`print(df[${L(c)}])`]},
+   ()=>{const r=ord(shuffle(R).slice(0,2),R);return [`<b>${r.join(', ')}</b> 인덱스에 해당하는 행을 추출해 출력하세요.`,`print(df.loc[${L(r)}])`]},
+   ()=>{const r=ord(shuffle(R).slice(0,2),R),c=ord(shuffle(['age','height']).slice(0,2),C);return [`<b>${r.join(', ')}</b> 행의 <b>${c.join(', ')}</b> 열만 추출해 출력하세요.`,`print(df.loc[${L(r)}, ${L(c)}])`]},
+   ()=>{const o=pick([['sex',['M','F','M']],['blood',['A','B','O']]]);return [`<b>${o[0]}</b> 칼럼 (${o[1].join(', ')})을 <b>마지막</b>에 추가하고 출력하세요.`,`df[${q(o[0])}] = ${L(o[1])}\nprint(df)`]},
+   ()=>{const o=pick([['sex',['M','F','M']],['blood',['A','B','O']]]);return [`<b>${o[0]}</b> 칼럼 (${o[1].join(', ')})을 <b>제일 앞</b>에 추가하고 출력하세요.`,`df.insert(0, ${q(o[0])}, ${L(o[1])})\nprint(df)`]},
+   ()=>{const o=pick([['d',[40,1.4,'D']],['e',[50,1.5,'E']]]);return [`<b>${o[0]}</b> 행 (age ${o[1][0]}, height ${o[1][1]}, name ${o[1][2]})을 추가하고 출력하세요.`,`df.loc[${q(o[0])}] = ${L(o[1])}\nprint(df)`]},
+   ()=>[`<b>d</b> 행 (40, 1.4, D)을 추가한 뒤, d 행의 값을 <b>모두 0</b>으로 바꿔 출력하세요.`,`df.loc['d'] = [40, 1.4, 'D']\ndf.loc['d'] = 0\nprint(df)`],
+   ()=>{const r=pick(R);return [`<b>${r}</b> 행의 age를 <b>99</b>로 바꿔 출력하세요.`,`df.loc[${q(r)}, 'age'] = 99\nprint(df)`]},
+   ()=>[`① 인덱스명을 <b>A, B, C</b>로 바꾼 결과를 출력하고, ② 칼럼명을 <b>X, Y, Z</b>로 바꾼 결과를 출력하세요. (각각 원래 df에서)`,`print(df.rename(index={'a': 'A', 'b': 'B', 'c': 'C'}))\nprint(df.rename(columns={'age': 'X', 'height': 'Y', 'name': 'Z'}))`],
    ()=>[`인덱스와 칼럼을 <b>맞바꿔</b> 출력하세요.`,`print(df.T)`],
-   ()=>{const r=pick(FAM),c=pick(['age','weight','height','nickname']);return [`<b>${r}</b> 인덱스와 <b>${c}</b> 칼럼을 삭제하고 출력하세요.`,`df = df.drop(index=${q(r)}, columns=${q(c)})\nprint(df)`]},
-   ()=>[`인덱스를 <b>nickname</b> 칼럼으로 바꾸고 (원본 변경) 출력하세요.`,`df.set_index('nickname', inplace=True)\nprint(df)`],
+   ()=>{const r=pick(R),c=pick(C);return [`<b>${r}</b> 인덱스와 <b>${c}</b> 칼럼을 삭제하고 출력하세요.`,`df = df.drop(index=${q(r)}, columns=${q(c)})\nprint(df)`]},
+   ()=>[`인덱스를 <b>name</b> 칼럼으로 바꾸고 (원본 변경) 출력하세요.`,`df.set_index('name', inplace=True)\nprint(df)`],
   ];
   const N=PDN?+PDN[1]:2+rnd(12);
-  const NAMES={2:'열 2개 추출',3:'행 3개 추출',4:'행과 열 지정 추출',5:'마지막에 칼럼 추가',6:'제일 앞에 칼럼 추가',7:'새 행 추가',8:'행 값 모두 0',9:'값 변경',10:'인덱스명·칼럼명 변경',11:'인덱스와 칼럼 맞바꾸기',12:'행과 칼럼 삭제',13:'인덱스를 칼럼으로'};
+  const NAMES={2:'열 2개 추출',3:'행 추출',4:'행과 열 지정 추출',5:'마지막에 칼럼 추가',6:'제일 앞에 칼럼 추가',7:'새 행 추가',8:'행 값 모두 0',9:'값 변경',10:'인덱스명·칼럼명 변경',11:'인덱스와 칼럼 맞바꾸기',12:'행과 칼럼 삭제',13:'인덱스를 칼럼으로'};
   const [desc,code]=tasks[N-2]();
-  return {t:'code',title:`모의 판다스 ${N}번: ${NAMES[N]}`,must:N===13?[['inplace\\s*=\\s*True|df\\s*=\\s*df\\.set_index','원본이 바뀌어야 해요: inplace=True 또는 df = df.set_index(...)']]:undefined,body:`<p>가족 데이터프레임(df)에서 ${desc}</p><p class="dim">df를 만드는 코드는 넣어 뒀어요. 그 아래에 이어서 쓰세요.</p>`,starter:DF_DICT+'\n\n',ref:DF_DICT+'\n'+code,check:'out',lenient:true,hints:['열 여러 개 [[ ]], 행은 loc, 추가는 df[...]= 또는 insert, 삭제는 drop','정답 코드의 첫 줄: '+code.split('\n')[0]]};
+  return {t:'code',title:`모의 판다스 ${N}번: ${NAMES[N]}`,must:N===13?[['inplace\\s*=\\s*True|df\\s*=\\s*df\\.set_index','원본이 바뀌어야 해요: inplace=True 또는 df = df.set_index(...)']]:undefined,body:`<p>아래 작은 데이터프레임(df)에서 ${desc}</p>`+MINI_TABLE+`<p class="dim">df를 만드는 코드는 넣어 뒀어요. 그 아래에 이어서 쓰세요.</p>`,starter:MINI+'\n\n',ref:MINI+'\n'+code,check:'out',lenient:true,hints:['열 여러 개 [[ ]], 행은 loc, 추가는 df[...]= 또는 insert, 삭제는 drop','정답 코드의 첫 줄: '+code.split('\n')[0]]};
  }
  if(kind==='plot'){
-  const col=pick(['weight','age','height']);const mk=pick(MARKERS),cl=pick(COLORS),ls=pick(LS);
-  const ref=`import matplotlib.pyplot as plt\nx = ${L(FAM)}\ny = ${L(COLS[col])}\nplt.plot(x, y, marker=${q(mk[0])}, color=${q(cl[0])}, label=${q(col)}, linestyle=${q(ls[0])})\nplt.xlabel('family')\nplt.ylabel(${q(col)})\nplt.legend()\nplt.show()`;
-  return {t:'code',blank:true,title:'모의 맷플롯립: 조건 그래프',body:`<p>가족(grandpa, grandma, grandson, papa, mama)의 <b>${col}</b> 데이터(${COLS[col].join(', ')})로 그래프를 그리세요.</p><div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ${mk[1]}, 색상: ${cl[1]}(${cl[0]}), 선 종류: ${ls[1]}, 범례 label='${col}', x축 family, y축 ${col}</div>`,
-   ref,check:'plot',showExpected:true,hints:['옵션표 다시 떠올리기: marker / color / linestyle',`marker='${mk[0]}', color='${cl[0]}', linestyle='${ls[0]}'`]};
+  const mk=pick(MARKERS),cl=pick(COLORS),ls=pick(LS);
+  const ref=`import matplotlib.pyplot as plt\nx = [1, 2, 3]\ny = [2, 4, 6]\nplt.plot(x, y, marker=${q(mk[0])}, color=${q(cl[0])}, label='data', linestyle=${q(ls[0])})\nplt.xlabel('x')\nplt.ylabel('y')\nplt.legend()\nplt.show()`;
+  return {t:'code',blank:true,title:'모의 맷플롯립: 조건 그래프',body:`<p>x = <b>[1, 2, 3]</b>, y = <b>[2, 4, 6]</b>으로 그래프를 그리세요.</p><div class="photo-cond"><b>&lt;작성 조건&gt;</b> 마커: ${mk[1]}, 색상: ${cl[1]}(${cl[0]}), 선 종류: ${ls[1]}, 범례 label='data', x축 이름 x, y축 이름 y</div>`,
+   ref,check:'plot',showExpected:true,hints:['plot → xlabel → ylabel → legend → show',`marker='${mk[0]}', color='${cl[0]}', linestyle='${ls[0]}'`]};
  }
  if(kind==='ml'){
-  const o=pick([{x:[1,3,5],y:[80,69,55],p:2},{x:[1,2,4],y:[90,82,64],p:3},{x:[2,4,6],y:[85,70,52],p:5},{x:[1,3,5],y:[80,69,55],p:4}]);
-  const ref=`import numpy as np\nx = np.array(${L(o.x)})\ny = np.array(${L(o.y)})\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(x.reshape(-1, 1), y)\npre_x = int(input('스마트폰 사용 시간:'))\ny_hat = model.predict([[pre_x]])\nprint(y_hat, '점')`;
-  return {t:'code',blank:true,title:'모의 머신러닝: 점수 예측',body:`<p>스마트폰 사용 시간 <b>${o.x.join(', ')}시간</b>일 때 시험 점수가 <b>${o.y.join(', ')}점</b>이었어요. 사용 시간을 입력받아 점수를 예측하는 프로그램을 쓰세요. (입력값 ${o.p}와 ${o.p+1}로 채점, 마지막 출력은 <code>print(y_hat, '점')</code>)</p>`,
-   ref,inputs:String(o.p),inputs2:String(o.p+1),check:'out',must:[['LinearRegression','LinearRegression 모델을 써야 해요'],['\\.fit\\(','fit으로 학습'],['\\.predict\\(','predict로 예측'],['input\\(','input()으로 입력']],hints:['fit에는 x.reshape(-1, 1)','predict에는 [[pre_x]]','마지막은 print(y_hat, \'점\')']};
+  const ref=`import numpy as np\nx = np.array([1, 2, 3])\ny = np.array([10, 20, 30])\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(x.reshape(-1, 1), y)\npre_x = int(input('시간:'))\ny_hat = model.predict([[pre_x]])\nprint(y_hat, '점')`;
+  return {t:'code',blank:true,title:'모의 머신러닝: 점수 예측',body:`<p>x = <b>[1, 2, 3]</b>일 때 y = <b>[10, 20, 30]</b>이에요. x를 입력받아 y를 예측하는 프로그램을 쓰세요. (입력값 4와 5로 채점, 마지막 출력은 <code>print(y_hat, '점')</code>)</p>`,
+   ref,inputs:'4',inputs2:'5',check:'out',must:[['LinearRegression','LinearRegression 모델을 써야 해요'],['\\.fit\\(','fit으로 학습'],['\\.predict\\(','predict로 예측'],['input\\(','input()으로 입력']],hints:['fit에는 x.reshape(-1, 1)','predict에는 [[pre_x]]','마지막은 print(y_hat, \'점\')']};
  }
 }
 
@@ -1349,7 +1358,7 @@ class LinearRegression:
         X = _np.asarray(X, float)
         if X.ndim != 2:
             raise ValueError("Expected 2D array, got 1D array instead. Reshape your data using array.reshape(-1, 1)")
-        return X @ self.coef_ + self.intercept_
+        return _np.round(X @ self.coef_ + self.intercept_, 10)
     def __repr__(self): return "LinearRegression()"
 class LogisticRegression:
     def __init__(self, C=1.0, max_iter=100, **kw):
@@ -1566,10 +1575,11 @@ function fixPos(x){let k=x.posKey;if(!k||OLDKEYS.indexOf(k)<0){k=OLDKEYS[x.pos]|
   let i=FLAT.findIndex(f=>f.key===k);if(i<0){const oi=OLDKEYS.indexOf(k);for(let j=oi+1;j<OLDKEYS.length&&i<0;j++)i=FLAT.findIndex(f=>f.key===OLDKEYS[j])}
   if(i<0)i=Math.min(x.pos||0,FLAT.length-1);
   x.pos=Math.max(0,i);x.posKey=FLAT[x.pos].key;return x}
+const GENV=2;  // 모의고사 데이터 버전 (작은 데이터)
 const GEN={};  // 프로필 없을 때만 쓰는 임시 저장
 function stepAt(i){const f=FLAT[i];if(f.raw.t!=='gen')return f.raw;
   const box=PID?(S.gen=S.gen||{}):GEN;
-  if(!box[f.key]||box[f.key].kind!==f.raw.kind){box[f.key]=Object.assign(genStep(f.raw.kind),{kind:f.raw.kind});if(PID)save()}
+  if(!box[f.key]||box[f.key].kind!==f.raw.kind||box[f.key].gv!==GENV){if(box[f.key]&&PID)delete S.codes[f.key];box[f.key]=Object.assign(genStep(f.raw.kind),{kind:f.raw.kind,gv:GENV});if(PID)save()}
   return box[f.key]}
 if(S.pos>=FLAT.length)S.pos=0;
 
