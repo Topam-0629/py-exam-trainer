@@ -1805,7 +1805,19 @@ function renderFill(main,step,key,eyebrow){
   const nz=s=>s.replace(/\s+/g,'').replace(/"/g,"'");
   const build=()=>{let i=0;return parts.map(p=>p.s!=null?p.s:ins[i++].value).join('')};
   $('#fcheck').onclick=()=>{let n=0;ins.forEach((x,i)=>{const ok=blanks[i].a.some(a=>nz(a)===nz(x.value));x.classList.toggle('ok',ok);x.classList.toggle('no',!ok);if(ok)n++});
-    const v=$('#verdict');v.hidden=false;if(n===ins.length){v.className='verdict pass';v.innerHTML=`<b>전부 정답! 통과예요.</b> ${n} / ${ins.length} · 아래 <b>다음 →</b>을 누르세요.`;markDone(key);msPass()}else{v.className='verdict fail';v.innerHTML=`<b>${n} / ${ins.length}</b> 맞았어요. 빨간 칸을 다시 보세요.`}};
+    const v=$('#verdict');v.hidden=false;if(n===ins.length){v.className='verdict pass';v.innerHTML=`<b>전부 정답! 통과예요.</b> ${n} / ${ins.length} · 아래 <b>다음 →</b>을 누르세요.`;markDone(key);msPass();return}
+    // 글자가 시험지와 달라도, 채운 코드의 실행 결과(그래프·출력)가 시험지 코드와 같으면 통과
+    v.className='verdict wait';v.innerHTML='글자가 다른 칸이 있어서, 채운 코드를 실행해 결과로 확인하는 중…';
+    (async()=>{try{
+      const refCode=parts.map(p=>p.s!=null?p.s:p.a[0]).join('');const inp=$('#stdin').value;
+      const [u,r]=await Promise.all([runPy(build(),inp),runPy(refCode,inp)]);
+      let same=!u.err;
+      if(same){const isPlot=/plt\.show/.test(refCode);
+        if(isPlot) same=comparePlots(u,r).length===0;
+        else same=sq(u.gout!=null?u.gout:u.out)===sq(r.gout!=null?r.gout:r.out);}
+      if(same){v.className='verdict pass';v.innerHTML=`<b>통과!</b> 시험지와 글자가 다른 칸(빨간 칸)이 ${ins.length-n}개 있지만, 실행 결과는 시험지 코드와 같아요. 시험에서는 시험지 형태가 안전하니 <b>정답 보기</b>로 한 번 확인해 두세요.`;markDone(key);msPass()}
+      else{v.className='verdict fail';v.innerHTML=`<b>${n} / ${ins.length}</b> 맞았어요. 빨간 칸을 다시 보세요.${u.err?` (실행 오류: ${esc(u.err.type)}: ${esc(u.err.msg)})`:' 실행 결과도 시험지 코드와 달라요.'}`}
+    }catch(e){v.className='verdict fail';v.innerHTML=`<b>${n} / ${ins.length}</b> 맞았어요. 빨간 칸을 다시 보세요.`}})()};
   $('#run').onclick=()=>doRun(build(),$('#stdin').value);
   $('#fillans').onclick=()=>{$('#hints').innerHTML=`<div class="ans"><div class="ans-h">빈칸 정답 (보고 직접 입력하세요)</div><pre>${blanks.map((b,i)=>(i+1)+'. '+esc(b.a[0])).join('\n')}</pre></div>`};
   ins[0]&&ins[0].focus();
