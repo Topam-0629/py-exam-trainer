@@ -3,6 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060807">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PY 수행평가">
+<link rel="apple-touch-icon" href="icon-192.png">
 <title>PY 수행평가 트레이닝</title>
 </head>
 <body>
@@ -315,6 +321,7 @@ body.coach-open .coach{transform:none}
     <nav class="chapters" id="chapters" aria-label="챕터"></nav>
     <button class="whobtn" id="who" title="프로필 바꾸기"><span>👤</span> 프로필</button>
     <span class="pypill loading" id="pypill">파이썬 불러오는 중…</span>
+    <span class="pypill" id="offpill" hidden title="한 번 받아 두면 인터넷 없이도 열려요"></span>
   </header>
   <div class="dotsbar"><div class="dots" id="dots"></div><span class="stepinfo" id="stepinfo"></span></div>
   <main class="main" id="main"></main>
@@ -1464,7 +1471,9 @@ const pyReady=(async()=>{
     return py;
   }catch(e){pyState='error';setPyPill(String(e));throw e}
 })();
+const fixQuotes=t=>String(t).replace(/[\u2018\u2019\u201A\u2032]/g,"'").replace(/[\u201C\u201D\u201E\u2033]/g,'"').replace(/\u00A0/g,' ');
 async function runPy(src, stdin=''){
+  src=fixQuotes(src);stdin=fixQuotes(stdin);
   await pyReady;
   const fn=PY.globals.get('_run');
   const r=JSON.parse(fn(src,stdin)); fn.destroy();
@@ -1608,7 +1617,7 @@ function makeEditor(host,code,opts={}){
     ta.oninput=()=>opts.onChange&&opts.onChange(ta.value);
     ta.onkeydown=e=>{if(e.key==='Tab'){e.preventDefault();document.execCommand('insertText',false,'    ')}if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();opts.onRun&&opts.onRun()}};
     return {getValue:()=>ta.value,setValue:v=>{ta.value=v;opts.onChange&&opts.onChange(v)},focus:()=>ta.focus(),refresh(){},addLineClass(){},removeLineClass(){},lineCount:()=>ta.value.split('\n').length}}
-  const cm=CodeMirror(host,{value:code,mode:'python',theme:'pitch',lineNumbers:true,indentUnit:4,tabSize:4,matchBrackets:true,lineWrapping:false,viewportMargin:Infinity,
+  const cm=CodeMirror(host,{value:code,mode:'python',theme:'pitch',spellcheck:false,autocorrect:false,autocapitalize:false,lineNumbers:true,indentUnit:4,tabSize:4,matchBrackets:true,lineWrapping:false,viewportMargin:Infinity,
     extraKeys:{'Tab':c=>c.somethingSelected()?c.indentSelection('add'):c.replaceSelection('    '),'Ctrl-Enter':()=>opts.onRun&&opts.onRun(),'Cmd-Enter':()=>opts.onRun&&opts.onRun()}});
   if(opts.onChange)cm.on('change',()=>opts.onChange(cm.getValue()));
   return cm;
@@ -1846,7 +1855,7 @@ function renderFill(main,step,key,eyebrow){
   const blanks=parts.filter(p=>p.a);const ins=[...main.querySelectorAll('.blank')];
   const saved=S.codes[key];if(Array.isArray(saved))ins.forEach((x,i)=>x.value=saved[i]||'');
   ins.forEach(x=>x.oninput=()=>{S.codes[key]=ins.map(y=>y.value);save();x.classList.remove('ok','no')});
-  const nz=s=>s.replace(/\s+/g,'').replace(/"/g,"'");
+  const nz=s=>fixQuotes(s).replace(/\s+/g,'').replace(/"/g,"'");
   const build=()=>{let i=0;return parts.map(p=>p.s!=null?p.s:ins[i++].value).join('')};
   $('#fcheck').onclick=()=>{let n=0;ins.forEach((x,i)=>{const ok=blanks[i].a.some(a=>nz(a)===nz(x.value));x.classList.toggle('ok',ok);x.classList.toggle('no',!ok);if(ok)n++});
     const v=$('#verdict');v.hidden=false;if(n===ins.length){v.className='verdict pass';v.innerHTML=`<b>전부 정답! 통과예요.</b> ${n} / ${ins.length} · 아래 <b>다음 →</b>을 누르세요.`;markDone(key);msPass();return}
@@ -2000,6 +2009,13 @@ $('#timer-reset').onclick=()=>{const b=$('#timer-reset');if(!b.classList.contain
   b.classList.remove('arm');b.textContent='↺ 타이머 초기화';S.elapsed=0;tickLast=Date.now();save();renderTimer()};
 document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input,textarea,.CodeMirror'))return;if(e.altKey&&e.key==='ArrowRight'){e.preventDefault();$('#next').click()}if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();$('#prev').click()}});
 setPyPill();renderTimer();render();updateCoachAvail();showProfiles();BOOTED=true;
+if(window.NO_COACH&&'serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+  const checkOffline=async()=>{try{const ok=await caches.match('py/pyodide.asm.wasm')&&await caches.match('py/w_pandas-2.2.0-cp312-cp312-pyodide_2024_0_wasm32.wasm');
+    const p=$('#offpill');if(p){p.hidden=false;p.textContent=ok?'오프라인 준비 완료':'오프라인 저장 중…';p.className='pypill '+(ok?'ready':'loading')}
+    if(!ok)setTimeout(checkOffline,3000)}catch(e){}};
+  navigator.serviceWorker.ready.then(checkOffline);
+}
 
 /* 자체 점검: 모든 정답 코드가 오류 없이 도는지 (개발용) */
 window.__selfTest=async()=>{const bad=[];for(let i=0;i<FLAT.length;i++){const s=stepAt(i);const code=s.ref||(s.t==='learn'&&s.code);if(!code)continue;const r=await runPy(code,s.inputs||'');if(r.err)bad.push([FLAT[i].key,s.title,r.err.type,r.err.msg]);}
