@@ -315,6 +315,10 @@ body.coach-open .coach{transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 </style>
+<div id="boot" style="position:fixed;inset:0;z-index:50;background:#060807;color:#e9f5ee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font:17px/1.6 -apple-system,system-ui,sans-serif;text-align:center;padding:24px">
+  <b style="font-size:22px;color:#1cf28a">PY 수행평가 불러오는 중…</b>
+  <span>30초 넘게 이 화면이면 새로고침하세요.<br>그래도 안 되면 <a href="reset.html" style="color:#1cf28a">여기(초기화)</a>를 누르세요. 진도는 지워지지 않아요.</span>
+</div>
 <div class="app">
   <header class="top">
     <div class="logo"><i><b>PY</b></i>수행평가</div>
@@ -1469,7 +1473,9 @@ const pyReady=(async()=>{
   try{
     const base=new URL('py/',location.href).href;
     const py=await loadPyodide({indexURL:base,stdLibURL:base+'stdlib.wasm'});
-    const bufs=await Promise.all(WHEELS.map(w=>fetch(base+w).then(r=>{if(!r.ok)throw new Error(w+' '+r.status);return r.arrayBuffer()})));
+    // 네트워크가 잠깐 끊겨도 다시 시도
+    const get=async(w)=>{let last;for(let k=0;k<4;k++){try{const r=await fetch(base+w);if(!r.ok)throw new Error(w+' '+r.status);return await r.arrayBuffer()}catch(e){last=e;await new Promise(z=>setTimeout(z,800*(k+1)))}}throw last};
+    const bufs=await Promise.all(WHEELS.map(get));
     for(const b of bufs) await py.unpackArchive(b,'wheel');
     py.FS.mkdirTree('/home/pyodide/sklearn');
     py.FS.writeFile('/home/pyodide/sklearn/__init__.py','');
@@ -2018,9 +2024,11 @@ $('#scratch-btn').onclick=()=>{SCR=!SCR;render()};
 $('#timer-reset').onclick=()=>{const b=$('#timer-reset');if(!b.classList.contains('arm')){b.classList.add('arm');b.textContent='한 번 더 누르면 0으로';setTimeout(()=>{b.classList.remove('arm');b.textContent='↺ 타이머 초기화'},3000);return}
   b.classList.remove('arm');b.textContent='↺ 타이머 초기화';S.elapsed=0;tickLast=Date.now();save();renderTimer()};
 document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input,textarea,.CodeMirror'))return;if(e.altKey&&e.key==='ArrowRight'){e.preventDefault();$('#next').click()}if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();$('#prev').click()}});
+{const b=document.getElementById('boot');if(b)b.remove()}
 setPyPill();renderTimer();render();updateCoachAvail();showProfiles();BOOTED=true;
 if(window.NO_COACH&&'serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
-  navigator.serviceWorker.register('sw.js').catch(()=>{});
+  // 파이썬을 다 불러온 뒤에 오프라인 저장 시작 (처음 열 때 와이파이를 두 번 쓰지 않게)
+  pyReady.then(()=>setTimeout(()=>navigator.serviceWorker.register('sw.js').catch(()=>{}),3000)).catch(()=>{});
   const checkOffline=async()=>{try{const ok=await caches.match('py/pyodide.asm.wasm')&&await caches.match('py/w_pandas-2.2.0-cp312-cp312-pyodide_2024_0_wasm32.wasm');
     const p=$('#offpill');if(p){p.hidden=false;p.textContent=ok?'오프라인 준비 완료':'오프라인 저장 중…';p.className='pypill '+(ok?'ready':'loading')}
     if(!ok)setTimeout(checkOffline,3000)}catch(e){}};

@@ -1,0 +1,10 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>초기화</title>
+<style>body{background:#060807;color:#e9f5ee;font:18px/1.7 -apple-system,system-ui,sans-serif;padding:40px 24px;max-width:640px;margin:0 auto}b{color:#1cf28a}a{color:#1cf28a}</style></head><body>
+<h1>오프라인 저장 초기화</h1><p id="m">정리하는 중…</p>
+<script>
+(async()=>{const m=document.getElementById('m');try{
+  if(navigator.serviceWorker){const rs=await navigator.serviceWorker.getRegistrations();for(const r of rs)await r.unregister()}
+  if(window.caches){for(const k of await caches.keys())await caches.delete(k)}
+  m.innerHTML='<b>초기화 완료!</b> 진도·프로필 기록은 그대로예요.<br><br><a href="./">학습 처음으로</a> &nbsp;·&nbsp; <a href="./#mock">모의고사 바로</a>';
+}catch(e){m.textContent='초기화 중 오류: '+e}})();
+</script></body></html>
