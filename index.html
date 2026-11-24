@@ -2011,7 +2011,7 @@ function showProfiles(){
   setTimeout(()=>{const i=$('#pfname');if(i&&!PROFS.list.length)i.focus()},0);
 }
 function useProfile(id){
-  save();STALE=false;PID=id;S=fixPos(loadState(id));
+  save();STALE=false;PID=id;S=fixPos(loadState(id));try{sessionStorage.setItem('pyexam-tabprofile',id)}catch(e){}
   if(MOCK){const first=FLAT.findIndex(f=>CHAPTERS[f.ci].id==='c6');const mi=S.mockKey?FLAT.findIndex(f=>f.key===S.mockKey):-1;S.pos=mi>=0?mi:first;setTimeout(()=>toast('모의고사 바로가기예요. 평소 학습 위치는 그대로 저장돼 있어요.'),300)}try{localStorage.setItem(OWN(id),TAB)}catch(e){}PROFS.last=id;savePro();
   const p=PROFS.list.find(x=>x.id===id);$('#who').innerHTML=`<span>👤</span> ${esc(p?p.name:'')}`;
   $('#profiles').hidden=true;SCR=false;tickLast=Date.now();coachTurns=[];render();renderTimer();
@@ -2028,7 +2028,10 @@ $('#timer-reset').onclick=()=>{const b=$('#timer-reset');if(!b.classList.contain
   b.classList.remove('arm');b.textContent='↺ 타이머 초기화';S.elapsed=0;tickLast=Date.now();save();renderTimer()};
 document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input,textarea,.CodeMirror'))return;if(e.altKey&&e.key==='ArrowRight'){e.preventDefault();$('#next').click()}if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();$('#prev').click()}});
 {const b=document.getElementById('boot');if(b)b.remove()}
-setPyPill();renderTimer();render();updateCoachAvail();showProfiles();BOOTED=true;
+setPyPill();renderTimer();render();updateCoachAvail();
+{let sid=null;try{sid=sessionStorage.getItem('pyexam-tabprofile')}catch(e){}
+ if(sid&&PROFS.list.some(p=>p.id===sid)){useProfile(sid);setTimeout(()=>toast('하던 곳에서 이어서 열었어요. (패드가 탭을 다시 불러왔어요)'),400)}else showProfiles()}
+BOOTED=true;
 setTimeout(()=>{if(pyState==='loading')toast('⏳ 파이썬을 받는 중이에요 (약 30MB). 와이파이가 느리면 1~2분 걸려요. 숫자가 계속 안 바뀌면 새로고침하세요.')},45000);
 // 예전에 설치된 오프라인 기능이 있으면 지우기 (패드 멈춤 방지)
 if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{});if(window.caches)caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).catch(()=>{})}
