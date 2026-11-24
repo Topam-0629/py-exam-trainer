@@ -2026,14 +2026,8 @@ $('#timer-reset').onclick=()=>{const b=$('#timer-reset');if(!b.classList.contain
 document.addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input,textarea,.CodeMirror'))return;if(e.altKey&&e.key==='ArrowRight'){e.preventDefault();$('#next').click()}if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();$('#prev').click()}});
 {const b=document.getElementById('boot');if(b)b.remove()}
 setPyPill();renderTimer();render();updateCoachAvail();showProfiles();BOOTED=true;
-if(window.NO_COACH&&'serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
-  // 파이썬을 다 불러온 뒤에 오프라인 저장 시작 (처음 열 때 와이파이를 두 번 쓰지 않게)
-  pyReady.then(()=>setTimeout(()=>navigator.serviceWorker.register('sw.js').catch(()=>{}),3000)).catch(()=>{});
-  const checkOffline=async()=>{try{const ok=await caches.match('py/pyodide.asm.wasm')&&await caches.match('py/w_pandas-2.2.0-cp312-cp312-pyodide_2024_0_wasm32.wasm');
-    const p=$('#offpill');if(p){p.hidden=false;p.textContent=ok?'오프라인 준비 완료':'오프라인 저장 중…';p.className='pypill '+(ok?'ready':'loading')}
-    if(!ok)setTimeout(checkOffline,3000)}catch(e){}};
-  navigator.serviceWorker.ready.then(checkOffline);
-}
+// 예전에 설치된 오프라인 기능이 있으면 지우기 (패드 멈춤 방지)
+if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{});if(window.caches)caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).catch(()=>{})}
 
 /* 자체 점검: 모든 정답 코드가 오류 없이 도는지 (개발용) */
 window.__selfTest=async()=>{const bad=[];for(let i=0;i<FLAT.length;i++){const s=stepAt(i);const code=s.ref||(s.t==='learn'&&s.code);if(!code)continue;const r=await runPy(code,s.inputs||'');if(r.err)bad.push([FLAT[i].key,s.title,r.err.type,r.err.msg]);}
